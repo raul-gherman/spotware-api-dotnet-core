@@ -51,6 +51,7 @@ namespace spotware
                                                                {2170, Process_Margin_Call_Update_Res},
                                                                {2171, Process_Margin_Call_Update_Event},
                                                                {2172, Process_Margin_Call_Trigger_Event},
+                                                               {2174, Process_Refresh_Token_Res},
                                                            };
     }
 }

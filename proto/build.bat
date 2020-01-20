@@ -1,2 +1,1 @@
-protogen.exe Spotware.proto --csharp_out=.\
-move Spotware.cs ..\API
+protogen.exe spotware.proto --csharp_out=.\
