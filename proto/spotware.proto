@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Spotware OpenAPI 6.4
+// Spotware OpenAPI 6.5
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 syntax="proto2";
@@ -107,6 +107,8 @@ enum ProtoOAPayloadType
     PROTO_OA_MARGIN_CALL_UPDATE_RES           = 2170;
     PROTO_OA_MARGIN_CALL_UPDATE_EVENT         = 2171;
     PROTO_OA_MARGIN_CALL_TRIGGER_EVENT        = 2172;
+    PROTO_OA_REFRESH_TOKEN_REQ                = 2173;
+    PROTO_OA_REFRESH_TOKEN_RES                = 2174;
 }
 
 enum ProtoOADayOfWeek
@@ -1327,4 +1329,21 @@ message ProtoOAMarginCallTriggerEvent
     optional ProtoOAPayloadType payloadType         = 1 [default = PROTO_OA_MARGIN_CALL_TRIGGER_EVENT];
     required int64              ctidTraderAccountId = 2;
     required ProtoOAMarginCall  marginCall          = 3;
+}
+
+// Request to refresh the access token using refresh token of granted trader account.
+message ProtoOARefreshTokenReq
+{
+    optional ProtoOAPayloadType payloadType  = 1 [default = PROTO_OA_REFRESH_TOKEN_REQ];
+    required string             refreshToken = 2; // The Refresh Token issued for updating Access Token.
+}
+
+// Response to the ProtoOARefreshTokenReq request.
+message ProtoOARefreshTokenRes
+{
+    optional ProtoOAPayloadType payloadType  = 1 [default = PROTO_OA_REFRESH_TOKEN_RES];
+    required string             accessToken  = 2; // The Access Token issued for providing access to the Trader's Account.
+    required string             tokenType    = 3; // bearer
+    required int64              expiresIn    = 4; // Access Token expiration in seconds
+    required string             refreshToken = 5;
 }
