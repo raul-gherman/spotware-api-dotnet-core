@@ -6,7 +6,8 @@
         {
             ProtoOAErrorRes args = ProtoBuf.Serializer.Deserialize<ProtoOAErrorRes>(_processorMemoryStream);
 
-            _log.Error($"Oa_Error_Res: {args.errorCode} :: {args.Description}");
+            _log.Error($"Oa_Error_Res: errorCode: {args.errorCode} | " +
+                       $"Description: {args.Description}");
 
             OnOaErrorRes_Received?.Invoke(args);
         }

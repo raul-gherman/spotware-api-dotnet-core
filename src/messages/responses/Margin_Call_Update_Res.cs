@@ -8,7 +8,7 @@ namespace spotware
         {
             ProtoOAMarginCallUpdateRes args = Serializer.Deserialize<ProtoOAMarginCallUpdateRes>(_processorMemoryStream);
 
-            // log
+            _log.Info("MarginCallUpdate");
 
             OnMarginCallUpdateRes_Received?.Invoke(this, args);
         }

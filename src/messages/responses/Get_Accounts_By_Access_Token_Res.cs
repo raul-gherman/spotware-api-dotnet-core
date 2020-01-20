@@ -10,10 +10,11 @@ namespace spotware
 
             foreach (ProtoOACtidTraderAccount account in args.ctidTraderAccounts)
             {
-                TradingAccounts[(long)account.ctidTraderAccountId] = new TradingAccount(this, (long)account.ctidTraderAccountId);
+                TradingAccounts[(long) account.ctidTraderAccountId] = new TradingAccount(this, (long) account.ctidTraderAccountId);
+
                 _log.Info($"TradingAccount {account.ctidTraderAccountId} retrieved");
 
-                Send(Account_Auth_Req((long)account.ctidTraderAccountId, AccessToken));
+                Send(Account_Auth_Req((long) account.ctidTraderAccountId, AccessToken));
             }
 
             OnGetAccountListByAccessTokenRes_Received?.Invoke(args);

@@ -14,17 +14,17 @@ namespace spotware
                 if (lightSymbol.Enabled)
                 {
                     TradingSymbol tradingSymbol = new TradingSymbol(this, args.ctidTraderAccountId)
-                    {
-                        LightSymbol = lightSymbol
-                    };
+                                                  {
+                                                      LightSymbol = lightSymbol
+                                                  };
                     TradingAccounts[args.ctidTraderAccountId].TradingSymbols[lightSymbol.symbolId] = tradingSymbol;
+                }
 
-                    _log.Info($"TradingAccount {args.ctidTraderAccountId} | TradingSymbol {lightSymbol.symbolId} {lightSymbol.symbolName} : {lightSymbol.Description} | enabled");
-                }
-                else
-                {
-                    _log.Info($"TradingAccount {args.ctidTraderAccountId} | TradingSymbol {lightSymbol.symbolId} {lightSymbol.symbolName} : {lightSymbol.Description} | disabled");
-                }
+                _log.Info($"TradingAccount {args.ctidTraderAccountId} | " +
+                          $"symbolId: {lightSymbol.symbolId} | "          +
+                          $"symbolName: {lightSymbol.symbolName} | "      +
+                          $"Description: {lightSymbol.Description} | "    +
+                          $"Enabled: {lightSymbol.Enabled}");
             }
 
             Send(Symbol_By_Id_Req(args.ctidTraderAccountId, TradingAccounts[args.ctidTraderAccountId].TradingSymbols.Keys.ToArray()));

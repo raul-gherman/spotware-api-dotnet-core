@@ -8,8 +8,8 @@ namespace spotware
         {
             ProtoOAUnsubscribeDepthQuotesRes args = Serializer.Deserialize<ProtoOAUnsubscribeDepthQuotesRes>(_processorMemoryStream);
 
-            // log
-
+            _log.Info($"TradingAccount: {args.ctidTraderAccountId} | " +
+                      $"Unsubscribe_Depth_Quotes_Res");
             OnUnsubscribeDepthQuotesRes_Received?.Invoke(args);
         }
 

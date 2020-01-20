@@ -10,7 +10,10 @@ namespace spotware
 
             foreach (ProtoOAAsset asset in args.Assets)
             {
-                _log.Info($"{args.ctidTraderAccountId} | assetId: {asset.assetId} | displayName: {asset.displayName} | Name: {asset.Name}");
+                _log.Info($"TradingAccount: {args.ctidTraderAccountId} | " +
+                          $"assetId: {asset.assetId} | " +
+                          $"displayName: {asset.displayName} | " +
+                          $"Name: {asset.Name}");
             }
 
             OnAssetListRes_Received?.Invoke(args);
