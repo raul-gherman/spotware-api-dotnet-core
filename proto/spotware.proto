@@ -1139,6 +1139,13 @@ message ProtoOASubscribeLiveTrendbarReq
     required int64                 symbolId            = 4; // Unique identifier of the Symbol in cTrader platform.
 }
 
+// Response to the ProtoOASubscribeLiveTrendbarReq request.
+message ProtoOASubscribeLiveTrendbarRes
+{
+    optional ProtoOAPayloadType payloadType         = 1 [default = PROTO_OA_SUBSCRIBE_LIVE_TRENDBAR_RES];
+    required int64              ctidTraderAccountId = 2; // Unique identifier of the trader's account. Used to match responses to trader's accounts.
+}
+
 // Request for unsubscribing from the live trend bars.
 message ProtoOAUnsubscribeLiveTrendbarReq
 {

@@ -8,13 +8,13 @@ namespace spotware
         {
             ProtoOAMarginCallUpdateRes args = Serializer.Deserialize<ProtoOAMarginCallUpdateRes>(_processorMemoryStream);
 
-            _log.Info("MarginCallUpdate");
+            _log.Info("ProtoOAMarginCallUpdateRes");
 
-            OnMarginCallUpdateRes_Received?.Invoke(this, args);
+            OnMarginCallUpdateResReceived?.Invoke(this, args);
         }
 
-        public event On_MarginCallUpdateRes_Received OnMarginCallUpdateRes_Received;
+        public event MarginCallUpdateResReceived OnMarginCallUpdateResReceived;
 
-        public delegate void On_MarginCallUpdateRes_Received(object sender, ProtoOAMarginCallUpdateRes args);
+        public delegate void MarginCallUpdateResReceived(object sender, ProtoOAMarginCallUpdateRes args);
     }
 }

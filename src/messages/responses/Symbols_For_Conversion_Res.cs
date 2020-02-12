@@ -10,20 +10,21 @@ namespace spotware
 
             foreach (ProtoOALightSymbol symbol in args.Symbols)
             {
-                _log.Info($"TradingAccount: {args.ctidTraderAccountId} | " +
-                          $"Description: {symbol.Description} | "          +
-                          $"Enabled: {symbol.Enabled} | "                  +
-                          $"symbolId: {symbol.symbolId} | "                +
-                          $"symbolName: {symbol.symbolName} | "            +
-                          $"baseAssetId: {symbol.baseAssetId} | "          +
-                          $"quoteAssetId: {symbol.quoteAssetId} | "        +
+                _log.Info($"ProtoOASymbolsForConversionRes | "                  +
+                          $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
+                          $"Description: {symbol.Description} | "               +
+                          $"Enabled: {symbol.Enabled} | "                       +
+                          $"symbolId: {symbol.symbolId} | "                     +
+                          $"symbolName: {symbol.symbolName} | "                 +
+                          $"baseAssetId: {symbol.baseAssetId} | "               +
+                          $"quoteAssetId: {symbol.quoteAssetId} | "             +
                           $"symbolCategoryId: {symbol.symbolCategoryId}");
             }
 
-            OnSymbolsForConversionRes_Received?.Invoke(args);
+            OnSymbolsForConversionResReceived?.Invoke(args);
         }
 
-        public event SymbolsForConversionResReceived OnSymbolsForConversionRes_Received;
+        public event SymbolsForConversionResReceived OnSymbolsForConversionResReceived;
 
         public delegate void SymbolsForConversionResReceived(ProtoOASymbolsForConversionRes args);
     }

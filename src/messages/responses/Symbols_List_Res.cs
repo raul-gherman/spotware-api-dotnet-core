@@ -20,19 +20,20 @@ namespace spotware
                     TradingAccounts[args.ctidTraderAccountId].TradingSymbols[lightSymbol.symbolId] = tradingSymbol;
                 }
 
-                _log.Info($"TradingAccount {args.ctidTraderAccountId} | " +
-                          $"symbolId: {lightSymbol.symbolId} | "          +
-                          $"symbolName: {lightSymbol.symbolName} | "      +
-                          $"Description: {lightSymbol.Description} | "    +
+                _log.Info($"ProtoOASymbolsListRes | "                           +
+                          $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
+                          $"symbolId: {lightSymbol.symbolId} | "                +
+                          $"symbolName: {lightSymbol.symbolName} | "            +
+                          $"Description: {lightSymbol.Description} | "          +
                           $"Enabled: {lightSymbol.Enabled}");
             }
 
             Send(Symbol_By_Id_Req(args.ctidTraderAccountId, TradingAccounts[args.ctidTraderAccountId].TradingSymbols.Keys.ToArray()));
 
-            OnSymbolsListRes_Received?.Invoke(args);
+            OnSymbolsListResReceived?.Invoke(args);
         }
 
-        public event SymbolsListResReceived OnSymbolsListRes_Received;
+        public event SymbolsListResReceived OnSymbolsListResReceived;
 
         public delegate void SymbolsListResReceived(ProtoOASymbolsListRes args);
     }

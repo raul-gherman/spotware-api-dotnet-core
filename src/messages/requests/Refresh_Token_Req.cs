@@ -4,12 +4,12 @@ namespace spotware
 {
     public partial class Client
     {
-        public static ProtoMessage Refresh_Token_Req(string refresh_token)
+        public static ProtoMessage Refresh_Token_Req(string refreshToken)
         {
             ProtoOARefreshTokenReq message = new ProtoOARefreshTokenReq
                                              {
                                                  payloadType  = ProtoOAPayloadType.ProtoOaRefreshTokenReq,
-                                                 refreshToken = refresh_token
+                                                 refreshToken = refreshToken
                                              };
 
             InnerMemoryStream.SetLength(0);

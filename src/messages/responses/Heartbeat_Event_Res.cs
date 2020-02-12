@@ -8,12 +8,12 @@ namespace spotware
         {
             ProtoHeartbeatEvent args = Serializer.Deserialize<ProtoHeartbeatEvent>(_processorMemoryStream);
 
-            _log.Info($"Heartbeat received");
+            _log.Info($"ProtoHeartbeatEvent received");
 
-            OnHeartbeatEvent_Received?.Invoke(args);
+            OnHeartbeatEventReceived?.Invoke(args);
         }
 
-        public event HeartbeatEventReceived OnHeartbeatEvent_Received;
+        public event HeartbeatEventReceived OnHeartbeatEventReceived;
 
         public delegate void HeartbeatEventReceived(ProtoHeartbeatEvent args);
     }

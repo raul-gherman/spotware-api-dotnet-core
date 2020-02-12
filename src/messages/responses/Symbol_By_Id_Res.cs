@@ -13,9 +13,10 @@ namespace spotware
             foreach (ProtoOASymbol symbol in args.Symbols)
             {
                 TradingAccounts[args.ctidTraderAccountId].TradingSymbols[symbol.symbolId].Symbol = symbol;
-                TradingAccounts[args.ctidTraderAccountId].TradingSymbols[symbol.symbolId].Pip    = (decimal) Math.Pow(10, -symbol.pipPosition);
+                TradingAccounts[args.ctidTraderAccountId].TradingSymbols[symbol.symbolId].Pip    = Math.Pow(10, -symbol.pipPosition);
 
-                _log.Info($"TradingAccount: {args.ctidTraderAccountId} | "                +
+                _log.Info($"ProtoOASymbolByIdRes | "                                      +
+                          $"ctidTraderAccountId: {args.ctidTraderAccountId} | "           +
                           $"Commission: {symbol.Commission} | "                           +
                           $"commissionType: {symbol.commissionType} | "                   +
                           $"Digits: {symbol.Digits} | "                                   +
@@ -47,14 +48,12 @@ namespace spotware
                           $"swapRollover3Days: {symbol.swapRollover3Days}");
             }
 
-            _log.Info($"Trading account {args.ctidTraderAccountId} symbols ready, sending spots subscription request");
-
             Send(Subscribe_Spots_Req(args.ctidTraderAccountId, TradingAccounts[args.ctidTraderAccountId].TradingSymbols.Keys.ToArray()));
 
-            OnSymbolByIdRes_Received?.Invoke(args);
+            OnSymbolByIdResReceived?.Invoke(args);
         }
 
-        public event SymbolByIdResReceived OnSymbolByIdRes_Received;
+        public event SymbolByIdResReceived OnSymbolByIdResReceived;
 
         public delegate void SymbolByIdResReceived(ProtoOASymbolByIdRes args);
     }

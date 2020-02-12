@@ -8,17 +8,18 @@ namespace spotware
         {
             ProtoOAGetTickDataRes args = Serializer.Deserialize<ProtoOAGetTickDataRes>(_processorMemoryStream);
 
-            foreach (ProtoOATickData tick_data in args.tickDatas)
+            foreach (ProtoOATickData tickData in args.tickDatas)
             {
-                _log.Info($"TradingAccount: {args.ctidTraderAccountId} | " +
-                          $"Tick: {tick_data.Tick} | "                     +
-                          $"Timestamp: {tick_data.Timestamp}");
+                _log.Info($"ProtoOAGetTickDataRes | "                           +
+                          $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
+                          $"Tick: {tickData.Tick} | "                           +
+                          $"Timestamp: {tickData.Timestamp}");
             }
 
-            OnGetTickDataRes_Received?.Invoke(args);
+            OnGetTickDataResReceived?.Invoke(args);
         }
 
-        public event GetTickDataResReceived OnGetTickDataRes_Received;
+        public event GetTickDataResReceived OnGetTickDataResReceived;
 
         public delegate void GetTickDataResReceived(ProtoOAGetTickDataRes args);
     }

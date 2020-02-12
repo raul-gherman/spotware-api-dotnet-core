@@ -10,16 +10,17 @@ namespace spotware
 
             foreach (ProtoOAAsset asset in args.Assets)
             {
-                _log.Info($"TradingAccount: {args.ctidTraderAccountId} | " +
-                          $"assetId: {asset.assetId} | " +
-                          $"displayName: {asset.displayName} | " +
+                _log.Info($"ProtoOAAssetListRes | "                             +
+                          $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
+                          $"assetId: {asset.assetId} | "                        +
+                          $"displayName: {asset.displayName} | "                +
                           $"Name: {asset.Name}");
             }
 
-            OnAssetListRes_Received?.Invoke(args);
+            OnAssetListResReceived?.Invoke(args);
         }
 
-        public event AssetListResReceived OnAssetListRes_Received;
+        public event AssetListResReceived OnAssetListResReceived;
 
         public delegate void AssetListResReceived(ProtoOAAssetListRes args);
     }

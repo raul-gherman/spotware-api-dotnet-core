@@ -1,5 +1,4 @@
-﻿using System;
-using ProtoBuf;
+﻿using ProtoBuf;
 
 namespace spotware
 {
@@ -9,10 +8,13 @@ namespace spotware
         {
             ProtoOAExecutionEvent args = Serializer.Deserialize<ProtoOAExecutionEvent>(_processorMemoryStream);
 
-            OnExecutionEvent_Received?.Invoke(args);
+            _log.Info($"ProtoOAExecutionEvent | " +
+                      $"ctidTraderAccountId: {args.ctidTraderAccountId}"); // TODO
+
+            OnExecutionEventReceived?.Invoke(args);
         }
 
-        public event ExecutionEventReceived OnExecutionEvent_Received;
+        public event ExecutionEventReceived OnExecutionEventReceived;
 
         public delegate void ExecutionEventReceived(ProtoOAExecutionEvent args);
     }

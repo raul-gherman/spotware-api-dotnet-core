@@ -3,7 +3,7 @@ using System.Collections;
 using System.IO;
 using System.Text;
 
-namespace Logger
+namespace spotware
 {
     public interface ILog
     {

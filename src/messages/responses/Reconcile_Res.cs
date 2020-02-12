@@ -12,7 +12,8 @@ namespace spotware
             {
                 TradingAccounts[args.ctidTraderAccountId].Positions[position.positionId] = position;
 
-                _log.Info($"TradingAccount: {args.ctidTraderAccountId} | "                  +
+                _log.Info($"ProtoOAReconcileRes |"                                          +
+                          $"ctidTraderAccountId: {args.ctidTraderAccountId} | "             +
                           $"Commission: {position.Commission} | "                           +
                           $"marginRate: {position.marginRate} | "                           +
                           $"mirroringCommission: {position.mirroringCommission} | "         +
@@ -38,7 +39,8 @@ namespace spotware
             {
                 TradingAccounts[args.ctidTraderAccountId].Orders[order.orderId] = order;
 
-                _log.Info($"TradingAccount: {args.ctidTraderAccountId} | "               +
+                _log.Info($"ProtoOAReconcileRes | "                                      +
+                          $"ctidTraderAccountId: {args.ctidTraderAccountId} | "          +
                           $"closingOrder: {order.closingOrder} | "                       +
                           $"executedVolume: {order.executedVolume} | "                   +
                           $"executionPrice: {order.executionPrice} | "                   +
@@ -68,14 +70,13 @@ namespace spotware
                           $"trailingStopLoss: {order.trailingStopLoss} | "               +
                           $"utcLastUpdateTimestamp: {order.utcLastUpdateTimestamp}");
 
-
-                OnReconcileRes_Received?.Invoke(args);
+                OnReconcileResReceived?.Invoke(args);
             }
 
             Send(Symbols_List_Req(args.ctidTraderAccountId));
         }
 
-        public event ReconcileResReceived OnReconcileRes_Received;
+        public event ReconcileResReceived OnReconcileResReceived;
 
         public delegate void ReconcileResReceived(ProtoOAReconcileRes args);
     }

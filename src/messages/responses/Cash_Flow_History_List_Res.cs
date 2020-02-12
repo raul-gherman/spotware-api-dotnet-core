@@ -10,7 +10,8 @@ namespace spotware
 
             foreach (ProtoOADepositWithdraw depositWithdraw in args.depositWithdraws)
             {
-                _log.Info($"{args.ctidTraderAccountId} | "                           +
+                _log.Info($"ProtoOACashFlowHistoryListRes | "                        +
+                          $"ctidTraderAccountId: {args.ctidTraderAccountId} | "      +
                           $"Balance: {depositWithdraw.Balance} | "                   +
                           $"balanceVersion: {depositWithdraw.balanceVersion} | "     +
                           $"Delta: {depositWithdraw.Delta} | "                       +
@@ -21,10 +22,10 @@ namespace spotware
                           $"changeBalanceTimestamp: {depositWithdraw.changeBalanceTimestamp}");
             }
 
-            OnCashFlowHistoryListRes_Received?.Invoke(args);
+            OnCashFlowHistoryListResReceived?.Invoke(args);
         }
 
-        public event CashFlowHistoryListResReceived OnCashFlowHistoryListRes_Received;
+        public event CashFlowHistoryListResReceived OnCashFlowHistoryListResReceived;
 
         public delegate void CashFlowHistoryListResReceived(ProtoOACashFlowHistoryListRes args);
     }

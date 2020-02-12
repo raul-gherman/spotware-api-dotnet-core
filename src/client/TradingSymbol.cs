@@ -7,13 +7,15 @@ namespace spotware
         public ProtoOALightSymbol LightSymbol;
         public ProtoOASymbol      Symbol;
 
-        public decimal Bid          { get; private set; }
-        public decimal Ask          { get; private set; }
-        public decimal Spread       { get; private set; }
-        public decimal SpreadInPips { get; private set; }
+        public double Bid          { get; private set; }
+        public double Ask          { get; private set; }
+        public double Spread       { get; private set; }
+        public double SpreadInPips { get; private set; }
+        public double Weight       { get; private set; }
+        public bool   IsTradable   { get; private set; }
 
-        public        decimal Pip { get; set; }
-        private const decimal DIVIDER = 100000;
+        public        double Pip { get; set; }
+        private const double Divider = 100000;
 
         public event SpotEvent OnSpotEvent;
 
@@ -21,7 +23,7 @@ namespace spotware
 
         public TradingSymbol(Client client, long ctid)
         {
-            client.OnSpotEvent_Received += OnSpotEvent_Received;
+            client.OnSpotEventReceived += OnSpotEvent_Received;
             CtidTraderAccount           =  ctid;
         }
 
@@ -34,16 +36,18 @@ namespace spotware
                 return;
 
             if (args.Ask != 0)
-                Ask = args.Ask / DIVIDER;
+                Ask = args.Ask / Divider;
 
             if (args.Bid != 0)
-                Bid = args.Bid / DIVIDER;
+                Bid = args.Bid / Divider;
 
             if (!(Ask > 0) || !(Bid > 0))
                 return;
-
+            IsTradable   = true;
             Spread       = Ask - Bid;
             SpreadInPips = (Ask - Bid) / Pip;
+            Weight       = Ask         / Pip;
+
             OnSpotEvent?.Invoke(this);
         }
     }

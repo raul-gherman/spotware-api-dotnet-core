@@ -8,20 +8,24 @@ namespace spotware
         {
             ProtoOARefreshTokenRes args = Serializer.Deserialize<ProtoOARefreshTokenRes>(_processorMemoryStream);
 
-            _log.Info($"RefreshTokenRes: | "                  +
-                      $"tokenType: {args.tokenType}| "        +
-                      $"expiresIn: {args.expiresIn} | "       +
+            _log.Info($"ProtoOARefreshTokenRes | "            +
+                      $"tokenType: {args.tokenType} | "       +
                       $"accessToken: {args.accessToken} | "   +
                       $"refreshToken: {args.refreshToken} | " +
                       $"expiresIn: {args.expiresIn}");
 
-            // TODO: restart the entire flow, from authorization
+            AccessToken  = args.accessToken;
+            RefreshToken = args.refreshToken;
 
-            OnRefreshTokenRes_Received?.Invoke(args);
+            TradingAccounts.Clear();
+
+            Send(Get_Accounts_By_Access_Token_Req(AccessToken));
+
+            OnRefreshTokenResReceived?.Invoke(args);
         }
 
-        public event RefreshTokenRessReceived OnRefreshTokenRes_Received;
+        public event RefreshTokenResReceived OnRefreshTokenResReceived;
 
-        public delegate void RefreshTokenRessReceived(ProtoOARefreshTokenRes args);
+        public delegate void RefreshTokenResReceived(ProtoOARefreshTokenRes args);
     }
 }

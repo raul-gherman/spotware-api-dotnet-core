@@ -8,15 +8,18 @@ namespace spotware
         {
             ProtoOAAssetClassListRes args = Serializer.Deserialize<ProtoOAAssetClassListRes>(_processorMemoryStream);
 
-            foreach (ProtoOAAssetClass asset_class in args.assetClasses)
+            foreach (ProtoOAAssetClass assetClass in args.assetClasses)
             {
-                _log.Info($"{args.ctidTraderAccountId} assetClass: {asset_class.Id} {asset_class.Name}");
+                _log.Info($"ProtoOAAssetClassListRes | "                        +
+                          $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
+                          $"asset_class.Id: {assetClass.Id} | "                 +
+                          $"asset_class.Name: {assetClass.Name}");
             }
 
-            OnAssetClassListRes_Received?.Invoke(args);
+            OnAssetClassListResReceived?.Invoke(args);
         }
 
-        public event AssetClassListResReceived OnAssetClassListRes_Received;
+        public event AssetClassListResReceived OnAssetClassListResReceived;
 
         public delegate void AssetClassListResReceived(ProtoOAAssetClassListRes args);
     }

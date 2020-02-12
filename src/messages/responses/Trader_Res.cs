@@ -10,7 +10,8 @@ namespace spotware
 
             TradingAccounts[(long) args.ctidTraderAccountId].Trader = args.Trader;
 
-            _log.Info($"TradingAccount {args.ctidTraderAccountId} | "                  +
+            _log.Info($"ProtoOATraderRes | "                                           +
+                      $"ctidTraderAccountId: {args.ctidTraderAccountId} | "            +
                       $"accessRights: {args.Trader.accessRights} | "                   +
                       $"accountType: {args.Trader.accountType} | "                     +
                       $"Balance: {args.Trader.Balance} | "                             +
@@ -30,10 +31,10 @@ namespace spotware
 
             Send(Reconcile_Req(args.ctidTraderAccountId));
 
-            OnTraderRes_Received?.Invoke(args);
+            OnTraderResReceived?.Invoke(args);
         }
 
-        public event TraderResReceived OnTraderRes_Received;
+        public event TraderResReceived OnTraderResReceived;
 
         public delegate void TraderResReceived(ProtoOATraderRes args);
     }

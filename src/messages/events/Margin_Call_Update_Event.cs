@@ -8,13 +8,17 @@ namespace spotware
         {
             ProtoOAMarginCallUpdateEvent args = Serializer.Deserialize<ProtoOAMarginCallUpdateEvent>(_processorMemoryStream);
 
-            // log
+            _log.Info($"ProtoOAMarginCallUpdateEvent | "                                 +
+                      $"ctidTraderAccountId: {args.ctidTraderAccountId} | "              +
+                      $"marginCallType: {args.marginCall.marginCallType} | "             +
+                      $"marginLevelThreshold: {args.marginCall.marginLevelThreshold} | " +
+                      $"utcLastUpdateTimestamp: {args.marginCall.utcLastUpdateTimestamp}");
 
-            OnMarginCallUpdateEvent_Received?.Invoke(this, args);
+            OnMarginCallUpdateEventReceived?.Invoke(this, args);
         }
 
-        public event MarginCallUpdateEvent_Received OnMarginCallUpdateEvent_Received;
+        public event MarginCallUpdateEventReceived OnMarginCallUpdateEventReceived;
 
-        public delegate void MarginCallUpdateEvent_Received(object sender, ProtoOAMarginCallUpdateEvent args);
+        public delegate void MarginCallUpdateEventReceived(object sender, ProtoOAMarginCallUpdateEvent args);
     }
 }

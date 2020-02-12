@@ -3299,6 +3299,29 @@ namespace spotware
     }
 
     [global::ProtoBuf.ProtoContract()]
+    public partial class ProtoOASubscribeLiveTrendbarRes : global::ProtoBuf.IExtensible
+    {
+        private global::ProtoBuf.IExtension __pbn__extensionData;
+        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [global::ProtoBuf.ProtoMember(1)]
+        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSubscribeLiveTrendbarRes)]
+        public ProtoOAPayloadType payloadType
+        {
+            get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSubscribeLiveTrendbarRes; }
+            set { __pbn__payloadType = value; }
+        }
+        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public void ResetpayloadType() => __pbn__payloadType = null;
+        private ProtoOAPayloadType? __pbn__payloadType;
+
+        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        public long ctidTraderAccountId { get; set; }
+
+    }
+
+    [global::ProtoBuf.ProtoContract()]
     public partial class ProtoOAUnsubscribeLiveTrendbarReq : global::ProtoBuf.IExtensible
     {
         private global::ProtoBuf.IExtension __pbn__extensionData;

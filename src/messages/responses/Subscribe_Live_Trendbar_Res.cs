@@ -6,16 +6,16 @@ namespace spotware
     {
         private void Process_Subscribe_Live_Trendbar_Res()
         {
-            ProtoOAUnsubscribeLiveTrendbarRes args = Serializer.Deserialize<ProtoOAUnsubscribeLiveTrendbarRes>(_processorMemoryStream);
+            ProtoOASubscribeLiveTrendbarRes args = Serializer.Deserialize<ProtoOASubscribeLiveTrendbarRes>(_processorMemoryStream);
 
-            _log.Info($"TradingAccount: {args.ctidTraderAccountId} | " +
-                      $"Subscribe_Live_Trendbar_Res");
+            _log.Info($"ProtoOASubscribeLiveTrendbarRes | " +
+                      $"ctidTraderAccountId: {args.ctidTraderAccountId}");
 
-            OnSubscribeLiveTrendbarRes_Received?.Invoke(args);
+            OnSubscribeLiveTrendbarResReceived?.Invoke(args);
         }
 
-        public event SubscribeLiveTrendbarResReceived OnSubscribeLiveTrendbarRes_Received;
+        public event SubscribeLiveTrendbarResReceived OnSubscribeLiveTrendbarResReceived;
 
-        public delegate void SubscribeLiveTrendbarResReceived(ProtoOAUnsubscribeLiveTrendbarRes args);
+        public delegate void SubscribeLiveTrendbarResReceived(ProtoOASubscribeLiveTrendbarRes args);
     }
 }

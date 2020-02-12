@@ -6,13 +6,16 @@
         {
             ProtoOAErrorRes args = ProtoBuf.Serializer.Deserialize<ProtoOAErrorRes>(_processorMemoryStream);
 
-            _log.Error($"Oa_Error_Res: errorCode: {args.errorCode} | " +
-                       $"Description: {args.Description}");
+            _log.Error($"ProtoOAErrorRes | "                                +
+                       $"ctidTraderAccountId {args.ctidTraderAccountId} | " +
+                       $"errorCode: {args.errorCode} | "                    +
+                       $"Description: {args.Description} | "                +
+                       $"maintenanceEndTimestamp: {args.maintenanceEndTimestamp}");
 
-            OnOaErrorRes_Received?.Invoke(args);
+            OnOaErrorResReceived?.Invoke(args);
         }
 
-        public event OaErrorResReceived OnOaErrorRes_Received;
+        public event OaErrorResReceived OnOaErrorResReceived;
 
         public delegate void OaErrorResReceived(ProtoOAErrorRes args);
     }

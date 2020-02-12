@@ -20,7 +20,7 @@ namespace spotware
                     while (Thread.CurrentThread.IsAlive)
                     {
                         Thread.Sleep(1000);
-                        if (DateTime.Now > _nextTimeGate)
+                        if (DateTime.UtcNow > _nextTimeGate)
                         {
                             ProtoMessagesQueue.Enqueue(KeepAliveMessage);
                         }
@@ -28,7 +28,7 @@ namespace spotware
                 }
                 catch (Exception ex)
                 {
-                    _log.Error("Start_KeepAlive_Thread :: " + ex);
+                    _log.Error($"Start_KeepAlive_Thread :: {ex}");
                 }
             });
             _keepAliveThread.Start();

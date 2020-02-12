@@ -8,18 +8,19 @@ namespace spotware
         {
             ProtoOAExpectedMarginRes args = Serializer.Deserialize<ProtoOAExpectedMarginRes>(_processorMemoryStream);
 
-            foreach (ProtoOAExpectedMargin expected_margin in args.Margins)
+            foreach (ProtoOAExpectedMargin expectedMargin in args.Margins)
             {
-                _log.Info($"TradingAccount: {args.ctidTraderAccountId} | " +
-                          $"buyMargin: {expected_margin.buyMargin} | "     +
-                          $"sellMargin: {expected_margin.sellMargin} | "   +
-                          $"Volume: {expected_margin.Volume}");
+                _log.Info($"ProtoOAExpectedMarginRes | "                        +
+                          $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
+                          $"buyMargin: {expectedMargin.buyMargin} | "           +
+                          $"sellMargin: {expectedMargin.sellMargin} | "         +
+                          $"Volume: {expectedMargin.Volume}");
             }
 
-            OnExpectedMarginRes_Received.Invoke(args);
+            OnExpectedMarginResReceived?.Invoke(args);
         }
 
-        public event ExpectedMarginResReceived OnExpectedMarginRes_Received;
+        public event ExpectedMarginResReceived OnExpectedMarginResReceived;
 
         public delegate void ExpectedMarginResReceived(ProtoOAExpectedMarginRes args);
     }

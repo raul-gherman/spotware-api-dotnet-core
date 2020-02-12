@@ -8,18 +8,19 @@ namespace spotware
         {
             ProtoOAGetTrendbarsRes args = Serializer.Deserialize<ProtoOAGetTrendbarsRes>(_processorMemoryStream);
 
-            foreach (ProtoOATrendbar trend_bar in args.Trendbars)
+            foreach (ProtoOATrendbar trendBar in args.Trendbars)
             {
-                _log.Info($"TradingAccount: {args.ctidTraderAccountId} | " +
-                          $"symbolId: {args.symbolId} | "                  +
-                          $"Period: {args.Period} | "                      +
-                          $"Timestamp: {args.Timestamp} | "                +
-                          $"Low: {trend_bar.Low} | "                       +
-                          $"deltaOpen: {trend_bar.deltaOpen} | "           +
-                          $"deltaHigh: {trend_bar.deltaHigh} | "           +
-                          $"deltaClose: {trend_bar.deltaClose} | "         +
-                          $"Volume: {trend_bar.Volume} | "                 +
-                          $"Period: {trend_bar.Period}");
+                _log.Info($"ProtoOAGetTrendbarsRes | "                          +
+                          $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
+                          $"symbolId: {args.symbolId} | "                       +
+                          $"Period: {args.Period} | "                           +
+                          $"Timestamp: {args.Timestamp} | "                     +
+                          $"Low: {trendBar.Low} | "                             +
+                          $"deltaOpen: {trendBar.deltaOpen} | "                 +
+                          $"deltaHigh: {trendBar.deltaHigh} | "                 +
+                          $"deltaClose: {trendBar.deltaClose} | "               +
+                          $"Volume: {trendBar.Volume} | "                       +
+                          $"Period: {trendBar.Period}");
             }
 
             OnGetTrendbarsRes_Received?.Invoke(args);

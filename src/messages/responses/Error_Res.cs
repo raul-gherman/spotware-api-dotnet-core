@@ -8,12 +8,15 @@ namespace spotware
         {
             ProtoErrorRes args = Serializer.Deserialize<ProtoErrorRes>(_processorMemoryStream);
 
-            _log.Error($"Error_Res: {args.errorCode} :: {args.Description}");
+            _log.Error($"ProtoErrorRes: | "                  +
+                       $"errorCode: {args.errorCode} |"      +
+                       $"Description: {args.Description} | " +
+                       $"maintenanceEndTimestamp: {args.maintenanceEndTimestamp}");
 
-            OnErrorRes_Received?.Invoke(args);
+            OnErrorResReceived?.Invoke(args);
         }
 
-        public event ErrorResReceived OnErrorRes_Received;
+        public event ErrorResReceived OnErrorResReceived;
 
         public delegate void ErrorResReceived(ProtoErrorRes args);
     }

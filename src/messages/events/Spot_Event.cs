@@ -7,11 +7,13 @@ namespace spotware
         private void Process_Spot_Event()
         {
             ProtoOASpotEvent args = Serializer.Deserialize<ProtoOASpotEvent>(_processorMemoryStream);
+            
+            // not logging spot events, they are way too many...
 
-            OnSpotEvent_Received?.Invoke(args);
+            OnSpotEventReceived?.Invoke(args);
         }
 
-        public event SpotEventReceived OnSpotEvent_Received;
+        public event SpotEventReceived OnSpotEventReceived;
 
         public delegate void SpotEventReceived(ProtoOASpotEvent args);
     }

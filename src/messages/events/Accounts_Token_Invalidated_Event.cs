@@ -8,15 +8,19 @@ namespace spotware
         {
             ProtoOAAccountsTokenInvalidatedEvent args = Serializer.Deserialize<ProtoOAAccountsTokenInvalidatedEvent>(_processorMemoryStream);
 
-            foreach (long account in args.ctidTraderAccountIds)
+            foreach (long ctidTraderAccountId in args.ctidTraderAccountIds)
             {
-                _log.Info($"{args.ctidTraderAccountIds} token invalidated: {args.Reason}");
+                _log.Info($"ProtoOAAccountsTokenInvalidatedEvent | "       +
+                          $"ctidTraderAccountId: {ctidTraderAccountId} | " +
+                          $"Reason: {args.Reason}");
             }
 
-            OnAccountsTokenInvalidatedEvent_Received?.Invoke(args);
+            Send(Refresh_Token_Req(RefreshToken));
+
+            OnAccountsTokenInvalidatedEventReceived?.Invoke(args);
         }
 
-        public event AccountsTokenInvalidatedEventReceived OnAccountsTokenInvalidatedEvent_Received;
+        public event AccountsTokenInvalidatedEventReceived OnAccountsTokenInvalidatedEventReceived;
 
         public delegate void AccountsTokenInvalidatedEventReceived(ProtoOAAccountsTokenInvalidatedEvent args);
     }

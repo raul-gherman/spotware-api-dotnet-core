@@ -27,7 +27,7 @@ namespace spotware
                                              }
                                              catch (Exception ex)
                                              {
-                                                 _log.Error("Listen :: " + ex);
+                                                 _log.Error($"Listen :: {ex}");
                                              }
                                          });
             _listenerThread.Start();

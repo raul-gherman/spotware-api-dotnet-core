@@ -10,7 +10,8 @@ namespace spotware
 
             foreach (ProtoOADeal deal in args.Deals)
             {
-                _log.Info($"{args.ctidTraderAccountId} | "                                                            +
+                _log.Info($"ProtoOADealListRes | "                                                                    +
+                          $"ctidTraderAccountId {args.ctidTraderAccountId} | "                                        +
                           $"Commission: {deal.Commission} | "                                                         +
                           $"createTimestamp: {deal.createTimestamp} | "                                               +
                           $"dealId: {deal.dealId} | "                                                                 +
@@ -37,10 +38,10 @@ namespace spotware
                           $"baseToUsdConversionRate: {deal.baseToUsdConversionRate}");
             }
 
-            OnDealListRes_Received?.Invoke(args);
+            OnDealListResReceived?.Invoke(args);
         }
 
-        public event DealListResReceived OnDealListRes_Received;
+        public event DealListResReceived OnDealListResReceived;
 
         public delegate void DealListResReceived(ProtoOADealListRes args);
     }

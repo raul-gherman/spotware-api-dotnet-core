@@ -8,12 +8,19 @@ namespace spotware
         {
             ProtoOASymbolChangedEvent args = Serializer.Deserialize<ProtoOASymbolChangedEvent>(_processorMemoryStream);
 
-            // log
+            foreach (long symbolId in args.symbolIds)
+            {
+                _log.Info($"ProtoOASymbolChangedEvent | "                       +
+                          $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
+                          $"symbolId: {symbolId}");
+            }
 
-            OnSymbolChangedEvent_Received?.Invoke(args);
+            Send(Symbol_By_Id_Req(args.ctidTraderAccountId, args.symbolIds));
+
+            OnSymbolChangedEventReceived?.Invoke(args);
         }
 
-        public event SymbolChangedEventReceived OnSymbolChangedEvent_Received;
+        public event SymbolChangedEventReceived OnSymbolChangedEventReceived;
 
         public delegate void SymbolChangedEventReceived(ProtoOASymbolChangedEvent args);
     }

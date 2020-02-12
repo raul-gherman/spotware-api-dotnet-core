@@ -8,12 +8,17 @@ namespace spotware
         {
             ProtoOATrailingSLChangedEvent args = Serializer.Deserialize<ProtoOATrailingSLChangedEvent>(_processorMemoryStream);
 
-            // log
+            _log.Info($"ProtoOATrailingSLChangedEvent | "                   +
+                      $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
+                      $"positionId: {args.positionId} | "                   +
+                      $"orderId: {args.orderId} | "                         +
+                      $"stopPrice: {args.stopPrice} | "                     +
+                      $"utcLastUpdateTimestamp: {args.utcLastUpdateTimestamp}");
 
-            OnTrailingSlChangedEvent_Received.Invoke(args);
+            OnTrailingSlChangedEventReceived.Invoke(args);
         }
 
-        public event TrailingSlChangedEventReceived OnTrailingSlChangedEvent_Received;
+        public event TrailingSlChangedEventReceived OnTrailingSlChangedEventReceived;
 
         public delegate void TrailingSlChangedEventReceived(ProtoOATrailingSLChangedEvent args);
     }

@@ -1,13 +1,10 @@
 using System;
 using System.Collections.Generic;
-using Logger;
 
 namespace spotware
 {
     public class TradingAccount
     {
-        private readonly ILog _log = LogManager.GetLogger();
-
         public readonly long          CtidTraderAccount;
         public          ProtoOATrader Trader { get; set; }
 
@@ -18,7 +15,7 @@ namespace spotware
         public TradingAccount(Client client, long ctid)
         {
             CtidTraderAccount                =  ctid;
-            client.OnExecutionEvent_Received += ExecutionEventReceived;
+            client.OnExecutionEventReceived += ExecutionEventReceived;
         }
 
         private void ExecutionEventReceived(ProtoOAExecutionEvent args)

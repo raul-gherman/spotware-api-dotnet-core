@@ -15,7 +15,7 @@ namespace spotware
             return message;
         }
 
-        private void Send(ProtoMessage protoMessage)
+        public void Send(ProtoMessage protoMessage)
         {
             _connection.ProtoMessagesQueue.Enqueue(protoMessage);
         }
