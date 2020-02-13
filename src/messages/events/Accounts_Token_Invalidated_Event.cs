@@ -15,6 +15,7 @@ namespace spotware
                           $"Reason: {args.Reason}");
             }
 
+            _log.Info($"Send(Refresh_Token_Req({RefreshToken})");
             Send(Refresh_Token_Req(RefreshToken));
 
             OnAccountsTokenInvalidatedEventReceived?.Invoke(args);

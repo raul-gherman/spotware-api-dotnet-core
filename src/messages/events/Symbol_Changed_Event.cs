@@ -15,6 +15,7 @@ namespace spotware
                           $"symbolId: {symbolId}");
             }
 
+            _log.Info($"Send(Symbol_By_Id_Req({args.ctidTraderAccountId}, {args.symbolIds}))");
             Send(Symbol_By_Id_Req(args.ctidTraderAccountId, args.symbolIds));
 
             OnSymbolChangedEventReceived?.Invoke(args);

@@ -73,6 +73,7 @@ namespace spotware
                 OnReconcileResReceived?.Invoke(args);
             }
 
+            _log.Info($"Send(Symbols_List_Req({args.ctidTraderAccountId}))");
             Send(Symbols_List_Req(args.ctidTraderAccountId));
         }
 

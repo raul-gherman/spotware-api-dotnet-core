@@ -19,6 +19,7 @@ namespace spotware
 
             TradingAccounts.Clear();
 
+            _log.Info($"Send(Get_Accounts_By_Access_Token_Req({AccessToken}))");
             Send(Get_Accounts_By_Access_Token_Req(AccessToken));
 
             OnRefreshTokenResReceived?.Invoke(args);

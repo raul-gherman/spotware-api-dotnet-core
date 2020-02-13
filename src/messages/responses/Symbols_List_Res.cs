@@ -28,6 +28,7 @@ namespace spotware
                           $"Enabled: {lightSymbol.Enabled}");
             }
 
+            _log.Info($"Send(Symbol_By_Id_Req({args.ctidTraderAccountId}, {TradingAccounts[args.ctidTraderAccountId].TradingSymbols.Keys.ToArray()}))");
             Send(Symbol_By_Id_Req(args.ctidTraderAccountId, TradingAccounts[args.ctidTraderAccountId].TradingSymbols.Keys.ToArray()));
 
             OnSymbolsListResReceived?.Invoke(args);

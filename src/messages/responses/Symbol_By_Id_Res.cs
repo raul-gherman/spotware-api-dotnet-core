@@ -28,7 +28,7 @@ namespace spotware
                           $"minVolume: {symbol.minVolume} | "                             +
                           $"pipPosition: {symbol.pipPosition} | "                         +
                           $"rolloverCommission: {symbol.rolloverCommission} | "           +
-                          $"Schedules: {symbol.Schedules} | "                             + // TODO: untangle this
+                          $"Schedules: {symbol.Schedules} | "                             + // TODO: untangle this ("[{0}]", string.Join(", ", symbol.Schedules))
                           $"slDistance: {symbol.slDistance} | "                           +
                           $"stepVolume: {symbol.stepVolume} | "                           +
                           $"swapLong: {symbol.swapLong} | "                               +
@@ -48,6 +48,7 @@ namespace spotware
                           $"swapRollover3Days: {symbol.swapRollover3Days}");
             }
 
+            _log.Info($"Send(Subscribe_Spots_Req({args.ctidTraderAccountId}, {TradingAccounts[args.ctidTraderAccountId].TradingSymbols.Keys.ToArray()}))");
             Send(Subscribe_Spots_Req(args.ctidTraderAccountId, TradingAccounts[args.ctidTraderAccountId].TradingSymbols.Keys.ToArray()));
 
             OnSymbolByIdResReceived?.Invoke(args);

@@ -7,7 +7,7 @@ namespace spotware
     {
         public void Connect()
         {
-            LogManager.Configure($"spotware-api-{DateTime.Now:yyyy-MM-dd}.log");
+            LogManager.Configure($"spotware-api-{DateTime.UtcNow:yyyy-MM-dd}.log");
 
             Prepare_Dispatcher();
 
@@ -23,6 +23,7 @@ namespace spotware
 
         private void Start_Spotware_Message_Flow(object sender, EventArgs args)
         {
+            _log.Info("Send(Version_Req())");
             Send(Version_Req());
         }
 

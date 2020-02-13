@@ -29,6 +29,7 @@ namespace spotware
                       $"nonWithdrawableBonus: {args.Trader.nonWithdrawableBonus} | "   +
                       $"totalMarginCalculationType: {args.Trader.totalMarginCalculationType}");
 
+            _log.Info($"Send(Reconcile_Req({args.ctidTraderAccountId}))");
             Send(Reconcile_Req(args.ctidTraderAccountId));
 
             OnTraderResReceived?.Invoke(args);

@@ -11,6 +11,7 @@ namespace spotware
             _log.Info($"ProtoOAAccountAuthRes | " +
                       $"ctidTraderAccountId: {args.ctidTraderAccountId}");
 
+            _log.Info($"Send(Trader_Req({args.ctidTraderAccountId}))");
             Send(Trader_Req(args.ctidTraderAccountId));
 
             OnAccountAuthResReceived?.Invoke(args);

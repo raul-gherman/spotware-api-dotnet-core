@@ -12,7 +12,6 @@ namespace spotware
                       $"Version: {args.Version}");
 
             _log.Info($"Send(Application_Auth_Req({ClientId}, {ClientSecret})");
-
             Send(Application_Auth_Req(ClientId, ClientSecret));
 
             OnVersionResReceived?.Invoke(args);
