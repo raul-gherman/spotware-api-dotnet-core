@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
-        <RootNamespace>spotware_api</RootNamespace>
+        <RootNamespace>spotware</RootNamespace>
         <Configurations>Release;Debug</Configurations>
         <Platforms>x64</Platforms>
     </PropertyGroup>
