@@ -30,6 +30,8 @@ namespace spotware
             if (stopLossTriggerMethod != ProtoOAOrderTriggerMethod.Trade)
                 message.stopLossTriggerMethod = stopLossTriggerMethod;
 
+            Persist(message);
+
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);
 

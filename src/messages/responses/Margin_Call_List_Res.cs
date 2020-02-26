@@ -8,13 +8,7 @@ namespace spotware
         {
             ProtoOAMarginCallListRes args = Serializer.Deserialize<ProtoOAMarginCallListRes>(_processorMemoryStream);
 
-            foreach (ProtoOAMarginCall marginCall in args.marginCalls)
-            {
-                _log.Info($"ProtoOAMarginCallListRes | "                                +
-                          $"marginCallType: {marginCall.marginCallType} | "             +
-                          $"marginLevelThreshold: {marginCall.marginLevelThreshold} | " +
-                          $"utcLastUpdateTimestamp: {marginCall.utcLastUpdateTimestamp}");
-            }
+            Persist(args);
 
             OnMarginCallListResReceived?.Invoke(this, args);
         }

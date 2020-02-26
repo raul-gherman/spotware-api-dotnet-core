@@ -5,4632 +5,5072 @@
 #pragma warning disable CS1591, CS0612, CS3021, IDE1006
 namespace spotware
 {
-
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoMessage : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoMessage : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1, IsRequired = true)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1, IsRequired = true)]
         public uint payloadType { get; set; }
 
-        [global::ProtoBuf.ProtoMember(2, Name = @"payload")]
+        [ProtoBuf.ProtoMember(2, Name = @"payload")]
         public byte[] Payload
         {
             get { return __pbn__Payload; }
             set { __pbn__Payload = value; }
         }
-        public bool ShouldSerializePayload() => __pbn__Payload != null;
-        public void ResetPayload() => __pbn__Payload = null;
+
+        public  bool   ShouldSerializePayload() => __pbn__Payload != null;
+        public  void   ResetPayload()           => __pbn__Payload = null;
         private byte[] __pbn__Payload;
 
-        [global::ProtoBuf.ProtoMember(3)]
-        [global::System.ComponentModel.DefaultValue("")]
+        [ProtoBuf.ProtoMember(3)]
+        [System.ComponentModel.DefaultValue("")]
         public string clientMsgId
         {
             get { return __pbn__clientMsgId ?? ""; }
             set { __pbn__clientMsgId = value; }
         }
-        public bool ShouldSerializeclientMsgId() => __pbn__clientMsgId != null;
-        public void ResetclientMsgId() => __pbn__clientMsgId = null;
-        private string __pbn__clientMsgId;
 
+        public  bool   ShouldSerializeclientMsgId() => __pbn__clientMsgId != null;
+        public  void   ResetclientMsgId()           => __pbn__clientMsgId = null;
+        private string __pbn__clientMsgId;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoErrorRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoErrorRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoPayloadType.ErrorRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoPayloadType.ErrorRes)]
         public ProtoPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoPayloadType.ErrorRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool              ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void              ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public string errorCode { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"description")]
-        [global::System.ComponentModel.DefaultValue("")]
+        [ProtoBuf.ProtoMember(3, Name = @"description")]
+        [System.ComponentModel.DefaultValue("")]
         public string Description
         {
             get { return __pbn__Description ?? ""; }
             set { __pbn__Description = value; }
         }
-        public bool ShouldSerializeDescription() => __pbn__Description != null;
-        public void ResetDescription() => __pbn__Description = null;
+
+        public  bool   ShouldSerializeDescription() => __pbn__Description != null;
+        public  void   ResetDescription()           => __pbn__Description = null;
         private string __pbn__Description;
 
-        [global::ProtoBuf.ProtoMember(4)]
+        [ProtoBuf.ProtoMember(4)]
         public ulong maintenanceEndTimestamp
         {
             get { return __pbn__maintenanceEndTimestamp.GetValueOrDefault(); }
             set { __pbn__maintenanceEndTimestamp = value; }
         }
-        public bool ShouldSerializemaintenanceEndTimestamp() => __pbn__maintenanceEndTimestamp != null;
-        public void ResetmaintenanceEndTimestamp() => __pbn__maintenanceEndTimestamp = null;
-        private ulong? __pbn__maintenanceEndTimestamp;
 
+        public  bool   ShouldSerializemaintenanceEndTimestamp() => __pbn__maintenanceEndTimestamp != null;
+        public  void   ResetmaintenanceEndTimestamp()           => __pbn__maintenanceEndTimestamp = null;
+        private ulong? __pbn__maintenanceEndTimestamp;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoHeartbeatEvent : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoHeartbeatEvent : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoPayloadType.HeartbeatEvent)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoPayloadType.HeartbeatEvent)]
         public ProtoPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoPayloadType.HeartbeatEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
-        private ProtoPayloadType? __pbn__payloadType;
 
+        public  bool              ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void              ResetpayloadType()           => __pbn__payloadType = null;
+        private ProtoPayloadType? __pbn__payloadType;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAAsset : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAAsset : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1, IsRequired = true)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1, IsRequired = true)]
         public long assetId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(2, Name = @"name", IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, Name = @"name", IsRequired = true)]
         public string Name { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3)]
-        [global::System.ComponentModel.DefaultValue("")]
+        [ProtoBuf.ProtoMember(3)]
+        [System.ComponentModel.DefaultValue("")]
         public string displayName
         {
             get { return __pbn__displayName ?? ""; }
             set { __pbn__displayName = value; }
         }
-        public bool ShouldSerializedisplayName() => __pbn__displayName != null;
-        public void ResetdisplayName() => __pbn__displayName = null;
-        private string __pbn__displayName;
 
+        public  bool   ShouldSerializedisplayName() => __pbn__displayName != null;
+        public  void   ResetdisplayName()           => __pbn__displayName = null;
+        private string __pbn__displayName;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAInterval : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAInterval : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public uint startSecond { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4, IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public uint endSecond { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOASymbol : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOASymbol : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1, IsRequired = true)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1, IsRequired = true)]
         public long symbolId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(2, Name = @"digits", IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, Name = @"digits", IsRequired = true)]
         public int Digits { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public int pipPosition { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4)]
+        [ProtoBuf.ProtoMember(4)]
         public bool enableShortSelling
         {
             get { return __pbn__enableShortSelling.GetValueOrDefault(); }
             set { __pbn__enableShortSelling = value; }
         }
-        public bool ShouldSerializeenableShortSelling() => __pbn__enableShortSelling != null;
-        public void ResetenableShortSelling() => __pbn__enableShortSelling = null;
+
+        public  bool  ShouldSerializeenableShortSelling() => __pbn__enableShortSelling != null;
+        public  void  ResetenableShortSelling()           => __pbn__enableShortSelling = null;
         private bool? __pbn__enableShortSelling;
 
-        [global::ProtoBuf.ProtoMember(5)]
+        [ProtoBuf.ProtoMember(5)]
         public bool guaranteedStopLoss
         {
             get { return __pbn__guaranteedStopLoss.GetValueOrDefault(); }
             set { __pbn__guaranteedStopLoss = value; }
         }
-        public bool ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
-        public void ResetguaranteedStopLoss() => __pbn__guaranteedStopLoss = null;
+
+        public  bool  ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
+        public  void  ResetguaranteedStopLoss()           => __pbn__guaranteedStopLoss = null;
         private bool? __pbn__guaranteedStopLoss;
 
-        [global::ProtoBuf.ProtoMember(6)]
-        [global::System.ComponentModel.DefaultValue(ProtoOADayOfWeek.Monday)]
+        [ProtoBuf.ProtoMember(6)]
+        [System.ComponentModel.DefaultValue(ProtoOADayOfWeek.Monday)]
         public ProtoOADayOfWeek swapRollover3Days
         {
             get { return __pbn__swapRollover3Days ?? ProtoOADayOfWeek.Monday; }
             set { __pbn__swapRollover3Days = value; }
         }
-        public bool ShouldSerializeswapRollover3Days() => __pbn__swapRollover3Days != null;
-        public void ResetswapRollover3Days() => __pbn__swapRollover3Days = null;
+
+        public  bool              ShouldSerializeswapRollover3Days() => __pbn__swapRollover3Days != null;
+        public  void              ResetswapRollover3Days()           => __pbn__swapRollover3Days = null;
         private ProtoOADayOfWeek? __pbn__swapRollover3Days;
 
-        [global::ProtoBuf.ProtoMember(7)]
+        [ProtoBuf.ProtoMember(7)]
         public double swapLong
         {
             get { return __pbn__swapLong.GetValueOrDefault(); }
             set { __pbn__swapLong = value; }
         }
-        public bool ShouldSerializeswapLong() => __pbn__swapLong != null;
-        public void ResetswapLong() => __pbn__swapLong = null;
+
+        public  bool    ShouldSerializeswapLong() => __pbn__swapLong != null;
+        public  void    ResetswapLong()           => __pbn__swapLong = null;
         private double? __pbn__swapLong;
 
-        [global::ProtoBuf.ProtoMember(8)]
+        [ProtoBuf.ProtoMember(8)]
         public double swapShort
         {
             get { return __pbn__swapShort.GetValueOrDefault(); }
             set { __pbn__swapShort = value; }
         }
-        public bool ShouldSerializeswapShort() => __pbn__swapShort != null;
-        public void ResetswapShort() => __pbn__swapShort = null;
+
+        public  bool    ShouldSerializeswapShort() => __pbn__swapShort != null;
+        public  void    ResetswapShort()           => __pbn__swapShort = null;
         private double? __pbn__swapShort;
 
-        [global::ProtoBuf.ProtoMember(9)]
+        [ProtoBuf.ProtoMember(9)]
         public long maxVolume
         {
             get { return __pbn__maxVolume.GetValueOrDefault(); }
             set { __pbn__maxVolume = value; }
         }
-        public bool ShouldSerializemaxVolume() => __pbn__maxVolume != null;
-        public void ResetmaxVolume() => __pbn__maxVolume = null;
+
+        public  bool  ShouldSerializemaxVolume() => __pbn__maxVolume != null;
+        public  void  ResetmaxVolume()           => __pbn__maxVolume = null;
         private long? __pbn__maxVolume;
 
-        [global::ProtoBuf.ProtoMember(10)]
+        [ProtoBuf.ProtoMember(10)]
         public long minVolume
         {
             get { return __pbn__minVolume.GetValueOrDefault(); }
             set { __pbn__minVolume = value; }
         }
-        public bool ShouldSerializeminVolume() => __pbn__minVolume != null;
-        public void ResetminVolume() => __pbn__minVolume = null;
+
+        public  bool  ShouldSerializeminVolume() => __pbn__minVolume != null;
+        public  void  ResetminVolume()           => __pbn__minVolume = null;
         private long? __pbn__minVolume;
 
-        [global::ProtoBuf.ProtoMember(11)]
+        [ProtoBuf.ProtoMember(11)]
         public long stepVolume
         {
             get { return __pbn__stepVolume.GetValueOrDefault(); }
             set { __pbn__stepVolume = value; }
         }
-        public bool ShouldSerializestepVolume() => __pbn__stepVolume != null;
-        public void ResetstepVolume() => __pbn__stepVolume = null;
+
+        public  bool  ShouldSerializestepVolume() => __pbn__stepVolume != null;
+        public  void  ResetstepVolume()           => __pbn__stepVolume = null;
         private long? __pbn__stepVolume;
 
-        [global::ProtoBuf.ProtoMember(12)]
+        [ProtoBuf.ProtoMember(12)]
         public ulong maxExposure
         {
             get { return __pbn__maxExposure.GetValueOrDefault(); }
             set { __pbn__maxExposure = value; }
         }
-        public bool ShouldSerializemaxExposure() => __pbn__maxExposure != null;
-        public void ResetmaxExposure() => __pbn__maxExposure = null;
+
+        public  bool   ShouldSerializemaxExposure() => __pbn__maxExposure != null;
+        public  void   ResetmaxExposure()           => __pbn__maxExposure = null;
         private ulong? __pbn__maxExposure;
 
-        [global::ProtoBuf.ProtoMember(13, Name = @"schedule")]
-        public global::System.Collections.Generic.List<ProtoOAInterval> Schedules { get; } = new global::System.Collections.Generic.List<ProtoOAInterval>();
+        [ProtoBuf.ProtoMember(13, Name = @"schedule")]
+        public System.Collections.Generic.List<ProtoOAInterval> Schedules { get; } = new System.Collections.Generic.List<ProtoOAInterval>();
 
-        [global::ProtoBuf.ProtoMember(14, Name = @"commission", IsRequired = true)]
+        [ProtoBuf.ProtoMember(14, Name = @"commission", IsRequired = true)]
         public long Commission { get; set; }
 
-        [global::ProtoBuf.ProtoMember(15)]
-        [global::System.ComponentModel.DefaultValue(ProtoOACommissionType.UsdPerMilUsd)]
+        [ProtoBuf.ProtoMember(15)]
+        [System.ComponentModel.DefaultValue(ProtoOACommissionType.UsdPerMilUsd)]
         public ProtoOACommissionType commissionType
         {
             get { return __pbn__commissionType ?? ProtoOACommissionType.UsdPerMilUsd; }
             set { __pbn__commissionType = value; }
         }
-        public bool ShouldSerializecommissionType() => __pbn__commissionType != null;
-        public void ResetcommissionType() => __pbn__commissionType = null;
+
+        public  bool                   ShouldSerializecommissionType() => __pbn__commissionType != null;
+        public  void                   ResetcommissionType()           => __pbn__commissionType = null;
         private ProtoOACommissionType? __pbn__commissionType;
 
-        [global::ProtoBuf.ProtoMember(16)]
+        [ProtoBuf.ProtoMember(16)]
         public uint slDistance
         {
             get { return __pbn__slDistance.GetValueOrDefault(); }
             set { __pbn__slDistance = value; }
         }
-        public bool ShouldSerializeslDistance() => __pbn__slDistance != null;
-        public void ResetslDistance() => __pbn__slDistance = null;
+
+        public  bool  ShouldSerializeslDistance() => __pbn__slDistance != null;
+        public  void  ResetslDistance()           => __pbn__slDistance = null;
         private uint? __pbn__slDistance;
 
-        [global::ProtoBuf.ProtoMember(17)]
+        [ProtoBuf.ProtoMember(17)]
         public uint tpDistance
         {
             get { return __pbn__tpDistance.GetValueOrDefault(); }
             set { __pbn__tpDistance = value; }
         }
-        public bool ShouldSerializetpDistance() => __pbn__tpDistance != null;
-        public void ResettpDistance() => __pbn__tpDistance = null;
+
+        public  bool  ShouldSerializetpDistance() => __pbn__tpDistance != null;
+        public  void  ResettpDistance()           => __pbn__tpDistance = null;
         private uint? __pbn__tpDistance;
 
-        [global::ProtoBuf.ProtoMember(18)]
+        [ProtoBuf.ProtoMember(18)]
         public uint gslDistance
         {
             get { return __pbn__gslDistance.GetValueOrDefault(); }
             set { __pbn__gslDistance = value; }
         }
-        public bool ShouldSerializegslDistance() => __pbn__gslDistance != null;
-        public void ResetgslDistance() => __pbn__gslDistance = null;
+
+        public  bool  ShouldSerializegslDistance() => __pbn__gslDistance != null;
+        public  void  ResetgslDistance()           => __pbn__gslDistance = null;
         private uint? __pbn__gslDistance;
 
-        [global::ProtoBuf.ProtoMember(19)]
+        [ProtoBuf.ProtoMember(19)]
         public long gslCharge
         {
             get { return __pbn__gslCharge.GetValueOrDefault(); }
             set { __pbn__gslCharge = value; }
         }
-        public bool ShouldSerializegslCharge() => __pbn__gslCharge != null;
-        public void ResetgslCharge() => __pbn__gslCharge = null;
+
+        public  bool  ShouldSerializegslCharge() => __pbn__gslCharge != null;
+        public  void  ResetgslCharge()           => __pbn__gslCharge = null;
         private long? __pbn__gslCharge;
 
-        [global::ProtoBuf.ProtoMember(20)]
-        [global::System.ComponentModel.DefaultValue(ProtoOASymbolDistanceType.SymbolDistanceInPoints)]
+        [ProtoBuf.ProtoMember(20)]
+        [System.ComponentModel.DefaultValue(ProtoOASymbolDistanceType.SymbolDistanceInPoints)]
         public ProtoOASymbolDistanceType distanceSetIn
         {
             get { return __pbn__distanceSetIn ?? ProtoOASymbolDistanceType.SymbolDistanceInPoints; }
             set { __pbn__distanceSetIn = value; }
         }
-        public bool ShouldSerializedistanceSetIn() => __pbn__distanceSetIn != null;
-        public void ResetdistanceSetIn() => __pbn__distanceSetIn = null;
+
+        public  bool                       ShouldSerializedistanceSetIn() => __pbn__distanceSetIn != null;
+        public  void                       ResetdistanceSetIn()           => __pbn__distanceSetIn = null;
         private ProtoOASymbolDistanceType? __pbn__distanceSetIn;
 
-        [global::ProtoBuf.ProtoMember(21)]
+        [ProtoBuf.ProtoMember(21)]
         public long minCommission
         {
             get { return __pbn__minCommission.GetValueOrDefault(); }
             set { __pbn__minCommission = value; }
         }
-        public bool ShouldSerializeminCommission() => __pbn__minCommission != null;
-        public void ResetminCommission() => __pbn__minCommission = null;
+
+        public  bool  ShouldSerializeminCommission() => __pbn__minCommission != null;
+        public  void  ResetminCommission()           => __pbn__minCommission = null;
         private long? __pbn__minCommission;
 
-        [global::ProtoBuf.ProtoMember(22)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAMinCommissionType.Currency)]
+        [ProtoBuf.ProtoMember(22)]
+        [System.ComponentModel.DefaultValue(ProtoOAMinCommissionType.Currency)]
         public ProtoOAMinCommissionType minCommissionType
         {
             get { return __pbn__minCommissionType ?? ProtoOAMinCommissionType.Currency; }
             set { __pbn__minCommissionType = value; }
         }
-        public bool ShouldSerializeminCommissionType() => __pbn__minCommissionType != null;
-        public void ResetminCommissionType() => __pbn__minCommissionType = null;
+
+        public  bool                      ShouldSerializeminCommissionType() => __pbn__minCommissionType != null;
+        public  void                      ResetminCommissionType()           => __pbn__minCommissionType = null;
         private ProtoOAMinCommissionType? __pbn__minCommissionType;
 
-        [global::ProtoBuf.ProtoMember(23)]
-        [global::System.ComponentModel.DefaultValue(@"USD")]
+        [ProtoBuf.ProtoMember(23)]
+        [System.ComponentModel.DefaultValue(@"USD")]
         public string minCommissionAsset
         {
             get { return __pbn__minCommissionAsset ?? @"USD"; }
             set { __pbn__minCommissionAsset = value; }
         }
-        public bool ShouldSerializeminCommissionAsset() => __pbn__minCommissionAsset != null;
-        public void ResetminCommissionAsset() => __pbn__minCommissionAsset = null;
+
+        public  bool   ShouldSerializeminCommissionAsset() => __pbn__minCommissionAsset != null;
+        public  void   ResetminCommissionAsset()           => __pbn__minCommissionAsset = null;
         private string __pbn__minCommissionAsset;
 
-        [global::ProtoBuf.ProtoMember(24)]
+        [ProtoBuf.ProtoMember(24)]
         public long rolloverCommission
         {
             get { return __pbn__rolloverCommission.GetValueOrDefault(); }
             set { __pbn__rolloverCommission = value; }
         }
-        public bool ShouldSerializerolloverCommission() => __pbn__rolloverCommission != null;
-        public void ResetrolloverCommission() => __pbn__rolloverCommission = null;
+
+        public  bool  ShouldSerializerolloverCommission() => __pbn__rolloverCommission != null;
+        public  void  ResetrolloverCommission()           => __pbn__rolloverCommission = null;
         private long? __pbn__rolloverCommission;
 
-        [global::ProtoBuf.ProtoMember(25)]
+        [ProtoBuf.ProtoMember(25)]
         public int skipRolloverDays
         {
             get { return __pbn__skipRolloverDays.GetValueOrDefault(); }
             set { __pbn__skipRolloverDays = value; }
         }
-        public bool ShouldSerializeskipRolloverDays() => __pbn__skipRolloverDays != null;
-        public void ResetskipRolloverDays() => __pbn__skipRolloverDays = null;
+
+        public  bool ShouldSerializeskipRolloverDays() => __pbn__skipRolloverDays != null;
+        public  void ResetskipRolloverDays()           => __pbn__skipRolloverDays = null;
         private int? __pbn__skipRolloverDays;
 
-        [global::ProtoBuf.ProtoMember(26)]
-        [global::System.ComponentModel.DefaultValue("")]
+        [ProtoBuf.ProtoMember(26)]
+        [System.ComponentModel.DefaultValue("")]
         public string scheduleTimeZone
         {
             get { return __pbn__scheduleTimeZone ?? ""; }
             set { __pbn__scheduleTimeZone = value; }
         }
-        public bool ShouldSerializescheduleTimeZone() => __pbn__scheduleTimeZone != null;
-        public void ResetscheduleTimeZone() => __pbn__scheduleTimeZone = null;
+
+        public  bool   ShouldSerializescheduleTimeZone() => __pbn__scheduleTimeZone != null;
+        public  void   ResetscheduleTimeZone()           => __pbn__scheduleTimeZone = null;
         private string __pbn__scheduleTimeZone;
 
-        [global::ProtoBuf.ProtoMember(27)]
-        [global::System.ComponentModel.DefaultValue(ProtoOATradingMode.Enabled)]
+        [ProtoBuf.ProtoMember(27)]
+        [System.ComponentModel.DefaultValue(ProtoOATradingMode.Enabled)]
         public ProtoOATradingMode tradingMode
         {
             get { return __pbn__tradingMode ?? ProtoOATradingMode.Enabled; }
             set { __pbn__tradingMode = value; }
         }
-        public bool ShouldSerializetradingMode() => __pbn__tradingMode != null;
-        public void ResettradingMode() => __pbn__tradingMode = null;
+
+        public  bool                ShouldSerializetradingMode() => __pbn__tradingMode != null;
+        public  void                ResettradingMode()           => __pbn__tradingMode = null;
         private ProtoOATradingMode? __pbn__tradingMode;
 
-        [global::ProtoBuf.ProtoMember(28)]
-        [global::System.ComponentModel.DefaultValue(ProtoOADayOfWeek.Monday)]
+        [ProtoBuf.ProtoMember(28)]
+        [System.ComponentModel.DefaultValue(ProtoOADayOfWeek.Monday)]
         public ProtoOADayOfWeek rolloverCommission3Days
         {
             get { return __pbn__rolloverCommission3Days ?? ProtoOADayOfWeek.Monday; }
             set { __pbn__rolloverCommission3Days = value; }
         }
-        public bool ShouldSerializerolloverCommission3Days() => __pbn__rolloverCommission3Days != null;
-        public void ResetrolloverCommission3Days() => __pbn__rolloverCommission3Days = null;
+
+        public  bool              ShouldSerializerolloverCommission3Days() => __pbn__rolloverCommission3Days != null;
+        public  void              ResetrolloverCommission3Days()           => __pbn__rolloverCommission3Days = null;
         private ProtoOADayOfWeek? __pbn__rolloverCommission3Days;
 
-        [global::ProtoBuf.ProtoMember(29)]
-        [global::System.ComponentModel.DefaultValue(ProtoOASwapCalculationType.Points)]
+        [ProtoBuf.ProtoMember(29)]
+        [System.ComponentModel.DefaultValue(ProtoOASwapCalculationType.Points)]
         public ProtoOASwapCalculationType swapCalculationType
         {
             get { return __pbn__swapCalculationType ?? ProtoOASwapCalculationType.Points; }
             set { __pbn__swapCalculationType = value; }
         }
-        public bool ShouldSerializeswapCalculationType() => __pbn__swapCalculationType != null;
-        public void ResetswapCalculationType() => __pbn__swapCalculationType = null;
-        private ProtoOASwapCalculationType? __pbn__swapCalculationType;
 
+        public  bool                        ShouldSerializeswapCalculationType() => __pbn__swapCalculationType != null;
+        public  void                        ResetswapCalculationType()           => __pbn__swapCalculationType = null;
+        private ProtoOASwapCalculationType? __pbn__swapCalculationType;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOALightSymbol : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOALightSymbol : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1, IsRequired = true)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1, IsRequired = true)]
         public long symbolId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(2)]
-        [global::System.ComponentModel.DefaultValue("")]
+        [ProtoBuf.ProtoMember(2)]
+        [System.ComponentModel.DefaultValue("")]
         public string symbolName
         {
             get { return __pbn__symbolName ?? ""; }
             set { __pbn__symbolName = value; }
         }
-        public bool ShouldSerializesymbolName() => __pbn__symbolName != null;
-        public void ResetsymbolName() => __pbn__symbolName = null;
+
+        public  bool   ShouldSerializesymbolName() => __pbn__symbolName != null;
+        public  void   ResetsymbolName()           => __pbn__symbolName = null;
         private string __pbn__symbolName;
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"enabled")]
+        [ProtoBuf.ProtoMember(3, Name = @"enabled")]
         public bool Enabled
         {
             get { return __pbn__Enabled.GetValueOrDefault(); }
             set { __pbn__Enabled = value; }
         }
-        public bool ShouldSerializeEnabled() => __pbn__Enabled != null;
-        public void ResetEnabled() => __pbn__Enabled = null;
+
+        public  bool  ShouldSerializeEnabled() => __pbn__Enabled != null;
+        public  void  ResetEnabled()           => __pbn__Enabled = null;
         private bool? __pbn__Enabled;
 
-        [global::ProtoBuf.ProtoMember(4)]
+        [ProtoBuf.ProtoMember(4)]
         public long baseAssetId
         {
             get { return __pbn__baseAssetId.GetValueOrDefault(); }
             set { __pbn__baseAssetId = value; }
         }
-        public bool ShouldSerializebaseAssetId() => __pbn__baseAssetId != null;
-        public void ResetbaseAssetId() => __pbn__baseAssetId = null;
+
+        public  bool  ShouldSerializebaseAssetId() => __pbn__baseAssetId != null;
+        public  void  ResetbaseAssetId()           => __pbn__baseAssetId = null;
         private long? __pbn__baseAssetId;
 
-        [global::ProtoBuf.ProtoMember(5)]
+        [ProtoBuf.ProtoMember(5)]
         public long quoteAssetId
         {
             get { return __pbn__quoteAssetId.GetValueOrDefault(); }
             set { __pbn__quoteAssetId = value; }
         }
-        public bool ShouldSerializequoteAssetId() => __pbn__quoteAssetId != null;
-        public void ResetquoteAssetId() => __pbn__quoteAssetId = null;
+
+        public  bool  ShouldSerializequoteAssetId() => __pbn__quoteAssetId != null;
+        public  void  ResetquoteAssetId()           => __pbn__quoteAssetId = null;
         private long? __pbn__quoteAssetId;
 
-        [global::ProtoBuf.ProtoMember(6)]
+        [ProtoBuf.ProtoMember(6)]
         public long symbolCategoryId
         {
             get { return __pbn__symbolCategoryId.GetValueOrDefault(); }
             set { __pbn__symbolCategoryId = value; }
         }
-        public bool ShouldSerializesymbolCategoryId() => __pbn__symbolCategoryId != null;
-        public void ResetsymbolCategoryId() => __pbn__symbolCategoryId = null;
+
+        public  bool  ShouldSerializesymbolCategoryId() => __pbn__symbolCategoryId != null;
+        public  void  ResetsymbolCategoryId()           => __pbn__symbolCategoryId = null;
         private long? __pbn__symbolCategoryId;
 
-        [global::ProtoBuf.ProtoMember(7, Name = @"description")]
-        [global::System.ComponentModel.DefaultValue("")]
+        [ProtoBuf.ProtoMember(7, Name = @"description")]
+        [System.ComponentModel.DefaultValue("")]
         public string Description
         {
             get { return __pbn__Description ?? ""; }
             set { __pbn__Description = value; }
         }
-        public bool ShouldSerializeDescription() => __pbn__Description != null;
-        public void ResetDescription() => __pbn__Description = null;
-        private string __pbn__Description;
 
+        public  bool   ShouldSerializeDescription() => __pbn__Description != null;
+        public  void   ResetDescription()           => __pbn__Description = null;
+        private string __pbn__Description;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOASymbolCategory : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOASymbolCategory : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1, Name = @"id", IsRequired = true)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1, Name = @"id", IsRequired = true)]
         public long Id { get; set; }
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long assetClassId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"name", IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, Name = @"name", IsRequired = true)]
         public string Name { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOATrader : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOATrader : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1, IsRequired = true)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(2, Name = @"balance", IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, Name = @"balance", IsRequired = true)]
         public long Balance { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3)]
+        [ProtoBuf.ProtoMember(3)]
         public long balanceVersion
         {
             get { return __pbn__balanceVersion.GetValueOrDefault(); }
             set { __pbn__balanceVersion = value; }
         }
-        public bool ShouldSerializebalanceVersion() => __pbn__balanceVersion != null;
-        public void ResetbalanceVersion() => __pbn__balanceVersion = null;
+
+        public  bool  ShouldSerializebalanceVersion() => __pbn__balanceVersion != null;
+        public  void  ResetbalanceVersion()           => __pbn__balanceVersion = null;
         private long? __pbn__balanceVersion;
 
-        [global::ProtoBuf.ProtoMember(4)]
+        [ProtoBuf.ProtoMember(4)]
         public long managerBonus
         {
             get { return __pbn__managerBonus.GetValueOrDefault(); }
             set { __pbn__managerBonus = value; }
         }
-        public bool ShouldSerializemanagerBonus() => __pbn__managerBonus != null;
-        public void ResetmanagerBonus() => __pbn__managerBonus = null;
+
+        public  bool  ShouldSerializemanagerBonus() => __pbn__managerBonus != null;
+        public  void  ResetmanagerBonus()           => __pbn__managerBonus = null;
         private long? __pbn__managerBonus;
 
-        [global::ProtoBuf.ProtoMember(5)]
+        [ProtoBuf.ProtoMember(5)]
         public long ibBonus
         {
             get { return __pbn__ibBonus.GetValueOrDefault(); }
             set { __pbn__ibBonus = value; }
         }
-        public bool ShouldSerializeibBonus() => __pbn__ibBonus != null;
-        public void ResetibBonus() => __pbn__ibBonus = null;
+
+        public  bool  ShouldSerializeibBonus() => __pbn__ibBonus != null;
+        public  void  ResetibBonus()           => __pbn__ibBonus = null;
         private long? __pbn__ibBonus;
 
-        [global::ProtoBuf.ProtoMember(6)]
+        [ProtoBuf.ProtoMember(6)]
         public long nonWithdrawableBonus
         {
             get { return __pbn__nonWithdrawableBonus.GetValueOrDefault(); }
             set { __pbn__nonWithdrawableBonus = value; }
         }
-        public bool ShouldSerializenonWithdrawableBonus() => __pbn__nonWithdrawableBonus != null;
-        public void ResetnonWithdrawableBonus() => __pbn__nonWithdrawableBonus = null;
+
+        public  bool  ShouldSerializenonWithdrawableBonus() => __pbn__nonWithdrawableBonus != null;
+        public  void  ResetnonWithdrawableBonus()           => __pbn__nonWithdrawableBonus = null;
         private long? __pbn__nonWithdrawableBonus;
 
-        [global::ProtoBuf.ProtoMember(7)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAAccessRights.FullAccess)]
+        [ProtoBuf.ProtoMember(7)]
+        [System.ComponentModel.DefaultValue(ProtoOAAccessRights.FullAccess)]
         public ProtoOAAccessRights accessRights
         {
             get { return __pbn__accessRights ?? ProtoOAAccessRights.FullAccess; }
             set { __pbn__accessRights = value; }
         }
-        public bool ShouldSerializeaccessRights() => __pbn__accessRights != null;
-        public void ResetaccessRights() => __pbn__accessRights = null;
+
+        public  bool                 ShouldSerializeaccessRights() => __pbn__accessRights != null;
+        public  void                 ResetaccessRights()           => __pbn__accessRights = null;
         private ProtoOAAccessRights? __pbn__accessRights;
 
-        [global::ProtoBuf.ProtoMember(8, IsRequired = true)]
+        [ProtoBuf.ProtoMember(8, IsRequired = true)]
         public long depositAssetId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(9)]
+        [ProtoBuf.ProtoMember(9)]
         public bool swapFree
         {
             get { return __pbn__swapFree.GetValueOrDefault(); }
             set { __pbn__swapFree = value; }
         }
-        public bool ShouldSerializeswapFree() => __pbn__swapFree != null;
-        public void ResetswapFree() => __pbn__swapFree = null;
+
+        public  bool  ShouldSerializeswapFree() => __pbn__swapFree != null;
+        public  void  ResetswapFree()           => __pbn__swapFree = null;
         private bool? __pbn__swapFree;
 
-        [global::ProtoBuf.ProtoMember(10)]
+        [ProtoBuf.ProtoMember(10)]
         public uint leverageInCents
         {
             get { return __pbn__leverageInCents.GetValueOrDefault(); }
             set { __pbn__leverageInCents = value; }
         }
-        public bool ShouldSerializeleverageInCents() => __pbn__leverageInCents != null;
-        public void ResetleverageInCents() => __pbn__leverageInCents = null;
+
+        public  bool  ShouldSerializeleverageInCents() => __pbn__leverageInCents != null;
+        public  void  ResetleverageInCents()           => __pbn__leverageInCents = null;
         private uint? __pbn__leverageInCents;
 
-        [global::ProtoBuf.ProtoMember(11)]
-        [global::System.ComponentModel.DefaultValue(ProtoOATotalMarginCalculationType.Max)]
+        [ProtoBuf.ProtoMember(11)]
+        [System.ComponentModel.DefaultValue(ProtoOATotalMarginCalculationType.Max)]
         public ProtoOATotalMarginCalculationType totalMarginCalculationType
         {
             get { return __pbn__totalMarginCalculationType ?? ProtoOATotalMarginCalculationType.Max; }
             set { __pbn__totalMarginCalculationType = value; }
         }
-        public bool ShouldSerializetotalMarginCalculationType() => __pbn__totalMarginCalculationType != null;
-        public void ResettotalMarginCalculationType() => __pbn__totalMarginCalculationType = null;
+
+        public  bool                               ShouldSerializetotalMarginCalculationType() => __pbn__totalMarginCalculationType != null;
+        public  void                               ResettotalMarginCalculationType()           => __pbn__totalMarginCalculationType = null;
         private ProtoOATotalMarginCalculationType? __pbn__totalMarginCalculationType;
 
-        [global::ProtoBuf.ProtoMember(12)]
+        [ProtoBuf.ProtoMember(12)]
         public uint maxLeverage
         {
             get { return __pbn__maxLeverage.GetValueOrDefault(); }
             set { __pbn__maxLeverage = value; }
         }
-        public bool ShouldSerializemaxLeverage() => __pbn__maxLeverage != null;
-        public void ResetmaxLeverage() => __pbn__maxLeverage = null;
+
+        public  bool  ShouldSerializemaxLeverage() => __pbn__maxLeverage != null;
+        public  void  ResetmaxLeverage()           => __pbn__maxLeverage = null;
         private uint? __pbn__maxLeverage;
 
-        [global::ProtoBuf.ProtoMember(13)]
+        [ProtoBuf.ProtoMember(13)]
         public bool frenchRisk
         {
             get { return __pbn__frenchRisk.GetValueOrDefault(); }
             set { __pbn__frenchRisk = value; }
         }
-        public bool ShouldSerializefrenchRisk() => __pbn__frenchRisk != null;
-        public void ResetfrenchRisk() => __pbn__frenchRisk = null;
+
+        public  bool  ShouldSerializefrenchRisk() => __pbn__frenchRisk != null;
+        public  void  ResetfrenchRisk()           => __pbn__frenchRisk = null;
         private bool? __pbn__frenchRisk;
 
-        [global::ProtoBuf.ProtoMember(14)]
+        [ProtoBuf.ProtoMember(14)]
         public long traderLogin
         {
             get { return __pbn__traderLogin.GetValueOrDefault(); }
             set { __pbn__traderLogin = value; }
         }
-        public bool ShouldSerializetraderLogin() => __pbn__traderLogin != null;
-        public void ResettraderLogin() => __pbn__traderLogin = null;
+
+        public  bool  ShouldSerializetraderLogin() => __pbn__traderLogin != null;
+        public  void  ResettraderLogin()           => __pbn__traderLogin = null;
         private long? __pbn__traderLogin;
 
-        [global::ProtoBuf.ProtoMember(15)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAAccountType.Hedged)]
+        [ProtoBuf.ProtoMember(15)]
+        [System.ComponentModel.DefaultValue(ProtoOAAccountType.Hedged)]
         public ProtoOAAccountType accountType
         {
             get { return __pbn__accountType ?? ProtoOAAccountType.Hedged; }
             set { __pbn__accountType = value; }
         }
-        public bool ShouldSerializeaccountType() => __pbn__accountType != null;
-        public void ResetaccountType() => __pbn__accountType = null;
+
+        public  bool                ShouldSerializeaccountType() => __pbn__accountType != null;
+        public  void                ResetaccountType()           => __pbn__accountType = null;
         private ProtoOAAccountType? __pbn__accountType;
 
-        [global::ProtoBuf.ProtoMember(16)]
-        [global::System.ComponentModel.DefaultValue("")]
+        [ProtoBuf.ProtoMember(16)]
+        [System.ComponentModel.DefaultValue("")]
         public string brokerName
         {
             get { return __pbn__brokerName ?? ""; }
             set { __pbn__brokerName = value; }
         }
-        public bool ShouldSerializebrokerName() => __pbn__brokerName != null;
-        public void ResetbrokerName() => __pbn__brokerName = null;
+
+        public  bool   ShouldSerializebrokerName() => __pbn__brokerName != null;
+        public  void   ResetbrokerName()           => __pbn__brokerName = null;
         private string __pbn__brokerName;
 
-        [global::ProtoBuf.ProtoMember(17)]
+        [ProtoBuf.ProtoMember(17)]
         public long registrationTimestamp
         {
             get { return __pbn__registrationTimestamp.GetValueOrDefault(); }
             set { __pbn__registrationTimestamp = value; }
         }
-        public bool ShouldSerializeregistrationTimestamp() => __pbn__registrationTimestamp != null;
-        public void ResetregistrationTimestamp() => __pbn__registrationTimestamp = null;
-        private long? __pbn__registrationTimestamp;
 
+        public  bool  ShouldSerializeregistrationTimestamp() => __pbn__registrationTimestamp != null;
+        public  void  ResetregistrationTimestamp()           => __pbn__registrationTimestamp = null;
+        private long? __pbn__registrationTimestamp;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOATradeData : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOATradeData : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1, IsRequired = true)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1, IsRequired = true)]
         public long symbolId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(2, Name = @"volume", IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, Name = @"volume", IsRequired = true)]
         public long Volume { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public ProtoOATradeSide tradeSide { get; set; } = ProtoOATradeSide.Buy;
 
-        [global::ProtoBuf.ProtoMember(4)]
+        [ProtoBuf.ProtoMember(4)]
         public long openTimestamp
         {
             get { return __pbn__openTimestamp.GetValueOrDefault(); }
             set { __pbn__openTimestamp = value; }
         }
-        public bool ShouldSerializeopenTimestamp() => __pbn__openTimestamp != null;
-        public void ResetopenTimestamp() => __pbn__openTimestamp = null;
+
+        public  bool  ShouldSerializeopenTimestamp() => __pbn__openTimestamp != null;
+        public  void  ResetopenTimestamp()           => __pbn__openTimestamp = null;
         private long? __pbn__openTimestamp;
 
-        [global::ProtoBuf.ProtoMember(5, Name = @"label")]
-        [global::System.ComponentModel.DefaultValue("")]
+        [ProtoBuf.ProtoMember(5, Name = @"label")]
+        [System.ComponentModel.DefaultValue("")]
         public string Label
         {
             get { return __pbn__Label ?? ""; }
             set { __pbn__Label = value; }
         }
-        public bool ShouldSerializeLabel() => __pbn__Label != null;
-        public void ResetLabel() => __pbn__Label = null;
+
+        public  bool   ShouldSerializeLabel() => __pbn__Label != null;
+        public  void   ResetLabel()           => __pbn__Label = null;
         private string __pbn__Label;
 
-        [global::ProtoBuf.ProtoMember(6)]
+        [ProtoBuf.ProtoMember(6)]
         public bool guaranteedStopLoss
         {
             get { return __pbn__guaranteedStopLoss.GetValueOrDefault(); }
             set { __pbn__guaranteedStopLoss = value; }
         }
-        public bool ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
-        public void ResetguaranteedStopLoss() => __pbn__guaranteedStopLoss = null;
-        private bool? __pbn__guaranteedStopLoss;
 
+        public  bool  ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
+        public  void  ResetguaranteedStopLoss()           => __pbn__guaranteedStopLoss = null;
+        private bool? __pbn__guaranteedStopLoss;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAPosition : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAPosition : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1, IsRequired = true)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1, IsRequired = true)]
         public long positionId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public ProtoOATradeData tradeData { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public ProtoOAPositionStatus positionStatus { get; set; } = ProtoOAPositionStatus.PositionStatusOpen;
 
-        [global::ProtoBuf.ProtoMember(4, Name = @"swap", IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, Name = @"swap", IsRequired = true)]
         public long Swap { get; set; }
 
-        [global::ProtoBuf.ProtoMember(5, Name = @"price")]
+        [ProtoBuf.ProtoMember(5, Name = @"price")]
         public double Price
         {
             get { return __pbn__Price.GetValueOrDefault(); }
             set { __pbn__Price = value; }
         }
-        public bool ShouldSerializePrice() => __pbn__Price != null;
-        public void ResetPrice() => __pbn__Price = null;
+
+        public  bool    ShouldSerializePrice() => __pbn__Price != null;
+        public  void    ResetPrice()           => __pbn__Price = null;
         private double? __pbn__Price;
 
-        [global::ProtoBuf.ProtoMember(6)]
+        [ProtoBuf.ProtoMember(6)]
         public double stopLoss
         {
             get { return __pbn__stopLoss.GetValueOrDefault(); }
             set { __pbn__stopLoss = value; }
         }
-        public bool ShouldSerializestopLoss() => __pbn__stopLoss != null;
-        public void ResetstopLoss() => __pbn__stopLoss = null;
+
+        public  bool    ShouldSerializestopLoss() => __pbn__stopLoss != null;
+        public  void    ResetstopLoss()           => __pbn__stopLoss = null;
         private double? __pbn__stopLoss;
 
-        [global::ProtoBuf.ProtoMember(7)]
+        [ProtoBuf.ProtoMember(7)]
         public double takeProfit
         {
             get { return __pbn__takeProfit.GetValueOrDefault(); }
             set { __pbn__takeProfit = value; }
         }
-        public bool ShouldSerializetakeProfit() => __pbn__takeProfit != null;
-        public void ResettakeProfit() => __pbn__takeProfit = null;
+
+        public  bool    ShouldSerializetakeProfit() => __pbn__takeProfit != null;
+        public  void    ResettakeProfit()           => __pbn__takeProfit = null;
         private double? __pbn__takeProfit;
 
-        [global::ProtoBuf.ProtoMember(8)]
+        [ProtoBuf.ProtoMember(8)]
         public long utcLastUpdateTimestamp
         {
             get { return __pbn__utcLastUpdateTimestamp.GetValueOrDefault(); }
             set { __pbn__utcLastUpdateTimestamp = value; }
         }
-        public bool ShouldSerializeutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp != null;
-        public void ResetutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp = null;
+
+        public  bool  ShouldSerializeutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp != null;
+        public  void  ResetutcLastUpdateTimestamp()           => __pbn__utcLastUpdateTimestamp = null;
         private long? __pbn__utcLastUpdateTimestamp;
 
-        [global::ProtoBuf.ProtoMember(9, Name = @"commission")]
+        [ProtoBuf.ProtoMember(9, Name = @"commission")]
         public long Commission
         {
             get { return __pbn__Commission.GetValueOrDefault(); }
             set { __pbn__Commission = value; }
         }
-        public bool ShouldSerializeCommission() => __pbn__Commission != null;
-        public void ResetCommission() => __pbn__Commission = null;
+
+        public  bool  ShouldSerializeCommission() => __pbn__Commission != null;
+        public  void  ResetCommission()           => __pbn__Commission = null;
         private long? __pbn__Commission;
 
-        [global::ProtoBuf.ProtoMember(10)]
+        [ProtoBuf.ProtoMember(10)]
         public double marginRate
         {
             get { return __pbn__marginRate.GetValueOrDefault(); }
             set { __pbn__marginRate = value; }
         }
-        public bool ShouldSerializemarginRate() => __pbn__marginRate != null;
-        public void ResetmarginRate() => __pbn__marginRate = null;
+
+        public  bool    ShouldSerializemarginRate() => __pbn__marginRate != null;
+        public  void    ResetmarginRate()           => __pbn__marginRate = null;
         private double? __pbn__marginRate;
 
-        [global::ProtoBuf.ProtoMember(11)]
+        [ProtoBuf.ProtoMember(11)]
         public long mirroringCommission
         {
             get { return __pbn__mirroringCommission.GetValueOrDefault(); }
             set { __pbn__mirroringCommission = value; }
         }
-        public bool ShouldSerializemirroringCommission() => __pbn__mirroringCommission != null;
-        public void ResetmirroringCommission() => __pbn__mirroringCommission = null;
+
+        public  bool  ShouldSerializemirroringCommission() => __pbn__mirroringCommission != null;
+        public  void  ResetmirroringCommission()           => __pbn__mirroringCommission = null;
         private long? __pbn__mirroringCommission;
 
-        [global::ProtoBuf.ProtoMember(12)]
+        [ProtoBuf.ProtoMember(12)]
         public bool guaranteedStopLoss
         {
             get { return __pbn__guaranteedStopLoss.GetValueOrDefault(); }
             set { __pbn__guaranteedStopLoss = value; }
         }
-        public bool ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
-        public void ResetguaranteedStopLoss() => __pbn__guaranteedStopLoss = null;
+
+        public  bool  ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
+        public  void  ResetguaranteedStopLoss()           => __pbn__guaranteedStopLoss = null;
         private bool? __pbn__guaranteedStopLoss;
 
-        [global::ProtoBuf.ProtoMember(13)]
+        [ProtoBuf.ProtoMember(13)]
         public ulong usedMargin
         {
             get { return __pbn__usedMargin.GetValueOrDefault(); }
             set { __pbn__usedMargin = value; }
         }
-        public bool ShouldSerializeusedMargin() => __pbn__usedMargin != null;
-        public void ResetusedMargin() => __pbn__usedMargin = null;
+
+        public  bool   ShouldSerializeusedMargin() => __pbn__usedMargin != null;
+        public  void   ResetusedMargin()           => __pbn__usedMargin = null;
         private ulong? __pbn__usedMargin;
 
-        [global::ProtoBuf.ProtoMember(14)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAOrderTriggerMethod.Trade)]
+        [ProtoBuf.ProtoMember(14)]
+        [System.ComponentModel.DefaultValue(ProtoOAOrderTriggerMethod.Trade)]
         public ProtoOAOrderTriggerMethod stopLossTriggerMethod
         {
             get { return __pbn__stopLossTriggerMethod ?? ProtoOAOrderTriggerMethod.Trade; }
             set { __pbn__stopLossTriggerMethod = value; }
         }
-        public bool ShouldSerializestopLossTriggerMethod() => __pbn__stopLossTriggerMethod != null;
-        public void ResetstopLossTriggerMethod() => __pbn__stopLossTriggerMethod = null;
-        private ProtoOAOrderTriggerMethod? __pbn__stopLossTriggerMethod;
 
+        public  bool                       ShouldSerializestopLossTriggerMethod() => __pbn__stopLossTriggerMethod != null;
+        public  void                       ResetstopLossTriggerMethod()           => __pbn__stopLossTriggerMethod = null;
+        private ProtoOAOrderTriggerMethod? __pbn__stopLossTriggerMethod;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAOrder : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAOrder : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1, IsRequired = true)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1, IsRequired = true)]
         public long orderId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public ProtoOATradeData tradeData { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public ProtoOAOrderType orderType { get; set; } = ProtoOAOrderType.Market;
 
-        [global::ProtoBuf.ProtoMember(4, IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public ProtoOAOrderStatus orderStatus { get; set; } = ProtoOAOrderStatus.OrderStatusAccepted;
 
-        [global::ProtoBuf.ProtoMember(6)]
+        [ProtoBuf.ProtoMember(6)]
         public long expirationTimestamp
         {
             get { return __pbn__expirationTimestamp.GetValueOrDefault(); }
             set { __pbn__expirationTimestamp = value; }
         }
-        public bool ShouldSerializeexpirationTimestamp() => __pbn__expirationTimestamp != null;
-        public void ResetexpirationTimestamp() => __pbn__expirationTimestamp = null;
+
+        public  bool  ShouldSerializeexpirationTimestamp() => __pbn__expirationTimestamp != null;
+        public  void  ResetexpirationTimestamp()           => __pbn__expirationTimestamp = null;
         private long? __pbn__expirationTimestamp;
 
-        [global::ProtoBuf.ProtoMember(7)]
+        [ProtoBuf.ProtoMember(7)]
         public double executionPrice
         {
             get { return __pbn__executionPrice.GetValueOrDefault(); }
             set { __pbn__executionPrice = value; }
         }
-        public bool ShouldSerializeexecutionPrice() => __pbn__executionPrice != null;
-        public void ResetexecutionPrice() => __pbn__executionPrice = null;
+
+        public  bool    ShouldSerializeexecutionPrice() => __pbn__executionPrice != null;
+        public  void    ResetexecutionPrice()           => __pbn__executionPrice = null;
         private double? __pbn__executionPrice;
 
-        [global::ProtoBuf.ProtoMember(8)]
+        [ProtoBuf.ProtoMember(8)]
         public long executedVolume
         {
             get { return __pbn__executedVolume.GetValueOrDefault(); }
             set { __pbn__executedVolume = value; }
         }
-        public bool ShouldSerializeexecutedVolume() => __pbn__executedVolume != null;
-        public void ResetexecutedVolume() => __pbn__executedVolume = null;
+
+        public  bool  ShouldSerializeexecutedVolume() => __pbn__executedVolume != null;
+        public  void  ResetexecutedVolume()           => __pbn__executedVolume = null;
         private long? __pbn__executedVolume;
 
-        [global::ProtoBuf.ProtoMember(9)]
+        [ProtoBuf.ProtoMember(9)]
         public long utcLastUpdateTimestamp
         {
             get { return __pbn__utcLastUpdateTimestamp.GetValueOrDefault(); }
             set { __pbn__utcLastUpdateTimestamp = value; }
         }
-        public bool ShouldSerializeutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp != null;
-        public void ResetutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp = null;
+
+        public  bool  ShouldSerializeutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp != null;
+        public  void  ResetutcLastUpdateTimestamp()           => __pbn__utcLastUpdateTimestamp = null;
         private long? __pbn__utcLastUpdateTimestamp;
 
-        [global::ProtoBuf.ProtoMember(10)]
+        [ProtoBuf.ProtoMember(10)]
         public double baseSlippagePrice
         {
             get { return __pbn__baseSlippagePrice.GetValueOrDefault(); }
             set { __pbn__baseSlippagePrice = value; }
         }
-        public bool ShouldSerializebaseSlippagePrice() => __pbn__baseSlippagePrice != null;
-        public void ResetbaseSlippagePrice() => __pbn__baseSlippagePrice = null;
+
+        public  bool    ShouldSerializebaseSlippagePrice() => __pbn__baseSlippagePrice != null;
+        public  void    ResetbaseSlippagePrice()           => __pbn__baseSlippagePrice = null;
         private double? __pbn__baseSlippagePrice;
 
-        [global::ProtoBuf.ProtoMember(11)]
+        [ProtoBuf.ProtoMember(11)]
         public long slippageInPoints
         {
             get { return __pbn__slippageInPoints.GetValueOrDefault(); }
             set { __pbn__slippageInPoints = value; }
         }
-        public bool ShouldSerializeslippageInPoints() => __pbn__slippageInPoints != null;
-        public void ResetslippageInPoints() => __pbn__slippageInPoints = null;
+
+        public  bool  ShouldSerializeslippageInPoints() => __pbn__slippageInPoints != null;
+        public  void  ResetslippageInPoints()           => __pbn__slippageInPoints = null;
         private long? __pbn__slippageInPoints;
 
-        [global::ProtoBuf.ProtoMember(12)]
+        [ProtoBuf.ProtoMember(12)]
         public bool closingOrder
         {
             get { return __pbn__closingOrder.GetValueOrDefault(); }
             set { __pbn__closingOrder = value; }
         }
-        public bool ShouldSerializeclosingOrder() => __pbn__closingOrder != null;
-        public void ResetclosingOrder() => __pbn__closingOrder = null;
+
+        public  bool  ShouldSerializeclosingOrder() => __pbn__closingOrder != null;
+        public  void  ResetclosingOrder()           => __pbn__closingOrder = null;
         private bool? __pbn__closingOrder;
 
-        [global::ProtoBuf.ProtoMember(13)]
+        [ProtoBuf.ProtoMember(13)]
         public double limitPrice
         {
             get { return __pbn__limitPrice.GetValueOrDefault(); }
             set { __pbn__limitPrice = value; }
         }
-        public bool ShouldSerializelimitPrice() => __pbn__limitPrice != null;
-        public void ResetlimitPrice() => __pbn__limitPrice = null;
+
+        public  bool    ShouldSerializelimitPrice() => __pbn__limitPrice != null;
+        public  void    ResetlimitPrice()           => __pbn__limitPrice = null;
         private double? __pbn__limitPrice;
 
-        [global::ProtoBuf.ProtoMember(14)]
+        [ProtoBuf.ProtoMember(14)]
         public double stopPrice
         {
             get { return __pbn__stopPrice.GetValueOrDefault(); }
             set { __pbn__stopPrice = value; }
         }
-        public bool ShouldSerializestopPrice() => __pbn__stopPrice != null;
-        public void ResetstopPrice() => __pbn__stopPrice = null;
+
+        public  bool    ShouldSerializestopPrice() => __pbn__stopPrice != null;
+        public  void    ResetstopPrice()           => __pbn__stopPrice = null;
         private double? __pbn__stopPrice;
 
-        [global::ProtoBuf.ProtoMember(15)]
+        [ProtoBuf.ProtoMember(15)]
         public double stopLoss
         {
             get { return __pbn__stopLoss.GetValueOrDefault(); }
             set { __pbn__stopLoss = value; }
         }
-        public bool ShouldSerializestopLoss() => __pbn__stopLoss != null;
-        public void ResetstopLoss() => __pbn__stopLoss = null;
+
+        public  bool    ShouldSerializestopLoss() => __pbn__stopLoss != null;
+        public  void    ResetstopLoss()           => __pbn__stopLoss = null;
         private double? __pbn__stopLoss;
 
-        [global::ProtoBuf.ProtoMember(16)]
+        [ProtoBuf.ProtoMember(16)]
         public double takeProfit
         {
             get { return __pbn__takeProfit.GetValueOrDefault(); }
             set { __pbn__takeProfit = value; }
         }
-        public bool ShouldSerializetakeProfit() => __pbn__takeProfit != null;
-        public void ResettakeProfit() => __pbn__takeProfit = null;
+
+        public  bool    ShouldSerializetakeProfit() => __pbn__takeProfit != null;
+        public  void    ResettakeProfit()           => __pbn__takeProfit = null;
         private double? __pbn__takeProfit;
 
-        [global::ProtoBuf.ProtoMember(17)]
-        [global::System.ComponentModel.DefaultValue("")]
+        [ProtoBuf.ProtoMember(17)]
+        [System.ComponentModel.DefaultValue("")]
         public string clientOrderId
         {
             get { return __pbn__clientOrderId ?? ""; }
             set { __pbn__clientOrderId = value; }
         }
-        public bool ShouldSerializeclientOrderId() => __pbn__clientOrderId != null;
-        public void ResetclientOrderId() => __pbn__clientOrderId = null;
+
+        public  bool   ShouldSerializeclientOrderId() => __pbn__clientOrderId != null;
+        public  void   ResetclientOrderId()           => __pbn__clientOrderId = null;
         private string __pbn__clientOrderId;
 
-        [global::ProtoBuf.ProtoMember(18)]
-        [global::System.ComponentModel.DefaultValue(ProtoOATimeInForce.ImmediateOrCancel)]
+        [ProtoBuf.ProtoMember(18)]
+        [System.ComponentModel.DefaultValue(ProtoOATimeInForce.ImmediateOrCancel)]
         public ProtoOATimeInForce timeInForce
         {
             get { return __pbn__timeInForce ?? ProtoOATimeInForce.ImmediateOrCancel; }
             set { __pbn__timeInForce = value; }
         }
-        public bool ShouldSerializetimeInForce() => __pbn__timeInForce != null;
-        public void ResettimeInForce() => __pbn__timeInForce = null;
+
+        public  bool                ShouldSerializetimeInForce() => __pbn__timeInForce != null;
+        public  void                ResettimeInForce()           => __pbn__timeInForce = null;
         private ProtoOATimeInForce? __pbn__timeInForce;
 
-        [global::ProtoBuf.ProtoMember(19)]
+        [ProtoBuf.ProtoMember(19)]
         public long positionId
         {
             get { return __pbn__positionId.GetValueOrDefault(); }
             set { __pbn__positionId = value; }
         }
-        public bool ShouldSerializepositionId() => __pbn__positionId != null;
-        public void ResetpositionId() => __pbn__positionId = null;
+
+        public  bool  ShouldSerializepositionId() => __pbn__positionId != null;
+        public  void  ResetpositionId()           => __pbn__positionId = null;
         private long? __pbn__positionId;
 
-        [global::ProtoBuf.ProtoMember(20)]
+        [ProtoBuf.ProtoMember(20)]
         public long relativeStopLoss
         {
             get { return __pbn__relativeStopLoss.GetValueOrDefault(); }
             set { __pbn__relativeStopLoss = value; }
         }
-        public bool ShouldSerializerelativeStopLoss() => __pbn__relativeStopLoss != null;
-        public void ResetrelativeStopLoss() => __pbn__relativeStopLoss = null;
+
+        public  bool  ShouldSerializerelativeStopLoss() => __pbn__relativeStopLoss != null;
+        public  void  ResetrelativeStopLoss()           => __pbn__relativeStopLoss = null;
         private long? __pbn__relativeStopLoss;
 
-        [global::ProtoBuf.ProtoMember(21)]
+        [ProtoBuf.ProtoMember(21)]
         public long relativeTakeProfit
         {
             get { return __pbn__relativeTakeProfit.GetValueOrDefault(); }
             set { __pbn__relativeTakeProfit = value; }
         }
-        public bool ShouldSerializerelativeTakeProfit() => __pbn__relativeTakeProfit != null;
-        public void ResetrelativeTakeProfit() => __pbn__relativeTakeProfit = null;
+
+        public  bool  ShouldSerializerelativeTakeProfit() => __pbn__relativeTakeProfit != null;
+        public  void  ResetrelativeTakeProfit()           => __pbn__relativeTakeProfit = null;
         private long? __pbn__relativeTakeProfit;
 
-        [global::ProtoBuf.ProtoMember(22)]
+        [ProtoBuf.ProtoMember(22)]
         public bool isStopOut
         {
             get { return __pbn__isStopOut.GetValueOrDefault(); }
             set { __pbn__isStopOut = value; }
         }
-        public bool ShouldSerializeisStopOut() => __pbn__isStopOut != null;
-        public void ResetisStopOut() => __pbn__isStopOut = null;
+
+        public  bool  ShouldSerializeisStopOut() => __pbn__isStopOut != null;
+        public  void  ResetisStopOut()           => __pbn__isStopOut = null;
         private bool? __pbn__isStopOut;
 
-        [global::ProtoBuf.ProtoMember(23)]
+        [ProtoBuf.ProtoMember(23)]
         public bool trailingStopLoss
         {
             get { return __pbn__trailingStopLoss.GetValueOrDefault(); }
             set { __pbn__trailingStopLoss = value; }
         }
-        public bool ShouldSerializetrailingStopLoss() => __pbn__trailingStopLoss != null;
-        public void ResettrailingStopLoss() => __pbn__trailingStopLoss = null;
+
+        public  bool  ShouldSerializetrailingStopLoss() => __pbn__trailingStopLoss != null;
+        public  void  ResettrailingStopLoss()           => __pbn__trailingStopLoss = null;
         private bool? __pbn__trailingStopLoss;
 
-        [global::ProtoBuf.ProtoMember(24)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAOrderTriggerMethod.Trade)]
+        [ProtoBuf.ProtoMember(24)]
+        [System.ComponentModel.DefaultValue(ProtoOAOrderTriggerMethod.Trade)]
         public ProtoOAOrderTriggerMethod stopTriggerMethod
         {
             get { return __pbn__stopTriggerMethod ?? ProtoOAOrderTriggerMethod.Trade; }
             set { __pbn__stopTriggerMethod = value; }
         }
-        public bool ShouldSerializestopTriggerMethod() => __pbn__stopTriggerMethod != null;
-        public void ResetstopTriggerMethod() => __pbn__stopTriggerMethod = null;
-        private ProtoOAOrderTriggerMethod? __pbn__stopTriggerMethod;
 
+        public  bool                       ShouldSerializestopTriggerMethod() => __pbn__stopTriggerMethod != null;
+        public  void                       ResetstopTriggerMethod()           => __pbn__stopTriggerMethod = null;
+        private ProtoOAOrderTriggerMethod? __pbn__stopTriggerMethod;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOABonusDepositWithdraw : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOABonusDepositWithdraw : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1, IsRequired = true)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1, IsRequired = true)]
         public ProtoOAChangeBonusType operationType { get; set; }
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long bonusHistoryId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public long managerBonus { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4, IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public long managerDelta { get; set; }
 
-        [global::ProtoBuf.ProtoMember(5, IsRequired = true)]
+        [ProtoBuf.ProtoMember(5, IsRequired = true)]
         public long ibBonus { get; set; }
 
-        [global::ProtoBuf.ProtoMember(6, IsRequired = true)]
+        [ProtoBuf.ProtoMember(6, IsRequired = true)]
         public long ibDelta { get; set; }
 
-        [global::ProtoBuf.ProtoMember(7, IsRequired = true)]
+        [ProtoBuf.ProtoMember(7, IsRequired = true)]
         public long changeBonusTimestamp { get; set; }
 
-        [global::ProtoBuf.ProtoMember(8)]
-        [global::System.ComponentModel.DefaultValue("")]
+        [ProtoBuf.ProtoMember(8)]
+        [System.ComponentModel.DefaultValue("")]
         public string externalNote
         {
             get { return __pbn__externalNote ?? ""; }
             set { __pbn__externalNote = value; }
         }
-        public bool ShouldSerializeexternalNote() => __pbn__externalNote != null;
-        public void ResetexternalNote() => __pbn__externalNote = null;
+
+        public  bool   ShouldSerializeexternalNote() => __pbn__externalNote != null;
+        public  void   ResetexternalNote()           => __pbn__externalNote = null;
         private string __pbn__externalNote;
 
-        [global::ProtoBuf.ProtoMember(9)]
+        [ProtoBuf.ProtoMember(9)]
         public long introducingBrokerId
         {
             get { return __pbn__introducingBrokerId.GetValueOrDefault(); }
             set { __pbn__introducingBrokerId = value; }
         }
-        public bool ShouldSerializeintroducingBrokerId() => __pbn__introducingBrokerId != null;
-        public void ResetintroducingBrokerId() => __pbn__introducingBrokerId = null;
-        private long? __pbn__introducingBrokerId;
 
+        public  bool  ShouldSerializeintroducingBrokerId() => __pbn__introducingBrokerId != null;
+        public  void  ResetintroducingBrokerId()           => __pbn__introducingBrokerId = null;
+        private long? __pbn__introducingBrokerId;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOADepositWithdraw : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOADepositWithdraw : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1, IsRequired = true)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1, IsRequired = true)]
         public ProtoOAChangeBalanceType operationType { get; set; }
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long balanceHistoryId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"balance", IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, Name = @"balance", IsRequired = true)]
         public long Balance { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4, Name = @"delta", IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, Name = @"delta", IsRequired = true)]
         public long Delta { get; set; }
 
-        [global::ProtoBuf.ProtoMember(5, IsRequired = true)]
+        [ProtoBuf.ProtoMember(5, IsRequired = true)]
         public long changeBalanceTimestamp { get; set; }
 
-        [global::ProtoBuf.ProtoMember(6)]
-        [global::System.ComponentModel.DefaultValue("")]
+        [ProtoBuf.ProtoMember(6)]
+        [System.ComponentModel.DefaultValue("")]
         public string externalNote
         {
             get { return __pbn__externalNote ?? ""; }
             set { __pbn__externalNote = value; }
         }
-        public bool ShouldSerializeexternalNote() => __pbn__externalNote != null;
-        public void ResetexternalNote() => __pbn__externalNote = null;
+
+        public  bool   ShouldSerializeexternalNote() => __pbn__externalNote != null;
+        public  void   ResetexternalNote()           => __pbn__externalNote = null;
         private string __pbn__externalNote;
 
-        [global::ProtoBuf.ProtoMember(7)]
+        [ProtoBuf.ProtoMember(7)]
         public long balanceVersion
         {
             get { return __pbn__balanceVersion.GetValueOrDefault(); }
             set { __pbn__balanceVersion = value; }
         }
-        public bool ShouldSerializebalanceVersion() => __pbn__balanceVersion != null;
-        public void ResetbalanceVersion() => __pbn__balanceVersion = null;
+
+        public  bool  ShouldSerializebalanceVersion() => __pbn__balanceVersion != null;
+        public  void  ResetbalanceVersion()           => __pbn__balanceVersion = null;
         private long? __pbn__balanceVersion;
 
-        [global::ProtoBuf.ProtoMember(8, Name = @"equity")]
+        [ProtoBuf.ProtoMember(8, Name = @"equity")]
         public long Equity
         {
             get { return __pbn__Equity.GetValueOrDefault(); }
             set { __pbn__Equity = value; }
         }
-        public bool ShouldSerializeEquity() => __pbn__Equity != null;
-        public void ResetEquity() => __pbn__Equity = null;
-        private long? __pbn__Equity;
 
+        public  bool  ShouldSerializeEquity() => __pbn__Equity != null;
+        public  void  ResetEquity()           => __pbn__Equity = null;
+        private long? __pbn__Equity;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOADeal : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOADeal : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1, IsRequired = true)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1, IsRequired = true)]
         public long dealId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long orderId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public long positionId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4, Name = @"volume", IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, Name = @"volume", IsRequired = true)]
         public long Volume { get; set; }
 
-        [global::ProtoBuf.ProtoMember(5, IsRequired = true)]
+        [ProtoBuf.ProtoMember(5, IsRequired = true)]
         public long filledVolume { get; set; }
 
-        [global::ProtoBuf.ProtoMember(6, IsRequired = true)]
+        [ProtoBuf.ProtoMember(6, IsRequired = true)]
         public long symbolId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(7, IsRequired = true)]
+        [ProtoBuf.ProtoMember(7, IsRequired = true)]
         public long createTimestamp { get; set; }
 
-        [global::ProtoBuf.ProtoMember(8, IsRequired = true)]
+        [ProtoBuf.ProtoMember(8, IsRequired = true)]
         public long executionTimestamp { get; set; }
 
-        [global::ProtoBuf.ProtoMember(9)]
+        [ProtoBuf.ProtoMember(9)]
         public long utcLastUpdateTimestamp
         {
             get { return __pbn__utcLastUpdateTimestamp.GetValueOrDefault(); }
             set { __pbn__utcLastUpdateTimestamp = value; }
         }
-        public bool ShouldSerializeutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp != null;
-        public void ResetutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp = null;
+
+        public  bool  ShouldSerializeutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp != null;
+        public  void  ResetutcLastUpdateTimestamp()           => __pbn__utcLastUpdateTimestamp = null;
         private long? __pbn__utcLastUpdateTimestamp;
 
-        [global::ProtoBuf.ProtoMember(10)]
+        [ProtoBuf.ProtoMember(10)]
         public double executionPrice
         {
             get { return __pbn__executionPrice.GetValueOrDefault(); }
             set { __pbn__executionPrice = value; }
         }
-        public bool ShouldSerializeexecutionPrice() => __pbn__executionPrice != null;
-        public void ResetexecutionPrice() => __pbn__executionPrice = null;
+
+        public  bool    ShouldSerializeexecutionPrice() => __pbn__executionPrice != null;
+        public  void    ResetexecutionPrice()           => __pbn__executionPrice = null;
         private double? __pbn__executionPrice;
 
-        [global::ProtoBuf.ProtoMember(11, IsRequired = true)]
+        [ProtoBuf.ProtoMember(11, IsRequired = true)]
         public ProtoOATradeSide tradeSide { get; set; } = ProtoOATradeSide.Buy;
 
-        [global::ProtoBuf.ProtoMember(12, IsRequired = true)]
+        [ProtoBuf.ProtoMember(12, IsRequired = true)]
         public ProtoOADealStatus dealStatus { get; set; } = ProtoOADealStatus.Filled;
 
-        [global::ProtoBuf.ProtoMember(13)]
+        [ProtoBuf.ProtoMember(13)]
         public double marginRate
         {
             get { return __pbn__marginRate.GetValueOrDefault(); }
             set { __pbn__marginRate = value; }
         }
-        public bool ShouldSerializemarginRate() => __pbn__marginRate != null;
-        public void ResetmarginRate() => __pbn__marginRate = null;
+
+        public  bool    ShouldSerializemarginRate() => __pbn__marginRate != null;
+        public  void    ResetmarginRate()           => __pbn__marginRate = null;
         private double? __pbn__marginRate;
 
-        [global::ProtoBuf.ProtoMember(14, Name = @"commission")]
+        [ProtoBuf.ProtoMember(14, Name = @"commission")]
         public long Commission
         {
             get { return __pbn__Commission.GetValueOrDefault(); }
             set { __pbn__Commission = value; }
         }
-        public bool ShouldSerializeCommission() => __pbn__Commission != null;
-        public void ResetCommission() => __pbn__Commission = null;
+
+        public  bool  ShouldSerializeCommission() => __pbn__Commission != null;
+        public  void  ResetCommission()           => __pbn__Commission = null;
         private long? __pbn__Commission;
 
-        [global::ProtoBuf.ProtoMember(15)]
+        [ProtoBuf.ProtoMember(15)]
         public double baseToUsdConversionRate
         {
             get { return __pbn__baseToUsdConversionRate.GetValueOrDefault(); }
             set { __pbn__baseToUsdConversionRate = value; }
         }
-        public bool ShouldSerializebaseToUsdConversionRate() => __pbn__baseToUsdConversionRate != null;
-        public void ResetbaseToUsdConversionRate() => __pbn__baseToUsdConversionRate = null;
+
+        public  bool    ShouldSerializebaseToUsdConversionRate() => __pbn__baseToUsdConversionRate != null;
+        public  void    ResetbaseToUsdConversionRate()           => __pbn__baseToUsdConversionRate = null;
         private double? __pbn__baseToUsdConversionRate;
 
-        [global::ProtoBuf.ProtoMember(16)]
-        public ProtoOAClosePositionDetail closePositionDetail { get; set; }
-
+        [ProtoBuf.ProtoMember(16)] public ProtoOAClosePositionDetail closePositionDetail { get; set; }
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAClosePositionDetail : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAClosePositionDetail : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1, IsRequired = true)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1, IsRequired = true)]
         public double entryPrice { get; set; }
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long grossProfit { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"swap", IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, Name = @"swap", IsRequired = true)]
         public long Swap { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4, Name = @"commission", IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, Name = @"commission", IsRequired = true)]
         public long Commission { get; set; }
 
-        [global::ProtoBuf.ProtoMember(5, Name = @"balance", IsRequired = true)]
+        [ProtoBuf.ProtoMember(5, Name = @"balance", IsRequired = true)]
         public long Balance { get; set; }
 
-        [global::ProtoBuf.ProtoMember(6)]
+        [ProtoBuf.ProtoMember(6)]
         public double quoteToDepositConversionRate
         {
             get { return __pbn__quoteToDepositConversionRate.GetValueOrDefault(); }
             set { __pbn__quoteToDepositConversionRate = value; }
         }
-        public bool ShouldSerializequoteToDepositConversionRate() => __pbn__quoteToDepositConversionRate != null;
-        public void ResetquoteToDepositConversionRate() => __pbn__quoteToDepositConversionRate = null;
+
+        public  bool    ShouldSerializequoteToDepositConversionRate() => __pbn__quoteToDepositConversionRate != null;
+        public  void    ResetquoteToDepositConversionRate()           => __pbn__quoteToDepositConversionRate = null;
         private double? __pbn__quoteToDepositConversionRate;
 
-        [global::ProtoBuf.ProtoMember(7)]
+        [ProtoBuf.ProtoMember(7)]
         public long closedVolume
         {
             get { return __pbn__closedVolume.GetValueOrDefault(); }
             set { __pbn__closedVolume = value; }
         }
-        public bool ShouldSerializeclosedVolume() => __pbn__closedVolume != null;
-        public void ResetclosedVolume() => __pbn__closedVolume = null;
+
+        public  bool  ShouldSerializeclosedVolume() => __pbn__closedVolume != null;
+        public  void  ResetclosedVolume()           => __pbn__closedVolume = null;
         private long? __pbn__closedVolume;
 
-        [global::ProtoBuf.ProtoMember(8)]
+        [ProtoBuf.ProtoMember(8)]
         public long balanceVersion
         {
             get { return __pbn__balanceVersion.GetValueOrDefault(); }
             set { __pbn__balanceVersion = value; }
         }
-        public bool ShouldSerializebalanceVersion() => __pbn__balanceVersion != null;
-        public void ResetbalanceVersion() => __pbn__balanceVersion = null;
-        private long? __pbn__balanceVersion;
 
+        public  bool  ShouldSerializebalanceVersion() => __pbn__balanceVersion != null;
+        public  void  ResetbalanceVersion()           => __pbn__balanceVersion = null;
+        private long? __pbn__balanceVersion;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOATrendbar : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOATrendbar : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"volume", IsRequired = true)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(3, Name = @"volume", IsRequired = true)]
         public long Volume { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4, Name = @"period")]
-        [global::System.ComponentModel.DefaultValue(ProtoOATrendbarPeriod.M1)]
+        [ProtoBuf.ProtoMember(4, Name = @"period")]
+        [System.ComponentModel.DefaultValue(ProtoOATrendbarPeriod.M1)]
         public ProtoOATrendbarPeriod Period
         {
             get { return __pbn__Period ?? ProtoOATrendbarPeriod.M1; }
             set { __pbn__Period = value; }
         }
-        public bool ShouldSerializePeriod() => __pbn__Period != null;
-        public void ResetPeriod() => __pbn__Period = null;
+
+        public  bool                   ShouldSerializePeriod() => __pbn__Period != null;
+        public  void                   ResetPeriod()           => __pbn__Period = null;
         private ProtoOATrendbarPeriod? __pbn__Period;
 
-        [global::ProtoBuf.ProtoMember(5, Name = @"low")]
+        [ProtoBuf.ProtoMember(5, Name = @"low")]
         public long Low
         {
             get { return __pbn__Low.GetValueOrDefault(); }
             set { __pbn__Low = value; }
         }
-        public bool ShouldSerializeLow() => __pbn__Low != null;
-        public void ResetLow() => __pbn__Low = null;
+
+        public  bool  ShouldSerializeLow() => __pbn__Low != null;
+        public  void  ResetLow()           => __pbn__Low = null;
         private long? __pbn__Low;
 
-        [global::ProtoBuf.ProtoMember(6)]
+        [ProtoBuf.ProtoMember(6)]
         public ulong deltaOpen
         {
             get { return __pbn__deltaOpen.GetValueOrDefault(); }
             set { __pbn__deltaOpen = value; }
         }
-        public bool ShouldSerializedeltaOpen() => __pbn__deltaOpen != null;
-        public void ResetdeltaOpen() => __pbn__deltaOpen = null;
+
+        public  bool   ShouldSerializedeltaOpen() => __pbn__deltaOpen != null;
+        public  void   ResetdeltaOpen()           => __pbn__deltaOpen = null;
         private ulong? __pbn__deltaOpen;
 
-        [global::ProtoBuf.ProtoMember(7)]
+        [ProtoBuf.ProtoMember(7)]
         public ulong deltaClose
         {
             get { return __pbn__deltaClose.GetValueOrDefault(); }
             set { __pbn__deltaClose = value; }
         }
-        public bool ShouldSerializedeltaClose() => __pbn__deltaClose != null;
-        public void ResetdeltaClose() => __pbn__deltaClose = null;
+
+        public  bool   ShouldSerializedeltaClose() => __pbn__deltaClose != null;
+        public  void   ResetdeltaClose()           => __pbn__deltaClose = null;
         private ulong? __pbn__deltaClose;
 
-        [global::ProtoBuf.ProtoMember(8)]
+        [ProtoBuf.ProtoMember(8)]
         public ulong deltaHigh
         {
             get { return __pbn__deltaHigh.GetValueOrDefault(); }
             set { __pbn__deltaHigh = value; }
         }
-        public bool ShouldSerializedeltaHigh() => __pbn__deltaHigh != null;
-        public void ResetdeltaHigh() => __pbn__deltaHigh = null;
+
+        public  bool   ShouldSerializedeltaHigh() => __pbn__deltaHigh != null;
+        public  void   ResetdeltaHigh()           => __pbn__deltaHigh = null;
         private ulong? __pbn__deltaHigh;
 
-        [global::ProtoBuf.ProtoMember(9)]
+        [ProtoBuf.ProtoMember(9)]
         public uint utcTimestampInMinutes
         {
             get { return __pbn__utcTimestampInMinutes.GetValueOrDefault(); }
             set { __pbn__utcTimestampInMinutes = value; }
         }
-        public bool ShouldSerializeutcTimestampInMinutes() => __pbn__utcTimestampInMinutes != null;
-        public void ResetutcTimestampInMinutes() => __pbn__utcTimestampInMinutes = null;
-        private uint? __pbn__utcTimestampInMinutes;
 
+        public  bool  ShouldSerializeutcTimestampInMinutes() => __pbn__utcTimestampInMinutes != null;
+        public  void  ResetutcTimestampInMinutes()           => __pbn__utcTimestampInMinutes = null;
+        private uint? __pbn__utcTimestampInMinutes;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAExpectedMargin : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAExpectedMargin : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1, Name = @"volume", IsRequired = true)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1, Name = @"volume", IsRequired = true)]
         public long Volume { get; set; }
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long buyMargin { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public long sellMargin { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOATickData : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOATickData : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1, Name = @"timestamp", IsRequired = true)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1, Name = @"timestamp", IsRequired = true)]
         public long Timestamp { get; set; }
 
-        [global::ProtoBuf.ProtoMember(2, Name = @"tick", IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, Name = @"tick", IsRequired = true)]
         public long Tick { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOACtidProfile : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOACtidProfile : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1, IsRequired = true)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1, IsRequired = true)]
         public long userId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOACtidTraderAccount : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOACtidTraderAccount : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1, IsRequired = true)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1, IsRequired = true)]
         public ulong ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(2)]
+        [ProtoBuf.ProtoMember(2)]
         public bool isLive
         {
             get { return __pbn__isLive.GetValueOrDefault(); }
             set { __pbn__isLive = value; }
         }
-        public bool ShouldSerializeisLive() => __pbn__isLive != null;
-        public void ResetisLive() => __pbn__isLive = null;
+
+        public  bool  ShouldSerializeisLive() => __pbn__isLive != null;
+        public  void  ResetisLive()           => __pbn__isLive = null;
         private bool? __pbn__isLive;
 
-        [global::ProtoBuf.ProtoMember(3)]
+        [ProtoBuf.ProtoMember(3)]
         public long traderLogin
         {
             get { return __pbn__traderLogin.GetValueOrDefault(); }
             set { __pbn__traderLogin = value; }
         }
-        public bool ShouldSerializetraderLogin() => __pbn__traderLogin != null;
-        public void ResettraderLogin() => __pbn__traderLogin = null;
-        private long? __pbn__traderLogin;
 
+        public  bool  ShouldSerializetraderLogin() => __pbn__traderLogin != null;
+        public  void  ResettraderLogin()           => __pbn__traderLogin = null;
+        private long? __pbn__traderLogin;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAAssetClass : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAAssetClass : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1, Name = @"id")]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1, Name = @"id")]
         public long Id
         {
             get { return __pbn__Id.GetValueOrDefault(); }
             set { __pbn__Id = value; }
         }
-        public bool ShouldSerializeId() => __pbn__Id != null;
-        public void ResetId() => __pbn__Id = null;
+
+        public  bool  ShouldSerializeId() => __pbn__Id != null;
+        public  void  ResetId()           => __pbn__Id = null;
         private long? __pbn__Id;
 
-        [global::ProtoBuf.ProtoMember(2, Name = @"name")]
-        [global::System.ComponentModel.DefaultValue("")]
+        [ProtoBuf.ProtoMember(2, Name = @"name")]
+        [System.ComponentModel.DefaultValue("")]
         public string Name
         {
             get { return __pbn__Name ?? ""; }
             set { __pbn__Name = value; }
         }
-        public bool ShouldSerializeName() => __pbn__Name != null;
-        public void ResetName() => __pbn__Name = null;
-        private string __pbn__Name;
 
+        public  bool   ShouldSerializeName() => __pbn__Name != null;
+        public  void   ResetName()           => __pbn__Name = null;
+        private string __pbn__Name;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOADepthQuote : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOADepthQuote : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1, Name = @"id", IsRequired = true)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1, Name = @"id", IsRequired = true)]
         public ulong Id { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"size", IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, Name = @"size", IsRequired = true)]
         public ulong Size { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4, Name = @"bid")]
+        [ProtoBuf.ProtoMember(4, Name = @"bid")]
         public ulong Bid
         {
             get { return __pbn__Bid.GetValueOrDefault(); }
             set { __pbn__Bid = value; }
         }
-        public bool ShouldSerializeBid() => __pbn__Bid != null;
-        public void ResetBid() => __pbn__Bid = null;
+
+        public  bool   ShouldSerializeBid() => __pbn__Bid != null;
+        public  void   ResetBid()           => __pbn__Bid = null;
         private ulong? __pbn__Bid;
 
-        [global::ProtoBuf.ProtoMember(5, Name = @"ask")]
+        [ProtoBuf.ProtoMember(5, Name = @"ask")]
         public ulong Ask
         {
             get { return __pbn__Ask.GetValueOrDefault(); }
             set { __pbn__Ask = value; }
         }
-        public bool ShouldSerializeAsk() => __pbn__Ask != null;
-        public void ResetAsk() => __pbn__Ask = null;
-        private ulong? __pbn__Ask;
 
+        public  bool   ShouldSerializeAsk() => __pbn__Ask != null;
+        public  void   ResetAsk()           => __pbn__Ask = null;
+        private ulong? __pbn__Ask;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAMarginCall : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAMarginCall : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1, IsRequired = true)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1, IsRequired = true)]
         public ProtoOANotificationType marginCallType { get; set; } = ProtoOANotificationType.MarginLevelThreshold1;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public double marginLevelThreshold { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3)]
+        [ProtoBuf.ProtoMember(3)]
         public long utcLastUpdateTimestamp
         {
             get { return __pbn__utcLastUpdateTimestamp.GetValueOrDefault(); }
             set { __pbn__utcLastUpdateTimestamp = value; }
         }
-        public bool ShouldSerializeutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp != null;
-        public void ResetutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp = null;
-        private long? __pbn__utcLastUpdateTimestamp;
 
+        public  bool  ShouldSerializeutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp != null;
+        public  void  ResetutcLastUpdateTimestamp()           => __pbn__utcLastUpdateTimestamp = null;
+        private long? __pbn__utcLastUpdateTimestamp;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAApplicationAuthReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAApplicationAuthReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaApplicationAuthReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaApplicationAuthReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaApplicationAuthReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public string clientId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public string clientSecret { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAApplicationAuthRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAApplicationAuthRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaApplicationAuthRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaApplicationAuthRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaApplicationAuthRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
-        private ProtoOAPayloadType? __pbn__payloadType;
 
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
+        private ProtoOAPayloadType? __pbn__payloadType;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAAccountAuthReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAAccountAuthReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAccountAuthReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAccountAuthReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAccountAuthReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public string accessToken { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAAccountAuthRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAAccountAuthRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAccountAuthRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAccountAuthRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAccountAuthRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAErrorRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAErrorRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaErrorRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaErrorRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaErrorRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2)]
+        [ProtoBuf.ProtoMember(2)]
         public long ctidTraderAccountId
         {
             get { return __pbn__ctidTraderAccountId.GetValueOrDefault(); }
             set { __pbn__ctidTraderAccountId = value; }
         }
-        public bool ShouldSerializectidTraderAccountId() => __pbn__ctidTraderAccountId != null;
-        public void ResetctidTraderAccountId() => __pbn__ctidTraderAccountId = null;
+
+        public  bool  ShouldSerializectidTraderAccountId() => __pbn__ctidTraderAccountId != null;
+        public  void  ResetctidTraderAccountId()           => __pbn__ctidTraderAccountId = null;
         private long? __pbn__ctidTraderAccountId;
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public string errorCode { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4, Name = @"description")]
-        [global::System.ComponentModel.DefaultValue("")]
+        [ProtoBuf.ProtoMember(4, Name = @"description")]
+        [System.ComponentModel.DefaultValue("")]
         public string Description
         {
             get { return __pbn__Description ?? ""; }
             set { __pbn__Description = value; }
         }
-        public bool ShouldSerializeDescription() => __pbn__Description != null;
-        public void ResetDescription() => __pbn__Description = null;
+
+        public  bool   ShouldSerializeDescription() => __pbn__Description != null;
+        public  void   ResetDescription()           => __pbn__Description = null;
         private string __pbn__Description;
 
-        [global::ProtoBuf.ProtoMember(5)]
+        [ProtoBuf.ProtoMember(5)]
         public long maintenanceEndTimestamp
         {
             get { return __pbn__maintenanceEndTimestamp.GetValueOrDefault(); }
             set { __pbn__maintenanceEndTimestamp = value; }
         }
-        public bool ShouldSerializemaintenanceEndTimestamp() => __pbn__maintenanceEndTimestamp != null;
-        public void ResetmaintenanceEndTimestamp() => __pbn__maintenanceEndTimestamp = null;
-        private long? __pbn__maintenanceEndTimestamp;
 
+        public  bool  ShouldSerializemaintenanceEndTimestamp() => __pbn__maintenanceEndTimestamp != null;
+        public  void  ResetmaintenanceEndTimestamp()           => __pbn__maintenanceEndTimestamp = null;
+        private long? __pbn__maintenanceEndTimestamp;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAClientDisconnectEvent : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAClientDisconnectEvent : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaClientDisconnectEvent)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaClientDisconnectEvent)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaClientDisconnectEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, Name = @"reason")]
-        [global::System.ComponentModel.DefaultValue("")]
+        [ProtoBuf.ProtoMember(2, Name = @"reason")]
+        [System.ComponentModel.DefaultValue("")]
         public string Reason
         {
             get { return __pbn__Reason ?? ""; }
             set { __pbn__Reason = value; }
         }
-        public bool ShouldSerializeReason() => __pbn__Reason != null;
-        public void ResetReason() => __pbn__Reason = null;
-        private string __pbn__Reason;
 
+        public  bool   ShouldSerializeReason() => __pbn__Reason != null;
+        public  void   ResetReason()           => __pbn__Reason = null;
+        private string __pbn__Reason;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAAccountsTokenInvalidatedEvent : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAAccountsTokenInvalidatedEvent : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAccountsTokenInvalidatedEvent)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAccountsTokenInvalidatedEvent)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAccountsTokenInvalidatedEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2)]
-        public long[] ctidTraderAccountIds { get; set; }
+        [ProtoBuf.ProtoMember(2)] public long[] ctidTraderAccountIds { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"reason")]
-        [global::System.ComponentModel.DefaultValue("")]
+        [ProtoBuf.ProtoMember(3, Name = @"reason")]
+        [System.ComponentModel.DefaultValue("")]
         public string Reason
         {
             get { return __pbn__Reason ?? ""; }
             set { __pbn__Reason = value; }
         }
-        public bool ShouldSerializeReason() => __pbn__Reason != null;
-        public void ResetReason() => __pbn__Reason = null;
-        private string __pbn__Reason;
 
+        public  bool   ShouldSerializeReason() => __pbn__Reason != null;
+        public  void   ResetReason()           => __pbn__Reason = null;
+        private string __pbn__Reason;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAVersionReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAVersionReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaVersionReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaVersionReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaVersionReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
-        private ProtoOAPayloadType? __pbn__payloadType;
 
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
+        private ProtoOAPayloadType? __pbn__payloadType;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAVersionRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAVersionRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaVersionRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaVersionRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaVersionRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, Name = @"version", IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, Name = @"version", IsRequired = true)]
         public string Version { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOANewOrderReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOANewOrderReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaNewOrderReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaNewOrderReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaNewOrderReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public long symbolId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4, IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public ProtoOAOrderType orderType { get; set; } = ProtoOAOrderType.Market;
 
-        [global::ProtoBuf.ProtoMember(5, IsRequired = true)]
+        [ProtoBuf.ProtoMember(5, IsRequired = true)]
         public ProtoOATradeSide tradeSide { get; set; } = ProtoOATradeSide.Buy;
 
-        [global::ProtoBuf.ProtoMember(6, Name = @"volume", IsRequired = true)]
+        [ProtoBuf.ProtoMember(6, Name = @"volume", IsRequired = true)]
         public long Volume { get; set; }
 
-        [global::ProtoBuf.ProtoMember(7)]
+        [ProtoBuf.ProtoMember(7)]
         public double limitPrice
         {
             get { return __pbn__limitPrice.GetValueOrDefault(); }
             set { __pbn__limitPrice = value; }
         }
-        public bool ShouldSerializelimitPrice() => __pbn__limitPrice != null;
-        public void ResetlimitPrice() => __pbn__limitPrice = null;
+
+        public  bool    ShouldSerializelimitPrice() => __pbn__limitPrice != null;
+        public  void    ResetlimitPrice()           => __pbn__limitPrice = null;
         private double? __pbn__limitPrice;
 
-        [global::ProtoBuf.ProtoMember(8)]
+        [ProtoBuf.ProtoMember(8)]
         public double stopPrice
         {
             get { return __pbn__stopPrice.GetValueOrDefault(); }
             set { __pbn__stopPrice = value; }
         }
-        public bool ShouldSerializestopPrice() => __pbn__stopPrice != null;
-        public void ResetstopPrice() => __pbn__stopPrice = null;
+
+        public  bool    ShouldSerializestopPrice() => __pbn__stopPrice != null;
+        public  void    ResetstopPrice()           => __pbn__stopPrice = null;
         private double? __pbn__stopPrice;
 
-        [global::ProtoBuf.ProtoMember(9)]
-        [global::System.ComponentModel.DefaultValue(ProtoOATimeInForce.GoodTillCancel)]
+        [ProtoBuf.ProtoMember(9)]
+        [System.ComponentModel.DefaultValue(ProtoOATimeInForce.GoodTillCancel)]
         public ProtoOATimeInForce timeInForce
         {
             get { return __pbn__timeInForce ?? ProtoOATimeInForce.GoodTillCancel; }
             set { __pbn__timeInForce = value; }
         }
-        public bool ShouldSerializetimeInForce() => __pbn__timeInForce != null;
-        public void ResettimeInForce() => __pbn__timeInForce = null;
+
+        public  bool                ShouldSerializetimeInForce() => __pbn__timeInForce != null;
+        public  void                ResettimeInForce()           => __pbn__timeInForce = null;
         private ProtoOATimeInForce? __pbn__timeInForce;
 
-        [global::ProtoBuf.ProtoMember(10)]
+        [ProtoBuf.ProtoMember(10)]
         public long expirationTimestamp
         {
             get { return __pbn__expirationTimestamp.GetValueOrDefault(); }
             set { __pbn__expirationTimestamp = value; }
         }
-        public bool ShouldSerializeexpirationTimestamp() => __pbn__expirationTimestamp != null;
-        public void ResetexpirationTimestamp() => __pbn__expirationTimestamp = null;
+
+        public  bool  ShouldSerializeexpirationTimestamp() => __pbn__expirationTimestamp != null;
+        public  void  ResetexpirationTimestamp()           => __pbn__expirationTimestamp = null;
         private long? __pbn__expirationTimestamp;
 
-        [global::ProtoBuf.ProtoMember(11)]
+        [ProtoBuf.ProtoMember(11)]
         public double stopLoss
         {
             get { return __pbn__stopLoss.GetValueOrDefault(); }
             set { __pbn__stopLoss = value; }
         }
-        public bool ShouldSerializestopLoss() => __pbn__stopLoss != null;
-        public void ResetstopLoss() => __pbn__stopLoss = null;
+
+        public  bool    ShouldSerializestopLoss() => __pbn__stopLoss != null;
+        public  void    ResetstopLoss()           => __pbn__stopLoss = null;
         private double? __pbn__stopLoss;
 
-        [global::ProtoBuf.ProtoMember(12)]
+        [ProtoBuf.ProtoMember(12)]
         public double takeProfit
         {
             get { return __pbn__takeProfit.GetValueOrDefault(); }
             set { __pbn__takeProfit = value; }
         }
-        public bool ShouldSerializetakeProfit() => __pbn__takeProfit != null;
-        public void ResettakeProfit() => __pbn__takeProfit = null;
+
+        public  bool    ShouldSerializetakeProfit() => __pbn__takeProfit != null;
+        public  void    ResettakeProfit()           => __pbn__takeProfit = null;
         private double? __pbn__takeProfit;
 
-        [global::ProtoBuf.ProtoMember(13, Name = @"comment")]
-        [global::System.ComponentModel.DefaultValue("")]
+        [ProtoBuf.ProtoMember(13, Name = @"comment")]
+        [System.ComponentModel.DefaultValue("")]
         public string Comment
         {
             get { return __pbn__Comment ?? ""; }
             set { __pbn__Comment = value; }
         }
-        public bool ShouldSerializeComment() => __pbn__Comment != null;
-        public void ResetComment() => __pbn__Comment = null;
+
+        public  bool   ShouldSerializeComment() => __pbn__Comment != null;
+        public  void   ResetComment()           => __pbn__Comment = null;
         private string __pbn__Comment;
 
-        [global::ProtoBuf.ProtoMember(14)]
+        [ProtoBuf.ProtoMember(14)]
         public double baseSlippagePrice
         {
             get { return __pbn__baseSlippagePrice.GetValueOrDefault(); }
             set { __pbn__baseSlippagePrice = value; }
         }
-        public bool ShouldSerializebaseSlippagePrice() => __pbn__baseSlippagePrice != null;
-        public void ResetbaseSlippagePrice() => __pbn__baseSlippagePrice = null;
+
+        public  bool    ShouldSerializebaseSlippagePrice() => __pbn__baseSlippagePrice != null;
+        public  void    ResetbaseSlippagePrice()           => __pbn__baseSlippagePrice = null;
         private double? __pbn__baseSlippagePrice;
 
-        [global::ProtoBuf.ProtoMember(15)]
+        [ProtoBuf.ProtoMember(15)]
         public int slippageInPoints
         {
             get { return __pbn__slippageInPoints.GetValueOrDefault(); }
             set { __pbn__slippageInPoints = value; }
         }
-        public bool ShouldSerializeslippageInPoints() => __pbn__slippageInPoints != null;
-        public void ResetslippageInPoints() => __pbn__slippageInPoints = null;
+
+        public  bool ShouldSerializeslippageInPoints() => __pbn__slippageInPoints != null;
+        public  void ResetslippageInPoints()           => __pbn__slippageInPoints = null;
         private int? __pbn__slippageInPoints;
 
-        [global::ProtoBuf.ProtoMember(16, Name = @"label")]
-        [global::System.ComponentModel.DefaultValue("")]
+        [ProtoBuf.ProtoMember(16, Name = @"label")]
+        [System.ComponentModel.DefaultValue("")]
         public string Label
         {
             get { return __pbn__Label ?? ""; }
             set { __pbn__Label = value; }
         }
-        public bool ShouldSerializeLabel() => __pbn__Label != null;
-        public void ResetLabel() => __pbn__Label = null;
+
+        public  bool   ShouldSerializeLabel() => __pbn__Label != null;
+        public  void   ResetLabel()           => __pbn__Label = null;
         private string __pbn__Label;
 
-        [global::ProtoBuf.ProtoMember(17)]
+        [ProtoBuf.ProtoMember(17)]
         public long positionId
         {
             get { return __pbn__positionId.GetValueOrDefault(); }
             set { __pbn__positionId = value; }
         }
-        public bool ShouldSerializepositionId() => __pbn__positionId != null;
-        public void ResetpositionId() => __pbn__positionId = null;
+
+        public  bool  ShouldSerializepositionId() => __pbn__positionId != null;
+        public  void  ResetpositionId()           => __pbn__positionId = null;
         private long? __pbn__positionId;
 
-        [global::ProtoBuf.ProtoMember(18)]
-        [global::System.ComponentModel.DefaultValue("")]
+        [ProtoBuf.ProtoMember(18)]
+        [System.ComponentModel.DefaultValue("")]
         public string clientOrderId
         {
             get { return __pbn__clientOrderId ?? ""; }
             set { __pbn__clientOrderId = value; }
         }
-        public bool ShouldSerializeclientOrderId() => __pbn__clientOrderId != null;
-        public void ResetclientOrderId() => __pbn__clientOrderId = null;
+
+        public  bool   ShouldSerializeclientOrderId() => __pbn__clientOrderId != null;
+        public  void   ResetclientOrderId()           => __pbn__clientOrderId = null;
         private string __pbn__clientOrderId;
 
-        [global::ProtoBuf.ProtoMember(19)]
+        [ProtoBuf.ProtoMember(19)]
         public long relativeStopLoss
         {
             get { return __pbn__relativeStopLoss.GetValueOrDefault(); }
             set { __pbn__relativeStopLoss = value; }
         }
-        public bool ShouldSerializerelativeStopLoss() => __pbn__relativeStopLoss != null;
-        public void ResetrelativeStopLoss() => __pbn__relativeStopLoss = null;
+
+        public  bool  ShouldSerializerelativeStopLoss() => __pbn__relativeStopLoss != null;
+        public  void  ResetrelativeStopLoss()           => __pbn__relativeStopLoss = null;
         private long? __pbn__relativeStopLoss;
 
-        [global::ProtoBuf.ProtoMember(20)]
+        [ProtoBuf.ProtoMember(20)]
         public long relativeTakeProfit
         {
             get { return __pbn__relativeTakeProfit.GetValueOrDefault(); }
             set { __pbn__relativeTakeProfit = value; }
         }
-        public bool ShouldSerializerelativeTakeProfit() => __pbn__relativeTakeProfit != null;
-        public void ResetrelativeTakeProfit() => __pbn__relativeTakeProfit = null;
+
+        public  bool  ShouldSerializerelativeTakeProfit() => __pbn__relativeTakeProfit != null;
+        public  void  ResetrelativeTakeProfit()           => __pbn__relativeTakeProfit = null;
         private long? __pbn__relativeTakeProfit;
 
-        [global::ProtoBuf.ProtoMember(21)]
+        [ProtoBuf.ProtoMember(21)]
         public bool guaranteedStopLoss
         {
             get { return __pbn__guaranteedStopLoss.GetValueOrDefault(); }
             set { __pbn__guaranteedStopLoss = value; }
         }
-        public bool ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
-        public void ResetguaranteedStopLoss() => __pbn__guaranteedStopLoss = null;
+
+        public  bool  ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
+        public  void  ResetguaranteedStopLoss()           => __pbn__guaranteedStopLoss = null;
         private bool? __pbn__guaranteedStopLoss;
 
-        [global::ProtoBuf.ProtoMember(22)]
+        [ProtoBuf.ProtoMember(22)]
         public bool trailingStopLoss
         {
             get { return __pbn__trailingStopLoss.GetValueOrDefault(); }
             set { __pbn__trailingStopLoss = value; }
         }
-        public bool ShouldSerializetrailingStopLoss() => __pbn__trailingStopLoss != null;
-        public void ResettrailingStopLoss() => __pbn__trailingStopLoss = null;
+
+        public  bool  ShouldSerializetrailingStopLoss() => __pbn__trailingStopLoss != null;
+        public  void  ResettrailingStopLoss()           => __pbn__trailingStopLoss = null;
         private bool? __pbn__trailingStopLoss;
 
-        [global::ProtoBuf.ProtoMember(23)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAOrderTriggerMethod.Trade)]
+        [ProtoBuf.ProtoMember(23)]
+        [System.ComponentModel.DefaultValue(ProtoOAOrderTriggerMethod.Trade)]
         public ProtoOAOrderTriggerMethod stopTriggerMethod
         {
             get { return __pbn__stopTriggerMethod ?? ProtoOAOrderTriggerMethod.Trade; }
             set { __pbn__stopTriggerMethod = value; }
         }
-        public bool ShouldSerializestopTriggerMethod() => __pbn__stopTriggerMethod != null;
-        public void ResetstopTriggerMethod() => __pbn__stopTriggerMethod = null;
-        private ProtoOAOrderTriggerMethod? __pbn__stopTriggerMethod;
 
+        public  bool                       ShouldSerializestopTriggerMethod() => __pbn__stopTriggerMethod != null;
+        public  void                       ResetstopTriggerMethod()           => __pbn__stopTriggerMethod = null;
+        private ProtoOAOrderTriggerMethod? __pbn__stopTriggerMethod;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAExecutionEvent : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAExecutionEvent : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaExecutionEvent)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaExecutionEvent)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaExecutionEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public ProtoOAExecutionType executionType { get; set; } = ProtoOAExecutionType.OrderAccepted;
 
-        [global::ProtoBuf.ProtoMember(4, Name = @"position")]
+        [ProtoBuf.ProtoMember(4, Name = @"position")]
         public ProtoOAPosition Position { get; set; }
 
-        [global::ProtoBuf.ProtoMember(5, Name = @"order")]
+        [ProtoBuf.ProtoMember(5, Name = @"order")]
         public ProtoOAOrder Order { get; set; }
 
-        [global::ProtoBuf.ProtoMember(6, Name = @"deal")]
+        [ProtoBuf.ProtoMember(6, Name = @"deal")]
         public ProtoOADeal Deal { get; set; }
 
-        [global::ProtoBuf.ProtoMember(7)]
-        public ProtoOABonusDepositWithdraw bonusDepositWithdraw { get; set; }
+        [ProtoBuf.ProtoMember(7)] public ProtoOABonusDepositWithdraw bonusDepositWithdraw { get; set; }
 
-        [global::ProtoBuf.ProtoMember(8)]
-        public ProtoOADepositWithdraw depositWithdraw { get; set; }
+        [ProtoBuf.ProtoMember(8)] public ProtoOADepositWithdraw depositWithdraw { get; set; }
 
-        [global::ProtoBuf.ProtoMember(9)]
-        [global::System.ComponentModel.DefaultValue("")]
+        [ProtoBuf.ProtoMember(9)]
+        [System.ComponentModel.DefaultValue("")]
         public string errorCode
         {
             get { return __pbn__errorCode ?? ""; }
             set { __pbn__errorCode = value; }
         }
-        public bool ShouldSerializeerrorCode() => __pbn__errorCode != null;
-        public void ReseterrorCode() => __pbn__errorCode = null;
+
+        public  bool   ShouldSerializeerrorCode() => __pbn__errorCode != null;
+        public  void   ReseterrorCode()           => __pbn__errorCode = null;
         private string __pbn__errorCode;
 
-        [global::ProtoBuf.ProtoMember(10)]
+        [ProtoBuf.ProtoMember(10)]
         public bool isServerEvent
         {
             get { return __pbn__isServerEvent.GetValueOrDefault(); }
             set { __pbn__isServerEvent = value; }
         }
-        public bool ShouldSerializeisServerEvent() => __pbn__isServerEvent != null;
-        public void ResetisServerEvent() => __pbn__isServerEvent = null;
-        private bool? __pbn__isServerEvent;
 
+        public  bool  ShouldSerializeisServerEvent() => __pbn__isServerEvent != null;
+        public  void  ResetisServerEvent()           => __pbn__isServerEvent = null;
+        private bool? __pbn__isServerEvent;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOACancelOrderReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOACancelOrderReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaCancelOrderReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaCancelOrderReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaCancelOrderReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public long orderId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAAmendOrderReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAAmendOrderReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAmendOrderReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAmendOrderReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAmendOrderReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public long orderId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4, Name = @"volume")]
+        [ProtoBuf.ProtoMember(4, Name = @"volume")]
         public long Volume
         {
             get { return __pbn__Volume.GetValueOrDefault(); }
             set { __pbn__Volume = value; }
         }
-        public bool ShouldSerializeVolume() => __pbn__Volume != null;
-        public void ResetVolume() => __pbn__Volume = null;
+
+        public  bool  ShouldSerializeVolume() => __pbn__Volume != null;
+        public  void  ResetVolume()           => __pbn__Volume = null;
         private long? __pbn__Volume;
 
-        [global::ProtoBuf.ProtoMember(5)]
+        [ProtoBuf.ProtoMember(5)]
         public double limitPrice
         {
             get { return __pbn__limitPrice.GetValueOrDefault(); }
             set { __pbn__limitPrice = value; }
         }
-        public bool ShouldSerializelimitPrice() => __pbn__limitPrice != null;
-        public void ResetlimitPrice() => __pbn__limitPrice = null;
+
+        public  bool    ShouldSerializelimitPrice() => __pbn__limitPrice != null;
+        public  void    ResetlimitPrice()           => __pbn__limitPrice = null;
         private double? __pbn__limitPrice;
 
-        [global::ProtoBuf.ProtoMember(6)]
+        [ProtoBuf.ProtoMember(6)]
         public double stopPrice
         {
             get { return __pbn__stopPrice.GetValueOrDefault(); }
             set { __pbn__stopPrice = value; }
         }
-        public bool ShouldSerializestopPrice() => __pbn__stopPrice != null;
-        public void ResetstopPrice() => __pbn__stopPrice = null;
+
+        public  bool    ShouldSerializestopPrice() => __pbn__stopPrice != null;
+        public  void    ResetstopPrice()           => __pbn__stopPrice = null;
         private double? __pbn__stopPrice;
 
-        [global::ProtoBuf.ProtoMember(7)]
+        [ProtoBuf.ProtoMember(7)]
         public long expirationTimestamp
         {
             get { return __pbn__expirationTimestamp.GetValueOrDefault(); }
             set { __pbn__expirationTimestamp = value; }
         }
-        public bool ShouldSerializeexpirationTimestamp() => __pbn__expirationTimestamp != null;
-        public void ResetexpirationTimestamp() => __pbn__expirationTimestamp = null;
+
+        public  bool  ShouldSerializeexpirationTimestamp() => __pbn__expirationTimestamp != null;
+        public  void  ResetexpirationTimestamp()           => __pbn__expirationTimestamp = null;
         private long? __pbn__expirationTimestamp;
 
-        [global::ProtoBuf.ProtoMember(8)]
+        [ProtoBuf.ProtoMember(8)]
         public double stopLoss
         {
             get { return __pbn__stopLoss.GetValueOrDefault(); }
             set { __pbn__stopLoss = value; }
         }
-        public bool ShouldSerializestopLoss() => __pbn__stopLoss != null;
-        public void ResetstopLoss() => __pbn__stopLoss = null;
+
+        public  bool    ShouldSerializestopLoss() => __pbn__stopLoss != null;
+        public  void    ResetstopLoss()           => __pbn__stopLoss = null;
         private double? __pbn__stopLoss;
 
-        [global::ProtoBuf.ProtoMember(9)]
+        [ProtoBuf.ProtoMember(9)]
         public double takeProfit
         {
             get { return __pbn__takeProfit.GetValueOrDefault(); }
             set { __pbn__takeProfit = value; }
         }
-        public bool ShouldSerializetakeProfit() => __pbn__takeProfit != null;
-        public void ResettakeProfit() => __pbn__takeProfit = null;
+
+        public  bool    ShouldSerializetakeProfit() => __pbn__takeProfit != null;
+        public  void    ResettakeProfit()           => __pbn__takeProfit = null;
         private double? __pbn__takeProfit;
 
-        [global::ProtoBuf.ProtoMember(10)]
+        [ProtoBuf.ProtoMember(10)]
         public int slippageInPoints
         {
             get { return __pbn__slippageInPoints.GetValueOrDefault(); }
             set { __pbn__slippageInPoints = value; }
         }
-        public bool ShouldSerializeslippageInPoints() => __pbn__slippageInPoints != null;
-        public void ResetslippageInPoints() => __pbn__slippageInPoints = null;
+
+        public  bool ShouldSerializeslippageInPoints() => __pbn__slippageInPoints != null;
+        public  void ResetslippageInPoints()           => __pbn__slippageInPoints = null;
         private int? __pbn__slippageInPoints;
 
-        [global::ProtoBuf.ProtoMember(11)]
+        [ProtoBuf.ProtoMember(11)]
         public long relativeStopLoss
         {
             get { return __pbn__relativeStopLoss.GetValueOrDefault(); }
             set { __pbn__relativeStopLoss = value; }
         }
-        public bool ShouldSerializerelativeStopLoss() => __pbn__relativeStopLoss != null;
-        public void ResetrelativeStopLoss() => __pbn__relativeStopLoss = null;
+
+        public  bool  ShouldSerializerelativeStopLoss() => __pbn__relativeStopLoss != null;
+        public  void  ResetrelativeStopLoss()           => __pbn__relativeStopLoss = null;
         private long? __pbn__relativeStopLoss;
 
-        [global::ProtoBuf.ProtoMember(12)]
+        [ProtoBuf.ProtoMember(12)]
         public long relativeTakeProfit
         {
             get { return __pbn__relativeTakeProfit.GetValueOrDefault(); }
             set { __pbn__relativeTakeProfit = value; }
         }
-        public bool ShouldSerializerelativeTakeProfit() => __pbn__relativeTakeProfit != null;
-        public void ResetrelativeTakeProfit() => __pbn__relativeTakeProfit = null;
+
+        public  bool  ShouldSerializerelativeTakeProfit() => __pbn__relativeTakeProfit != null;
+        public  void  ResetrelativeTakeProfit()           => __pbn__relativeTakeProfit = null;
         private long? __pbn__relativeTakeProfit;
 
-        [global::ProtoBuf.ProtoMember(13)]
+        [ProtoBuf.ProtoMember(13)]
         public bool guaranteedStopLoss
         {
             get { return __pbn__guaranteedStopLoss.GetValueOrDefault(); }
             set { __pbn__guaranteedStopLoss = value; }
         }
-        public bool ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
-        public void ResetguaranteedStopLoss() => __pbn__guaranteedStopLoss = null;
+
+        public  bool  ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
+        public  void  ResetguaranteedStopLoss()           => __pbn__guaranteedStopLoss = null;
         private bool? __pbn__guaranteedStopLoss;
 
-        [global::ProtoBuf.ProtoMember(14)]
+        [ProtoBuf.ProtoMember(14)]
         public bool trailingStopLoss
         {
             get { return __pbn__trailingStopLoss.GetValueOrDefault(); }
             set { __pbn__trailingStopLoss = value; }
         }
-        public bool ShouldSerializetrailingStopLoss() => __pbn__trailingStopLoss != null;
-        public void ResettrailingStopLoss() => __pbn__trailingStopLoss = null;
+
+        public  bool  ShouldSerializetrailingStopLoss() => __pbn__trailingStopLoss != null;
+        public  void  ResettrailingStopLoss()           => __pbn__trailingStopLoss = null;
         private bool? __pbn__trailingStopLoss;
 
-        [global::ProtoBuf.ProtoMember(15)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAOrderTriggerMethod.Trade)]
+        [ProtoBuf.ProtoMember(15)]
+        [System.ComponentModel.DefaultValue(ProtoOAOrderTriggerMethod.Trade)]
         public ProtoOAOrderTriggerMethod stopTriggerMethod
         {
             get { return __pbn__stopTriggerMethod ?? ProtoOAOrderTriggerMethod.Trade; }
             set { __pbn__stopTriggerMethod = value; }
         }
-        public bool ShouldSerializestopTriggerMethod() => __pbn__stopTriggerMethod != null;
-        public void ResetstopTriggerMethod() => __pbn__stopTriggerMethod = null;
-        private ProtoOAOrderTriggerMethod? __pbn__stopTriggerMethod;
 
+        public  bool                       ShouldSerializestopTriggerMethod() => __pbn__stopTriggerMethod != null;
+        public  void                       ResetstopTriggerMethod()           => __pbn__stopTriggerMethod = null;
+        private ProtoOAOrderTriggerMethod? __pbn__stopTriggerMethod;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAAmendPositionSLTPReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAAmendPositionSLTPReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAmendPositionSltpReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAmendPositionSltpReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAmendPositionSltpReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public long positionId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4)]
+        [ProtoBuf.ProtoMember(4)]
         public double stopLoss
         {
             get { return __pbn__stopLoss.GetValueOrDefault(); }
             set { __pbn__stopLoss = value; }
         }
-        public bool ShouldSerializestopLoss() => __pbn__stopLoss != null;
-        public void ResetstopLoss() => __pbn__stopLoss = null;
+
+        public  bool    ShouldSerializestopLoss() => __pbn__stopLoss != null;
+        public  void    ResetstopLoss()           => __pbn__stopLoss = null;
         private double? __pbn__stopLoss;
 
-        [global::ProtoBuf.ProtoMember(5)]
+        [ProtoBuf.ProtoMember(5)]
         public double takeProfit
         {
             get { return __pbn__takeProfit.GetValueOrDefault(); }
             set { __pbn__takeProfit = value; }
         }
-        public bool ShouldSerializetakeProfit() => __pbn__takeProfit != null;
-        public void ResettakeProfit() => __pbn__takeProfit = null;
+
+        public  bool    ShouldSerializetakeProfit() => __pbn__takeProfit != null;
+        public  void    ResettakeProfit()           => __pbn__takeProfit = null;
         private double? __pbn__takeProfit;
 
-        [global::ProtoBuf.ProtoMember(7)]
+        [ProtoBuf.ProtoMember(7)]
         public bool guaranteedStopLoss
         {
             get { return __pbn__guaranteedStopLoss.GetValueOrDefault(); }
             set { __pbn__guaranteedStopLoss = value; }
         }
-        public bool ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
-        public void ResetguaranteedStopLoss() => __pbn__guaranteedStopLoss = null;
+
+        public  bool  ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
+        public  void  ResetguaranteedStopLoss()           => __pbn__guaranteedStopLoss = null;
         private bool? __pbn__guaranteedStopLoss;
 
-        [global::ProtoBuf.ProtoMember(8)]
+        [ProtoBuf.ProtoMember(8)]
         public bool trailingStopLoss
         {
             get { return __pbn__trailingStopLoss.GetValueOrDefault(); }
             set { __pbn__trailingStopLoss = value; }
         }
-        public bool ShouldSerializetrailingStopLoss() => __pbn__trailingStopLoss != null;
-        public void ResettrailingStopLoss() => __pbn__trailingStopLoss = null;
+
+        public  bool  ShouldSerializetrailingStopLoss() => __pbn__trailingStopLoss != null;
+        public  void  ResettrailingStopLoss()           => __pbn__trailingStopLoss = null;
         private bool? __pbn__trailingStopLoss;
 
-        [global::ProtoBuf.ProtoMember(9)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAOrderTriggerMethod.Trade)]
+        [ProtoBuf.ProtoMember(9)]
+        [System.ComponentModel.DefaultValue(ProtoOAOrderTriggerMethod.Trade)]
         public ProtoOAOrderTriggerMethod stopLossTriggerMethod
         {
             get { return __pbn__stopLossTriggerMethod ?? ProtoOAOrderTriggerMethod.Trade; }
             set { __pbn__stopLossTriggerMethod = value; }
         }
-        public bool ShouldSerializestopLossTriggerMethod() => __pbn__stopLossTriggerMethod != null;
-        public void ResetstopLossTriggerMethod() => __pbn__stopLossTriggerMethod = null;
-        private ProtoOAOrderTriggerMethod? __pbn__stopLossTriggerMethod;
 
+        public  bool                       ShouldSerializestopLossTriggerMethod() => __pbn__stopLossTriggerMethod != null;
+        public  void                       ResetstopLossTriggerMethod()           => __pbn__stopLossTriggerMethod = null;
+        private ProtoOAOrderTriggerMethod? __pbn__stopLossTriggerMethod;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAClosePositionReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAClosePositionReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaClosePositionReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaClosePositionReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaClosePositionReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public long positionId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4, Name = @"volume", IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, Name = @"volume", IsRequired = true)]
         public long Volume { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOATrailingSLChangedEvent : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOATrailingSLChangedEvent : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaTrailingSlChangedEvent)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaTrailingSlChangedEvent)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaTrailingSlChangedEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public long positionId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4, IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public long orderId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(5, IsRequired = true)]
+        [ProtoBuf.ProtoMember(5, IsRequired = true)]
         public double stopPrice { get; set; }
 
-        [global::ProtoBuf.ProtoMember(6, IsRequired = true)]
+        [ProtoBuf.ProtoMember(6, IsRequired = true)]
         public long utcLastUpdateTimestamp { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAAssetListReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAAssetListReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAssetListReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAssetListReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAssetListReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAAssetListRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAAssetListRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAssetListRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAssetListRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAssetListRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"asset")]
-        public global::System.Collections.Generic.List<ProtoOAAsset> Assets { get; } = new global::System.Collections.Generic.List<ProtoOAAsset>();
-
+        [ProtoBuf.ProtoMember(3, Name = @"asset")]
+        public System.Collections.Generic.List<ProtoOAAsset> Assets { get; } = new System.Collections.Generic.List<ProtoOAAsset>();
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOASymbolsListReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOASymbolsListReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSymbolsListReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSymbolsListReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSymbolsListReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOASymbolsListRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOASymbolsListRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSymbolsListRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSymbolsListRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSymbolsListRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"symbol")]
-        public global::System.Collections.Generic.List<ProtoOALightSymbol> Symbols { get; } = new global::System.Collections.Generic.List<ProtoOALightSymbol>();
-
+        [ProtoBuf.ProtoMember(3, Name = @"symbol")]
+        public System.Collections.Generic.List<ProtoOALightSymbol> Symbols { get; } = new System.Collections.Generic.List<ProtoOALightSymbol>();
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOASymbolByIdReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOASymbolByIdReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSymbolByIdReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSymbolByIdReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSymbolByIdReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"symbolId")]
+        [ProtoBuf.ProtoMember(3, Name = @"symbolId")]
         public long[] symbolIds { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOASymbolByIdRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOASymbolByIdRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSymbolByIdRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSymbolByIdRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSymbolByIdRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"symbol")]
-        public global::System.Collections.Generic.List<ProtoOASymbol> Symbols { get; } = new global::System.Collections.Generic.List<ProtoOASymbol>();
-
+        [ProtoBuf.ProtoMember(3, Name = @"symbol")]
+        public System.Collections.Generic.List<ProtoOASymbol> Symbols { get; } = new System.Collections.Generic.List<ProtoOASymbol>();
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOASymbolsForConversionReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOASymbolsForConversionReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSymbolsForConversionReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSymbolsForConversionReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSymbolsForConversionReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public long firstAssetId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4, IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public long lastAssetId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOASymbolsForConversionRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOASymbolsForConversionRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSymbolsForConversionRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSymbolsForConversionRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSymbolsForConversionRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"symbol")]
-        public global::System.Collections.Generic.List<ProtoOALightSymbol> Symbols { get; } = new global::System.Collections.Generic.List<ProtoOALightSymbol>();
-
+        [ProtoBuf.ProtoMember(3, Name = @"symbol")]
+        public System.Collections.Generic.List<ProtoOALightSymbol> Symbols { get; } = new System.Collections.Generic.List<ProtoOALightSymbol>();
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOASymbolChangedEvent : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOASymbolChangedEvent : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSymbolChangedEvent)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSymbolChangedEvent)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSymbolChangedEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"symbolId")]
+        [ProtoBuf.ProtoMember(3, Name = @"symbolId")]
         public long[] symbolIds { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAAssetClassListReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAAssetClassListReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAssetClassListReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAssetClassListReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAssetClassListReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAAssetClassListRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAAssetClassListRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAssetClassListRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAssetClassListRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAssetClassListRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"assetClass")]
-        public global::System.Collections.Generic.List<ProtoOAAssetClass> assetClasses { get; } = new global::System.Collections.Generic.List<ProtoOAAssetClass>();
-
+        [ProtoBuf.ProtoMember(3, Name = @"assetClass")]
+        public System.Collections.Generic.List<ProtoOAAssetClass> assetClasses { get; } = new System.Collections.Generic.List<ProtoOAAssetClass>();
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOATraderReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOATraderReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaTraderReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaTraderReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaTraderReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOATraderRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOATraderRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaTraderRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaTraderRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaTraderRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"trader", IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, Name = @"trader", IsRequired = true)]
         public ProtoOATrader Trader { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOATraderUpdatedEvent : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOATraderUpdatedEvent : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaTraderUpdateEvent)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaTraderUpdateEvent)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaTraderUpdateEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"trader", IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, Name = @"trader", IsRequired = true)]
         public ProtoOATrader Trader { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAReconcileReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAReconcileReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaReconcileReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaReconcileReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaReconcileReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAReconcileRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAReconcileRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaReconcileRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaReconcileRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaReconcileRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"position")]
-        public global::System.Collections.Generic.List<ProtoOAPosition> Positions { get; } = new global::System.Collections.Generic.List<ProtoOAPosition>();
+        [ProtoBuf.ProtoMember(3, Name = @"position")]
+        public System.Collections.Generic.List<ProtoOAPosition> Positions { get; } = new System.Collections.Generic.List<ProtoOAPosition>();
 
-        [global::ProtoBuf.ProtoMember(4, Name = @"order")]
-        public global::System.Collections.Generic.List<ProtoOAOrder> Orders { get; } = new global::System.Collections.Generic.List<ProtoOAOrder>();
-
+        [ProtoBuf.ProtoMember(4, Name = @"order")]
+        public System.Collections.Generic.List<ProtoOAOrder> Orders { get; } = new System.Collections.Generic.List<ProtoOAOrder>();
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAOrderErrorEvent : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAOrderErrorEvent : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaOrderErrorEvent)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaOrderErrorEvent)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaOrderErrorEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(5, IsRequired = true)]
+        [ProtoBuf.ProtoMember(5, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public string errorCode { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3)]
+        [ProtoBuf.ProtoMember(3)]
         public long orderId
         {
             get { return __pbn__orderId.GetValueOrDefault(); }
             set { __pbn__orderId = value; }
         }
-        public bool ShouldSerializeorderId() => __pbn__orderId != null;
-        public void ResetorderId() => __pbn__orderId = null;
+
+        public  bool  ShouldSerializeorderId() => __pbn__orderId != null;
+        public  void  ResetorderId()           => __pbn__orderId = null;
         private long? __pbn__orderId;
 
-        [global::ProtoBuf.ProtoMember(6)]
+        [ProtoBuf.ProtoMember(6)]
         public long positionId
         {
             get { return __pbn__positionId.GetValueOrDefault(); }
             set { __pbn__positionId = value; }
         }
-        public bool ShouldSerializepositionId() => __pbn__positionId != null;
-        public void ResetpositionId() => __pbn__positionId = null;
+
+        public  bool  ShouldSerializepositionId() => __pbn__positionId != null;
+        public  void  ResetpositionId()           => __pbn__positionId = null;
         private long? __pbn__positionId;
 
-        [global::ProtoBuf.ProtoMember(7, Name = @"description")]
-        [global::System.ComponentModel.DefaultValue("")]
+        [ProtoBuf.ProtoMember(7, Name = @"description")]
+        [System.ComponentModel.DefaultValue("")]
         public string Description
         {
             get { return __pbn__Description ?? ""; }
             set { __pbn__Description = value; }
         }
-        public bool ShouldSerializeDescription() => __pbn__Description != null;
-        public void ResetDescription() => __pbn__Description = null;
-        private string __pbn__Description;
 
+        public  bool   ShouldSerializeDescription() => __pbn__Description != null;
+        public  void   ResetDescription()           => __pbn__Description = null;
+        private string __pbn__Description;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOADealListReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOADealListReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaDealListReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaDealListReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaDealListReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public long fromTimestamp { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4, IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public long toTimestamp { get; set; }
 
-        [global::ProtoBuf.ProtoMember(5)]
+        [ProtoBuf.ProtoMember(5)]
         public int maxRows
         {
             get { return __pbn__maxRows.GetValueOrDefault(); }
             set { __pbn__maxRows = value; }
         }
-        public bool ShouldSerializemaxRows() => __pbn__maxRows != null;
-        public void ResetmaxRows() => __pbn__maxRows = null;
-        private int? __pbn__maxRows;
 
+        public  bool ShouldSerializemaxRows() => __pbn__maxRows != null;
+        public  void ResetmaxRows()           => __pbn__maxRows = null;
+        private int? __pbn__maxRows;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOADealListRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOADealListRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaDealListRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaDealListRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaDealListRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"deal")]
-        public global::System.Collections.Generic.List<ProtoOADeal> Deals { get; } = new global::System.Collections.Generic.List<ProtoOADeal>();
+        [ProtoBuf.ProtoMember(3, Name = @"deal")]
+        public System.Collections.Generic.List<ProtoOADeal> Deals { get; } = new System.Collections.Generic.List<ProtoOADeal>();
 
-        [global::ProtoBuf.ProtoMember(4, IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public bool hasMore { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAExpectedMarginReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAExpectedMarginReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaExpectedMarginReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaExpectedMarginReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaExpectedMarginReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public long symbolId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4, Name = @"volume")]
+        [ProtoBuf.ProtoMember(4, Name = @"volume")]
         public long[] Volumes { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAExpectedMarginRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAExpectedMarginRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaExpectedMarginRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaExpectedMarginRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaExpectedMarginRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"margin")]
-        public global::System.Collections.Generic.List<ProtoOAExpectedMargin> Margins { get; } = new global::System.Collections.Generic.List<ProtoOAExpectedMargin>();
-
+        [ProtoBuf.ProtoMember(3, Name = @"margin")]
+        public System.Collections.Generic.List<ProtoOAExpectedMargin> Margins { get; } = new System.Collections.Generic.List<ProtoOAExpectedMargin>();
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAMarginChangedEvent : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAMarginChangedEvent : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaMarginChangedEvent)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaMarginChangedEvent)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaMarginChangedEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public ulong positionId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4, IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public ulong usedMargin { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOACashFlowHistoryListReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOACashFlowHistoryListReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaCashFlowHistoryListReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaCashFlowHistoryListReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaCashFlowHistoryListReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public long fromTimestamp { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4, IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public long toTimestamp { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOACashFlowHistoryListRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOACashFlowHistoryListRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaCashFlowHistoryListRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaCashFlowHistoryListRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaCashFlowHistoryListRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"depositWithdraw")]
-        public global::System.Collections.Generic.List<ProtoOADepositWithdraw> depositWithdraws { get; } = new global::System.Collections.Generic.List<ProtoOADepositWithdraw>();
-
+        [ProtoBuf.ProtoMember(3, Name = @"depositWithdraw")]
+        public System.Collections.Generic.List<ProtoOADepositWithdraw> depositWithdraws { get; } = new System.Collections.Generic.List<ProtoOADepositWithdraw>();
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAGetAccountListByAccessTokenReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAGetAccountListByAccessTokenReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaGetAccountsByAccessTokenReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaGetAccountsByAccessTokenReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaGetAccountsByAccessTokenReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public string accessToken { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAGetAccountListByAccessTokenRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAGetAccountListByAccessTokenRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaGetAccountsByAccessTokenRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaGetAccountsByAccessTokenRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaGetAccountsByAccessTokenRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public string accessToken { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAClientPermissionScope.ScopeView)]
+        [ProtoBuf.ProtoMember(3)]
+        [System.ComponentModel.DefaultValue(ProtoOAClientPermissionScope.ScopeView)]
         public ProtoOAClientPermissionScope permissionScope
         {
             get { return __pbn__permissionScope ?? ProtoOAClientPermissionScope.ScopeView; }
             set { __pbn__permissionScope = value; }
         }
-        public bool ShouldSerializepermissionScope() => __pbn__permissionScope != null;
-        public void ResetpermissionScope() => __pbn__permissionScope = null;
+
+        public  bool                          ShouldSerializepermissionScope() => __pbn__permissionScope != null;
+        public  void                          ResetpermissionScope()           => __pbn__permissionScope = null;
         private ProtoOAClientPermissionScope? __pbn__permissionScope;
 
-        [global::ProtoBuf.ProtoMember(4, Name = @"ctidTraderAccount")]
-        public global::System.Collections.Generic.List<ProtoOACtidTraderAccount> ctidTraderAccounts { get; } = new global::System.Collections.Generic.List<ProtoOACtidTraderAccount>();
-
+        [ProtoBuf.ProtoMember(4, Name = @"ctidTraderAccount")]
+        public System.Collections.Generic.List<ProtoOACtidTraderAccount> ctidTraderAccounts { get; } =
+            new System.Collections.Generic.List<ProtoOACtidTraderAccount>();
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOASubscribeSpotsReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOASubscribeSpotsReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSubscribeSpotsReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSubscribeSpotsReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSubscribeSpotsReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"symbolId")]
+        [ProtoBuf.ProtoMember(3, Name = @"symbolId")]
         public long[] symbolIds { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOASubscribeSpotsRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOASubscribeSpotsRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSubscribeSpotsRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSubscribeSpotsRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSubscribeSpotsRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAUnsubscribeSpotsReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAUnsubscribeSpotsReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaUnsubscribeSpotsReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaUnsubscribeSpotsReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaUnsubscribeSpotsReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"symbolId")]
+        [ProtoBuf.ProtoMember(3, Name = @"symbolId")]
         public long[] symbolIds { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAUnsubscribeSpotsRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAUnsubscribeSpotsRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaUnsubscribeSpotsRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaUnsubscribeSpotsRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaUnsubscribeSpotsRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOASpotEvent : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOASpotEvent : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSpotEvent)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSpotEvent)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSpotEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public long symbolId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4, Name = @"bid")]
+        [ProtoBuf.ProtoMember(4, Name = @"bid")]
         public ulong Bid
         {
             get { return __pbn__Bid.GetValueOrDefault(); }
             set { __pbn__Bid = value; }
         }
-        public bool ShouldSerializeBid() => __pbn__Bid != null;
-        public void ResetBid() => __pbn__Bid = null;
+
+        public  bool   ShouldSerializeBid() => __pbn__Bid != null;
+        public  void   ResetBid()           => __pbn__Bid = null;
         private ulong? __pbn__Bid;
 
-        [global::ProtoBuf.ProtoMember(5, Name = @"ask")]
+        [ProtoBuf.ProtoMember(5, Name = @"ask")]
         public ulong Ask
         {
             get { return __pbn__Ask.GetValueOrDefault(); }
             set { __pbn__Ask = value; }
         }
-        public bool ShouldSerializeAsk() => __pbn__Ask != null;
-        public void ResetAsk() => __pbn__Ask = null;
+
+        public  bool   ShouldSerializeAsk() => __pbn__Ask != null;
+        public  void   ResetAsk()           => __pbn__Ask = null;
         private ulong? __pbn__Ask;
 
-        [global::ProtoBuf.ProtoMember(6, Name = @"trendbar")]
-        public global::System.Collections.Generic.List<ProtoOATrendbar> Trendbars { get; } = new global::System.Collections.Generic.List<ProtoOATrendbar>();
-
+        [ProtoBuf.ProtoMember(6, Name = @"trendbar")]
+        public System.Collections.Generic.List<ProtoOATrendbar> Trendbars { get; } = new System.Collections.Generic.List<ProtoOATrendbar>();
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOASubscribeLiveTrendbarReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOASubscribeLiveTrendbarReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSubscribeLiveTrendbarReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSubscribeLiveTrendbarReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSubscribeLiveTrendbarReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"period", IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, Name = @"period", IsRequired = true)]
         public ProtoOATrendbarPeriod Period { get; set; } = ProtoOATrendbarPeriod.M1;
 
-        [global::ProtoBuf.ProtoMember(4, IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public long symbolId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOASubscribeLiveTrendbarRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOASubscribeLiveTrendbarRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSubscribeLiveTrendbarRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSubscribeLiveTrendbarRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSubscribeLiveTrendbarRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAUnsubscribeLiveTrendbarReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAUnsubscribeLiveTrendbarReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaUnsubscribeLiveTrendbarReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaUnsubscribeLiveTrendbarReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaUnsubscribeLiveTrendbarReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"period", IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, Name = @"period", IsRequired = true)]
         public ProtoOATrendbarPeriod Period { get; set; } = ProtoOATrendbarPeriod.M1;
 
-        [global::ProtoBuf.ProtoMember(4, IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public long symbolId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAUnsubscribeLiveTrendbarRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAUnsubscribeLiveTrendbarRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaUnsubscribeLiveTrendbarRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaUnsubscribeLiveTrendbarRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaUnsubscribeLiveTrendbarRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAGetTrendbarsReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAGetTrendbarsReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaGetTrendbarsReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaGetTrendbarsReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaGetTrendbarsReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public long fromTimestamp { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4, IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public long toTimestamp { get; set; }
 
-        [global::ProtoBuf.ProtoMember(5, Name = @"period", IsRequired = true)]
+        [ProtoBuf.ProtoMember(5, Name = @"period", IsRequired = true)]
         public ProtoOATrendbarPeriod Period { get; set; } = ProtoOATrendbarPeriod.M1;
 
-        [global::ProtoBuf.ProtoMember(6, IsRequired = true)]
+        [ProtoBuf.ProtoMember(6, IsRequired = true)]
         public long symbolId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAGetTrendbarsRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAGetTrendbarsRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaGetTrendbarsRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaGetTrendbarsRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaGetTrendbarsRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"period", IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, Name = @"period", IsRequired = true)]
         public ProtoOATrendbarPeriod Period { get; set; } = ProtoOATrendbarPeriod.M1;
 
-        [global::ProtoBuf.ProtoMember(4, Name = @"timestamp", IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, Name = @"timestamp", IsRequired = true)]
         public long Timestamp { get; set; }
 
-        [global::ProtoBuf.ProtoMember(5, Name = @"trendbar")]
-        public global::System.Collections.Generic.List<ProtoOATrendbar> Trendbars { get; } = new global::System.Collections.Generic.List<ProtoOATrendbar>();
+        [ProtoBuf.ProtoMember(5, Name = @"trendbar")]
+        public System.Collections.Generic.List<ProtoOATrendbar> Trendbars { get; } = new System.Collections.Generic.List<ProtoOATrendbar>();
 
-        [global::ProtoBuf.ProtoMember(6)]
+        [ProtoBuf.ProtoMember(6)]
         public long symbolId
         {
             get { return __pbn__symbolId.GetValueOrDefault(); }
             set { __pbn__symbolId = value; }
         }
-        public bool ShouldSerializesymbolId() => __pbn__symbolId != null;
-        public void ResetsymbolId() => __pbn__symbolId = null;
-        private long? __pbn__symbolId;
 
+        public  bool  ShouldSerializesymbolId() => __pbn__symbolId != null;
+        public  void  ResetsymbolId()           => __pbn__symbolId = null;
+        private long? __pbn__symbolId;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAGetTickDataReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAGetTickDataReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaGetTickdataReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaGetTickdataReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaGetTickdataReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public long symbolId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4, Name = @"type", IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, Name = @"type", IsRequired = true)]
         public ProtoOAQuoteType Type { get; set; } = ProtoOAQuoteType.Bid;
 
-        [global::ProtoBuf.ProtoMember(5, IsRequired = true)]
+        [ProtoBuf.ProtoMember(5, IsRequired = true)]
         public long fromTimestamp { get; set; }
 
-        [global::ProtoBuf.ProtoMember(6, IsRequired = true)]
+        [ProtoBuf.ProtoMember(6, IsRequired = true)]
         public long toTimestamp { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAGetTickDataRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAGetTickDataRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaGetTickdataRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaGetTickdataRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaGetTickdataRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"tickData")]
-        public global::System.Collections.Generic.List<ProtoOATickData> tickDatas { get; } = new global::System.Collections.Generic.List<ProtoOATickData>();
+        [ProtoBuf.ProtoMember(3, Name = @"tickData")]
+        public System.Collections.Generic.List<ProtoOATickData> tickDatas { get; } = new System.Collections.Generic.List<ProtoOATickData>();
 
-        [global::ProtoBuf.ProtoMember(4, IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public bool hasMore { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAGetCtidProfileByTokenReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAGetCtidProfileByTokenReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaGetCtidProfileByTokenReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaGetCtidProfileByTokenReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaGetCtidProfileByTokenReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public string accessToken { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAGetCtidProfileByTokenRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAGetCtidProfileByTokenRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaGetCtidProfileByTokenRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaGetCtidProfileByTokenRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaGetCtidProfileByTokenRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, Name = @"profile", IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, Name = @"profile", IsRequired = true)]
         public ProtoOACtidProfile Profile { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOADepthEvent : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOADepthEvent : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaDepthEvent)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaDepthEvent)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaDepthEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public ulong symbolId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4)]
-        public global::System.Collections.Generic.List<ProtoOADepthQuote> newQuotes { get; } = new global::System.Collections.Generic.List<ProtoOADepthQuote>();
+        [ProtoBuf.ProtoMember(4)]
+        public System.Collections.Generic.List<ProtoOADepthQuote> newQuotes { get; } = new System.Collections.Generic.List<ProtoOADepthQuote>();
 
-        [global::ProtoBuf.ProtoMember(5, IsPacked = true)]
+        [ProtoBuf.ProtoMember(5, IsPacked = true)]
         public ulong[] deletedQuotes { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOASubscribeDepthQuotesReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOASubscribeDepthQuotesReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSubscribeDepthQuotesReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSubscribeDepthQuotesReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSubscribeDepthQuotesReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"symbolId")]
+        [ProtoBuf.ProtoMember(3, Name = @"symbolId")]
         public long[] symbolIds { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOASubscribeDepthQuotesRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOASubscribeDepthQuotesRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSubscribeDepthQuotesRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSubscribeDepthQuotesRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSubscribeDepthQuotesRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAUnsubscribeDepthQuotesReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAUnsubscribeDepthQuotesReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaUnsubscribeDepthQuotesReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaUnsubscribeDepthQuotesReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaUnsubscribeDepthQuotesReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"symbolId")]
+        [ProtoBuf.ProtoMember(3, Name = @"symbolId")]
         public long[] symbolIds { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAUnsubscribeDepthQuotesRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAUnsubscribeDepthQuotesRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaUnsubscribeDepthQuotesRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaUnsubscribeDepthQuotesRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaUnsubscribeDepthQuotesRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOASymbolCategoryListReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOASymbolCategoryListReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSymbolCategoryReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSymbolCategoryReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSymbolCategoryReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOASymbolCategoryListRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOASymbolCategoryListRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSymbolCategoryRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaSymbolCategoryRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSymbolCategoryRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"symbolCategory")]
-        public global::System.Collections.Generic.List<ProtoOASymbolCategory> symbolCategories { get; } = new global::System.Collections.Generic.List<ProtoOASymbolCategory>();
-
+        [ProtoBuf.ProtoMember(3, Name = @"symbolCategory")]
+        public System.Collections.Generic.List<ProtoOASymbolCategory> symbolCategories { get; } = new System.Collections.Generic.List<ProtoOASymbolCategory>();
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAAccountLogoutReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAAccountLogoutReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAccountLogoutReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAccountLogoutReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAccountLogoutReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAAccountLogoutRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAAccountLogoutRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAccountLogoutRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAccountLogoutRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAccountLogoutRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAAccountDisconnectEvent : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAAccountDisconnectEvent : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAccountDisconnectEvent)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaAccountDisconnectEvent)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAccountDisconnectEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAMarginCallListReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAMarginCallListReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaMarginCallListReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaMarginCallListReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaMarginCallListReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAMarginCallListRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAMarginCallListRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaMarginCallListRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaMarginCallListRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaMarginCallListRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, Name = @"marginCall")]
-        public global::System.Collections.Generic.List<ProtoOAMarginCall> marginCalls { get; } = new global::System.Collections.Generic.List<ProtoOAMarginCall>();
-
+        [ProtoBuf.ProtoMember(2, Name = @"marginCall")]
+        public System.Collections.Generic.List<ProtoOAMarginCall> marginCalls { get; } = new System.Collections.Generic.List<ProtoOAMarginCall>();
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAMarginCallUpdateReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAMarginCallUpdateReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaMarginCallUpdateReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaMarginCallUpdateReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaMarginCallUpdateReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public ProtoOAMarginCall marginCall { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAMarginCallUpdateRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAMarginCallUpdateRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaMarginCallUpdateRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaMarginCallUpdateRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaMarginCallUpdateRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
-        private ProtoOAPayloadType? __pbn__payloadType;
 
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
+        private ProtoOAPayloadType? __pbn__payloadType;
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAMarginCallUpdateEvent : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAMarginCallUpdateEvent : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaMarginCallUpdateEvent)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaMarginCallUpdateEvent)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaMarginCallUpdateEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public ProtoOAMarginCall marginCall { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOAMarginCallTriggerEvent : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOAMarginCallTriggerEvent : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaMarginCallTriggerEvent)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaMarginCallTriggerEvent)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaMarginCallTriggerEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public ProtoOAMarginCall marginCall { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOARefreshTokenReq : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOARefreshTokenReq : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaRefreshTokenReq)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaRefreshTokenReq)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaRefreshTokenReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public string refreshToken { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
-    public partial class ProtoOARefreshTokenRes : global::ProtoBuf.IExtensible
+    [ProtoBuf.ProtoContract()]
+    public partial class ProtoOARefreshTokenRes : ProtoBuf.IExtensible
     {
-        private global::ProtoBuf.IExtension __pbn__extensionData;
-        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+        private ProtoBuf.IExtension __pbn__extensionData;
 
-        [global::ProtoBuf.ProtoMember(1)]
-        [global::System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaRefreshTokenRes)]
+        ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [ProtoBuf.ProtoMember(1)]
+        [System.ComponentModel.DefaultValue(ProtoOAPayloadType.ProtoOaRefreshTokenRes)]
         public ProtoOAPayloadType payloadType
         {
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaRefreshTokenRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [global::ProtoBuf.ProtoMember(2, IsRequired = true)]
+        [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public string accessToken { get; set; }
 
-        [global::ProtoBuf.ProtoMember(3, IsRequired = true)]
+        [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public string tokenType { get; set; }
 
-        [global::ProtoBuf.ProtoMember(4, IsRequired = true)]
+        [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public long expiresIn { get; set; }
 
-        [global::ProtoBuf.ProtoMember(5, IsRequired = true)]
+        [ProtoBuf.ProtoMember(5, IsRequired = true)]
         public string refreshToken { get; set; }
-
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoPayloadType
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_MESSAGE")]
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_MESSAGE")]
         ProtoMessage = 5,
-        [global::ProtoBuf.ProtoEnum(Name = @"ERROR_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"ERROR_RES")]
         ErrorRes = 50,
-        [global::ProtoBuf.ProtoEnum(Name = @"HEARTBEAT_EVENT")]
+
+        [ProtoBuf.ProtoEnum(Name = @"HEARTBEAT_EVENT")]
         HeartbeatEvent = 51,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoErrorCode
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"UNKNOWN_ERROR")]
+        [ProtoBuf.ProtoEnum(Name = @"UNKNOWN_ERROR")]
         UnknownError = 1,
-        [global::ProtoBuf.ProtoEnum(Name = @"UNSUPPORTED_MESSAGE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"UNSUPPORTED_MESSAGE")]
         UnsupportedMessage = 2,
-        [global::ProtoBuf.ProtoEnum(Name = @"INVALID_REQUEST")]
+
+        [ProtoBuf.ProtoEnum(Name = @"INVALID_REQUEST")]
         InvalidRequest = 3,
-        [global::ProtoBuf.ProtoEnum(Name = @"TIMEOUT_ERROR")]
+
+        [ProtoBuf.ProtoEnum(Name = @"TIMEOUT_ERROR")]
         TimeoutError = 5,
-        [global::ProtoBuf.ProtoEnum(Name = @"ENTITY_NOT_FOUND")]
+
+        [ProtoBuf.ProtoEnum(Name = @"ENTITY_NOT_FOUND")]
         EntityNotFound = 6,
-        [global::ProtoBuf.ProtoEnum(Name = @"CANT_ROUTE_REQUEST")]
+
+        [ProtoBuf.ProtoEnum(Name = @"CANT_ROUTE_REQUEST")]
         CantRouteRequest = 7,
-        [global::ProtoBuf.ProtoEnum(Name = @"FRAME_TOO_LONG")]
+
+        [ProtoBuf.ProtoEnum(Name = @"FRAME_TOO_LONG")]
         FrameTooLong = 8,
-        [global::ProtoBuf.ProtoEnum(Name = @"MARKET_CLOSED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"MARKET_CLOSED")]
         MarketClosed = 9,
-        [global::ProtoBuf.ProtoEnum(Name = @"CONCURRENT_MODIFICATION")]
+
+        [ProtoBuf.ProtoEnum(Name = @"CONCURRENT_MODIFICATION")]
         ConcurrentModification = 10,
-        [global::ProtoBuf.ProtoEnum(Name = @"BLOCKED_PAYLOAD_TYPE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BLOCKED_PAYLOAD_TYPE")]
         BlockedPayloadType = 11,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOAPayloadType
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_APPLICATION_AUTH_REQ")]
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_APPLICATION_AUTH_REQ")]
         ProtoOaApplicationAuthReq = 2100,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_APPLICATION_AUTH_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_APPLICATION_AUTH_RES")]
         ProtoOaApplicationAuthRes = 2101,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ACCOUNT_AUTH_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ACCOUNT_AUTH_REQ")]
         ProtoOaAccountAuthReq = 2102,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ACCOUNT_AUTH_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ACCOUNT_AUTH_RES")]
         ProtoOaAccountAuthRes = 2103,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_VERSION_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_VERSION_REQ")]
         ProtoOaVersionReq = 2104,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_VERSION_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_VERSION_RES")]
         ProtoOaVersionRes = 2105,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_NEW_ORDER_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_NEW_ORDER_REQ")]
         ProtoOaNewOrderReq = 2106,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_TRAILING_SL_CHANGED_EVENT")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_TRAILING_SL_CHANGED_EVENT")]
         ProtoOaTrailingSlChangedEvent = 2107,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_CANCEL_ORDER_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_CANCEL_ORDER_REQ")]
         ProtoOaCancelOrderReq = 2108,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_AMEND_ORDER_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_AMEND_ORDER_REQ")]
         ProtoOaAmendOrderReq = 2109,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_AMEND_POSITION_SLTP_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_AMEND_POSITION_SLTP_REQ")]
         ProtoOaAmendPositionSltpReq = 2110,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_CLOSE_POSITION_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_CLOSE_POSITION_REQ")]
         ProtoOaClosePositionReq = 2111,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ASSET_LIST_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ASSET_LIST_REQ")]
         ProtoOaAssetListReq = 2112,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ASSET_LIST_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ASSET_LIST_RES")]
         ProtoOaAssetListRes = 2113,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOLS_LIST_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOLS_LIST_REQ")]
         ProtoOaSymbolsListReq = 2114,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOLS_LIST_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOLS_LIST_RES")]
         ProtoOaSymbolsListRes = 2115,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOL_BY_ID_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOL_BY_ID_REQ")]
         ProtoOaSymbolByIdReq = 2116,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOL_BY_ID_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOL_BY_ID_RES")]
         ProtoOaSymbolByIdRes = 2117,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOLS_FOR_CONVERSION_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOLS_FOR_CONVERSION_REQ")]
         ProtoOaSymbolsForConversionReq = 2118,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOLS_FOR_CONVERSION_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOLS_FOR_CONVERSION_RES")]
         ProtoOaSymbolsForConversionRes = 2119,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOL_CHANGED_EVENT")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOL_CHANGED_EVENT")]
         ProtoOaSymbolChangedEvent = 2120,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_TRADER_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_TRADER_REQ")]
         ProtoOaTraderReq = 2121,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_TRADER_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_TRADER_RES")]
         ProtoOaTraderRes = 2122,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_TRADER_UPDATE_EVENT")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_TRADER_UPDATE_EVENT")]
         ProtoOaTraderUpdateEvent = 2123,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_RECONCILE_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_RECONCILE_REQ")]
         ProtoOaReconcileReq = 2124,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_RECONCILE_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_RECONCILE_RES")]
         ProtoOaReconcileRes = 2125,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_EXECUTION_EVENT")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_EXECUTION_EVENT")]
         ProtoOaExecutionEvent = 2126,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SUBSCRIBE_SPOTS_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SUBSCRIBE_SPOTS_REQ")]
         ProtoOaSubscribeSpotsReq = 2127,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SUBSCRIBE_SPOTS_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SUBSCRIBE_SPOTS_RES")]
         ProtoOaSubscribeSpotsRes = 2128,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_UNSUBSCRIBE_SPOTS_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_UNSUBSCRIBE_SPOTS_REQ")]
         ProtoOaUnsubscribeSpotsReq = 2129,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_UNSUBSCRIBE_SPOTS_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_UNSUBSCRIBE_SPOTS_RES")]
         ProtoOaUnsubscribeSpotsRes = 2130,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SPOT_EVENT")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SPOT_EVENT")]
         ProtoOaSpotEvent = 2131,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ORDER_ERROR_EVENT")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ORDER_ERROR_EVENT")]
         ProtoOaOrderErrorEvent = 2132,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_DEAL_LIST_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_DEAL_LIST_REQ")]
         ProtoOaDealListReq = 2133,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_DEAL_LIST_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_DEAL_LIST_RES")]
         ProtoOaDealListRes = 2134,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SUBSCRIBE_LIVE_TRENDBAR_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SUBSCRIBE_LIVE_TRENDBAR_REQ")]
         ProtoOaSubscribeLiveTrendbarReq = 2135,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_UNSUBSCRIBE_LIVE_TRENDBAR_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_UNSUBSCRIBE_LIVE_TRENDBAR_REQ")]
         ProtoOaUnsubscribeLiveTrendbarReq = 2136,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_TRENDBARS_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_TRENDBARS_REQ")]
         ProtoOaGetTrendbarsReq = 2137,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_TRENDBARS_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_TRENDBARS_RES")]
         ProtoOaGetTrendbarsRes = 2138,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_EXPECTED_MARGIN_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_EXPECTED_MARGIN_REQ")]
         ProtoOaExpectedMarginReq = 2139,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_EXPECTED_MARGIN_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_EXPECTED_MARGIN_RES")]
         ProtoOaExpectedMarginRes = 2140,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_MARGIN_CHANGED_EVENT")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_MARGIN_CHANGED_EVENT")]
         ProtoOaMarginChangedEvent = 2141,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ERROR_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ERROR_RES")]
         ProtoOaErrorRes = 2142,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_CASH_FLOW_HISTORY_LIST_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_CASH_FLOW_HISTORY_LIST_REQ")]
         ProtoOaCashFlowHistoryListReq = 2143,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_CASH_FLOW_HISTORY_LIST_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_CASH_FLOW_HISTORY_LIST_RES")]
         ProtoOaCashFlowHistoryListRes = 2144,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_TICKDATA_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_TICKDATA_REQ")]
         ProtoOaGetTickdataReq = 2145,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_TICKDATA_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_TICKDATA_RES")]
         ProtoOaGetTickdataRes = 2146,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ACCOUNTS_TOKEN_INVALIDATED_EVENT")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ACCOUNTS_TOKEN_INVALIDATED_EVENT")]
         ProtoOaAccountsTokenInvalidatedEvent = 2147,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_CLIENT_DISCONNECT_EVENT")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_CLIENT_DISCONNECT_EVENT")]
         ProtoOaClientDisconnectEvent = 2148,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_ACCOUNTS_BY_ACCESS_TOKEN_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_ACCOUNTS_BY_ACCESS_TOKEN_REQ")]
         ProtoOaGetAccountsByAccessTokenReq = 2149,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_ACCOUNTS_BY_ACCESS_TOKEN_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_ACCOUNTS_BY_ACCESS_TOKEN_RES")]
         ProtoOaGetAccountsByAccessTokenRes = 2150,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_CTID_PROFILE_BY_TOKEN_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_CTID_PROFILE_BY_TOKEN_REQ")]
         ProtoOaGetCtidProfileByTokenReq = 2151,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_CTID_PROFILE_BY_TOKEN_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_CTID_PROFILE_BY_TOKEN_RES")]
         ProtoOaGetCtidProfileByTokenRes = 2152,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ASSET_CLASS_LIST_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ASSET_CLASS_LIST_REQ")]
         ProtoOaAssetClassListReq = 2153,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ASSET_CLASS_LIST_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ASSET_CLASS_LIST_RES")]
         ProtoOaAssetClassListRes = 2154,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_DEPTH_EVENT")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_DEPTH_EVENT")]
         ProtoOaDepthEvent = 2155,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SUBSCRIBE_DEPTH_QUOTES_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SUBSCRIBE_DEPTH_QUOTES_REQ")]
         ProtoOaSubscribeDepthQuotesReq = 2156,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SUBSCRIBE_DEPTH_QUOTES_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SUBSCRIBE_DEPTH_QUOTES_RES")]
         ProtoOaSubscribeDepthQuotesRes = 2157,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_UNSUBSCRIBE_DEPTH_QUOTES_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_UNSUBSCRIBE_DEPTH_QUOTES_REQ")]
         ProtoOaUnsubscribeDepthQuotesReq = 2158,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_UNSUBSCRIBE_DEPTH_QUOTES_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_UNSUBSCRIBE_DEPTH_QUOTES_RES")]
         ProtoOaUnsubscribeDepthQuotesRes = 2159,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOL_CATEGORY_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOL_CATEGORY_REQ")]
         ProtoOaSymbolCategoryReq = 2160,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOL_CATEGORY_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOL_CATEGORY_RES")]
         ProtoOaSymbolCategoryRes = 2161,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ACCOUNT_LOGOUT_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ACCOUNT_LOGOUT_REQ")]
         ProtoOaAccountLogoutReq = 2162,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ACCOUNT_LOGOUT_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ACCOUNT_LOGOUT_RES")]
         ProtoOaAccountLogoutRes = 2163,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ACCOUNT_DISCONNECT_EVENT")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ACCOUNT_DISCONNECT_EVENT")]
         ProtoOaAccountDisconnectEvent = 2164,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SUBSCRIBE_LIVE_TRENDBAR_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SUBSCRIBE_LIVE_TRENDBAR_RES")]
         ProtoOaSubscribeLiveTrendbarRes = 2165,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_UNSUBSCRIBE_LIVE_TRENDBAR_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_UNSUBSCRIBE_LIVE_TRENDBAR_RES")]
         ProtoOaUnsubscribeLiveTrendbarRes = 2166,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_MARGIN_CALL_LIST_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_MARGIN_CALL_LIST_REQ")]
         ProtoOaMarginCallListReq = 2167,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_MARGIN_CALL_LIST_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_MARGIN_CALL_LIST_RES")]
         ProtoOaMarginCallListRes = 2168,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_MARGIN_CALL_UPDATE_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_MARGIN_CALL_UPDATE_REQ")]
         ProtoOaMarginCallUpdateReq = 2169,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_MARGIN_CALL_UPDATE_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_MARGIN_CALL_UPDATE_RES")]
         ProtoOaMarginCallUpdateRes = 2170,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_MARGIN_CALL_UPDATE_EVENT")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_MARGIN_CALL_UPDATE_EVENT")]
         ProtoOaMarginCallUpdateEvent = 2171,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_MARGIN_CALL_TRIGGER_EVENT")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_MARGIN_CALL_TRIGGER_EVENT")]
         ProtoOaMarginCallTriggerEvent = 2172,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_REFRESH_TOKEN_REQ")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_REFRESH_TOKEN_REQ")]
         ProtoOaRefreshTokenReq = 2173,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTO_OA_REFRESH_TOKEN_RES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_REFRESH_TOKEN_RES")]
         ProtoOaRefreshTokenRes = 2174,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOADayOfWeek
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"NONE")]
+        [ProtoBuf.ProtoEnum(Name = @"NONE")]
         None = 0,
-        [global::ProtoBuf.ProtoEnum(Name = @"MONDAY")]
+
+        [ProtoBuf.ProtoEnum(Name = @"MONDAY")]
         Monday = 1,
-        [global::ProtoBuf.ProtoEnum(Name = @"TUESDAY")]
+
+        [ProtoBuf.ProtoEnum(Name = @"TUESDAY")]
         Tuesday = 2,
-        [global::ProtoBuf.ProtoEnum(Name = @"WEDNESDAY")]
+
+        [ProtoBuf.ProtoEnum(Name = @"WEDNESDAY")]
         Wednesday = 3,
-        [global::ProtoBuf.ProtoEnum(Name = @"THURSDAY")]
+
+        [ProtoBuf.ProtoEnum(Name = @"THURSDAY")]
         Thursday = 4,
-        [global::ProtoBuf.ProtoEnum(Name = @"FRIDAY")]
+
+        [ProtoBuf.ProtoEnum(Name = @"FRIDAY")]
         Friday = 5,
-        [global::ProtoBuf.ProtoEnum(Name = @"SATURDAY")]
+
+        [ProtoBuf.ProtoEnum(Name = @"SATURDAY")]
         Saturday = 6,
-        [global::ProtoBuf.ProtoEnum(Name = @"SUNDAY")]
+
+        [ProtoBuf.ProtoEnum(Name = @"SUNDAY")]
         Sunday = 7,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOACommissionType
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"USD_PER_MIL_USD")]
+        [ProtoBuf.ProtoEnum(Name = @"USD_PER_MIL_USD")]
         UsdPerMilUsd = 1,
-        [global::ProtoBuf.ProtoEnum(Name = @"USD_PER_LOT")]
+
+        [ProtoBuf.ProtoEnum(Name = @"USD_PER_LOT")]
         UsdPerLot = 2,
-        [global::ProtoBuf.ProtoEnum(Name = @"PERCENTAGE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PERCENTAGE")]
         Percentage = 3,
-        [global::ProtoBuf.ProtoEnum(Name = @"QUOTE_CCY_PER_LOT")]
+
+        [ProtoBuf.ProtoEnum(Name = @"QUOTE_CCY_PER_LOT")]
         QuoteCcyPerLot = 4,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOASymbolDistanceType
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"SYMBOL_DISTANCE_IN_POINTS")]
+        [ProtoBuf.ProtoEnum(Name = @"SYMBOL_DISTANCE_IN_POINTS")]
         SymbolDistanceInPoints = 1,
-        [global::ProtoBuf.ProtoEnum(Name = @"SYMBOL_DISTANCE_IN_PERCENTAGE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"SYMBOL_DISTANCE_IN_PERCENTAGE")]
         SymbolDistanceInPercentage = 2,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOAMinCommissionType
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"CURRENCY")]
+        [ProtoBuf.ProtoEnum(Name = @"CURRENCY")]
         Currency = 1,
-        [global::ProtoBuf.ProtoEnum(Name = @"QUOTE_CURRENCY")]
+
+        [ProtoBuf.ProtoEnum(Name = @"QUOTE_CURRENCY")]
         QuoteCurrency = 2,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOATradingMode
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"ENABLED")]
+        [ProtoBuf.ProtoEnum(Name = @"ENABLED")]
         Enabled = 0,
-        [global::ProtoBuf.ProtoEnum(Name = @"DISABLED_WITHOUT_PENDINGS_EXECUTION")]
+
+        [ProtoBuf.ProtoEnum(Name = @"DISABLED_WITHOUT_PENDINGS_EXECUTION")]
         DisabledWithoutPendingsExecution = 1,
-        [global::ProtoBuf.ProtoEnum(Name = @"DISABLED_WITH_PENDINGS_EXECUTION")]
+
+        [ProtoBuf.ProtoEnum(Name = @"DISABLED_WITH_PENDINGS_EXECUTION")]
         DisabledWithPendingsExecution = 2,
-        [global::ProtoBuf.ProtoEnum(Name = @"CLOSE_ONLY_MODE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"CLOSE_ONLY_MODE")]
         CloseOnlyMode = 3,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOASwapCalculationType
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"POINTS")]
+        [ProtoBuf.ProtoEnum(Name = @"POINTS")]
         Points = 0,
-        [global::ProtoBuf.ProtoEnum(Name = @"INTEREST")]
+
+        [ProtoBuf.ProtoEnum(Name = @"INTEREST")]
         Interest = 1,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOAAccessRights
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"FULL_ACCESS")]
+        [ProtoBuf.ProtoEnum(Name = @"FULL_ACCESS")]
         FullAccess = 0,
-        [global::ProtoBuf.ProtoEnum(Name = @"CLOSE_ONLY")]
+
+        [ProtoBuf.ProtoEnum(Name = @"CLOSE_ONLY")]
         CloseOnly = 1,
-        [global::ProtoBuf.ProtoEnum(Name = @"NO_TRADING")]
+
+        [ProtoBuf.ProtoEnum(Name = @"NO_TRADING")]
         NoTrading = 2,
-        [global::ProtoBuf.ProtoEnum(Name = @"NO_LOGIN")]
+
+        [ProtoBuf.ProtoEnum(Name = @"NO_LOGIN")]
         NoLogin = 3,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOATotalMarginCalculationType
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"MAX")]
+        [ProtoBuf.ProtoEnum(Name = @"MAX")]
         Max = 0,
-        [global::ProtoBuf.ProtoEnum(Name = @"SUM")]
+
+        [ProtoBuf.ProtoEnum(Name = @"SUM")]
         Sum = 1,
-        [global::ProtoBuf.ProtoEnum(Name = @"NET")]
+
+        [ProtoBuf.ProtoEnum(Name = @"NET")]
         Net = 2,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOAAccountType
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"HEDGED")]
+        [ProtoBuf.ProtoEnum(Name = @"HEDGED")]
         Hedged = 0,
-        [global::ProtoBuf.ProtoEnum(Name = @"NETTED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"NETTED")]
         Netted = 1,
-        [global::ProtoBuf.ProtoEnum(Name = @"SPREAD_BETTING")]
+
+        [ProtoBuf.ProtoEnum(Name = @"SPREAD_BETTING")]
         SpreadBetting = 2,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOANotificationType
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"MARGIN_LEVEL_THRESHOLD_1")]
+        [ProtoBuf.ProtoEnum(Name = @"MARGIN_LEVEL_THRESHOLD_1")]
         MarginLevelThreshold1 = 61,
-        [global::ProtoBuf.ProtoEnum(Name = @"MARGIN_LEVEL_THRESHOLD_2")]
+
+        [ProtoBuf.ProtoEnum(Name = @"MARGIN_LEVEL_THRESHOLD_2")]
         MarginLevelThreshold2 = 62,
-        [global::ProtoBuf.ProtoEnum(Name = @"MARGIN_LEVEL_THRESHOLD_3")]
+
+        [ProtoBuf.ProtoEnum(Name = @"MARGIN_LEVEL_THRESHOLD_3")]
         MarginLevelThreshold3 = 63,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOAErrorCode
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"OA_AUTH_TOKEN_EXPIRED")]
+        [ProtoBuf.ProtoEnum(Name = @"OA_AUTH_TOKEN_EXPIRED")]
         OaAuthTokenExpired = 1,
-        [global::ProtoBuf.ProtoEnum(Name = @"ACCOUNT_NOT_AUTHORIZED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"ACCOUNT_NOT_AUTHORIZED")]
         AccountNotAuthorized = 2,
-        [global::ProtoBuf.ProtoEnum(Name = @"ALREADY_LOGGED_IN")]
+
+        [ProtoBuf.ProtoEnum(Name = @"ALREADY_LOGGED_IN")]
         AlreadyLoggedIn = 14,
-        [global::ProtoBuf.ProtoEnum(Name = @"CH_CLIENT_AUTH_FAILURE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"CH_CLIENT_AUTH_FAILURE")]
         ChClientAuthFailure = 101,
-        [global::ProtoBuf.ProtoEnum(Name = @"CH_CLIENT_NOT_AUTHENTICATED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"CH_CLIENT_NOT_AUTHENTICATED")]
         ChClientNotAuthenticated = 102,
-        [global::ProtoBuf.ProtoEnum(Name = @"CH_CLIENT_ALREADY_AUTHENTICATED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"CH_CLIENT_ALREADY_AUTHENTICATED")]
         ChClientAlreadyAuthenticated = 103,
-        [global::ProtoBuf.ProtoEnum(Name = @"CH_ACCESS_TOKEN_INVALID")]
+
+        [ProtoBuf.ProtoEnum(Name = @"CH_ACCESS_TOKEN_INVALID")]
         ChAccessTokenInvalid = 104,
-        [global::ProtoBuf.ProtoEnum(Name = @"CH_SERVER_NOT_REACHABLE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"CH_SERVER_NOT_REACHABLE")]
         ChServerNotReachable = 105,
-        [global::ProtoBuf.ProtoEnum(Name = @"CH_CTID_TRADER_ACCOUNT_NOT_FOUND")]
+
+        [ProtoBuf.ProtoEnum(Name = @"CH_CTID_TRADER_ACCOUNT_NOT_FOUND")]
         ChCtidTraderAccountNotFound = 106,
-        [global::ProtoBuf.ProtoEnum(Name = @"CH_OA_CLIENT_NOT_FOUND")]
+
+        [ProtoBuf.ProtoEnum(Name = @"CH_OA_CLIENT_NOT_FOUND")]
         ChOaClientNotFound = 107,
-        [global::ProtoBuf.ProtoEnum(Name = @"REQUEST_FREQUENCY_EXCEEDED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"REQUEST_FREQUENCY_EXCEEDED")]
         RequestFrequencyExceeded = 108,
-        [global::ProtoBuf.ProtoEnum(Name = @"SERVER_IS_UNDER_MAINTENANCE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"SERVER_IS_UNDER_MAINTENANCE")]
         ServerIsUnderMaintenance = 109,
-        [global::ProtoBuf.ProtoEnum(Name = @"CHANNEL_IS_BLOCKED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"CHANNEL_IS_BLOCKED")]
         ChannelIsBlocked = 110,
-        [global::ProtoBuf.ProtoEnum(Name = @"CONNECTIONS_LIMIT_EXCEEDED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"CONNECTIONS_LIMIT_EXCEEDED")]
         ConnectionsLimitExceeded = 67,
-        [global::ProtoBuf.ProtoEnum(Name = @"NOT_SUBSCRIBED_TO_SPOTS")]
+
+        [ProtoBuf.ProtoEnum(Name = @"NOT_SUBSCRIBED_TO_SPOTS")]
         NotSubscribedToSpots = 112,
-        [global::ProtoBuf.ProtoEnum(Name = @"ALREADY_SUBSCRIBED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"ALREADY_SUBSCRIBED")]
         AlreadySubscribed = 113,
-        [global::ProtoBuf.ProtoEnum(Name = @"SYMBOL_NOT_FOUND")]
+
+        [ProtoBuf.ProtoEnum(Name = @"SYMBOL_NOT_FOUND")]
         SymbolNotFound = 114,
-        [global::ProtoBuf.ProtoEnum(Name = @"UNKNOWN_SYMBOL")]
+
+        [ProtoBuf.ProtoEnum(Name = @"UNKNOWN_SYMBOL")]
         UnknownSymbol = 115,
-        [global::ProtoBuf.ProtoEnum(Name = @"INCORRECT_BOUNDARIES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"INCORRECT_BOUNDARIES")]
         IncorrectBoundaries = 35,
-        [global::ProtoBuf.ProtoEnum(Name = @"NO_QUOTES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"NO_QUOTES")]
         NoQuotes = 117,
-        [global::ProtoBuf.ProtoEnum(Name = @"NOT_ENOUGH_MONEY")]
+
+        [ProtoBuf.ProtoEnum(Name = @"NOT_ENOUGH_MONEY")]
         NotEnoughMoney = 118,
-        [global::ProtoBuf.ProtoEnum(Name = @"MAX_EXPOSURE_REACHED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"MAX_EXPOSURE_REACHED")]
         MaxExposureReached = 119,
-        [global::ProtoBuf.ProtoEnum(Name = @"POSITION_NOT_FOUND")]
+
+        [ProtoBuf.ProtoEnum(Name = @"POSITION_NOT_FOUND")]
         PositionNotFound = 120,
-        [global::ProtoBuf.ProtoEnum(Name = @"ORDER_NOT_FOUND")]
+
+        [ProtoBuf.ProtoEnum(Name = @"ORDER_NOT_FOUND")]
         OrderNotFound = 121,
-        [global::ProtoBuf.ProtoEnum(Name = @"POSITION_NOT_OPEN")]
+
+        [ProtoBuf.ProtoEnum(Name = @"POSITION_NOT_OPEN")]
         PositionNotOpen = 122,
-        [global::ProtoBuf.ProtoEnum(Name = @"POSITION_LOCKED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"POSITION_LOCKED")]
         PositionLocked = 123,
-        [global::ProtoBuf.ProtoEnum(Name = @"TOO_MANY_POSITIONS")]
+
+        [ProtoBuf.ProtoEnum(Name = @"TOO_MANY_POSITIONS")]
         TooManyPositions = 124,
-        [global::ProtoBuf.ProtoEnum(Name = @"TRADING_BAD_VOLUME")]
+
+        [ProtoBuf.ProtoEnum(Name = @"TRADING_BAD_VOLUME")]
         TradingBadVolume = 125,
-        [global::ProtoBuf.ProtoEnum(Name = @"TRADING_BAD_STOPS")]
+
+        [ProtoBuf.ProtoEnum(Name = @"TRADING_BAD_STOPS")]
         TradingBadStops = 126,
-        [global::ProtoBuf.ProtoEnum(Name = @"TRADING_BAD_PRICES")]
+
+        [ProtoBuf.ProtoEnum(Name = @"TRADING_BAD_PRICES")]
         TradingBadPrices = 127,
-        [global::ProtoBuf.ProtoEnum(Name = @"TRADING_BAD_STAKE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"TRADING_BAD_STAKE")]
         TradingBadStake = 128,
-        [global::ProtoBuf.ProtoEnum(Name = @"PROTECTION_IS_TOO_CLOSE_TO_MARKET")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PROTECTION_IS_TOO_CLOSE_TO_MARKET")]
         ProtectionIsTooCloseToMarket = 129,
-        [global::ProtoBuf.ProtoEnum(Name = @"TRADING_BAD_EXPIRATION_DATE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"TRADING_BAD_EXPIRATION_DATE")]
         TradingBadExpirationDate = 130,
-        [global::ProtoBuf.ProtoEnum(Name = @"PENDING_EXECUTION")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PENDING_EXECUTION")]
         PendingExecution = 131,
-        [global::ProtoBuf.ProtoEnum(Name = @"TRADING_DISABLED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"TRADING_DISABLED")]
         TradingDisabled = 132,
-        [global::ProtoBuf.ProtoEnum(Name = @"TRADING_NOT_ALLOWED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"TRADING_NOT_ALLOWED")]
         TradingNotAllowed = 133,
-        [global::ProtoBuf.ProtoEnum(Name = @"UNABLE_TO_CANCEL_ORDER")]
+
+        [ProtoBuf.ProtoEnum(Name = @"UNABLE_TO_CANCEL_ORDER")]
         UnableToCancelOrder = 134,
-        [global::ProtoBuf.ProtoEnum(Name = @"UNABLE_TO_AMEND_ORDER")]
+
+        [ProtoBuf.ProtoEnum(Name = @"UNABLE_TO_AMEND_ORDER")]
         UnableToAmendOrder = 135,
-        [global::ProtoBuf.ProtoEnum(Name = @"SHORT_SELLING_NOT_ALLOWED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"SHORT_SELLING_NOT_ALLOWED")]
         ShortSellingNotAllowed = 136,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOAQuoteType
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"BID")]
+        [ProtoBuf.ProtoEnum(Name = @"BID")]
         Bid = 1,
-        [global::ProtoBuf.ProtoEnum(Name = @"ASK")]
+
+        [ProtoBuf.ProtoEnum(Name = @"ASK")]
         Ask = 2,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOAClientPermissionScope
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"SCOPE_VIEW")]
+        [ProtoBuf.ProtoEnum(Name = @"SCOPE_VIEW")]
         ScopeView = 0,
-        [global::ProtoBuf.ProtoEnum(Name = @"SCOPE_TRADE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"SCOPE_TRADE")]
         ScopeTrade = 1,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOATrendbarPeriod
     {
-        M1 = 1,
-        M2 = 2,
-        M3 = 3,
-        M4 = 4,
-        M5 = 5,
+        M1  = 1,
+        M2  = 2,
+        M3  = 3,
+        M4  = 4,
+        M5  = 5,
         M10 = 6,
         M15 = 7,
         M30 = 8,
-        H1 = 9,
-        H4 = 10,
+        H1  = 9,
+        H4  = 10,
         H12 = 11,
-        D1 = 12,
-        W1 = 13,
-        [global::ProtoBuf.ProtoEnum(Name = @"MN1")]
+        D1  = 12,
+        W1  = 13,
+
+        [ProtoBuf.ProtoEnum(Name = @"MN1")]
         Mn1 = 14,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOAPositionStatus
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"POSITION_STATUS_OPEN")]
+        [ProtoBuf.ProtoEnum(Name = @"POSITION_STATUS_OPEN")]
         PositionStatusOpen = 1,
-        [global::ProtoBuf.ProtoEnum(Name = @"POSITION_STATUS_CLOSED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"POSITION_STATUS_CLOSED")]
         PositionStatusClosed = 2,
-        [global::ProtoBuf.ProtoEnum(Name = @"POSITION_STATUS_CREATED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"POSITION_STATUS_CREATED")]
         PositionStatusCreated = 3,
-        [global::ProtoBuf.ProtoEnum(Name = @"POSITION_STATUS_ERROR")]
+
+        [ProtoBuf.ProtoEnum(Name = @"POSITION_STATUS_ERROR")]
         PositionStatusError = 4,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOATradeSide
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"BUY")]
+        [ProtoBuf.ProtoEnum(Name = @"BUY")]
         Buy = 1,
-        [global::ProtoBuf.ProtoEnum(Name = @"SELL")]
+
+        [ProtoBuf.ProtoEnum(Name = @"SELL")]
         Sell = 2,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOAOrderType
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"MARKET")]
+        [ProtoBuf.ProtoEnum(Name = @"MARKET")]
         Market = 1,
-        [global::ProtoBuf.ProtoEnum(Name = @"LIMIT")]
+
+        [ProtoBuf.ProtoEnum(Name = @"LIMIT")]
         Limit = 2,
-        [global::ProtoBuf.ProtoEnum(Name = @"STOP")]
+
+        [ProtoBuf.ProtoEnum(Name = @"STOP")]
         Stop = 3,
-        [global::ProtoBuf.ProtoEnum(Name = @"STOP_LOSS_TAKE_PROFIT")]
+
+        [ProtoBuf.ProtoEnum(Name = @"STOP_LOSS_TAKE_PROFIT")]
         StopLossTakeProfit = 4,
-        [global::ProtoBuf.ProtoEnum(Name = @"MARKET_RANGE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"MARKET_RANGE")]
         MarketRange = 5,
-        [global::ProtoBuf.ProtoEnum(Name = @"STOP_LIMIT")]
+
+        [ProtoBuf.ProtoEnum(Name = @"STOP_LIMIT")]
         StopLimit = 6,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOATimeInForce
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"GOOD_TILL_DATE")]
+        [ProtoBuf.ProtoEnum(Name = @"GOOD_TILL_DATE")]
         GoodTillDate = 1,
-        [global::ProtoBuf.ProtoEnum(Name = @"GOOD_TILL_CANCEL")]
+
+        [ProtoBuf.ProtoEnum(Name = @"GOOD_TILL_CANCEL")]
         GoodTillCancel = 2,
-        [global::ProtoBuf.ProtoEnum(Name = @"IMMEDIATE_OR_CANCEL")]
+
+        [ProtoBuf.ProtoEnum(Name = @"IMMEDIATE_OR_CANCEL")]
         ImmediateOrCancel = 3,
-        [global::ProtoBuf.ProtoEnum(Name = @"FILL_OR_KILL")]
+
+        [ProtoBuf.ProtoEnum(Name = @"FILL_OR_KILL")]
         FillOrKill = 4,
-        [global::ProtoBuf.ProtoEnum(Name = @"MARKET_ON_OPEN")]
+
+        [ProtoBuf.ProtoEnum(Name = @"MARKET_ON_OPEN")]
         MarketOnOpen = 5,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOAOrderStatus
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"ORDER_STATUS_ACCEPTED")]
+        [ProtoBuf.ProtoEnum(Name = @"ORDER_STATUS_ACCEPTED")]
         OrderStatusAccepted = 1,
-        [global::ProtoBuf.ProtoEnum(Name = @"ORDER_STATUS_FILLED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"ORDER_STATUS_FILLED")]
         OrderStatusFilled = 2,
-        [global::ProtoBuf.ProtoEnum(Name = @"ORDER_STATUS_REJECTED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"ORDER_STATUS_REJECTED")]
         OrderStatusRejected = 3,
-        [global::ProtoBuf.ProtoEnum(Name = @"ORDER_STATUS_EXPIRED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"ORDER_STATUS_EXPIRED")]
         OrderStatusExpired = 4,
-        [global::ProtoBuf.ProtoEnum(Name = @"ORDER_STATUS_CANCELLED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"ORDER_STATUS_CANCELLED")]
         OrderStatusCancelled = 5,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOAOrderTriggerMethod
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"TRADE")]
+        [ProtoBuf.ProtoEnum(Name = @"TRADE")]
         Trade = 1,
-        [global::ProtoBuf.ProtoEnum(Name = @"OPPOSITE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"OPPOSITE")]
         Opposite = 2,
-        [global::ProtoBuf.ProtoEnum(Name = @"DOUBLE_TRADE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"DOUBLE_TRADE")]
         DoubleTrade = 3,
-        [global::ProtoBuf.ProtoEnum(Name = @"DOUBLE_OPPOSITE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"DOUBLE_OPPOSITE")]
         DoubleOpposite = 4,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOAExecutionType
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"ORDER_ACCEPTED")]
+        [ProtoBuf.ProtoEnum(Name = @"ORDER_ACCEPTED")]
         OrderAccepted = 2,
-        [global::ProtoBuf.ProtoEnum(Name = @"ORDER_FILLED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"ORDER_FILLED")]
         OrderFilled = 3,
-        [global::ProtoBuf.ProtoEnum(Name = @"ORDER_REPLACED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"ORDER_REPLACED")]
         OrderReplaced = 4,
-        [global::ProtoBuf.ProtoEnum(Name = @"ORDER_CANCELLED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"ORDER_CANCELLED")]
         OrderCancelled = 5,
-        [global::ProtoBuf.ProtoEnum(Name = @"ORDER_EXPIRED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"ORDER_EXPIRED")]
         OrderExpired = 6,
-        [global::ProtoBuf.ProtoEnum(Name = @"ORDER_REJECTED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"ORDER_REJECTED")]
         OrderRejected = 7,
-        [global::ProtoBuf.ProtoEnum(Name = @"ORDER_CANCEL_REJECTED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"ORDER_CANCEL_REJECTED")]
         OrderCancelRejected = 8,
-        [global::ProtoBuf.ProtoEnum(Name = @"SWAP")]
+
+        [ProtoBuf.ProtoEnum(Name = @"SWAP")]
         Swap = 9,
-        [global::ProtoBuf.ProtoEnum(Name = @"DEPOSIT_WITHDRAW")]
+
+        [ProtoBuf.ProtoEnum(Name = @"DEPOSIT_WITHDRAW")]
         DepositWithdraw = 10,
-        [global::ProtoBuf.ProtoEnum(Name = @"ORDER_PARTIAL_FILL")]
+
+        [ProtoBuf.ProtoEnum(Name = @"ORDER_PARTIAL_FILL")]
         OrderPartialFill = 11,
-        [global::ProtoBuf.ProtoEnum(Name = @"BONUS_DEPOSIT_WITHDRAW")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BONUS_DEPOSIT_WITHDRAW")]
         BonusDepositWithdraw = 12,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOAChangeBalanceType
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT")]
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT")]
         BalanceDeposit = 0,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW")]
         BalanceWithdraw = 1,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_STRATEGY_COMMISSION_INNER")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_STRATEGY_COMMISSION_INNER")]
         BalanceDepositStrategyCommissionInner = 3,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_STRATEGY_COMMISSION_INNER")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_STRATEGY_COMMISSION_INNER")]
         BalanceWithdrawStrategyCommissionInner = 4,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_IB_COMMISSIONS")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_IB_COMMISSIONS")]
         BalanceDepositIbCommissions = 5,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_IB_SHARED_PERCENTAGE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_IB_SHARED_PERCENTAGE")]
         BalanceWithdrawIbSharedPercentage = 6,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_IB_SHARED_PERCENTAGE_FROM_SUB_IB")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_IB_SHARED_PERCENTAGE_FROM_SUB_IB")]
         BalanceDepositIbSharedPercentageFromSubIb = 7,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_IB_SHARED_PERCENTAGE_FROM_BROKER")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_IB_SHARED_PERCENTAGE_FROM_BROKER")]
         BalanceDepositIbSharedPercentageFromBroker = 8,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_REBATE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_REBATE")]
         BalanceDepositRebate = 9,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_REBATE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_REBATE")]
         BalanceWithdrawRebate = 10,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_STRATEGY_COMMISSION_OUTER")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_STRATEGY_COMMISSION_OUTER")]
         BalanceDepositStrategyCommissionOuter = 11,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_STRATEGY_COMMISSION_OUTER")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_STRATEGY_COMMISSION_OUTER")]
         BalanceWithdrawStrategyCommissionOuter = 12,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_BONUS_COMPENSATION")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_BONUS_COMPENSATION")]
         BalanceWithdrawBonusCompensation = 13,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_IB_SHARED_PERCENTAGE_TO_BROKER")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_IB_SHARED_PERCENTAGE_TO_BROKER")]
         BalanceWithdrawIbSharedPercentageToBroker = 14,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_DIVIDENDS")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_DIVIDENDS")]
         BalanceDepositDividends = 15,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_DIVIDENDS")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_DIVIDENDS")]
         BalanceWithdrawDividends = 16,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_GSL_CHARGE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_GSL_CHARGE")]
         BalanceWithdrawGslCharge = 17,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_ROLLOVER")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_ROLLOVER")]
         BalanceWithdrawRollover = 18,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_NONWITHDRAWABLE_BONUS")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_NONWITHDRAWABLE_BONUS")]
         BalanceDepositNonwithdrawableBonus = 19,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_NONWITHDRAWABLE_BONUS")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_NONWITHDRAWABLE_BONUS")]
         BalanceWithdrawNonwithdrawableBonus = 20,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_SWAP")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_SWAP")]
         BalanceDepositSwap = 21,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_SWAP")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_SWAP")]
         BalanceWithdrawSwap = 22,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_MANAGEMENT_FEE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_MANAGEMENT_FEE")]
         BalanceDepositManagementFee = 27,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_MANAGEMENT_FEE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_MANAGEMENT_FEE")]
         BalanceWithdrawManagementFee = 28,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_PERFORMANCE_FEE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_PERFORMANCE_FEE")]
         BalanceDepositPerformanceFee = 29,
-        [global::ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_INACTIVITY_FEE")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_INACTIVITY_FEE")]
         BalanceWithdrawInactivityFee = 35,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOADealStatus
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"FILLED")]
+        [ProtoBuf.ProtoEnum(Name = @"FILLED")]
         Filled = 2,
-        [global::ProtoBuf.ProtoEnum(Name = @"PARTIALLY_FILLED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"PARTIALLY_FILLED")]
         PartiallyFilled = 3,
-        [global::ProtoBuf.ProtoEnum(Name = @"REJECTED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"REJECTED")]
         Rejected = 4,
-        [global::ProtoBuf.ProtoEnum(Name = @"INTERNALLY_REJECTED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"INTERNALLY_REJECTED")]
         InternallyRejected = 5,
-        [global::ProtoBuf.ProtoEnum(Name = @"ERROR")]
+
+        [ProtoBuf.ProtoEnum(Name = @"ERROR")]
         Error = 6,
-        [global::ProtoBuf.ProtoEnum(Name = @"MISSED")]
+
+        [ProtoBuf.ProtoEnum(Name = @"MISSED")]
         Missed = 7,
     }
 
-    [global::ProtoBuf.ProtoContract()]
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOAChangeBonusType
     {
-        [global::ProtoBuf.ProtoEnum(Name = @"BONUS_DEPOSIT")]
+        [ProtoBuf.ProtoEnum(Name = @"BONUS_DEPOSIT")]
         BonusDeposit = 0,
-        [global::ProtoBuf.ProtoEnum(Name = @"BONUS_WITHDRAW")]
+
+        [ProtoBuf.ProtoEnum(Name = @"BONUS_WITHDRAW")]
         BonusWithdraw = 1,
     }
-
 }
 
 #pragma warning restore CS1591, CS0612, CS3021, IDE1006

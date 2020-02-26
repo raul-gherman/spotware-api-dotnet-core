@@ -8,8 +8,7 @@ namespace spotware
         {
             ProtoOAExecutionEvent args = Serializer.Deserialize<ProtoOAExecutionEvent>(_processorMemoryStream);
 
-            _log.Info($"ProtoOAExecutionEvent | " +
-                      $"ctidTraderAccountId: {args.ctidTraderAccountId}"); // TODO
+            Persist(args); //TODO
 
             OnExecutionEventReceived?.Invoke(args);
         }

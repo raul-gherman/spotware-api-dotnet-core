@@ -20,6 +20,8 @@ namespace spotware
                                                 toTimestamp         = toTimestamp
                                             };
 
+            Persist(message);
+
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);
 

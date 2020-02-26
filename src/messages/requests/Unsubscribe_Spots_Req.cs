@@ -13,6 +13,8 @@ namespace spotware
                                                      symbolIds           = symbolIDs
                                                  };
 
+            Persist(message);
+
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);
 

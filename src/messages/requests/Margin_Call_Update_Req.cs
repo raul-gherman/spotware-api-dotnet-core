@@ -13,6 +13,8 @@ namespace spotware
                                                      marginCall          = marginCall
                                                  };
 
+            Persist(message);
+
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);
 

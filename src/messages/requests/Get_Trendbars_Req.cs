@@ -22,6 +22,8 @@ namespace spotware
             if (symbolId > 0)
                 message.symbolId = symbolId;
 
+            Persist(message);
+
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);
 
