@@ -14,7 +14,7 @@ namespace spotware
 
         public TradingAccount(Client client, long ctid)
         {
-            CtidTraderAccount                =  ctid;
+            CtidTraderAccount               =  ctid;
             client.OnExecutionEventReceived += ExecutionEventReceived;
         }
 

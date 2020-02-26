@@ -24,7 +24,7 @@ namespace spotware
         public TradingSymbol(Client client, long ctid)
         {
             client.OnSpotEventReceived += OnSpotEvent_Received;
-            CtidTraderAccount           =  ctid;
+            CtidTraderAccount          =  ctid;
         }
 
         private void OnSpotEvent_Received(ProtoOASpotEvent args)

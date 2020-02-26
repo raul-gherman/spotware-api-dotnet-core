@@ -20,6 +20,8 @@ namespace spotware
             if (maxRows > 0)
                 message.maxRows = maxRows;
 
+            Persist(message);
+
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);
 

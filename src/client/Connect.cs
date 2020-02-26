@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 
 namespace spotware
@@ -8,6 +8,7 @@ namespace spotware
         public void Connect()
         {
             LogManager.Configure($"spotware-api-{DateTime.UtcNow:yyyy-MM-dd}.log");
+            Start_Persister_Thread();
 
             Prepare_Dispatcher();
 
@@ -23,7 +24,6 @@ namespace spotware
 
         private void Start_Spotware_Message_Flow(object sender, EventArgs args)
         {
-            _log.Info("Send(Version_Req())");
             Send(Version_Req());
         }
 

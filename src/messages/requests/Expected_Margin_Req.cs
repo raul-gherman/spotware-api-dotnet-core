@@ -16,6 +16,8 @@ namespace spotware
                                                    Volumes             = volumes
                                                };
 
+            Persist(message);
+
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);
 

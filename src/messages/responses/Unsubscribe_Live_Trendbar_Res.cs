@@ -8,8 +8,7 @@ namespace spotware
         {
             ProtoOAUnsubscribeLiveTrendbarRes args = Serializer.Deserialize<ProtoOAUnsubscribeLiveTrendbarRes>(_processorMemoryStream);
 
-            _log.Info($"ProtoOAUnsubscribeLiveTrendbarRes | " +
-                      $"ctidTraderAccountId: {args.ctidTraderAccountId}");
+            Persist(args);
 
             OnUnsubscribeLiveTrendbarResReceived?.Invoke(args);
         }

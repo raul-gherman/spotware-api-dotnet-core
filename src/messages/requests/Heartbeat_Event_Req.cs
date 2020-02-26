@@ -11,6 +11,8 @@ namespace spotware
                                               payloadType = ProtoPayloadType.HeartbeatEvent
                                           };
 
+            Persist(message);
+
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);
 
