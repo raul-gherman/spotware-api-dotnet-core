@@ -11,24 +11,17 @@ namespace spotware
 
             foreach (ProtoOALightSymbol lightSymbol in args.Symbols)
             {
-                if (lightSymbol.Enabled)
-                {
-                    TradingSymbol tradingSymbol = new TradingSymbol(this, args.ctidTraderAccountId)
-                                                  {
-                                                      LightSymbol = lightSymbol
-                                                  };
-                    TradingAccounts[args.ctidTraderAccountId].TradingSymbols[lightSymbol.symbolId] = tradingSymbol;
-                }
-
-                _log.Info($"ProtoOASymbolsListRes | "                           +
-                          $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
-                          $"symbolId: {lightSymbol.symbolId} | "                +
-                          $"symbolName: {lightSymbol.symbolName} | "            +
-                          $"Description: {lightSymbol.Description} | "          +
-                          $"Enabled: {lightSymbol.Enabled}");
+                if (!lightSymbol.Enabled)
+                    continue;
+                TradingSymbol tradingSymbol = new TradingSymbol(this, args.ctidTraderAccountId)
+                                              {
+                                                  LightSymbol = lightSymbol
+                                              };
+                TradingAccounts[args.ctidTraderAccountId].TradingSymbols[lightSymbol.symbolId] = tradingSymbol;
             }
 
-            _log.Info($"Send(Symbol_By_Id_Req({args.ctidTraderAccountId}, {TradingAccounts[args.ctidTraderAccountId].TradingSymbols.Keys.ToArray()}))");
+            Persist(args);
+
             Send(Symbol_By_Id_Req(args.ctidTraderAccountId, TradingAccounts[args.ctidTraderAccountId].TradingSymbols.Keys.ToArray()));
 
             OnSymbolsListResReceived?.Invoke(args);

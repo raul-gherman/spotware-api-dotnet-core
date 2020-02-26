@@ -37,12 +37,12 @@ namespace spotware
 
                     if (PersisterQueue.Count <= 0)
                         continue;
-                    _log.Info(GetObjectDetails(PersisterQueue.Dequeue()));
+                    Log.Info(GetObjectDetails(PersisterQueue.Dequeue()));
                 }
             }
             catch (Exception ex)
             {
-                _log.Error($"WriteToPersistenceLayer :: {ex}");
+                Log.Error($"WriteToPersistenceLayer :: {ex}");
             }
         }
 
@@ -70,7 +70,7 @@ namespace spotware
 
                         logMessage += $"{name}={Environment.NewLine}[";
 
-                        for (int i = myList.Count; i -- > 0; )
+                        for (int i = myList.Count; i-- > 0;)
                         {
                             logMessage += Environment.NewLine;
                             logMessage += $"  {GetObjectDetails(myList[i])}";

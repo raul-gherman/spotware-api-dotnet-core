@@ -5,7 +5,7 @@ namespace spotware
 {
     public partial class Client
     {
-        private readonly ILog _log = LogManager.GetLogger();
+        private static readonly ILog Log = LogManager.GetLogger();
 
         public string Gateway;
         public int    Port;

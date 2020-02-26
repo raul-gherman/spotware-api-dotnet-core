@@ -49,14 +49,7 @@ namespace spotware
                                                    _nextOutgoingWindow                = DateTime.UtcNow.AddMilliseconds(OutgoingTimeWindowInMillis);
                                                }
 
-                                               try
-                                               {
-                                                   Send(ProtoMessagesQueue.Dequeue());
-                                               }
-                                               catch (Exception ex)
-                                               {
-                                                   _log.Error($"Send :: {ex}");
-                                               }
+                                               Send(ProtoMessagesQueue.Dequeue());
                                            }
                                        });
             _senderThread.Start();
@@ -64,17 +57,24 @@ namespace spotware
 
         private void Send(ProtoMessage protoMessage)
         {
-            _encoderMemoryStream.SetLength(0);
-            Serializer.Serialize(_encoderMemoryStream, protoMessage);
+            try
+            {
+                _encoderMemoryStream.SetLength(0);
+                Serializer.Serialize(_encoderMemoryStream, protoMessage);
 
-            _sslStream.Write(BitConverter.GetBytes(_encoderMemoryStream.ToArray().Length).Reverse().ToArray());
-            _sslStream.Write(_encoderMemoryStream.ToArray());
+                _sslStream.Write(BitConverter.GetBytes(_encoderMemoryStream.ToArray().Length).Reverse().ToArray());
+                _sslStream.Write(_encoderMemoryStream.ToArray());
 
-            ++_outgoingMessageCountPerTimeWindow;
+                ++_outgoingMessageCountPerTimeWindow;
 
-            _nextTimeGate = DateTime.UtcNow.AddSeconds(HeartbeatIntervalInSeconds);
+                _nextTimeGate = DateTime.UtcNow.AddSeconds(HeartbeatIntervalInSeconds);
 
-            _sslStream.Flush();
+                _sslStream.Flush();
+            }
+            catch (Exception ex)
+            {
+                _log.Error($"Send :: {ex}");
+            }
         }
     }
 }

@@ -8,10 +8,8 @@ namespace spotware
         {
             ProtoOAAccountAuthRes args = Serializer.Deserialize<ProtoOAAccountAuthRes>(_processorMemoryStream);
 
-            _log.Info($"ProtoOAAccountAuthRes | " +
-                      $"ctidTraderAccountId: {args.ctidTraderAccountId}");
+            Persist(args);
 
-            _log.Info($"Send(Trader_Req({args.ctidTraderAccountId}))");
             Send(Trader_Req(args.ctidTraderAccountId));
 
             OnAccountAuthResReceived?.Invoke(args);

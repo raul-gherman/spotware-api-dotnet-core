@@ -6,11 +6,7 @@
         {
             ProtoOAErrorRes args = ProtoBuf.Serializer.Deserialize<ProtoOAErrorRes>(_processorMemoryStream);
 
-            _log.Error($"ProtoOAErrorRes | "                                +
-                       $"ctidTraderAccountId {args.ctidTraderAccountId} | " +
-                       $"errorCode: {args.errorCode} | "                    +
-                       $"Description: {args.Description} | "                +
-                       $"maintenanceEndTimestamp: {args.maintenanceEndTimestamp}");
+            Persist(args);
 
             OnOaErrorResReceived?.Invoke(args);
         }

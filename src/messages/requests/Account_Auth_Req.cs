@@ -14,6 +14,8 @@ namespace spotware
                                                 accessToken         = accessToken
                                             };
 
+            Persist(message);
+
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);
 

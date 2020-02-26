@@ -12,6 +12,8 @@ namespace spotware
                                                   ctidTraderAccountId = ctidTraderAccountId
                                               };
 
+            Persist(message);
+
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);
 
