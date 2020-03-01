@@ -3,7 +3,7 @@
 // Input: spotware.proto
 
 #pragma warning disable CS1591, CS0612, CS3021, IDE1006
-namespace Spotware
+namespace spotware
 {
 
     [global::ProtoBuf.ProtoContract()]

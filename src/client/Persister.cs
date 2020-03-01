@@ -33,7 +33,7 @@ namespace spotware
             {
                 while (Thread.CurrentThread.IsAlive)
                 {
-                    Thread.Sleep(100);
+                    Thread.Sleep(1);
 
                     if (PersisterQueue.Count <= 0)
                         continue;
