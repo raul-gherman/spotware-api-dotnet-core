@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Spotware OpenAPI 6.5
+// Spotware OpenAPI 6.6
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 syntax="proto2";
@@ -244,6 +244,14 @@ enum ProtoOAErrorCode
     UNABLE_TO_CANCEL_ORDER            = 134; // Unable to cancel order.
     UNABLE_TO_AMEND_ORDER             = 135; // Unable to amend order.
     SHORT_SELLING_NOT_ALLOWED         = 136; // Short selling is not allowed.
+}
+
+enum ProtoOALimitedRiskMarginCalculationStrategy
+{
+    ACCORDING_TO_LEVERAGE         = 0;
+    ACCORDING_TO_GSL              = 1;
+    ACCORDING_TO_GSL_AND_LEVERAGE = 2;
+
 }
 
 // Price quote type
@@ -506,11 +514,11 @@ message ProtoOATrader
     optional int64                             nonWithdrawableBonus       = 6; // Broker bonus that cannot be withdrew from the account as cash.
     optional ProtoOAAccessRights               accessRights               = 7  [default = FULL_ACCESS]; // Access rights that an owner has to the account in cTrader platform. See ProtoOAAccessRights for details.
     required int64                             depositAssetId             = 8; // Deposit currency of the account.
-    optional bool                              swapFree                   = 9; // If TRUE than account is Shariah compliant.
+    optional bool                              swapFree                   = 9; // If TRUE then account is Shariah compliant.
     optional uint32                            leverageInCents            = 10; // Account leverage (e.g. If leverage = 1:50 then value = 5000).
     optional ProtoOATotalMarginCalculationType totalMarginCalculationType = 11; // Margin computation type for the account (MAX, SUM, NET).
     optional uint32                            maxLeverage                = 12; // Maximum allowed leverage for the account. Used as validation when a Trader can change leverage value.
-    optional bool                              frenchRisk                 = 13; // If TRUE then account is AMF compliant.
+    optional bool                              frenchRisk                 = 13 [deprecated = true]; // If TRUE then account is AMF compliant.
     optional int64                             traderLogin                = 14; // ID of the account that is unique per server (Broker).
     optional ProtoOAAccountType                accountType                = 15  [default = HEDGED]; // Account type: HEDGED, NETTED, etc.
     optional string                            brokerName                 = 16; // Some whitelabel assigned to trader by broker at the moment of account creation.
@@ -1128,6 +1136,8 @@ message ProtoOASpotEvent
     optional uint64             bid                 = 4; // Bid price. Specified in 1/100_000 of unit of a price. (e.g. 1.23 -> 123_000)
     optional uint64             ask                 = 5; // Ask price. Specified in 1/100_000 of unit of a price.
     repeated ProtoOATrendbar    trendbar            = 6; // Returns live trend bar. Requires subscription on the trend bars.
+    optional uint64             sessionClose        = 7; // Last session close. Specified in 1/100_000 of unit of a price.
+
 }
 
 // Request for subscribing for live trend bars. Requires subscription on the spot events, see ProtoOASubscribeSpotsReq.
