@@ -8,14 +8,17 @@ namespace spotware
         {
             ProtoOARefreshTokenRes args = Serializer.Deserialize<ProtoOARefreshTokenRes>(_processorMemoryStream);
 
-            AccessToken  = args.accessToken;
-            RefreshToken = args.refreshToken;
+            _accessToken  = args.accessToken;
+            System.Environment.SetEnvironmentVariable("SPOTWARE_API_ACCESS_TOKEN", _accessToken);
+            
+            _refreshToken = args.refreshToken;
+            System.Environment.SetEnvironmentVariable("SPOTWARE_API_REFRESH_TOKEN", _refreshToken);
 
             TradingAccounts.Clear();
 
             Persist(args);
 
-            Send(Get_Accounts_By_Access_Token_Req(AccessToken));
+            Send(Get_Accounts_By_Access_Token_Req(_accessToken));
 
             OnRefreshTokenResReceived?.Invoke(args);
         }

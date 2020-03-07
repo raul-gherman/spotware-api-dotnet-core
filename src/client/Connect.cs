@@ -7,12 +7,11 @@ namespace spotware
     {
         public void Connect()
         {
-            LogManager.Configure($"spotware-api-{DateTime.UtcNow:yyyy-MM-dd}.log");
             Start_Persister_Thread();
 
             Prepare_Dispatcher();
 
-            _connection = new Connection(Gateway, Port)
+            _connection = new Connection(_gateway, _port)
                           {
                               KeepAliveMessage = Heartbeat()
                           };

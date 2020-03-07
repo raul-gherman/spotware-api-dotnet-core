@@ -10,7 +10,7 @@ namespace spotware
 
             Persist(args);
 
-            Send(Refresh_Token_Req(RefreshToken));
+            Send(Refresh_Token_Req(_refreshToken));
 
             OnAccountsTokenInvalidatedEventReceived?.Invoke(args);
         }
