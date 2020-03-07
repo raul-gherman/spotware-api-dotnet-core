@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace spotware
@@ -39,14 +40,14 @@ namespace spotware
         {
             LogManager.Configure($"spotware-api-{System.DateTime.UtcNow:yyyy-MM-dd}.log");
 
-            _gateway = GetEnvironmentVariable("SPOTWARE_API_GATEWAY");
-            _port    = int.Parse(GetEnvironmentVariable("SPOTWARE_API_PORT"));
+            _gateway = GetEnvironmentVariable("SPOTWARE_API_GATEWAY") ?? throw new Exception("SPOTWARE_API_GATEWAY");
+            _port    = int.Parse(GetEnvironmentVariable("SPOTWARE_API_PORT") ?? throw new Exception("SPOTWARE_API_PORT"));
 
-            _clientId     = GetEnvironmentVariable("SPOTWARE_API_CLIENT_ID");
-            _clientSecret = GetEnvironmentVariable("SPOTWARE_API_CLIENT_SECRET");
+            _clientId     = GetEnvironmentVariable("SPOTWARE_API_CLIENT_ID")     ?? throw new Exception("SPOTWARE_API_CLIENT_ID");
+            _clientSecret = GetEnvironmentVariable("SPOTWARE_API_CLIENT_SECRET") ?? throw new Exception("SPOTWARE_API_CLIENT_SECRET");
 
-            _accessToken  = GetEnvironmentVariable("SPOTWARE_API_ACCESS_TOKEN");
-            _refreshToken = GetEnvironmentVariable("SPOTWARE_API_REFRESH_TOKEN");
+            _accessToken  = GetEnvironmentVariable("SPOTWARE_API_ACCESS_TOKEN")  ?? throw new Exception("SPOTWARE_API_ACCESS_TOKEN");
+            _refreshToken = GetEnvironmentVariable("SPOTWARE_API_REFRESH_TOKEN") ?? throw new Exception("SPOTWARE_API_REFRESH_TOKEN");
         }
 
         private static string GetEnvironmentVariable(string key)
