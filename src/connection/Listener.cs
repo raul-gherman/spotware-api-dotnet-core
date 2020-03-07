@@ -21,47 +21,48 @@ namespace spotware
             _listenerThread = new Thread(() =>
                                          {
                                              Thread.CurrentThread.IsBackground = true;
-                                             try
-                                             {
-                                                 Listen();
-                                             }
-                                             catch (Exception ex)
-                                             {
-                                                 _log.Error($"Listen :: {ex}");
-                                             }
+                                             Listen();
                                          });
             _listenerThread.Start();
         }
 
         private void Listen()
         {
-            while (Thread.CurrentThread.IsAlive)
+            try
             {
-                _readBytes = 0;
-                do
+                while (Thread.CurrentThread.IsAlive)
                 {
-                    _readBytes += _sslStream.Read(_incomingHeader, _readBytes, _incomingHeader.Length - _readBytes);
-                } while (_readBytes < _incomingHeader.Length);
+                    _readBytes = 0;
+                    do
+                    {
+                        _readBytes += _sslStream.Read(_incomingHeader, _readBytes, _incomingHeader.Length - _readBytes);
+                    } while (_readBytes < _incomingHeader.Length);
 
-                _calculatedIncomingRawDataSize = BitConverter.ToInt32(_incomingHeader.Reverse().ToArray(), 0);
+                    _calculatedIncomingRawDataSize = BitConverter.ToInt32(_incomingHeader.Reverse().ToArray(), 0);
 
-                if (_calculatedIncomingRawDataSize <= 0)
-                {
-                    continue;
+                    if (_calculatedIncomingRawDataSize <= 0)
+                    {
+                        continue;
+                    }
+
+                    _rawData   = new byte[_calculatedIncomingRawDataSize];
+                    _readBytes = 0;
+                    do
+                    {
+                        _readBytes += _sslStream.Read(_rawData, _readBytes, _rawData.Length - _readBytes);
+                    } while (_readBytes < _calculatedIncomingRawDataSize);
+
+                    _decoderMemoryStream = new MemoryStream(_rawData);
+                    _incomingMessage     = Serializer.Deserialize<ProtoMessage>(_decoderMemoryStream);
+
+                    OnMessageReceived?.Invoke(_incomingMessage);
                 }
-
-                _rawData   = new byte[_calculatedIncomingRawDataSize];
-                _readBytes = 0;
-                do
-                {
-                    _readBytes += _sslStream.Read(_rawData, _readBytes, _rawData.Length - _readBytes);
-                } while (_readBytes < _calculatedIncomingRawDataSize);
-
-                _decoderMemoryStream = new MemoryStream(_rawData);
-                _incomingMessage     = Serializer.Deserialize<ProtoMessage>(_decoderMemoryStream);
-
-                OnMessageReceived?.Invoke(_incomingMessage);
             }
+            catch (Exception ex)
+            {
+                _log.Error($"Listen :: {ex}");
+            }
+
         }
 
         public event MessageReceived OnMessageReceived;
