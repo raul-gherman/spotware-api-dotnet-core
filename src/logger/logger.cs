@@ -12,7 +12,7 @@ namespace spotware
         void Info(string msg);
     }
 
-    internal static class LogManager
+    public static class LogManager
     {
         public static void Configure(string filename)
         {

@@ -27,7 +27,7 @@ namespace spotware
             _persisterThread.Start();
         }
 
-        private static void WriteToPersistenceLayer()
+        private void WriteToPersistenceLayer()
         {
             try
             {
