@@ -12,7 +12,7 @@ namespace spotware
         void Info(string msg);
     }
 
-    internal static class LogManager
+    public static class LogManager
     {
         public static void Configure(string filename)
         {
@@ -59,7 +59,7 @@ namespace spotware
         {
             _que         = new Queue();
             _logFileName = filename;
-            System.Timers.Timer saveTimer = new System.Timers.Timer(1000)
+            System.Timers.Timer saveTimer = new System.Timers.Timer(1)
                                             {
                                                 Enabled   = true,
                                                 AutoReset = true

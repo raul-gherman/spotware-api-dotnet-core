@@ -10,7 +10,7 @@ namespace spotware
 
             Persist(args);
 
-            Send(Application_Auth_Req(ClientId, ClientSecret));
+            Send(Application_Auth_Req(_clientId, _clientSecret));
 
             OnVersionResReceived?.Invoke(args);
         }

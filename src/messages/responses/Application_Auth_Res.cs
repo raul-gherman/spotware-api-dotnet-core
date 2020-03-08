@@ -10,7 +10,7 @@ namespace spotware
 
             Persist(args);
 
-            Send(Get_Accounts_By_Access_Token_Req(AccessToken));
+            Send(Get_Accounts_By_Access_Token_Req(_accessToken));
 
             OnApplicationAuthResReceived?.Invoke(args);
         }

@@ -12,7 +12,7 @@ namespace spotware
             {
                 TradingAccounts[(long) account.ctidTraderAccountId] = new TradingAccount(this, (long) account.ctidTraderAccountId);
 
-                Send(Account_Auth_Req((long) account.ctidTraderAccountId, AccessToken));
+                Send(Account_Auth_Req((long) account.ctidTraderAccountId, _accessToken));
             }
 
             Persist(args);
