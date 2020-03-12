@@ -15,7 +15,7 @@ namespace spotware
             }
             catch (Exception ex)
             {
-                _log.Error($"Connecting to {_gateway}:{_port} :: {ex.Message}");
+                _log.Error($"Connecting to {_gateway}:{_port} :: {ex}");
                 throw;
             }
 
@@ -26,7 +26,7 @@ namespace spotware
             }
             catch (Exception ex)
             {
-                _log.Error($"_sslStream.AuthenticateAsClient({_gateway}) :: {ex.Message}");
+                _log.Error($"_sslStream.AuthenticateAsClient({_gateway}) :: {ex}");
                 _tcpClient.Dispose();
                 throw;
             }
