@@ -18,7 +18,7 @@ namespace spotware
 
             Persist(args);
 
-            if (SubscribeAllSymbols)
+            if (_subscribeAllSymbols)
             {
                 Send(Subscribe_Spots_Req(args.ctidTraderAccountId, TradingAccounts[args.ctidTraderAccountId].TradingSymbols.Keys.ToArray()));
             }

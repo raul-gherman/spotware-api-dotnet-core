@@ -23,7 +23,7 @@ namespace spotware
 
         public readonly Dictionary<long, TradingAccount> TradingAccounts = new Dictionary<long, TradingAccount>();
 
-        private bool SubscribeAllSymbols = true;
+        private readonly bool _subscribeAllSymbols = true;
 
         public Client()
         {
@@ -32,7 +32,7 @@ namespace spotware
 
         public Client(bool subscribeAllSymbols = true)
         {
-            SubscribeAllSymbols = subscribeAllSymbols;
+            _subscribeAllSymbols = subscribeAllSymbols;
             Initialize();
         }
 

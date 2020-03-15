@@ -74,6 +74,7 @@ namespace spotware
             catch (Exception ex)
             {
                 _log.Error($"Send :: {ex}");
+                throw;
             }
         }
     }
