@@ -8,7 +8,12 @@ namespace spotware
         {
             ProtoOAOrderErrorEvent args = Serializer.Deserialize<ProtoOAOrderErrorEvent>(_processorMemoryStream);
 
-            Persist(args);
+            Log.Info($"ProtoOAOrderErrorEvent | "          +
+                     $"Description: {args.Description} | " +
+                     $"errorCode: {args.errorCode} | "     +
+                     $"orderId: {args.orderId} | "         +
+                     $"positionId: {args.positionId} | "   +
+                     $"ctidTraderAccountId: {args.ctidTraderAccountId}");
 
             OnOrderErrorEventReceived?.Invoke(args);
         }

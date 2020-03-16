@@ -6,7 +6,7 @@ namespace spotware
 {
     public partial class Client
     {
-        public ILog Log = LogManager.GetLogger();
+        public static ILog Log = LogManager.GetLogger();
 
         private string _gateway;
         private int    _port;
@@ -40,14 +40,14 @@ namespace spotware
         {
             LogManager.Configure($"spotware-api-{System.DateTime.UtcNow:yyyy-MM-dd}.log");
 
-            _gateway = GetEnvironmentVariable("SPOTWARE_API_GATEWAY") ?? throw new Exception("SPOTWARE_API_GATEWAY");
-            _port    = int.Parse(GetEnvironmentVariable("SPOTWARE_API_PORT") ?? throw new Exception("SPOTWARE_API_PORT"));
+            _gateway = GetEnvironmentVariable("SPOTWARE_API_GATEWAY") ?? throw new Exception("SPOTWARE_API_GATEWAY not set");
+            _port    = int.Parse(GetEnvironmentVariable("SPOTWARE_API_PORT") ?? throw new Exception("SPOTWARE_API_PORT not set"));
 
-            _clientId     = GetEnvironmentVariable("SPOTWARE_API_CLIENT_ID")     ?? throw new Exception("SPOTWARE_API_CLIENT_ID");
-            _clientSecret = GetEnvironmentVariable("SPOTWARE_API_CLIENT_SECRET") ?? throw new Exception("SPOTWARE_API_CLIENT_SECRET");
+            _clientId     = GetEnvironmentVariable("SPOTWARE_API_CLIENT_ID")     ?? throw new Exception("SPOTWARE_API_CLIENT_ID not set");
+            _clientSecret = GetEnvironmentVariable("SPOTWARE_API_CLIENT_SECRET") ?? throw new Exception("SPOTWARE_API_CLIENT_SECRET not set");
 
-            _accessToken  = GetEnvironmentVariable("SPOTWARE_API_ACCESS_TOKEN")  ?? throw new Exception("SPOTWARE_API_ACCESS_TOKEN");
-            _refreshToken = GetEnvironmentVariable("SPOTWARE_API_REFRESH_TOKEN") ?? throw new Exception("SPOTWARE_API_REFRESH_TOKEN");
+            _accessToken  = GetEnvironmentVariable("SPOTWARE_API_ACCESS_TOKEN")  ?? throw new Exception("SPOTWARE_API_ACCESS_TOKEN not set");
+            _refreshToken = GetEnvironmentVariable("SPOTWARE_API_REFRESH_TOKEN") ?? throw new Exception("SPOTWARE_API_REFRESH_TOKEN not set");
         }
 
         private static string GetEnvironmentVariable(string key)

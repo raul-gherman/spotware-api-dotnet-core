@@ -13,7 +13,9 @@ namespace spotware
                                                symbolIds           = symbolIDs
                                            };
 
-            Persist(message);
+            Log.Info($"ProtoOASymbolByIdReq | "                       +
+                     $"ctidTraderAccountId: {ctidTraderAccountId} | " +
+                     $"symbolIds: {string.Join(" | ", symbolIDs)}");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);

@@ -16,7 +16,10 @@ namespace spotware
                                                    Volumes             = volumes
                                                };
 
-            Persist(message);
+            Log.Info($"ProtoOAExpectedMarginReq | "                   +
+                     $"ctidTraderAccountId: {ctidTraderAccountId} | " +
+                     $"symbolId: {symbolId} | "                       +
+                     $"Volumes: {string.Join(" | ", volumes)}");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);

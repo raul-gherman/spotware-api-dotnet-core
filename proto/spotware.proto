@@ -518,7 +518,6 @@ message ProtoOATrader
     optional uint32                                      leverageInCents                      = 10; // Account leverage (e.g. If leverage = 1:50 then value = 5000).
     optional ProtoOATotalMarginCalculationType           totalMarginCalculationType           = 11; // Margin computation type for the account (MAX, SUM, NET).
     optional uint32                                      maxLeverage                          = 12; // Maximum allowed leverage for the account. Used as validation when a Trader can change leverage value.
-    optional bool                                        frenchRisk                           = 13 [deprecated = true]; // If TRUE then account is AMF compliant.
     optional int64                                       traderLogin                          = 14; // ID of the account that is unique per server (Broker).
     optional ProtoOAAccountType                          accountType                          = 15  [default = HEDGED]; // Account type: HEDGED, NETTED, etc.
     optional string                                      brokerName                           = 16; // Some whitelabel assigned to trader by broker at the moment of account creation.

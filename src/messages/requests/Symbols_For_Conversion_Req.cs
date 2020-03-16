@@ -15,7 +15,10 @@ namespace spotware
                                                          lastAssetId         = lastAssetId
                                                      };
 
-            Persist(message);
+            Log.Info($"ProtoOASymbolsForConversionReq | "             +
+                     $"ctidTraderAccountId: {ctidTraderAccountId} | " +
+                     $"firstAssetId: {firstAssetId} | "               +
+                     $"lastAssetId: {lastAssetId}");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);

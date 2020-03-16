@@ -8,8 +8,6 @@ namespace spotware
         {
             ProtoOASpotEvent args = Serializer.Deserialize<ProtoOASpotEvent>(_processorMemoryStream);
 
-            // Persist(args);
-
             OnSpotEventReceived?.Invoke(args);
         }
 

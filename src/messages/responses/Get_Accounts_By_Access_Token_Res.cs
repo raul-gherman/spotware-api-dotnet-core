@@ -1,4 +1,5 @@
-﻿using ProtoBuf;
+﻿using System;
+using ProtoBuf;
 
 namespace spotware
 {
@@ -8,14 +9,23 @@ namespace spotware
         {
             ProtoOAGetAccountListByAccessTokenRes args = Serializer.Deserialize<ProtoOAGetAccountListByAccessTokenRes>(_processorMemoryStream);
 
+            string ctidTraderAccounts = String.Empty;
+
             foreach (ProtoOACtidTraderAccount account in args.ctidTraderAccounts)
             {
                 TradingAccounts[(long) account.ctidTraderAccountId] = new TradingAccount(this, (long) account.ctidTraderAccountId);
 
+                ctidTraderAccounts += $"isLive: {account.isLive} | "           +
+                                      $"traderLogin: {account.traderLogin} | " +
+                                      $"ctidTraderAccountId: {account.ctidTraderAccountId}";
+
                 Send(Account_Auth_Req((long) account.ctidTraderAccountId, _accessToken));
             }
 
-            Persist(args);
+            Log.Info($"ProtoOAGetAccountListByAccessTokenRes | "   +
+                     $"accessToken: {args.accessToken} | "         +
+                     $"permissionScope: {args.permissionScope} | " +
+                     $"ctidTraderAccounts: {ctidTraderAccounts}");
 
             OnGetAccountListByAccessTokenResReceived?.Invoke(args);
         }

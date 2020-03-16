@@ -4,15 +4,16 @@ namespace spotware
 {
     public partial class Client
     {
-        public ProtoMessage Margin_Call_List_Req(long ctid)
+        public ProtoMessage Margin_Call_List_Req(long ctidTraderAccountId)
         {
             ProtoOAMarginCallListReq message = new ProtoOAMarginCallListReq
                                                {
                                                    payloadType         = ProtoOAPayloadType.ProtoOaMarginCallListReq,
-                                                   ctidTraderAccountId = ctid
+                                                   ctidTraderAccountId = ctidTraderAccountId
                                                };
 
-            Persist(message);
+            Log.Info($"ProtoOAMarginCallListReq | " +
+                     $"ctidTraderAccountId: {ctidTraderAccountId}");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);

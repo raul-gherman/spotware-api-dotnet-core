@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using ProtoBuf;
 
 namespace spotware
@@ -8,6 +9,8 @@ namespace spotware
         private void Process_Symbols_List_Res()
         {
             ProtoOASymbolsListRes args = Serializer.Deserialize<ProtoOASymbolsListRes>(_processorMemoryStream);
+            
+            string Symbols = String.Empty;
 
             foreach (ProtoOALightSymbol lightSymbol in args.Symbols)
             {
@@ -18,9 +21,19 @@ namespace spotware
                                                   LightSymbol = lightSymbol
                                               };
                 TradingAccounts[args.ctidTraderAccountId].TradingSymbols[lightSymbol.symbolId] = tradingSymbol;
+                
+                Symbols += $"Description: {lightSymbol.Description} | "   +
+                           $"Enabled: {lightSymbol.Enabled} | "           +
+                           $"symbolId: {lightSymbol.symbolId} | "         +
+                           $"symbolName: {lightSymbol.symbolName} | "     +
+                           $"baseAssetId: {lightSymbol.baseAssetId} | "   +
+                           $"quoteAssetId: {lightSymbol.quoteAssetId} | " +
+                           $"symbolCategoryId: {lightSymbol.symbolCategoryId}";
             }
 
-            Persist(args);
+            Log.Info($"ProtoOASymbolsListRes | "                           +
+                     $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
+                     $"Symbols: {Symbols}");
 
             Send(Symbol_By_Id_Req(args.ctidTraderAccountId, TradingAccounts[args.ctidTraderAccountId].TradingSymbols.Keys.ToArray()));
 

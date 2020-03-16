@@ -8,7 +8,10 @@ namespace spotware
         {
             ProtoOADepthEvent args = Serializer.Deserialize<ProtoOADepthEvent>(_processorMemoryStream);
 
-            Persist(args); // TODO
+            Log.Info($"ProtoOADepthEvent | "                               +
+                     $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
+                     $"symbolId: {args.symbolId} | "                       +
+                     $"//TODO"); //TODO
 
             OnDepthEventReceived?.Invoke(args);
         }

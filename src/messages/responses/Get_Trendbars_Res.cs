@@ -1,4 +1,5 @@
-﻿using ProtoBuf;
+﻿using System;
+using ProtoBuf;
 
 namespace spotware
 {
@@ -8,7 +9,23 @@ namespace spotware
         {
             ProtoOAGetTrendbarsRes args = Serializer.Deserialize<ProtoOAGetTrendbarsRes>(_processorMemoryStream);
 
-            Persist(args);
+            string Trendbars = String.Empty;
+            foreach (ProtoOATrendbar trendBar in args.Trendbars)
+            {
+                Trendbars += $"deltaClose: {trendBar.deltaClose} | "                       +
+                             $"deltaHigh: {trendBar.deltaHigh} | "                         +
+                             $"Low: {trendBar.Low} | "                                     +
+                             $"Period: {trendBar.Period} | "                               +
+                             $"Volume: {trendBar.Volume} | "                               +
+                             $"utcTimestampInMinutes: {trendBar.utcTimestampInMinutes} | " +
+                             $"deltaOpen: {trendBar.deltaOpen}";
+            }
+
+            Log.Info($"ProtoOAGetAccountListByAccessTokenRes | "           +
+                     $"symbolId: {args.symbolId} | "                       +
+                     $"Timestamp: {args.Timestamp} | "                     +
+                     $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
+                     $"Trendbars: {Trendbars}");
 
             OnGetTrendbarsResReceived?.Invoke(args);
         }

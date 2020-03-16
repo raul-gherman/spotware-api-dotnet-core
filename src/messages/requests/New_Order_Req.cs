@@ -72,7 +72,29 @@ namespace spotware
             if (stopTriggerMethod != ProtoOAOrderTriggerMethod.Trade)
                 message.stopTriggerMethod = stopTriggerMethod;
 
-            Persist(message);
+            Log.Info($"ProtoMessage | "                               +
+                     $"ctidTraderAccountId: {ctidTraderAccountId} | " +
+                     $"symbolId: {symbolId} | "                       +
+                     $"orderType: {orderType} | "                     +
+                     $"tradeSide: {tradeSide} | "                     +
+                     $"volume: {volume} | "                           +
+                     $"limitPrice: {limitPrice} | "                   +
+                     $"stopPrice: {stopPrice} | "                     +
+                     $"timeInForce: {timeInForce} | "                 +
+                     $"expirationTimestamp: {expirationTimestamp} | " +
+                     $"stopLoss: {stopLoss} | "                       +
+                     $"takeProfit: {takeProfit} | "                   +
+                     $"comment: {comment} | "                         +
+                     $"baseSlippagePrice: {baseSlippagePrice} | "     +
+                     $"slippageInPoints: {slippageInPoints} | "       +
+                     $"label: {label} | "                             +
+                     $"positionId: {positionId} | "                   +
+                     $"clientOrderId: {clientOrderId} | "             +
+                     $"relativeStopLoss: {relativeStopLoss} | "       +
+                     $"relativeTakeProfit: {relativeTakeProfit} | "   +
+                     $"guaranteedStopLoss: {guaranteedStopLoss} | "   +
+                     $"trailingStopLoss: {trailingStopLoss} | "       +
+                     $"stopTriggerMethod: {stopTriggerMethod}");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);

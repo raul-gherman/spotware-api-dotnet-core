@@ -1,4 +1,5 @@
-﻿using ProtoBuf;
+﻿using System;
+using ProtoBuf;
 
 namespace spotware
 {
@@ -8,7 +9,15 @@ namespace spotware
         {
             ProtoOAAccountsTokenInvalidatedEvent args = Serializer.Deserialize<ProtoOAAccountsTokenInvalidatedEvent>(_processorMemoryStream);
 
-            Persist(args);
+            string ctidTraderAccountIds = string.Empty;
+            foreach (long ctid in args.ctidTraderAccountIds)
+            {
+                ctidTraderAccountIds += ctid + " | ";
+            }
+
+            Log.Info($"ProtoOAAccountsTokenInvalidatedEvent | "      +
+                     $"ctidTraderAccountIds: {ctidTraderAccountIds}" +
+                     $"Reason: {args.Reason}");
 
             Send(Refresh_Token_Req(_refreshToken));
 

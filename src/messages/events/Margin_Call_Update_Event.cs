@@ -8,7 +8,9 @@ namespace spotware
         {
             ProtoOAMarginCallUpdateEvent args = Serializer.Deserialize<ProtoOAMarginCallUpdateEvent>(_processorMemoryStream);
 
-            Persist(args);
+            Log.Info($"ProtoOAMarginCallUpdateEvent | "  +
+                     $"marginCall: {args.marginCall} | " +
+                     $"ctidTraderAccountId: {args.ctidTraderAccountId}");
 
             OnMarginCallUpdateEventReceived?.Invoke(this, args);
         }

@@ -1,4 +1,5 @@
-﻿using ProtoBuf;
+﻿using System;
+using ProtoBuf;
 
 namespace spotware
 {
@@ -8,7 +9,17 @@ namespace spotware
         {
             ProtoOAGetTickDataRes args = Serializer.Deserialize<ProtoOAGetTickDataRes>(_processorMemoryStream);
 
-            Persist(args);
+            string tickDatas = String.Empty;
+            foreach (ProtoOATickData tickData in args.tickDatas)
+            {
+                tickDatas += $"Tick: {tickData.Tick} | " +
+                             $"Timestamp: {tickData.Timestamp}";
+            }
+
+            Log.Info($"ProtoOAGetTickDataRes | "                       +
+                     $"accessToken: {args.hasMore} | "                 +
+                     $"permissionScope: {args.ctidTraderAccountId} | " +
+                     $"tickDatas: {tickDatas}");
 
             OnGetTickDataResReceived?.Invoke(args);
         }
