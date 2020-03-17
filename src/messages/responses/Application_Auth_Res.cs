@@ -8,7 +8,7 @@ namespace spotware
         {
             ProtoOAApplicationAuthRes args = Serializer.Deserialize<ProtoOAApplicationAuthRes>(_processorMemoryStream);
 
-            Log.Info($"ProtoOAApplicationAuthRes");
+            Log.Info("ProtoOAApplicationAuthRes");
             
             Send(Get_Accounts_By_Access_Token_Req(_accessToken));
 

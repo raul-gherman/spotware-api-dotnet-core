@@ -17,8 +17,8 @@ namespace spotware
                                $"utcLastUpdateTimestamp: {marginCall.utcLastUpdateTimestamp}";
             }
 
-            Log.Info($"ProtoOAMarginCallListRes | " +
-                     $"marginCalls: {marginCalls}");
+            Log.Info("ProtoOAMarginCallListRes | " +
+                     $"marginCalls: [{marginCalls}]");
 
             OnMarginCallListResReceived?.Invoke(this, args);
         }

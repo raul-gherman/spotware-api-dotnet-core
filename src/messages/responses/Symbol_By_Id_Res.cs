@@ -21,7 +21,7 @@ namespace spotware
                 foreach (ProtoOAInterval interval in symbol.Schedules)
                 {
                     Schedules += $"startSecond: {interval.startSecond} | " +
-                                 $"endSecond: {interval.endSecond}";
+                                 $"endSecond: {interval.endSecond} | ";
                 }
 
                 Symbols += $"Commission: {symbol.Commission} | "                           +
@@ -35,7 +35,7 @@ namespace spotware
                            $"minVolume: {symbol.minVolume} | "                             +
                            $"pipPosition: {symbol.pipPosition} | "                         +
                            $"rolloverCommission: {symbol.rolloverCommission} | "           +
-                           $"Schedules: {Schedules} | "                                    +
+                           $"Schedules: [{Schedules}] | "                                  +
                            $"slDistance: {symbol.slDistance} | "                           +
                            $"stepVolume: {symbol.stepVolume} | "                           +
                            $"swapLong: {symbol.swapLong} | "                               +
@@ -55,7 +55,7 @@ namespace spotware
                            $"swapRollover3Days: {symbol.swapRollover3Days}";
             }
 
-            Log.Info($"ProtoOASymbolByIdRes | "                            +
+            Log.Info("ProtoOASymbolByIdRes | "                             +
                      $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
                      $"Symbols: {Symbols}");
 

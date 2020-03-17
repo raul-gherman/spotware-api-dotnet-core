@@ -16,7 +16,7 @@ namespace spotware
                                                   Volume              = volume
                                               };
 
-            Log.Info($"ProtoOAClosePositionReq | "                    +
+            Log.Info("ProtoOAClosePositionReq | "                     +
                      $"ctidTraderAccountId: {ctidTraderAccountId} | " +
                      $"positionId: {positionId} | "                   +
                      $"volume: {volume}");

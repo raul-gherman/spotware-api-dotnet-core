@@ -14,12 +14,12 @@ namespace spotware
             {
                 symbolCategories += $"Id: {symbolCategory.Id} | "     +
                                     $"Name: {symbolCategory.Name} | " +
-                                    $"assetClassId: {symbolCategory.assetClassId}";
+                                    $"assetClassId: {symbolCategory.assetClassId} | ";
             }
 
-            Log.Info($"ProtoOASymbolCategoryListRes | "                    +
+            Log.Info("ProtoOASymbolCategoryListRes | "                     +
                      $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
-                     $"symbolCategories: {symbolCategories}");
+                     $"symbolCategories: [{symbolCategories}]");
 
             OnSymbolCategoryListResReceived?.Invoke(args);
         }

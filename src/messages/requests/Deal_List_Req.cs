@@ -20,7 +20,7 @@ namespace spotware
             if (maxRows > 0)
                 message.maxRows = maxRows;
 
-            Log.Info($"ProtoOADealListReq | "                         +
+            Log.Info("ProtoOADealListReq | "                          +
                      $"ctidTraderAccountId: {ctidTraderAccountId} | " +
                      $"fromTimestamp: {fromTimestamp} | "             +
                      $"toTimestamp: {toTimestamp} | "                 +

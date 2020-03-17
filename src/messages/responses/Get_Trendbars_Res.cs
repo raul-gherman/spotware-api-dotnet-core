@@ -21,11 +21,11 @@ namespace spotware
                              $"deltaOpen: {trendBar.deltaOpen}";
             }
 
-            Log.Info($"ProtoOAGetAccountListByAccessTokenRes | "           +
+            Log.Info("ProtoOAGetAccountListByAccessTokenRes | "            +
                      $"symbolId: {args.symbolId} | "                       +
                      $"Timestamp: {args.Timestamp} | "                     +
                      $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
-                     $"Trendbars: {Trendbars}");
+                     $"Trendbars: [{Trendbars}]");
 
             OnGetTrendbarsResReceived?.Invoke(args);
         }

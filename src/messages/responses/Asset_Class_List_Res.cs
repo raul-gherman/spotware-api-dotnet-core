@@ -16,9 +16,9 @@ namespace spotware
                                 $"Name: {assetClass.Name}";
             }
 
-            Log.Info($"ProtoOAAccountLogoutRes | "                         +
+            Log.Info("ProtoOAAccountLogoutRes | "                          +
                      $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
-                     $"assetClasses: {assetClasses} | ");
+                     $"assetClasses: [{assetClasses}]");
 
             OnAssetClassListResReceived?.Invoke(args);
         }

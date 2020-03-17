@@ -18,12 +18,12 @@ namespace spotware
                            $"symbolName: {lightSymbol.symbolName} | "     +
                            $"baseAssetId: {lightSymbol.baseAssetId} | "   +
                            $"quoteAssetId: {lightSymbol.quoteAssetId} | " +
-                           $"symbolCategoryId: {lightSymbol.symbolCategoryId}";
+                           $"symbolCategoryId: {lightSymbol.symbolCategoryId} | ";
             }
 
-            Log.Info($"ProtoOASymbolsForConversionRes | "                  +
+            Log.Info("ProtoOASymbolsForConversionRes | "                   +
                      $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
-                     $"Symbols: {Symbols}");
+                     $"Symbols: [{Symbols}]");
 
             OnSymbolsForConversionResReceived?.Invoke(args);
         }

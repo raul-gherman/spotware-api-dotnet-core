@@ -59,7 +59,7 @@ namespace spotware
         {
             _que         = new Queue();
             _logFileName = filename;
-            System.Timers.Timer saveTimer = new System.Timers.Timer(1)
+            System.Timers.Timer saveTimer = new System.Timers.Timer(10)
                                             {
                                                 Enabled   = true,
                                                 AutoReset = true

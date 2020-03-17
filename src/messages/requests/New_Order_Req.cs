@@ -72,7 +72,7 @@ namespace spotware
             if (stopTriggerMethod != ProtoOAOrderTriggerMethod.Trade)
                 message.stopTriggerMethod = stopTriggerMethod;
 
-            Log.Info($"ProtoMessage | "                               +
+            Log.Info("ProtoMessage | "                                +
                      $"ctidTraderAccountId: {ctidTraderAccountId} | " +
                      $"symbolId: {symbolId} | "                       +
                      $"orderType: {orderType} | "                     +

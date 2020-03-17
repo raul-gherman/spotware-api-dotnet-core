@@ -17,9 +17,9 @@ namespace spotware
                            $"sellMargin: {margin.sellMargin}";
             }
 
-            Log.Info($"ProtoOAExpectedMarginRes | "                        +
+            Log.Info("ProtoOAExpectedMarginRes | "                         +
                      $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
-                     $"Margins: {Margins}");
+                     $"Margins: [{Margins}]");
 
             OnExpectedMarginResReceived?.Invoke(args);
         }

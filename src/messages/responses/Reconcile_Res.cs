@@ -32,7 +32,7 @@ namespace spotware
                              $"tradeData.guaranteedStopLoss: {position.tradeData.guaranteedStopLoss} | " +
                              $"usedMargin: {position.usedMargin} | "                                     +
                              $"stopLossTriggerMethod: {position.stopLossTriggerMethod} | "               +
-                             $"utcLastUpdateTimestamp: {position.utcLastUpdateTimestamp}";
+                             $"utcLastUpdateTimestamp: {position.utcLastUpdateTimestamp} | ";
             }
 
             string Orders = String.Empty;
@@ -68,7 +68,7 @@ namespace spotware
                           $"stopTriggerMethod: {order.stopTriggerMethod} | "                       +
                           $"timeInForce: {order.timeInForce} | "                                   +
                           $"trailingStopLoss: {order.trailingStopLoss} | "                         +
-                          $"utcLastUpdateTimestamp: {order.utcLastUpdateTimestamp}";
+                          $"utcLastUpdateTimestamp: {order.utcLastUpdateTimestamp} | ";
             }
 
             Log.Info($"ProtoOAReconcileRes | "                             +

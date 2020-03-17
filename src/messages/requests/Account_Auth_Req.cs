@@ -14,7 +14,7 @@ namespace spotware
                                                 accessToken         = accessToken
                                             };
 
-            Log.Info($"ProtoOaAccountAuthReq | "                      +
+            Log.Info("ProtoOaAccountAuthReq | "                       +
                      $"ctidTraderAccountId: {ctidTraderAccountId} | " +
                      $"accessToken: {accessToken}");
 

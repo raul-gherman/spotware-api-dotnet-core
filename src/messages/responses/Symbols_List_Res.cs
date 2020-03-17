@@ -28,12 +28,12 @@ namespace spotware
                            $"symbolName: {lightSymbol.symbolName} | "     +
                            $"baseAssetId: {lightSymbol.baseAssetId} | "   +
                            $"quoteAssetId: {lightSymbol.quoteAssetId} | " +
-                           $"symbolCategoryId: {lightSymbol.symbolCategoryId}";
+                           $"symbolCategoryId: {lightSymbol.symbolCategoryId} | ";
             }
 
-            Log.Info($"ProtoOASymbolsListRes | "                           +
+            Log.Info("ProtoOASymbolsListRes | "                            +
                      $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
-                     $"Symbols: {Symbols}");
+                     $"Symbols: [{Symbols}]");
 
             Send(Symbol_By_Id_Req(args.ctidTraderAccountId, TradingAccounts[args.ctidTraderAccountId].TradingSymbols.Keys.ToArray()));
 

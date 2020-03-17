@@ -8,9 +8,9 @@ namespace spotware
         {
             ProtoOATraderUpdatedEvent args = Serializer.Deserialize<ProtoOATraderUpdatedEvent>(_processorMemoryStream);
 
-            TradingAccounts[(long) args.ctidTraderAccountId].Trader = args.Trader;
+            TradingAccounts[args.ctidTraderAccountId].Trader = args.Trader;
 
-            Log.Info($"ProtoOATraderUpdatedEvent | "                                                   +
+            Log.Info("ProtoOATraderUpdatedEvent | "                                                    +
                      $"Trader.accessRights: {args.Trader.accessRights} | "                             +
                      $"Trader.accountType: {args.Trader.accountType} | "                               +
                      $"Trader.Balance: {args.Trader.Balance} | "                                       +

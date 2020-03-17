@@ -17,9 +17,9 @@ namespace spotware
                           $"Name: {asset.Name}";
             }
 
-            Log.Info($"ProtoOAAssetListRes | "                             +
+            Log.Info("ProtoOAAssetListRes | "                              +
                      $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
-                     $"Assets: {Assets}");
+                     $"Assets: [{Assets}]");
 
             OnAssetListResReceived?.Invoke(args);
         }

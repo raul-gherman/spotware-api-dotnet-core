@@ -12,7 +12,7 @@ namespace spotware
                                                  refreshToken = refreshToken
                                              };
 
-            Log.Info($"ProtoOARefreshTokenReq | " +
+            Log.Info("ProtoOARefreshTokenReq | " +
                      $"refreshToken: {refreshToken}");
 
             InnerMemoryStream.SetLength(0);

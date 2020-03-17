@@ -8,10 +8,17 @@ namespace spotware
         {
             ProtoOADepthEvent args = Serializer.Deserialize<ProtoOADepthEvent>(_processorMemoryStream);
 
-            Log.Info($"ProtoOADepthEvent | "                               +
-                     $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
-                     $"symbolId: {args.symbolId} | "                       +
-                     $"//TODO"); //TODO
+            string newQuotes = string.Empty;
+            foreach (ProtoOADepthQuote newQuote in args.newQuotes)
+            {
+                newQuotes += newQuote + " | ";
+            }
+
+            Log.Info("ProtoOADepthEvent | "                                        +
+                     $"ctidTraderAccountId: {args.ctidTraderAccountId} | "         +
+                     $"symbolId: {args.symbolId} | "                               +
+                     $"deletedQuotes: [{string.Join(" | ", args.deletedQuotes)}] | " +
+                     $"newQuotes: [{newQuotes}]");
 
             OnDepthEventReceived?.Invoke(args);
         }

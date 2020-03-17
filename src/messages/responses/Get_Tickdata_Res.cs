@@ -16,10 +16,10 @@ namespace spotware
                              $"Timestamp: {tickData.Timestamp}";
             }
 
-            Log.Info($"ProtoOAGetTickDataRes | "                       +
+            Log.Info("ProtoOAGetTickDataRes | "                        +
                      $"accessToken: {args.hasMore} | "                 +
                      $"permissionScope: {args.ctidTraderAccountId} | " +
-                     $"tickDatas: {tickDatas}");
+                     $"tickDatas: [{tickDatas}]");
 
             OnGetTickDataResReceived?.Invoke(args);
         }

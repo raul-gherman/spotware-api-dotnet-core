@@ -14,9 +14,9 @@ namespace spotware
                 symbolIds += symbolId + " | ";
             }
 
-            Log.Info($"ProtoOASymbolChangedEvent | " +
-                     $"symbolIds: {symbolIds} | "    +
-                     $"ctidTraderAccountId: {args.ctidTraderAccountId}");
+            Log.Info("ProtoOASymbolChangedEvent | "                        +
+                     $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
+                     $"symbolIds: [{symbolIds}]");
 
             Send(Symbol_By_Id_Req(args.ctidTraderAccountId, args.symbolIds));
 

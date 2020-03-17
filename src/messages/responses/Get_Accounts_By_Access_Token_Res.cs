@@ -22,10 +22,10 @@ namespace spotware
                 Send(Account_Auth_Req((long) account.ctidTraderAccountId, _accessToken));
             }
 
-            Log.Info($"ProtoOAGetAccountListByAccessTokenRes | "   +
+            Log.Info("ProtoOAGetAccountListByAccessTokenRes | "    +
                      $"accessToken: {args.accessToken} | "         +
                      $"permissionScope: {args.permissionScope} | " +
-                     $"ctidTraderAccounts: {ctidTraderAccounts}");
+                     $"ctidTraderAccounts: [{ctidTraderAccounts}]");
 
             OnGetAccountListByAccessTokenResReceived?.Invoke(args);
         }

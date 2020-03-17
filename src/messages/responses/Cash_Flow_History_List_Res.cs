@@ -22,9 +22,9 @@ namespace spotware
                                     $"changeBalanceTimestamp: {depositWithdraw.changeBalanceTimestamp}";
             }
 
-            Log.Info($"ProtoOACashFlowHistoryListRes | "                   +
+            Log.Info("ProtoOACashFlowHistoryListRes | "                    +
                      $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
-                     $"depositWithdraws: {depositWithdraws}");
+                     $"depositWithdraws: [{depositWithdraws}]");
 
             OnCashFlowHistoryListResReceived?.Invoke(args);
         }

@@ -9,7 +9,7 @@ namespace spotware
             ProtoOAVersionRes args = Serializer.Deserialize<ProtoOAVersionRes>(_processorMemoryStream);
 
             Log.Info($"ProtoOAVersionRes | " +
-                     $"ctidTraderAccountId: {args.Version}");
+                     $"Version: {args.Version}");
 
             Send(Application_Auth_Req(_clientId, _clientSecret));
 

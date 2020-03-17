@@ -13,7 +13,7 @@ namespace spotware
                                                      marginCall          = marginCall
                                                  };
 
-            Log.Info($"ProtoOAMarginCallUpdateReq | "                 +
+            Log.Info("ProtoOAMarginCallUpdateReq | "                  +
                      $"ctidTraderAccountId: {ctidTraderAccountId} | " +
                      $"marginCall: {marginCall}");
 

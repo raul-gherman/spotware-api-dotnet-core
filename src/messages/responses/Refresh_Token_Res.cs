@@ -16,11 +16,11 @@ namespace spotware
 
             TradingAccounts.Clear();
 
-            Log.Info($"ProtoOARefreshTokenRes | "            +
+            Log.Info("ProtoOARefreshTokenRes | "             +
+                     $"tokenType: {args.tokenType} | "       +
                      $"accessToken: {args.accessToken} | "   +
-                     $"expiresIn: {args.expiresIn} | "       +
                      $"refreshToken: {args.refreshToken} | " +
-                     $"tokenType: {args.tokenType}");
+                     $"expiresIn: {args.expiresIn}");
 
             Send(Get_Accounts_By_Access_Token_Req(_accessToken));
 
