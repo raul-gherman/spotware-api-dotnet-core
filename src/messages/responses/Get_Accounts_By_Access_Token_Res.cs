@@ -1,5 +1,4 @@
-﻿using System;
-using ProtoBuf;
+﻿using ProtoBuf;
 
 namespace spotware
 {
@@ -9,7 +8,7 @@ namespace spotware
         {
             ProtoOAGetAccountListByAccessTokenRes args = Serializer.Deserialize<ProtoOAGetAccountListByAccessTokenRes>(_processorMemoryStream);
 
-            string ctidTraderAccounts = String.Empty;
+            string ctidTraderAccounts = string.Empty;
 
             foreach (ProtoOACtidTraderAccount account in args.ctidTraderAccounts)
             {

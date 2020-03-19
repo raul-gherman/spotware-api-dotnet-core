@@ -1,5 +1,4 @@
-﻿using System;
-using ProtoBuf;
+﻿using ProtoBuf;
 
 namespace spotware
 {
@@ -9,7 +8,7 @@ namespace spotware
         {
             ProtoOAGetTrendbarsRes args = Serializer.Deserialize<ProtoOAGetTrendbarsRes>(_processorMemoryStream);
 
-            string Trendbars = String.Empty;
+            string Trendbars = string.Empty;
             foreach (ProtoOATrendbar trendBar in args.Trendbars)
             {
                 Trendbars += $"deltaClose: {trendBar.deltaClose} | "                       +

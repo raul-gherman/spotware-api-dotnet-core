@@ -10,25 +10,25 @@ namespace spotware
 
             TradingAccounts[args.ctidTraderAccountId].Trader = args.Trader;
 
-            Log.Info("ProtoOATraderUpdatedEvent | "                                                    +
-                     $"Trader.accessRights: {args.Trader.accessRights} | "                             +
-                     $"Trader.accountType: {args.Trader.accountType} | "                               +
-                     $"Trader.Balance: {args.Trader.Balance} | "                                       +
-                     $"Trader.balanceVersion: {args.Trader.balanceVersion} | "                         +
-                     $"Trader.brokerName: {args.Trader.brokerName} | "                                 +
-                     $"Trader.ibBonus: {args.Trader.ibBonus} | "                                       +
-                     $"Trader.managerBonus: {args.Trader.managerBonus} | "                             +
-                     $"Trader.maxLeverage: {args.Trader.maxLeverage} | "                               +
-                     $"Trader.registrationTimestamp: {args.Trader.registrationTimestamp} | "           +
-                     $"Trader.swapFree: {args.Trader.swapFree} | "                                     +
-                     $"Trader.traderLogin: {args.Trader.traderLogin} | "                               +
-                     $"Trader.depositAssetId: {args.Trader.depositAssetId} | "                         +
-                     $"Trader.isLimitedRisk: {args.Trader.isLimitedRisk} | "                           +
-                     $"Trader.leverageInCents: {args.Trader.leverageInCents} | "                       +
-                     $"Trader.nonWithdrawableBonus: {args.Trader.nonWithdrawableBonus} | "             +
-                     $"Trader.ctidTraderAccountId: {args.Trader.ctidTraderAccountId} | "               +
-                     $"Trader.totalMarginCalculationType: {args.Trader.totalMarginCalculationType} | " +
-                     $"Trader.limitedRiskMarginCalculationStrategy: {args.Trader.limitedRiskMarginCalculationStrategy}");
+            Log.Info("ProtoOATraderUpdatedEvent | "                                             +
+                     $"accessRights: {args.Trader.accessRights} | "                             +
+                     $"accountType: {args.Trader.accountType} | "                               +
+                     $"Balance: {args.Trader.Balance} | "                                       +
+                     $"balanceVersion: {args.Trader.balanceVersion} | "                         +
+                     $"brokerName: {args.Trader.brokerName} | "                                 +
+                     $"ibBonus: {args.Trader.ibBonus} | "                                       +
+                     $"managerBonus: {args.Trader.managerBonus} | "                             +
+                     $"maxLeverage: {args.Trader.maxLeverage} | "                               +
+                     $"registrationTimestamp: {args.Trader.registrationTimestamp} | "           +
+                     $"swapFree: {args.Trader.swapFree} | "                                     +
+                     $"traderLogin: {args.Trader.traderLogin} | "                               +
+                     $"depositAssetId: {args.Trader.depositAssetId} | "                         +
+                     $"isLimitedRisk: {args.Trader.isLimitedRisk} | "                           +
+                     $"leverageInCents: {args.Trader.leverageInCents} | "                       +
+                     $"nonWithdrawableBonus: {args.Trader.nonWithdrawableBonus} | "             +
+                     $"ctidTraderAccountId: {args.Trader.ctidTraderAccountId} | "               +
+                     $"totalMarginCalculationType: {args.Trader.totalMarginCalculationType} | " +
+                     $"limitedRiskMarginCalculationStrategy: {args.Trader.limitedRiskMarginCalculationStrategy}");
 
             OnTraderUpdatedEventReceived?.Invoke(args);
         }

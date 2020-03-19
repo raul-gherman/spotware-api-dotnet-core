@@ -1,5 +1,4 @@
-﻿using System;
-using ProtoBuf;
+﻿using ProtoBuf;
 
 namespace spotware
 {
@@ -9,7 +8,7 @@ namespace spotware
         {
             ProtoOAGetTickDataRes args = Serializer.Deserialize<ProtoOAGetTickDataRes>(_processorMemoryStream);
 
-            string tickDatas = String.Empty;
+            string tickDatas = string.Empty;
             foreach (ProtoOATickData tickData in args.tickDatas)
             {
                 tickDatas += $"Tick: {tickData.Tick} | " +

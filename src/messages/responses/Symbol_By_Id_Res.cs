@@ -10,14 +10,14 @@ namespace spotware
         {
             ProtoOASymbolByIdRes args = Serializer.Deserialize<ProtoOASymbolByIdRes>(_processorMemoryStream);
 
-            string Symbols = String.Empty;
+            string Symbols = string.Empty;
 
             foreach (ProtoOASymbol symbol in args.Symbols)
             {
                 TradingAccounts[args.ctidTraderAccountId].TradingSymbols[symbol.symbolId].Symbol = symbol;
                 TradingAccounts[args.ctidTraderAccountId].TradingSymbols[symbol.symbolId].Pip    = Math.Pow(10, -symbol.pipPosition);
 
-                string Schedules = String.Empty;
+                string Schedules = string.Empty;
                 foreach (ProtoOAInterval interval in symbol.Schedules)
                 {
                     Schedules += $"startSecond: {interval.startSecond} | " +

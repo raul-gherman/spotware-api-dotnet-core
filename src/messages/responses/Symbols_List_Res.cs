@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using ProtoBuf;
 
 namespace spotware
@@ -10,7 +9,7 @@ namespace spotware
         {
             ProtoOASymbolsListRes args = Serializer.Deserialize<ProtoOASymbolsListRes>(_processorMemoryStream);
             
-            string Symbols = String.Empty;
+            string Symbols = string.Empty;
 
             foreach (ProtoOALightSymbol lightSymbol in args.Symbols)
             {

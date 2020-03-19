@@ -1,5 +1,4 @@
-﻿using System;
-using ProtoBuf;
+﻿using ProtoBuf;
 
 namespace spotware
 {
@@ -9,7 +8,7 @@ namespace spotware
         {
             ProtoOAExpectedMarginRes args = Serializer.Deserialize<ProtoOAExpectedMarginRes>(_processorMemoryStream);
 
-            string Margins = String.Empty;
+            string Margins = string.Empty;
             foreach (ProtoOAExpectedMargin margin in args.Margins)
             {
                 Margins += $"Volume: {margin.Volume} | "       +

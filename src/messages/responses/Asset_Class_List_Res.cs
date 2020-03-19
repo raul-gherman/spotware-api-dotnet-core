@@ -1,5 +1,4 @@
-﻿using System;
-using ProtoBuf;
+﻿using ProtoBuf;
 
 namespace spotware
 {
@@ -9,7 +8,7 @@ namespace spotware
         {
             ProtoOAAssetClassListRes args = Serializer.Deserialize<ProtoOAAssetClassListRes>(_processorMemoryStream);
 
-            string assetClasses = String.Empty;
+            string assetClasses = string.Empty;
             foreach (ProtoOAAssetClass assetClass in args.assetClasses)
             {
                 assetClasses += $"Id: {assetClass.Id} | " +

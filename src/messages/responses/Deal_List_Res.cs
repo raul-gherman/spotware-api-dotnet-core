@@ -1,5 +1,4 @@
-﻿using System;
-using ProtoBuf;
+﻿using ProtoBuf;
 
 namespace spotware
 {
@@ -9,7 +8,7 @@ namespace spotware
         {
             ProtoOADealListRes args = Serializer.Deserialize<ProtoOADealListRes>(_processorMemoryStream);
 
-            string Deals = String.Empty;
+            string Deals = string.Empty;
             foreach (ProtoOADeal deal in args.Deals)
             {
                 Deals += $"Commission: {deal.Commission} | "                                                                             +

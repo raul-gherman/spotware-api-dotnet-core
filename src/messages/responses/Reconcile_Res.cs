@@ -1,5 +1,4 @@
-﻿using System;
-using ProtoBuf;
+﻿using ProtoBuf;
 
 namespace spotware
 {
@@ -9,7 +8,7 @@ namespace spotware
         {
             ProtoOAReconcileRes args = Serializer.Deserialize<ProtoOAReconcileRes>(_processorMemoryStream);
 
-            string Positions = String.Empty;
+            string Positions = string.Empty;
 
             foreach (ProtoOAPosition position in args.Positions)
             {
@@ -35,7 +34,7 @@ namespace spotware
                              $"utcLastUpdateTimestamp: {position.utcLastUpdateTimestamp} | ";
             }
 
-            string Orders = String.Empty;
+            string Orders = string.Empty;
 
             foreach (ProtoOAOrder order in args.Orders)
             {

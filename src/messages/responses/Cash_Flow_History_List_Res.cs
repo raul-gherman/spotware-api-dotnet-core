@@ -1,5 +1,4 @@
-﻿using System;
-using ProtoBuf;
+﻿using ProtoBuf;
 
 namespace spotware
 {
@@ -9,7 +8,7 @@ namespace spotware
         {
             ProtoOACashFlowHistoryListRes args = Serializer.Deserialize<ProtoOACashFlowHistoryListRes>(_processorMemoryStream);
 
-            string depositWithdraws = String.Empty;
+            string depositWithdraws = string.Empty;
             foreach (ProtoOADepositWithdraw depositWithdraw in args.depositWithdraws)
             {
                 depositWithdraws += $"Balance: {depositWithdraw.Balance} | "                   +

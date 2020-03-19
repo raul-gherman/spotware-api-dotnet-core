@@ -1,5 +1,4 @@
-﻿using System;
-using ProtoBuf;
+﻿using ProtoBuf;
 
 namespace spotware
 {
@@ -9,7 +8,7 @@ namespace spotware
         {
             ProtoOASymbolCategoryListRes args = Serializer.Deserialize<ProtoOASymbolCategoryListRes>(_processorMemoryStream);
 
-            string symbolCategories = String.Empty;
+            string symbolCategories = string.Empty;
             foreach (ProtoOASymbolCategory symbolCategory in args.symbolCategories)
             {
                 symbolCategories += $"Id: {symbolCategory.Id} | "     +
