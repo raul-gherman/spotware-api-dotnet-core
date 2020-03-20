@@ -24,40 +24,40 @@ namespace spotware
                                  $"endSecond: {interval.endSecond} | ";
                 }
 
-                Symbols += $"Commission: {symbol.Commission} | "                           +
-                           $"commissionType: {symbol.commissionType} | "                   +
+                Symbols += $"symbolId: {symbol.symbolId} | " +
                            $"Digits: {symbol.Digits} | "                                   +
+                           $"pipPosition: {symbol.pipPosition} | "                         +
+                           $"tradingMode: {symbol.tradingMode} | "                         +
+                           $"Commission: {symbol.Commission} | "                           +
+                           $"commissionType: {symbol.commissionType} | "                   +
+                           $"minCommission: {symbol.minCommission} | "                     +
+                           $"minCommissionType: {symbol.minCommissionType} | "             +
+                           $"minCommissionAsset: {symbol.minCommissionAsset} | "           +
                            $"gslCharge: {symbol.gslCharge} | "                             +
                            $"gslDistance: {symbol.gslDistance} | "                         +
                            $"maxExposure: {symbol.maxExposure} | "                         +
                            $"maxVolume: {symbol.maxVolume} | "                             +
-                           $"minCommission: {symbol.minCommission} | "                     +
                            $"minVolume: {symbol.minVolume} | "                             +
-                           $"pipPosition: {symbol.pipPosition} | "                         +
                            $"rolloverCommission: {symbol.rolloverCommission} | "           +
-                           $"Schedules: [{Schedules}] | "                                  +
+                           $"distanceSetIn: {symbol.distanceSetIn} | "                     +
                            $"slDistance: {symbol.slDistance} | "                           +
+                           $"tpDistance: {symbol.tpDistance} | "                           +
                            $"stepVolume: {symbol.stepVolume} | "                           +
                            $"swapLong: {symbol.swapLong} | "                               +
                            $"swapShort: {symbol.swapShort} | "                             +
-                           $"symbolId: {symbol.symbolId} | "                               +
-                           $"tpDistance: {symbol.tpDistance} | "                           +
-                           $"tradingMode: {symbol.tradingMode} | "                         +
-                           $"distanceSetIn: {symbol.distanceSetIn} | "                     +
                            $"enableShortSelling: {symbol.enableShortSelling} | "           +
                            $"guaranteedStopLoss: {symbol.guaranteedStopLoss} | "           +
-                           $"minCommissionAsset: {symbol.minCommissionAsset} | "           +
-                           $"minCommissionType: {symbol.minCommissionType} | "             +
                            $"rolloverCommission3Days: {symbol.rolloverCommission3Days} | " +
-                           $"scheduleTimeZone: {symbol.scheduleTimeZone} | "               +
                            $"skipRolloverDays: {symbol.skipRolloverDays} | "               +
+                           $"scheduleTimeZone: {symbol.scheduleTimeZone} | "               +
+                           $"Schedules: [{Schedules}] | "                                  +
                            $"swapCalculationType: {symbol.swapCalculationType} | "         +
                            $"swapRollover3Days: {symbol.swapRollover3Days}";
             }
 
             Log.Info("ProtoOASymbolByIdRes | "                             +
                      $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
-                     $"Symbols: {Symbols}");
+                     $"Symbols: [{Symbols}]");
 
             if (_subscribeAllSymbols)
             {

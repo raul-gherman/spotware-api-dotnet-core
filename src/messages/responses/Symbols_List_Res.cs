@@ -21,13 +21,13 @@ namespace spotware
                                               };
                 TradingAccounts[args.ctidTraderAccountId].TradingSymbols[lightSymbol.symbolId] = tradingSymbol;
                 
-                Symbols += $"Description: {lightSymbol.Description} | "   +
-                           $"Enabled: {lightSymbol.Enabled} | "           +
-                           $"symbolId: {lightSymbol.symbolId} | "         +
-                           $"symbolName: {lightSymbol.symbolName} | "     +
-                           $"baseAssetId: {lightSymbol.baseAssetId} | "   +
-                           $"quoteAssetId: {lightSymbol.quoteAssetId} | " +
-                           $"symbolCategoryId: {lightSymbol.symbolCategoryId} | ";
+                Symbols += $"symbolId: {lightSymbol.symbolId} | "                 +
+                           $"symbolName: {lightSymbol.symbolName} | "             +
+                           $"Description: {lightSymbol.Description} | "           +
+                           $"Enabled: {lightSymbol.Enabled} | "                   +
+                           $"symbolCategoryId: {lightSymbol.symbolCategoryId} | " +
+                           $"baseAssetId: {lightSymbol.baseAssetId} | "           +
+                           $"quoteAssetId: {lightSymbol.quoteAssetId}";
             }
 
             Log.Info("ProtoOASymbolsListRes | "                            +

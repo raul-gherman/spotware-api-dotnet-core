@@ -11,7 +11,10 @@ namespace spotware
             string newQuotes = string.Empty;
             foreach (ProtoOADepthQuote newQuote in args.newQuotes)
             {
-                newQuotes += $"Id: {newQuote.Id} Ask: {newQuote.Ask} Bid: {newQuote.Bid} Size: {newQuote.Size} | ";
+                newQuotes += $"Id: {newQuote.Id} " +
+                             $"Ask: {newQuote.Ask} " +
+                             $"Bid: {newQuote.Bid} " +
+                             $"Size: {newQuote.Size} | ";
             }
 
             Log.Info("ProtoOADepthEvent | "                                          +

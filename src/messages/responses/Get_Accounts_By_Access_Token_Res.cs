@@ -14,9 +14,9 @@ namespace spotware
             {
                 TradingAccounts[(long) account.ctidTraderAccountId] = new TradingAccount(this, (long) account.ctidTraderAccountId);
 
-                ctidTraderAccounts += $"isLive: {account.isLive} | "           +
-                                      $"traderLogin: {account.traderLogin} | " +
-                                      $"ctidTraderAccountId: {account.ctidTraderAccountId}";
+                ctidTraderAccounts += $"ctidTraderAccountId: {account.ctidTraderAccountId} | " +
+                                      $"traderLogin: {account.traderLogin} | "                 +
+                                      $"isLive: {account.isLive}";
 
                 Send(Account_Auth_Req((long) account.ctidTraderAccountId, _accessToken));
             }

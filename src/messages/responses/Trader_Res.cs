@@ -12,20 +12,20 @@ namespace spotware
 
             Log.Info("ProtoOATraderRes | "                                                      +
                      $"ctidTraderAccountId: {args.ctidTraderAccountId} | "                      +
-                     $"accessRights: {args.Trader.accessRights} | "                             +
+                     $"brokerName: {args.Trader.brokerName} | "                                 +
+                     $"traderLogin: {args.Trader.traderLogin} | "                               +
                      $"accountType: {args.Trader.accountType} | "                               +
+                     $"accessRights: {args.Trader.accessRights} | "                             +
                      $"Balance: {args.Trader.Balance} | "                                       +
                      $"balanceVersion: {args.Trader.balanceVersion} | "                         +
-                     $"brokerName: {args.Trader.brokerName} | "                                 +
                      $"ibBonus: {args.Trader.ibBonus} | "                                       +
                      $"managerBonus: {args.Trader.managerBonus} | "                             +
                      $"maxLeverage: {args.Trader.maxLeverage} | "                               +
-                     $"registrationTimestamp: {args.Trader.registrationTimestamp} | "           +
                      $"swapFree: {args.Trader.swapFree} | "                                     +
-                     $"traderLogin: {args.Trader.traderLogin} | "                               +
                      $"depositAssetId: {args.Trader.depositAssetId} | "                         +
                      $"isLimitedRisk: {args.Trader.isLimitedRisk} | "                           +
                      $"leverageInCents: {args.Trader.leverageInCents} | "                       +
+                     $"registrationTimestamp: {args.Trader.registrationTimestamp} | "           +
                      $"nonWithdrawableBonus: {args.Trader.nonWithdrawableBonus} | "             +
                      $"ctidTraderAccountId: {args.Trader.ctidTraderAccountId} | "               +
                      $"totalMarginCalculationType: {args.Trader.totalMarginCalculationType} | " +

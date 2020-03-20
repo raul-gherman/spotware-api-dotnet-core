@@ -44,9 +44,8 @@ namespace spotware
 
     internal class XLogger
     {
-        public static readonly XLogger       Instance = new XLogger();
-        private                Queue         _que;
-        //private readonly       StringBuilder _sb = new StringBuilder();
+        public static readonly XLogger Instance = new XLogger();
+        private                Queue   _que;
 
         private XLogger()
         {
@@ -80,11 +79,6 @@ namespace spotware
         private static string FormatLog(string log, string msg)
         {
             return $"{(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss.ffffff"))} {log} {msg}{Environment.NewLine}";
-            //_sb.Clear();
-            //_sb.Append(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss.ffffff"));
-            //_sb.Append(log);
-            //_sb.AppendLine(msg);
-            //return _sb.ToString();
         }
 
         private void WriteData()

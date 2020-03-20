@@ -11,13 +11,13 @@ namespace spotware
             string depositWithdraws = string.Empty;
             foreach (ProtoOADepositWithdraw depositWithdraw in args.depositWithdraws)
             {
-                depositWithdraws += $"Balance: {depositWithdraw.Balance} | "                   +
-                                    $"balanceVersion: {depositWithdraw.balanceVersion} | "     +
-                                    $"Delta: {depositWithdraw.Delta} | "                       +
+                depositWithdraws += $"operationType: {depositWithdraw.operationType} | "       +
                                     $"Equity: {depositWithdraw.Equity} | "                     +
-                                    $"externalNote: {depositWithdraw.externalNote} | "         +
-                                    $"operationType: {depositWithdraw.operationType} | "       +
+                                    $"Balance: {depositWithdraw.Balance} | "                   +
+                                    $"balanceVersion: {depositWithdraw.balanceVersion} | "     +
                                     $"balanceHistoryId: {depositWithdraw.balanceHistoryId} | " +
+                                    $"Delta: {depositWithdraw.Delta} | "                       +
+                                    $"externalNote: {depositWithdraw.externalNote} | "         +
                                     $"changeBalanceTimestamp: {depositWithdraw.changeBalanceTimestamp}";
             }
 

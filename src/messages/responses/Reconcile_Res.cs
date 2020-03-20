@@ -14,22 +14,22 @@ namespace spotware
             {
                 TradingAccounts[args.ctidTraderAccountId].Positions[position.positionId] = position;
 
-                Positions += $"Commission: {position.Commission} | "                                     +
-                             $"marginRate: {position.marginRate} | "                                     +
-                             $"mirroringCommission: {position.mirroringCommission} | "                   +
-                             $"positionId: {position.positionId} | "                                     +
+                Positions += $"positionId: {position.positionId} | "                                     +
                              $"positionStatus: {position.positionStatus} | "                             +
+                             $"mirroringCommission: {position.mirroringCommission} | "                   +
                              $"Price: {position.Price} | "                                               +
                              $"stopLoss: {position.stopLoss} | "                                         +
-                             $"Swap: {position.Swap} | "                                                 +
                              $"takeProfit: {position.takeProfit} | "                                     +
-                             $"tradeData.Label: {position.tradeData.Label} | "                           +
-                             $"tradeData.openTimestamp: {position.tradeData.openTimestamp} | "           +
+                             $"usedMargin: {position.usedMargin} | "                                     +
+                             $"marginRate: {position.marginRate} | "                                     +
+                             $"Swap: {position.Swap} | "                                                 +
+                             $"Commission: {position.Commission} | "                                     +
                              $"tradeData.symbolId: {position.tradeData.symbolId} | "                     +
                              $"tradeData.tradeSide: {position.tradeData.tradeSide} | "                   +
                              $"tradeData.Volume: {position.tradeData.Volume} | "                         +
                              $"tradeData.guaranteedStopLoss: {position.tradeData.guaranteedStopLoss} | " +
-                             $"usedMargin: {position.usedMargin} | "                                     +
+                             $"tradeData.openTimestamp: {position.tradeData.openTimestamp} | "           +
+                             $"tradeData.Label: {position.tradeData.Label} | "                           +
                              $"stopLossTriggerMethod: {position.stopLossTriggerMethod} | "               +
                              $"utcLastUpdateTimestamp: {position.utcLastUpdateTimestamp} | ";
             }
