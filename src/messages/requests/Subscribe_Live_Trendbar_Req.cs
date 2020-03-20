@@ -14,7 +14,10 @@ namespace spotware
                                                           symbolId            = symbolId
                                                       };
 
-            Persist(message);
+            Log.Info("ProtoOASubscribeLiveTrendbarReq | "             +
+                     $"ctidTraderAccountId: {ctidTraderAccountId} | " +
+                     $"Period: {period} | "                           +
+                     $"symbolId: {symbolId}");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);

@@ -8,7 +8,8 @@ namespace spotware
         {
             ProtoOAGetCtidProfileByTokenRes args = Serializer.Deserialize<ProtoOAGetCtidProfileByTokenRes>(_processorMemoryStream);
 
-            Persist(args);
+            Log.Info("ProtoOAGetCtidProfileByTokenRes | " +
+                     $"Profile.userId: {args.Profile.userId}");
 
             OnGetCtidProfileByTokenResReceived?.Invoke(args);
         }

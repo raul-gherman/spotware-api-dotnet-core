@@ -13,25 +13,30 @@ namespace spotware
         {
             ProtoMessagesQueue.Enqueue(KeepAliveMessage);
             _keepAliveThread = new Thread(() =>
+                                          {
+                                              Thread.CurrentThread.IsBackground = true;
+                                              KeepAlive();
+                                          });
+            _keepAliveThread.Start();
+        }
+
+        private void KeepAlive()
+        {
+            try
             {
-                Thread.CurrentThread.IsBackground = true;
-                try
+                while (Thread.CurrentThread.IsAlive)
                 {
-                    while (Thread.CurrentThread.IsAlive)
+                    Thread.Sleep(1000);
+                    if (DateTime.UtcNow > _nextTimeGate)
                     {
-                        Thread.Sleep(1000);
-                        if (DateTime.UtcNow > _nextTimeGate)
-                        {
-                            ProtoMessagesQueue.Enqueue(KeepAliveMessage);
-                        }
+                        ProtoMessagesQueue.Enqueue(KeepAliveMessage);
                     }
                 }
-                catch (Exception ex)
-                {
-                    _log.Error($"Start_KeepAlive_Thread :: {ex}");
-                }
-            });
-            _keepAliveThread.Start();
+            }
+            catch (Exception ex)
+            {
+                _log.Error($"KeepAlive :: {ex}");
+            }
         }
     }
 }

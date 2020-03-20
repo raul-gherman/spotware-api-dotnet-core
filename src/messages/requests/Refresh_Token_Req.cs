@@ -12,7 +12,8 @@ namespace spotware
                                                  refreshToken = refreshToken
                                              };
 
-            Persist(message);
+            Log.Info("ProtoOARefreshTokenReq | " +
+                     $"refreshToken: {refreshToken}");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);

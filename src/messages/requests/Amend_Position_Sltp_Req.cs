@@ -30,7 +30,14 @@ namespace spotware
             if (stopLossTriggerMethod != ProtoOAOrderTriggerMethod.Trade)
                 message.stopLossTriggerMethod = stopLossTriggerMethod;
 
-            Persist(message);
+            Log.Info("Amend_Position_SLTP_Req | "                     +
+                     $"ctidTraderAccountId: {ctidTraderAccountId} | " +
+                     $"positionId: {positionId} | "                   +
+                     $"stopLoss: {stopLoss} | "                       +
+                     $"takeProfit: {takeProfit} | "                   +
+                     $"guaranteedStopLoss: {guaranteedStopLoss} | "   +
+                     $"trailingStopLoss: {trailingStopLoss} | "       +
+                     $"stopLossTriggerMethod: {stopLossTriggerMethod}");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);

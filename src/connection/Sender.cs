@@ -11,7 +11,7 @@ namespace spotware
     {
         private          Thread              _senderThread;
         private const    int                 HeartbeatIntervalInSeconds = 25;
-        private          DateTime            _nextTimeGate              = DateTime.UtcNow;
+        private          DateTime            _nextTimeGate              = DateTime.UtcNow.AddSeconds(HeartbeatIntervalInSeconds);
         public readonly  Queue<ProtoMessage> ProtoMessagesQueue         = new Queue<ProtoMessage>();
         private readonly MemoryStream        _encoderMemoryStream       = new MemoryStream();
 
@@ -74,6 +74,7 @@ namespace spotware
             catch (Exception ex)
             {
                 _log.Error($"Send :: {ex}");
+                throw;
             }
         }
     }

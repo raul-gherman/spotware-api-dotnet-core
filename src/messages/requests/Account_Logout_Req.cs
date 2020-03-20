@@ -12,7 +12,8 @@ namespace spotware
                                                   ctidTraderAccountId = ctidTraderAccountId
                                               };
 
-            Persist(message);
+            Log.Info("ProtoOAAccountLogoutReq | " +
+                     $"ctidTraderAccountId: {ctidTraderAccountId}");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);

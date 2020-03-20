@@ -7,22 +7,19 @@ namespace spotware
     {
         public void Connect()
         {
-            LogManager.Configure($"spotware-api-{DateTime.UtcNow:yyyy-MM-dd}.log");
-            Start_Persister_Thread();
-
             Prepare_Dispatcher();
 
-            _connection = new Connection(Gateway, Port)
+            _connection = new Connection(_gateway, _port)
                           {
                               KeepAliveMessage = Heartbeat()
                           };
 
-            _connection.OnConnectionEstablished += Start_Spotware_Message_Flow;
+            _connection.OnConnectionEstablished += Start_Message_Flow;
             _connection.OnMessageReceived       += MessageReceived;
             _connection.Connect();
         }
 
-        private void Start_Spotware_Message_Flow(object sender, EventArgs args)
+        private void Start_Message_Flow(object sender, EventArgs args)
         {
             Send(Version_Req());
         }

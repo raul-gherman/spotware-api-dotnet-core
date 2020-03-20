@@ -12,7 +12,8 @@ namespace spotware
                                                           accessToken = accessToken
                                                       };
 
-            Persist(message);
+            Log.Info("ProtoOAGetCtidProfileByTokenReq | " +
+                     $"accessToken: {accessToken}");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);

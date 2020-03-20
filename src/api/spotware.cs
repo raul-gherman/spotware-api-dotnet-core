@@ -663,17 +663,6 @@ namespace spotware
         public  void  ResetmaxLeverage()           => __pbn__maxLeverage = null;
         private uint? __pbn__maxLeverage;
 
-        [ProtoBuf.ProtoMember(13)]
-        public bool frenchRisk
-        {
-            get { return __pbn__frenchRisk.GetValueOrDefault(); }
-            set { __pbn__frenchRisk = value; }
-        }
-
-        public  bool  ShouldSerializefrenchRisk() => __pbn__frenchRisk != null;
-        public  void  ResetfrenchRisk()           => __pbn__frenchRisk = null;
-        private bool? __pbn__frenchRisk;
-
         [ProtoBuf.ProtoMember(14)]
         public long traderLogin
         {
@@ -719,6 +708,29 @@ namespace spotware
         public  bool  ShouldSerializeregistrationTimestamp() => __pbn__registrationTimestamp != null;
         public  void  ResetregistrationTimestamp()           => __pbn__registrationTimestamp = null;
         private long? __pbn__registrationTimestamp;
+
+        [ProtoBuf.ProtoMember(18)]
+        public bool isLimitedRisk
+        {
+            get { return __pbn__isLimitedRisk.GetValueOrDefault(); }
+            set { __pbn__isLimitedRisk = value; }
+        }
+
+        public  bool  ShouldSerializeisLimitedRisk() => __pbn__isLimitedRisk != null;
+        public  void  ResetisLimitedRisk()           => __pbn__isLimitedRisk = null;
+        private bool? __pbn__isLimitedRisk;
+
+        [ProtoBuf.ProtoMember(19)]
+        [System.ComponentModel.DefaultValue(ProtoOALimitedRiskMarginCalculationStrategy.AccordingToLeverage)]
+        public ProtoOALimitedRiskMarginCalculationStrategy limitedRiskMarginCalculationStrategy
+        {
+            get { return __pbn__limitedRiskMarginCalculationStrategy ?? ProtoOALimitedRiskMarginCalculationStrategy.AccordingToLeverage; }
+            set { __pbn__limitedRiskMarginCalculationStrategy = value; }
+        }
+
+        public  bool                                         ShouldSerializelimitedRiskMarginCalculationStrategy() => __pbn__limitedRiskMarginCalculationStrategy != null;
+        public  void                                         ResetlimitedRiskMarginCalculationStrategy()           => __pbn__limitedRiskMarginCalculationStrategy = null;
+        private ProtoOALimitedRiskMarginCalculationStrategy? __pbn__limitedRiskMarginCalculationStrategy;
     }
 
     [ProtoBuf.ProtoContract()]
@@ -3311,8 +3323,7 @@ namespace spotware
         private ProtoOAClientPermissionScope? __pbn__permissionScope;
 
         [ProtoBuf.ProtoMember(4, Name = @"ctidTraderAccount")]
-        public System.Collections.Generic.List<ProtoOACtidTraderAccount> ctidTraderAccounts { get; } =
-            new System.Collections.Generic.List<ProtoOACtidTraderAccount>();
+        public System.Collections.Generic.List<ProtoOACtidTraderAccount> ctidTraderAccounts { get; } = new System.Collections.Generic.List<ProtoOACtidTraderAccount>();
     }
 
     [ProtoBuf.ProtoContract()]
@@ -3467,6 +3478,17 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(6, Name = @"trendbar")]
         public System.Collections.Generic.List<ProtoOATrendbar> Trendbars { get; } = new System.Collections.Generic.List<ProtoOATrendbar>();
+
+        [ProtoBuf.ProtoMember(7)]
+        public ulong sessionClose
+        {
+            get { return __pbn__sessionClose.GetValueOrDefault(); }
+            set { __pbn__sessionClose = value; }
+        }
+
+        public  bool   ShouldSerializesessionClose() => __pbn__sessionClose != null;
+        public  void   ResetsessionClose()           => __pbn__sessionClose = null;
+        private ulong? __pbn__sessionClose;
     }
 
     [ProtoBuf.ProtoContract()]
@@ -3797,8 +3819,7 @@ namespace spotware
         [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public ulong symbolId { get; set; }
 
-        [ProtoBuf.ProtoMember(4)]
-        public System.Collections.Generic.List<ProtoOADepthQuote> newQuotes { get; } = new System.Collections.Generic.List<ProtoOADepthQuote>();
+        [ProtoBuf.ProtoMember(4)] public System.Collections.Generic.List<ProtoOADepthQuote> newQuotes { get; } = new System.Collections.Generic.List<ProtoOADepthQuote>();
 
         [ProtoBuf.ProtoMember(5, IsPacked = true)]
         public ulong[] deletedQuotes { get; set; }
@@ -4515,11 +4536,8 @@ namespace spotware
     [ProtoBuf.ProtoContract()]
     public enum ProtoOADayOfWeek
     {
-        [ProtoBuf.ProtoEnum(Name = @"NONE")]
-        None = 0,
-
-        [ProtoBuf.ProtoEnum(Name = @"MONDAY")]
-        Monday = 1,
+        [ProtoBuf.ProtoEnum(Name = @"NONE")]   None   = 0,
+        [ProtoBuf.ProtoEnum(Name = @"MONDAY")] Monday = 1,
 
         [ProtoBuf.ProtoEnum(Name = @"TUESDAY")]
         Tuesday = 2,
@@ -4529,15 +4547,11 @@ namespace spotware
 
         [ProtoBuf.ProtoEnum(Name = @"THURSDAY")]
         Thursday = 4,
-
-        [ProtoBuf.ProtoEnum(Name = @"FRIDAY")]
-        Friday = 5,
+        [ProtoBuf.ProtoEnum(Name = @"FRIDAY")] Friday = 5,
 
         [ProtoBuf.ProtoEnum(Name = @"SATURDAY")]
         Saturday = 6,
-
-        [ProtoBuf.ProtoEnum(Name = @"SUNDAY")]
-        Sunday = 7,
+        [ProtoBuf.ProtoEnum(Name = @"SUNDAY")] Sunday = 7,
     }
 
     [ProtoBuf.ProtoContract()]
@@ -4595,8 +4609,7 @@ namespace spotware
     [ProtoBuf.ProtoContract()]
     public enum ProtoOASwapCalculationType
     {
-        [ProtoBuf.ProtoEnum(Name = @"POINTS")]
-        Points = 0,
+        [ProtoBuf.ProtoEnum(Name = @"POINTS")] Points = 0,
 
         [ProtoBuf.ProtoEnum(Name = @"INTEREST")]
         Interest = 1,
@@ -4621,24 +4634,16 @@ namespace spotware
     [ProtoBuf.ProtoContract()]
     public enum ProtoOATotalMarginCalculationType
     {
-        [ProtoBuf.ProtoEnum(Name = @"MAX")]
-        Max = 0,
-
-        [ProtoBuf.ProtoEnum(Name = @"SUM")]
-        Sum = 1,
-
-        [ProtoBuf.ProtoEnum(Name = @"NET")]
-        Net = 2,
+        [ProtoBuf.ProtoEnum(Name = @"MAX")] Max = 0,
+        [ProtoBuf.ProtoEnum(Name = @"SUM")] Sum = 1,
+        [ProtoBuf.ProtoEnum(Name = @"NET")] Net = 2,
     }
 
     [ProtoBuf.ProtoContract()]
     public enum ProtoOAAccountType
     {
-        [ProtoBuf.ProtoEnum(Name = @"HEDGED")]
-        Hedged = 0,
-
-        [ProtoBuf.ProtoEnum(Name = @"NETTED")]
-        Netted = 1,
+        [ProtoBuf.ProtoEnum(Name = @"HEDGED")] Hedged = 0,
+        [ProtoBuf.ProtoEnum(Name = @"NETTED")] Netted = 1,
 
         [ProtoBuf.ProtoEnum(Name = @"SPREAD_BETTING")]
         SpreadBetting = 2,
@@ -4779,13 +4784,23 @@ namespace spotware
     }
 
     [ProtoBuf.ProtoContract()]
+    public enum ProtoOALimitedRiskMarginCalculationStrategy
+    {
+        [ProtoBuf.ProtoEnum(Name = @"ACCORDING_TO_LEVERAGE")]
+        AccordingToLeverage = 0,
+
+        [ProtoBuf.ProtoEnum(Name = @"ACCORDING_TO_GSL")]
+        AccordingToGsl = 1,
+
+        [ProtoBuf.ProtoEnum(Name = @"ACCORDING_TO_GSL_AND_LEVERAGE")]
+        AccordingToGslAndLeverage = 2,
+    }
+
+    [ProtoBuf.ProtoContract()]
     public enum ProtoOAQuoteType
     {
-        [ProtoBuf.ProtoEnum(Name = @"BID")]
-        Bid = 1,
-
-        [ProtoBuf.ProtoEnum(Name = @"ASK")]
-        Ask = 2,
+        [ProtoBuf.ProtoEnum(Name = @"BID")] Bid = 1,
+        [ProtoBuf.ProtoEnum(Name = @"ASK")] Ask = 2,
     }
 
     [ProtoBuf.ProtoContract()]
@@ -4801,22 +4816,20 @@ namespace spotware
     [ProtoBuf.ProtoContract()]
     public enum ProtoOATrendbarPeriod
     {
-        M1  = 1,
-        M2  = 2,
-        M3  = 3,
-        M4  = 4,
-        M5  = 5,
-        M10 = 6,
-        M15 = 7,
-        M30 = 8,
-        H1  = 9,
-        H4  = 10,
-        H12 = 11,
-        D1  = 12,
-        W1  = 13,
-
-        [ProtoBuf.ProtoEnum(Name = @"MN1")]
-        Mn1 = 14,
+        M1                                      = 1,
+        M2                                      = 2,
+        M3                                      = 3,
+        M4                                      = 4,
+        M5                                      = 5,
+        M10                                     = 6,
+        M15                                     = 7,
+        M30                                     = 8,
+        H1                                      = 9,
+        H4                                      = 10,
+        H12                                     = 11,
+        D1                                      = 12,
+        W1                                      = 13,
+        [ProtoBuf.ProtoEnum(Name = @"MN1")] Mn1 = 14,
     }
 
     [ProtoBuf.ProtoContract()]
@@ -4838,24 +4851,16 @@ namespace spotware
     [ProtoBuf.ProtoContract()]
     public enum ProtoOATradeSide
     {
-        [ProtoBuf.ProtoEnum(Name = @"BUY")]
-        Buy = 1,
-
-        [ProtoBuf.ProtoEnum(Name = @"SELL")]
-        Sell = 2,
+        [ProtoBuf.ProtoEnum(Name = @"BUY")]  Buy  = 1,
+        [ProtoBuf.ProtoEnum(Name = @"SELL")] Sell = 2,
     }
 
     [ProtoBuf.ProtoContract()]
     public enum ProtoOAOrderType
     {
-        [ProtoBuf.ProtoEnum(Name = @"MARKET")]
-        Market = 1,
-
-        [ProtoBuf.ProtoEnum(Name = @"LIMIT")]
-        Limit = 2,
-
-        [ProtoBuf.ProtoEnum(Name = @"STOP")]
-        Stop = 3,
+        [ProtoBuf.ProtoEnum(Name = @"MARKET")] Market = 1,
+        [ProtoBuf.ProtoEnum(Name = @"LIMIT")]  Limit  = 2,
+        [ProtoBuf.ProtoEnum(Name = @"STOP")]   Stop   = 3,
 
         [ProtoBuf.ProtoEnum(Name = @"STOP_LOSS_TAKE_PROFIT")]
         StopLossTakeProfit = 4,
@@ -4908,8 +4913,7 @@ namespace spotware
     [ProtoBuf.ProtoContract()]
     public enum ProtoOAOrderTriggerMethod
     {
-        [ProtoBuf.ProtoEnum(Name = @"TRADE")]
-        Trade = 1,
+        [ProtoBuf.ProtoEnum(Name = @"TRADE")] Trade = 1,
 
         [ProtoBuf.ProtoEnum(Name = @"OPPOSITE")]
         Opposite = 2,
@@ -4944,9 +4948,7 @@ namespace spotware
 
         [ProtoBuf.ProtoEnum(Name = @"ORDER_CANCEL_REJECTED")]
         OrderCancelRejected = 8,
-
-        [ProtoBuf.ProtoEnum(Name = @"SWAP")]
-        Swap = 9,
+        [ProtoBuf.ProtoEnum(Name = @"SWAP")] Swap = 9,
 
         [ProtoBuf.ProtoEnum(Name = @"DEPOSIT_WITHDRAW")]
         DepositWithdraw = 10,
@@ -5043,8 +5045,7 @@ namespace spotware
     [ProtoBuf.ProtoContract()]
     public enum ProtoOADealStatus
     {
-        [ProtoBuf.ProtoEnum(Name = @"FILLED")]
-        Filled = 2,
+        [ProtoBuf.ProtoEnum(Name = @"FILLED")] Filled = 2,
 
         [ProtoBuf.ProtoEnum(Name = @"PARTIALLY_FILLED")]
         PartiallyFilled = 3,
@@ -5054,12 +5055,8 @@ namespace spotware
 
         [ProtoBuf.ProtoEnum(Name = @"INTERNALLY_REJECTED")]
         InternallyRejected = 5,
-
-        [ProtoBuf.ProtoEnum(Name = @"ERROR")]
-        Error = 6,
-
-        [ProtoBuf.ProtoEnum(Name = @"MISSED")]
-        Missed = 7,
+        [ProtoBuf.ProtoEnum(Name = @"ERROR")]  Error  = 6,
+        [ProtoBuf.ProtoEnum(Name = @"MISSED")] Missed = 7,
     }
 
     [ProtoBuf.ProtoContract()]
