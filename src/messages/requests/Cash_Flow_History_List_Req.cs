@@ -16,9 +16,9 @@ namespace spotware
                                                         toTimestamp         = toTimestamp
                                                     };
 
-            Log.Info("ProtoOACashFlowHistoryListReq | "               +
-                     $"ctidTraderAccountId: {ctidTraderAccountId} | " +
-                     $"fromTimestamp: {fromTimestamp} | "             +
+            Log.Info("ProtoOACashFlowHistoryListReq: "               +
+                     $"ctidTraderAccountId: {ctidTraderAccountId}; " +
+                     $"fromTimestamp: {fromTimestamp}; "             +
                      $"toTimestamp: {toTimestamp}");
 
             InnerMemoryStream.SetLength(0);

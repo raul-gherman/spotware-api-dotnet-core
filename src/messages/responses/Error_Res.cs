@@ -8,9 +8,9 @@ namespace spotware
         {
             ProtoErrorRes args = Serializer.Deserialize<ProtoErrorRes>(_processorMemoryStream);
 
-            Log.Info("ProtoErrorRes | "                    +
-                     $"errorCode: {args.errorCode} | "     +
-                     $"Description: {args.Description} | " +
+            Log.Info("ProtoErrorRes: "                    +
+                     $"errorCode: {args.errorCode}; "     +
+                     $"Description: {args.Description}; " +
                      $"maintenanceEndTimestamp: {args.maintenanceEndTimestamp}");
 
             OnErrorResReceived?.Invoke(args);

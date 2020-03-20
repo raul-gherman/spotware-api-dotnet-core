@@ -11,13 +11,13 @@ namespace spotware
             string Margins = string.Empty;
             foreach (ProtoOAExpectedMargin margin in args.Margins)
             {
-                Margins += $"Volume: {margin.Volume} | "       +
-                           $"buyMargin: {margin.buyMargin} | " +
-                           $"sellMargin: {margin.sellMargin}";
+                Margins += $"Volume: {margin.Volume}; "       +
+                           $"buyMargin: {margin.buyMargin}; " +
+                           $"sellMargin: {margin.sellMargin} | ";
             }
 
-            Log.Info("ProtoOAExpectedMarginRes | "                         +
-                     $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
+            Log.Info("ProtoOAExpectedMarginRes: "                         +
+                     $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
                      $"Margins: [{Margins}]");
 
             OnExpectedMarginResReceived?.Invoke(args);

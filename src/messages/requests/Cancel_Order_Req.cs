@@ -14,8 +14,8 @@ namespace spotware
                                                 orderId             = orderId
                                             };
 
-            Log.Info("ProtoOACancelOrderReq | "                       +
-                     $"ctidTraderAccountId: {ctidTraderAccountId} | " +
+            Log.Info("ProtoOACancelOrderReq: "                       +
+                     $"ctidTraderAccountId: {ctidTraderAccountId}; " +
                      $"orderId: {orderId}");
 
             InnerMemoryStream.SetLength(0);

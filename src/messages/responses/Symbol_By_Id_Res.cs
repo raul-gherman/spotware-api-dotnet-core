@@ -20,43 +20,43 @@ namespace spotware
                 string Schedules = string.Empty;
                 foreach (ProtoOAInterval interval in symbol.Schedules)
                 {
-                    Schedules += $"startSecond: {interval.startSecond} | " +
+                    Schedules += $"startSecond: {interval.startSecond}; " +
                                  $"endSecond: {interval.endSecond} | ";
                 }
 
-                Symbols += $"symbolId: {symbol.symbolId} | " +
-                           $"Digits: {symbol.Digits} | "                                   +
-                           $"pipPosition: {symbol.pipPosition} | "                         +
-                           $"tradingMode: {symbol.tradingMode} | "                         +
-                           $"Commission: {symbol.Commission} | "                           +
-                           $"commissionType: {symbol.commissionType} | "                   +
-                           $"minCommission: {symbol.minCommission} | "                     +
-                           $"minCommissionType: {symbol.minCommissionType} | "             +
-                           $"minCommissionAsset: {symbol.minCommissionAsset} | "           +
-                           $"gslCharge: {symbol.gslCharge} | "                             +
-                           $"gslDistance: {symbol.gslDistance} | "                         +
-                           $"maxExposure: {symbol.maxExposure} | "                         +
-                           $"maxVolume: {symbol.maxVolume} | "                             +
-                           $"minVolume: {symbol.minVolume} | "                             +
-                           $"rolloverCommission: {symbol.rolloverCommission} | "           +
-                           $"distanceSetIn: {symbol.distanceSetIn} | "                     +
-                           $"slDistance: {symbol.slDistance} | "                           +
-                           $"tpDistance: {symbol.tpDistance} | "                           +
-                           $"stepVolume: {symbol.stepVolume} | "                           +
-                           $"swapLong: {symbol.swapLong} | "                               +
-                           $"swapShort: {symbol.swapShort} | "                             +
-                           $"enableShortSelling: {symbol.enableShortSelling} | "           +
-                           $"guaranteedStopLoss: {symbol.guaranteedStopLoss} | "           +
-                           $"rolloverCommission3Days: {symbol.rolloverCommission3Days} | " +
-                           $"skipRolloverDays: {symbol.skipRolloverDays} | "               +
-                           $"scheduleTimeZone: {symbol.scheduleTimeZone} | "               +
-                           $"Schedules: [{Schedules}] | "                                  +
-                           $"swapCalculationType: {symbol.swapCalculationType} | "         +
-                           $"swapRollover3Days: {symbol.swapRollover3Days}";
+                Symbols += $"symbolId: {symbol.symbolId}; " +
+                           $"Digits: {symbol.Digits}; "                                   +
+                           $"pipPosition: {symbol.pipPosition}; "                         +
+                           $"tradingMode: {symbol.tradingMode}; "                         +
+                           $"Commission: {symbol.Commission}; "                           +
+                           $"commissionType: {symbol.commissionType}; "                   +
+                           $"minCommission: {symbol.minCommission}; "                     +
+                           $"minCommissionType: {symbol.minCommissionType}; "             +
+                           $"minCommissionAsset: {symbol.minCommissionAsset}; "           +
+                           $"gslCharge: {symbol.gslCharge}; "                             +
+                           $"gslDistance: {symbol.gslDistance}; "                         +
+                           $"maxExposure: {symbol.maxExposure}; "                         +
+                           $"maxVolume: {symbol.maxVolume}; "                             +
+                           $"minVolume: {symbol.minVolume}; "                             +
+                           $"rolloverCommission: {symbol.rolloverCommission}; "           +
+                           $"distanceSetIn: {symbol.distanceSetIn}; "                     +
+                           $"slDistance: {symbol.slDistance}; "                           +
+                           $"tpDistance: {symbol.tpDistance}; "                           +
+                           $"stepVolume: {symbol.stepVolume}; "                           +
+                           $"swapLong: {symbol.swapLong}; "                               +
+                           $"swapShort: {symbol.swapShort}; "                             +
+                           $"enableShortSelling: {symbol.enableShortSelling}; "           +
+                           $"guaranteedStopLoss: {symbol.guaranteedStopLoss}; "           +
+                           $"rolloverCommission3Days: {symbol.rolloverCommission3Days}; " +
+                           $"skipRolloverDays: {symbol.skipRolloverDays}; "               +
+                           $"scheduleTimeZone: {symbol.scheduleTimeZone}; "               +
+                           $"Schedules: [{Schedules}]; "                                  +
+                           $"swapCalculationType: {symbol.swapCalculationType}; "         +
+                           $"swapRollover3Days: {symbol.swapRollover3Days} | ";
             }
 
-            Log.Info("ProtoOASymbolByIdRes | "                             +
-                     $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
+            Log.Info("ProtoOASymbolByIdRes: "                             +
+                     $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
                      $"Symbols: [{Symbols}]");
 
             if (_subscribeAllSymbols)

@@ -11,13 +11,13 @@ namespace spotware
             string symbolCategories = string.Empty;
             foreach (ProtoOASymbolCategory symbolCategory in args.symbolCategories)
             {
-                symbolCategories += $"Id: {symbolCategory.Id} | "     +
-                                    $"Name: {symbolCategory.Name} | " +
+                symbolCategories += $"Id: {symbolCategory.Id}; "     +
+                                    $"Name: {symbolCategory.Name}; " +
                                     $"assetClassId: {symbolCategory.assetClassId} | ";
             }
 
-            Log.Info("ProtoOASymbolCategoryListRes | "                     +
-                     $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
+            Log.Info("ProtoOASymbolCategoryListRes; "                     +
+                     $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
                      $"symbolCategories: [{symbolCategories}]");
 
             OnSymbolCategoryListResReceived?.Invoke(args);

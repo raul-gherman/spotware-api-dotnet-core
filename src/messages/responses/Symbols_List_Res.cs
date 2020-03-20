@@ -21,17 +21,17 @@ namespace spotware
                                               };
                 TradingAccounts[args.ctidTraderAccountId].TradingSymbols[lightSymbol.symbolId] = tradingSymbol;
                 
-                Symbols += $"symbolId: {lightSymbol.symbolId} | "                 +
-                           $"symbolName: {lightSymbol.symbolName} | "             +
-                           $"Description: {lightSymbol.Description} | "           +
-                           $"Enabled: {lightSymbol.Enabled} | "                   +
-                           $"symbolCategoryId: {lightSymbol.symbolCategoryId} | " +
-                           $"baseAssetId: {lightSymbol.baseAssetId} | "           +
-                           $"quoteAssetId: {lightSymbol.quoteAssetId}";
+                Symbols += $"symbolId: {lightSymbol.symbolId}; "                 +
+                           $"symbolName: {lightSymbol.symbolName}; "             +
+                           $"Description: {lightSymbol.Description}; "           +
+                           $"Enabled: {lightSymbol.Enabled}; "                   +
+                           $"symbolCategoryId: {lightSymbol.symbolCategoryId}; " +
+                           $"baseAssetId: {lightSymbol.baseAssetId}; "           +
+                           $"quoteAssetId: {lightSymbol.quoteAssetId} | ";
             }
 
-            Log.Info("ProtoOASymbolsListRes | "                            +
-                     $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
+            Log.Info("ProtoOASymbolsListRes: "                            +
+                     $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
                      $"Symbols: [{Symbols}]");
 
             Send(Symbol_By_Id_Req(args.ctidTraderAccountId, TradingAccounts[args.ctidTraderAccountId].TradingSymbols.Keys.ToArray()));

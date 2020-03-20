@@ -20,11 +20,11 @@ namespace spotware
                                                 toTimestamp         = toTimestamp
                                             };
 
-            Log.Info("ProtoOAGetTickDataReq | "                       +
-                     $"ctidTraderAccountId: {ctidTraderAccountId} | " +
-                     $"symbolId: {symbolId} | "                       +
-                     $"quoteType: {quoteType} | "                     +
-                     $"fromTimestamp: {fromTimestamp} | "             +
+            Log.Info("ProtoOAGetTickDataReq: "                       +
+                     $"ctidTraderAccountId: {ctidTraderAccountId}; " +
+                     $"symbolId: {symbolId}; "                       +
+                     $"quoteType: {quoteType}; "                     +
+                     $"fromTimestamp: {fromTimestamp}; "             +
                      $"toTimestamp: {toTimestamp}");
 
             InnerMemoryStream.SetLength(0);

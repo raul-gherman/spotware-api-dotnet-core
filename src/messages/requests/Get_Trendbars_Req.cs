@@ -22,10 +22,10 @@ namespace spotware
             if (symbolId > 0)
                 message.symbolId = symbolId;
 
-            Log.Info("ProtoOAGetTrendbarsReq | "                      +
-                     $"ctidTraderAccountId: {ctidTraderAccountId} | " +
-                     $"fromTimestamp: {fromTimestamp} | "             +
-                     $"toTimestamp: {toTimestamp} | "                 +
+            Log.Info("ProtoOAGetTrendbarsReq: "                      +
+                     $"ctidTraderAccountId: {ctidTraderAccountId}; " +
+                     $"fromTimestamp: {fromTimestamp}; "             +
+                     $"toTimestamp: {toTimestamp}; "                 +
                      $"period: {period}");
 
             InnerMemoryStream.SetLength(0);

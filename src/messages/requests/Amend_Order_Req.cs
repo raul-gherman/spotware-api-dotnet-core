@@ -51,19 +51,19 @@ namespace spotware
             if (stopTriggerMethod != ProtoOAOrderTriggerMethod.Trade)
                 message.stopTriggerMethod = stopTriggerMethod;
 
-            Log.Info("ProtoOAAmendOrderReq | "                        +
-                     $"ctidTraderAccountId: {ctidTraderAccountId} | " +
-                     $"volume: {volume} | "                           +
-                     $"limitPrice: {limitPrice} | "                   +
-                     $"stopPrice: {stopPrice} | "                     +
-                     $"expirationTimestamp: {expirationTimestamp} | " +
-                     $"stopLoss: {stopLoss} | "                       +
-                     $"takeProfit: {takeProfit} | "                   +
-                     $"slippageInPoints: {slippageInPoints} | "       +
-                     $"relativeStopLoss: {relativeStopLoss} | "       +
-                     $"relativeTakeProfit: {relativeTakeProfit} | "   +
-                     $"guaranteedStopLoss: {guaranteedStopLoss} | "   +
-                     $"trailingStopLoss: {trailingStopLoss} | "       +
+            Log.Info("ProtoOAAmendOrderReq: "                        +
+                     $"ctidTraderAccountId: {ctidTraderAccountId}; " +
+                     $"volume: {volume}; "                           +
+                     $"limitPrice: {limitPrice}; "                   +
+                     $"stopPrice: {stopPrice}; "                     +
+                     $"expirationTimestamp: {expirationTimestamp}; " +
+                     $"stopLoss: {stopLoss}; "                       +
+                     $"takeProfit: {takeProfit}; "                   +
+                     $"slippageInPoints: {slippageInPoints}; "       +
+                     $"relativeStopLoss: {relativeStopLoss}; "       +
+                     $"relativeTakeProfit: {relativeTakeProfit}; "   +
+                     $"guaranteedStopLoss: {guaranteedStopLoss}; "   +
+                     $"trailingStopLoss: {trailingStopLoss}; "       +
                      $"stopTriggerMethod: {stopTriggerMethod}");
 
             InnerMemoryStream.SetLength(0);

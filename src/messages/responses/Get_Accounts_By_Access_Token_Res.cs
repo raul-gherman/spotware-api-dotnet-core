@@ -14,16 +14,16 @@ namespace spotware
             {
                 TradingAccounts[(long) account.ctidTraderAccountId] = new TradingAccount(this, (long) account.ctidTraderAccountId);
 
-                ctidTraderAccounts += $"ctidTraderAccountId: {account.ctidTraderAccountId} | " +
-                                      $"traderLogin: {account.traderLogin} | "                 +
-                                      $"isLive: {account.isLive}";
+                ctidTraderAccounts += $"ctidTraderAccountId: {account.ctidTraderAccountId}; " +
+                                      $"traderLogin: {account.traderLogin}; "                 +
+                                      $"isLive: {account.isLive} | ";
 
                 Send(Account_Auth_Req((long) account.ctidTraderAccountId, _accessToken));
             }
 
-            Log.Info("ProtoOAGetAccountListByAccessTokenRes | "    +
-                     $"accessToken: {args.accessToken} | "         +
-                     $"permissionScope: {args.permissionScope} | " +
+            Log.Info("ProtoOAGetAccountListByAccessTokenRes: "    +
+                     $"accessToken: {args.accessToken}; "         +
+                     $"permissionScope: {args.permissionScope}; " +
                      $"ctidTraderAccounts: [{ctidTraderAccounts}]");
 
             OnGetAccountListByAccessTokenResReceived?.Invoke(args);

@@ -8,7 +8,7 @@ namespace spotware
         {
             ProtoOAAccountLogoutRes args = Serializer.Deserialize<ProtoOAAccountLogoutRes>(_processorMemoryStream);
 
-            Log.Info("ProtoOAAccountLogoutRes | " +
+            Log.Info("ProtoOAAccountLogoutRes: " +
                      $"ctidTraderAccountId: {args.ctidTraderAccountId}");
 
             OnAccountLogoutReceived?.Invoke(args);
