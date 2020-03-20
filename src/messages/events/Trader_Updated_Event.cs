@@ -10,7 +10,7 @@ namespace spotware
 
             TradingAccounts[args.ctidTraderAccountId].Trader = args.Trader;
 
-            Log.Info("ProtoOATraderUpdatedEvent: "                                             +
+            Log.Info("ProtoOATraderUpdatedEvent:: "                                            +
                      $"ctidTraderAccountId: {args.Trader.ctidTraderAccountId}; "               +
                      $"brokerName: {args.Trader.brokerName}; "                                 +
                      $"traderLogin: {args.Trader.traderLogin}; "                               +

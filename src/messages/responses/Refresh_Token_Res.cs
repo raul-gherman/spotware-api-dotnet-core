@@ -16,7 +16,7 @@ namespace spotware
 
             TradingAccounts.Clear();
 
-            Log.Info("ProtoOARefreshTokenRes: "             +
+            Log.Info("ProtoOARefreshTokenRes:: "            +
                      $"tokenType: {args.tokenType}; "       +
                      $"accessToken: {args.accessToken}; "   +
                      $"refreshToken: {args.refreshToken}; " +

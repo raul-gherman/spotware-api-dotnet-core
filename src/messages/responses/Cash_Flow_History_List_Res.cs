@@ -8,9 +8,9 @@ namespace spotware
         {
             ProtoOACashFlowHistoryListRes args = Serializer.Deserialize<ProtoOACashFlowHistoryListRes>(_processorMemoryStream);
 
-            string depositWithdraws = string.Empty;
             foreach (ProtoOADepositWithdraw depositWithdraw in args.depositWithdraws)
             {
+                string depositWithdraws = string.Empty;
                 depositWithdraws += $"operationType: {depositWithdraw.operationType}; "       +
                                     $"Equity: {depositWithdraw.Equity}; "                     +
                                     $"Balance: {depositWithdraw.Balance}; "                   +
@@ -18,12 +18,12 @@ namespace spotware
                                     $"balanceHistoryId: {depositWithdraw.balanceHistoryId}; " +
                                     $"Delta: {depositWithdraw.Delta}; "                       +
                                     $"externalNote: {depositWithdraw.externalNote}; "         +
-                                    $"changeBalanceTimestamp: {depositWithdraw.changeBalanceTimestamp} | ";
-            }
+                                    $"changeBalanceTimestamp: {depositWithdraw.changeBalanceTimestamp}";
 
-            Log.Info("ProtoOACashFlowHistoryListRes: "                    +
-                     $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
-                     $"depositWithdraws: [{depositWithdraws}]");
+                Log.Info("ProtoOACashFlowHistoryListRes:: "                   +
+                         $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
+                         $"depositWithdraws: {depositWithdraws}");
+            }
 
             OnCashFlowHistoryListResReceived?.Invoke(args);
         }

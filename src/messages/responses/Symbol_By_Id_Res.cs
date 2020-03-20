@@ -10,7 +10,6 @@ namespace spotware
         {
             ProtoOASymbolByIdRes args = Serializer.Deserialize<ProtoOASymbolByIdRes>(_processorMemoryStream);
 
-            string Symbols = string.Empty;
 
             foreach (ProtoOASymbol symbol in args.Symbols)
             {
@@ -24,7 +23,8 @@ namespace spotware
                                  $"endSecond: {interval.endSecond} | ";
                 }
 
-                Symbols += $"symbolId: {symbol.symbolId}; " +
+                string Symbols = string.Empty;
+                Symbols += $"symbolId: {symbol.symbolId}; "                               +
                            $"Digits: {symbol.Digits}; "                                   +
                            $"pipPosition: {symbol.pipPosition}; "                         +
                            $"tradingMode: {symbol.tradingMode}; "                         +
@@ -52,12 +52,12 @@ namespace spotware
                            $"scheduleTimeZone: {symbol.scheduleTimeZone}; "               +
                            $"Schedules: [{Schedules}]; "                                  +
                            $"swapCalculationType: {symbol.swapCalculationType}; "         +
-                           $"swapRollover3Days: {symbol.swapRollover3Days} | ";
-            }
+                           $"swapRollover3Days: {symbol.swapRollover3Days}";
 
-            Log.Info("ProtoOASymbolByIdRes: "                             +
-                     $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
-                     $"Symbols: [{Symbols}]");
+                Log.Info("ProtoOASymbolByIdRes:: "                            +
+                         $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
+                         $"Symbol: {Symbols}");
+            }
 
             if (_subscribeAllSymbols)
             {

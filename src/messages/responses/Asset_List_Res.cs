@@ -14,11 +14,11 @@ namespace spotware
                 Assets += $"assetId: {asset.assetId}; "         +
                           $"displayName: {asset.displayName}; " +
                           $"Name: {asset.Name} | ";
-            }
 
-            Log.Info("ProtoOAAssetListRes: "                              +
-                     $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
-                     $"Assets: [{Assets}]");
+                Log.Info("ProtoOAAssetListRes:: "                             +
+                         $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
+                         $"Asset: {Assets}");
+            }
 
             OnAssetListResReceived?.Invoke(args);
         }

@@ -8,7 +8,7 @@ namespace spotware
         {
             ProtoOASymbolChangedEvent args = Serializer.Deserialize<ProtoOASymbolChangedEvent>(_processorMemoryStream);
 
-            Log.Info("ProtoOASymbolChangedEvent: "                        +
+            Log.Info("ProtoOASymbolChangedEvent:: "                       +
                      $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
                      $"symbolIds: [{string.Join("; ", args.symbolIds)}]");
 

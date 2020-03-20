@@ -13,7 +13,7 @@ namespace spotware
                                                      symbolIds           = symbolIDs
                                                  };
 
-            Log.Info("ProtoOAUnsubscribeSpotsReq: "                  +
+            Log.Info("ProtoOAUnsubscribeSpotsReq:: "                 +
                      $"ctidTraderAccountId: {ctidTraderAccountId}; " +
                      $"symbolIds: [{string.Join("; ", symbolIDs)}]");
 

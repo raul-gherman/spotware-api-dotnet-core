@@ -30,7 +30,7 @@ namespace spotware
             if (stopLossTriggerMethod != ProtoOAOrderTriggerMethod.Trade)
                 message.stopLossTriggerMethod = stopLossTriggerMethod;
 
-            Log.Info("Amend_Position_SLTP_Req: "                     +
+            Log.Info("ProtoOAAmendPositionSLTPReq:: "                +
                      $"ctidTraderAccountId: {ctidTraderAccountId}; " +
                      $"positionId: {positionId}; "                   +
                      $"stopLoss: {stopLoss}; "                       +

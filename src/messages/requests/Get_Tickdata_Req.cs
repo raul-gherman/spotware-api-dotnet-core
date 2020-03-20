@@ -20,7 +20,7 @@ namespace spotware
                                                 toTimestamp         = toTimestamp
                                             };
 
-            Log.Info("ProtoOAGetTickDataReq: "                       +
+            Log.Info("ProtoOAGetTickDataReq:: "                      +
                      $"ctidTraderAccountId: {ctidTraderAccountId}; " +
                      $"symbolId: {symbolId}; "                       +
                      $"quoteType: {quoteType}; "                     +

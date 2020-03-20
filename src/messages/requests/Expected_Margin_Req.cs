@@ -16,7 +16,7 @@ namespace spotware
                                                    Volumes             = volumes
                                                };
 
-            Log.Info("ProtoOAExpectedMarginReq: "                    +
+            Log.Info("ProtoOAExpectedMarginReq:: "                   +
                      $"ctidTraderAccountId: {ctidTraderAccountId}; " +
                      $"symbolId: {symbolId}; "                       +
                      $"Volumes: [{string.Join("; ", volumes)}]");

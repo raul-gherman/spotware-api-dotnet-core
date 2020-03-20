@@ -8,7 +8,7 @@ namespace spotware
         {
             ProtoOAExecutionEvent args = Serializer.Deserialize<ProtoOAExecutionEvent>(_processorMemoryStream);
 
-            string executionEvent = "ProtoOAExecutionEvent: "                            +
+            string executionEvent = "ProtoOAExecutionEvent:: "                           +
                                     $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
                                     $"isServerEvent: {args.isServerEvent}; "             +
                                     $"executionType: {args.executionType}; "             +
@@ -18,10 +18,10 @@ namespace spotware
             executionEvent += "Orders: [";
             if (args.Order != null)
             {
-                executionEvent += $"closingOrder: {args.Order.closingOrder}; "                                 +
-                                  $"clientOrderId: {args.Order.clientOrderId}; "                               +
+                executionEvent += $"orderId: {args.Order.orderId}; "                                           +
                                   $"positionId: {args.Order.positionId}; "                                     +
-                                  $"orderId: {args.Order.orderId}; "                                           +
+                                  $"closingOrder: {args.Order.closingOrder}; "                                 +
+                                  $"clientOrderId: {args.Order.clientOrderId}; "                               +
                                   $"orderType: {args.Order.orderType}; "                                       +
                                   $"orderStatus: {args.Order.orderStatus}; "                                   +
                                   $"executedVolume: {args.Order.executedVolume}; "                             +

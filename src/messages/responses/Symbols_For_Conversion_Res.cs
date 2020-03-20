@@ -8,9 +8,9 @@ namespace spotware
         {
             ProtoOASymbolsForConversionRes args = Serializer.Deserialize<ProtoOASymbolsForConversionRes>(_processorMemoryStream);
 
-            string Symbols = string.Empty;
             foreach (ProtoOALightSymbol lightSymbol in args.Symbols)
             {
+                string Symbols = string.Empty;
                 Symbols += $"symbolId: {lightSymbol.symbolId}; "                 +
                            $"symbolName: {lightSymbol.symbolName}; "             +
                            $"Description: {lightSymbol.Description}; "           +
@@ -18,11 +18,11 @@ namespace spotware
                            $"symbolCategoryId: {lightSymbol.symbolCategoryId}; " +
                            $"baseAssetId: {lightSymbol.baseAssetId}; "           +
                            $"quoteAssetId: {lightSymbol.quoteAssetId} | ";
-            }
 
-            Log.Info("ProtoOASymbolsForConversionRes: "                   +
-                     $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
-                     $"Symbols: [{Symbols}]");
+                Log.Info("ProtoOASymbolsForConversionRes:: "                  +
+                         $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
+                         $"Symbol: {Symbols}");
+            }
 
             OnSymbolsForConversionResReceived?.Invoke(args);
         }

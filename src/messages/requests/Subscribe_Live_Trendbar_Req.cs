@@ -14,7 +14,7 @@ namespace spotware
                                                           symbolId            = symbolId
                                                       };
 
-            Log.Info("ProtoOASubscribeLiveTrendbarReq: "             +
+            Log.Info("ProtoOASubscribeLiveTrendbarReq:: "            +
                      $"ctidTraderAccountId: {ctidTraderAccountId}; " +
                      $"Period: {period}; "                           +
                      $"symbolId: {symbolId}");

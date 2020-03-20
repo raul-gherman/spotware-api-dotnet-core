@@ -8,7 +8,7 @@ namespace spotware
         {
             ProtoOASubscribeSpotsRes args = Serializer.Deserialize<ProtoOASubscribeSpotsRes>(_processorMemoryStream);
 
-            Log.Info("ProtoOASubscribeSpotsRes: " +
+            Log.Info("ProtoOASubscribeSpotsRes:: " +
                      $"ctidTraderAccountId: {args.ctidTraderAccountId}");
 
             OnSubscribeSpotsResReceived?.Invoke(args);

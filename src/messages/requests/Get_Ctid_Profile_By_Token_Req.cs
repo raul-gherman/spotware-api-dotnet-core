@@ -12,7 +12,7 @@ namespace spotware
                                                           accessToken = accessToken
                                                       };
 
-            Log.Info("ProtoOAGetCtidProfileByTokenReq: " +
+            Log.Info("ProtoOAGetCtidProfileByTokenReq:: " +
                      $"accessToken: {accessToken}");
 
             InnerMemoryStream.SetLength(0);

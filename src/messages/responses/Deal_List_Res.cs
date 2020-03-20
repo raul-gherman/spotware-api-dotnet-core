@@ -36,9 +36,9 @@ namespace spotware
                          $"baseToUsdConversionRate: {deal.baseToUsdConversionRate} | ";
             }
 
-            Log.Info("ProtoOADealListRes: "                               +
+            Log.Info("ProtoOADealListRes:: "                              +
                      $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
-                     $"Deals: [{Deals}]; "                                +
+                     $"Deal: {Deals}; "                                   +
                      $"hasMore: {args.hasMore}");
 
             OnDealListResReceived?.Invoke(args);

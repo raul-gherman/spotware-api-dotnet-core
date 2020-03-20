@@ -15,7 +15,7 @@ namespace spotware
                                                          lastAssetId         = lastAssetId
                                                      };
 
-            Log.Info("ProtoOASymbolsForConversionReq: "              +
+            Log.Info("ProtoOASymbolsForConversionReq:: "             +
                      $"ctidTraderAccountId: {ctidTraderAccountId}; " +
                      $"firstAssetId: {firstAssetId}; "               +
                      $"lastAssetId: {lastAssetId}");
