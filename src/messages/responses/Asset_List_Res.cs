@@ -13,7 +13,7 @@ namespace spotware
             {
                 Assets += $"assetId: {asset.assetId}; "         +
                           $"displayName: {asset.displayName}; " +
-                          $"Name: {asset.Name} | ";
+                          $"Name: {asset.Name}";
 
                 Log.Info("ProtoOAAssetListRes:: "                             +
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +

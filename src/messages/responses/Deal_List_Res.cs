@@ -8,9 +8,9 @@ namespace spotware
         {
             ProtoOADealListRes args = Serializer.Deserialize<ProtoOADealListRes>(_processorMemoryStream);
 
-            string Deals = string.Empty;
             foreach (ProtoOADeal deal in args.Deals)
             {
+                string Deals = string.Empty;
                 Deals += $"dealId: {deal.dealId}; "                                                                                     +
                          $"dealStatus: {deal.dealStatus}; "                                                                             +
                          $"orderId: {deal.orderId}; "                                                                                   +
@@ -33,13 +33,13 @@ namespace spotware
                          $"closePositionDetail.Commission: {deal.closePositionDetail.Commission}; "                                     +
                          $"closePositionDetail.grossProfit: {deal.closePositionDetail.grossProfit}; "                                   +
                          $"utcLastUpdateTimestamp: {deal.utcLastUpdateTimestamp}; "                                                     +
-                         $"baseToUsdConversionRate: {deal.baseToUsdConversionRate} | ";
-            }
+                         $"baseToUsdConversionRate: {deal.baseToUsdConversionRate}";
 
-            Log.Info("ProtoOADealListRes:: "                              +
-                     $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
-                     $"Deal: {Deals}; "                                   +
-                     $"hasMore: {args.hasMore}");
+                Log.Info("ProtoOADealListRes:: "                              +
+                         $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
+                         $"Deal: {Deals}; "                                   +
+                         $"hasMore: {args.hasMore}");
+            }
 
             OnDealListResReceived?.Invoke(args);
         }

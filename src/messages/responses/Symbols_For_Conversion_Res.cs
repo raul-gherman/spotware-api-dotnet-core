@@ -17,7 +17,7 @@ namespace spotware
                            $"Enabled: {lightSymbol.Enabled}; "                   +
                            $"symbolCategoryId: {lightSymbol.symbolCategoryId}; " +
                            $"baseAssetId: {lightSymbol.baseAssetId}; "           +
-                           $"quoteAssetId: {lightSymbol.quoteAssetId} | ";
+                           $"quoteAssetId: {lightSymbol.quoteAssetId}";
 
                 Log.Info("ProtoOASymbolsForConversionRes:: "                  +
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +

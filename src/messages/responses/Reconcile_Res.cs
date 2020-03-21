@@ -31,7 +31,7 @@ namespace spotware
                              $"tradeData.openTimestamp: {position.tradeData.openTimestamp}; "           +
                              $"tradeData.Label: {position.tradeData.Label}; "                           +
                              $"stopLossTriggerMethod: {position.stopLossTriggerMethod}; "               +
-                             $"utcLastUpdateTimestamp: {position.utcLastUpdateTimestamp} | ";
+                             $"utcLastUpdateTimestamp: {position.utcLastUpdateTimestamp}";
 
                 Log.Info($"ProtoOAReconcileRes:: "                            +
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
@@ -70,7 +70,7 @@ namespace spotware
                           $"stopTriggerMethod: {order.stopTriggerMethod}; "                       +
                           $"timeInForce: {order.timeInForce}; "                                   +
                           $"trailingStopLoss: {order.trailingStopLoss}; "                         +
-                          $"utcLastUpdateTimestamp: {order.utcLastUpdateTimestamp} | ";
+                          $"utcLastUpdateTimestamp: {order.utcLastUpdateTimestamp}";
 
                 Log.Info($"ProtoOAReconcileRes:: "                            +
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +

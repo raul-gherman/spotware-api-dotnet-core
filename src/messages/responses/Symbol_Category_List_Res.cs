@@ -13,7 +13,7 @@ namespace spotware
                 string symbolCategories = string.Empty;
                 symbolCategories += $"Id: {symbolCategory.Id}; "     +
                                     $"Name: {symbolCategory.Name}; " +
-                                    $"assetClassId: {symbolCategory.assetClassId} | ";
+                                    $"assetClassId: {symbolCategory.assetClassId}";
 
                 Log.Info("ProtoOASymbolCategoryListRes:: "                    +
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +

@@ -13,7 +13,7 @@ namespace spotware
                 string marginCalls = string.Empty;
                 marginCalls += $"marginCallType: {marginCall.marginCallType}; "             +
                                $"marginLevelThreshold: {marginCall.marginLevelThreshold}; " +
-                               $"utcLastUpdateTimestamp: {marginCall.utcLastUpdateTimestamp} | ";
+                               $"utcLastUpdateTimestamp: {marginCall.utcLastUpdateTimestamp}";
 
                 Log.Info("ProtoOAMarginCallListRes:: " +
                          $"marginCall: {marginCalls}");

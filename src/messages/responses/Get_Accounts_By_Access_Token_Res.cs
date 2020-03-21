@@ -16,7 +16,7 @@ namespace spotware
 
                 ctidTraderAccounts += $"ctidTraderAccountId: {account.ctidTraderAccountId}; " +
                                       $"traderLogin: {account.traderLogin}; "                 +
-                                      $"isLive: {account.isLive} | ";
+                                      $"isLive: {account.isLive}";
 
                 Log.Info("ProtoOAGetAccountListByAccessTokenRes:: "   +
                          $"accessToken: {args.accessToken}; "         +

@@ -17,7 +17,7 @@ namespace spotware
                              $"deltaOpen: {trendBar.deltaOpen}; "   +
                              $"deltaHigh: {trendBar.deltaHigh}; "   +
                              $"deltaClose: {trendBar.deltaClose}; " +
-                             $"utcTimestampInMinutes: {trendBar.utcTimestampInMinutes} | ";
+                             $"utcTimestampInMinutes: {trendBar.utcTimestampInMinutes}";
 
                 Log.Info("ProtoOAGetAccountListByAccessTokenRes:: "           +
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
