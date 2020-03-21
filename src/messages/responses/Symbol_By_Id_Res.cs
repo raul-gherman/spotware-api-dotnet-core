@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using ProtoBuf;
 
 namespace spotware
@@ -58,11 +57,8 @@ namespace spotware
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
                          $"Symbol: {Symbols}");
             }
-
-            if (_subscribeAllSymbols)
-            {
-                Send(Subscribe_Spots_Req(args.ctidTraderAccountId, TradingAccounts[args.ctidTraderAccountId].TradingSymbols.Keys.ToArray()));
-            }
+            
+            Send(Reconcile_Req(args.ctidTraderAccountId));
 
             OnSymbolByIdResReceived?.Invoke(args);
         }

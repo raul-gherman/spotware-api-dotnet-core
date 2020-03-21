@@ -20,10 +20,10 @@ namespace spotware
             if (maxRows > 0)
                 message.maxRows = maxRows;
 
-            Log.Info("ProtoOADealListReq:: "                         +
-                     $"ctidTraderAccountId: {ctidTraderAccountId}; " +
-                     $"fromTimestamp: {fromTimestamp}; "             +
-                     $"toTimestamp: {toTimestamp}; "                 +
+            Log.Info("ProtoOADealListReq:: "                                             +
+                     $"ctidTraderAccountId: {ctidTraderAccountId}; "                     +
+                     $"fromTimestamp: {fromTimestamp} ({EpochToString(fromTimestamp)}; " +
+                     $"toTimestamp: {toTimestamp} ({EpochToString(toTimestamp)}; "       +
                      $"maxRows: {maxRows}");
 
             InnerMemoryStream.SetLength(0);

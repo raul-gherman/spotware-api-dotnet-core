@@ -10,14 +10,18 @@ namespace spotware
 
             foreach (ProtoOAAssetClass assetClass in args.assetClasses)
             {
-                string assetClasses = string.Empty;
-                assetClasses += $"Id: {assetClass.Id}; " +
-                                $"Name: {assetClass.Name}";
+                TradingAccounts[args.ctidTraderAccountId].AssetClasses[assetClass.Id] = assetClass;
+
+                string item = string.Empty;
+                item += $"Id: {assetClass.Id}; " +
+                        $"Name: {assetClass.Name}";
 
                 Log.Info("ProtoOAAssetClassListRes:: "                        +
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
-                         $"assetClass: {assetClasses}");
+                         $"assetClass: [{item}]");
             }
+
+            Send(Asset_List_Req(args.ctidTraderAccountId));
 
             OnAssetClassListResReceived?.Invoke(args);
         }

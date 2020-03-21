@@ -22,8 +22,8 @@ namespace spotware
                          $"filledVolume: {deal.filledVolume}; "                                                                         +
                          $"marginRate: {deal.marginRate}; "                                                                             +
                          $"Commission: {deal.Commission}; "                                                                             +
-                         $"createTimestamp: {deal.createTimestamp}; "                                                                   +
-                         $"executionTimestamp: {deal.executionTimestamp}; "                                                             +
+                         $"createTimestamp: {deal.createTimestamp} ({EpochToString(deal.createTimestamp)}; "                            +
+                         $"executionTimestamp: {deal.executionTimestamp} ({EpochToString(deal.executionTimestamp)}; "                   +
                          $"closePositionDetail.Balance: {deal.closePositionDetail.Balance}; "                                           +
                          $"closePositionDetail.balanceVersion: {deal.closePositionDetail.balanceVersion}; "                             +
                          $"closePositionDetail.closedVolume: {deal.closePositionDetail.closedVolume}; "                                 +
@@ -32,7 +32,7 @@ namespace spotware
                          $"closePositionDetail.Swap: {deal.closePositionDetail.Swap}; "                                                 +
                          $"closePositionDetail.Commission: {deal.closePositionDetail.Commission}; "                                     +
                          $"closePositionDetail.grossProfit: {deal.closePositionDetail.grossProfit}; "                                   +
-                         $"utcLastUpdateTimestamp: {deal.utcLastUpdateTimestamp}; "                                                     +
+                         $"utcLastUpdateTimestamp: {deal.utcLastUpdateTimestamp} ({EpochToString(deal.utcLastUpdateTimestamp)}; "       +
                          $"baseToUsdConversionRate: {deal.baseToUsdConversionRate}";
 
                 Log.Info("ProtoOADealListRes:: "                              +

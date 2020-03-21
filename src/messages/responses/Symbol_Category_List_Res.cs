@@ -10,15 +10,19 @@ namespace spotware
 
             foreach (ProtoOASymbolCategory symbolCategory in args.symbolCategories)
             {
-                string symbolCategories = string.Empty;
-                symbolCategories += $"Id: {symbolCategory.Id}; "     +
-                                    $"Name: {symbolCategory.Name}; " +
-                                    $"assetClassId: {symbolCategory.assetClassId}";
+                TradingAccounts[args.ctidTraderAccountId].SymbolCategories[symbolCategory.Id] = symbolCategory;
+
+                string item = string.Empty;
+                item += $"Id: {symbolCategory.Id}; "     +
+                        $"Name: {symbolCategory.Name}; " +
+                        $"assetClassId: {symbolCategory.assetClassId} ({TradingAccounts[args.ctidTraderAccountId].AssetClasses[symbolCategory.assetClassId].Name})";
 
                 Log.Info("ProtoOASymbolCategoryListRes:: "                    +
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
-                         $"symbolCategory: {symbolCategories}");
+                         $"symbolCategory: [{item}]");
             }
+
+            Send(Symbols_List_Req(args.ctidTraderAccountId));
 
             OnSymbolCategoryListResReceived?.Invoke(args);
         }

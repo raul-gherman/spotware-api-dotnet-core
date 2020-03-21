@@ -17,12 +17,12 @@ namespace spotware
                              $"deltaOpen: {trendBar.deltaOpen}; "   +
                              $"deltaHigh: {trendBar.deltaHigh}; "   +
                              $"deltaClose: {trendBar.deltaClose}; " +
-                             $"utcTimestampInMinutes: {trendBar.utcTimestampInMinutes}";
+                             $"utcTimestampInMinutes: {trendBar.utcTimestampInMinutes} ({EpochToString(trendBar.utcTimestampInMinutes)}";
 
-                Log.Info("ProtoOAGetAccountListByAccessTokenRes:: "           +
-                         $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
-                         $"symbolId: {args.symbolId}; "                       +
-                         $"Timestamp: {args.Timestamp}; "                     +
+                Log.Info("ProtoOAGetAccountListByAccessTokenRes:: "                        +
+                         $"ctidTraderAccountId: {args.ctidTraderAccountId}; "              +
+                         $"symbolId: {args.symbolId}; "                                    +
+                         $"Timestamp: {args.Timestamp} ({EpochToString(args.Timestamp)}; " +
                          $"Trendbar: {Trendbars}");
             }
 

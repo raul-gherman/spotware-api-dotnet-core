@@ -20,12 +20,12 @@ namespace spotware
                                                 toTimestamp         = toTimestamp
                                             };
 
-            Log.Info("ProtoOAGetTickDataReq:: "                      +
-                     $"ctidTraderAccountId: {ctidTraderAccountId}; " +
-                     $"symbolId: {symbolId}; "                       +
-                     $"quoteType: {quoteType}; "                     +
-                     $"fromTimestamp: {fromTimestamp}; "             +
-                     $"toTimestamp: {toTimestamp}");
+            Log.Info("ProtoOAGetTickDataReq:: "                                          +
+                     $"ctidTraderAccountId: {ctidTraderAccountId}; "                     +
+                     $"symbolId: {symbolId}; "                                           +
+                     $"quoteType: {quoteType}; "                                         +
+                     $"fromTimestamp: {fromTimestamp} ({EpochToString(fromTimestamp)}; " +
+                     $"toTimestamp: {toTimestamp} ({EpochToString(toTimestamp)}");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);

@@ -11,7 +11,7 @@ namespace spotware
             Log.Info("ProtoErrorRes: "                    +
                      $"errorCode: {args.errorCode}; "     +
                      $"Description: {args.Description}; " +
-                     $"maintenanceEndTimestamp: {args.maintenanceEndTimestamp}");
+                     $"maintenanceEndTimestamp: {args.maintenanceEndTimestamp} ({EpochToString((long) args.maintenanceEndTimestamp)}");
 
             OnErrorResReceived?.Invoke(args);
         }

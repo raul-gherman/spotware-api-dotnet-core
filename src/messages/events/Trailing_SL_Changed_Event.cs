@@ -13,7 +13,7 @@ namespace spotware
                      $"orderId: {args.orderId}; "                         +
                      $"positionId: {args.positionId}; "                   +
                      $"stopPrice: {args.stopPrice}; "                     +
-                     $"utcLastUpdateTimestamp: {args.utcLastUpdateTimestamp}");
+                     $"utcLastUpdateTimestamp: {args.utcLastUpdateTimestamp} ({EpochToString(args.utcLastUpdateTimestamp)}");
 
             OnTrailingSlChangedEventReceived?.Invoke(args);
         }

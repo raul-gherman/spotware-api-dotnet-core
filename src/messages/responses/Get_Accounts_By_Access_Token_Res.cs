@@ -7,8 +7,7 @@ namespace spotware
         private void Process_Get_Accounts_By_Access_Token_Res()
         {
             ProtoOAGetAccountListByAccessTokenRes args = Serializer.Deserialize<ProtoOAGetAccountListByAccessTokenRes>(_processorMemoryStream);
-
-
+            
             foreach (ProtoOACtidTraderAccount account in args.ctidTraderAccounts)
             {
                 string ctidTraderAccounts = string.Empty;

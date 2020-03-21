@@ -12,7 +12,7 @@ namespace spotware
             foreach (ProtoOATickData tickData in args.tickDatas)
             {
                 tickDatas += $"Tick: {tickData.Tick}; " +
-                             $"Timestamp: {tickData.Timestamp} | ";
+                             $"Timestamp: {tickData.Timestamp} ( ({EpochToString(tickData.Timestamp)}) | ";
             }
 
             Log.Info("ProtoOAGetTickDataRes:: "                       +

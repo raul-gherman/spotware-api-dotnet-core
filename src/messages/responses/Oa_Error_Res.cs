@@ -10,7 +10,7 @@
                      $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
                      $"errorCode: {args.errorCode}; "                     +
                      $"Description: {args.Description}; "                 +
-                     $"maintenanceEndTimestamp: {args.maintenanceEndTimestamp}");
+                     $"maintenanceEndTimestamp: {args.maintenanceEndTimestamp} ({EpochToString(args.maintenanceEndTimestamp)}");
 
             OnOaErrorResReceived?.Invoke(args);
         }
