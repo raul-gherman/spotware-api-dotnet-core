@@ -25,7 +25,7 @@ namespace spotware
                      $"depositAssetId: {args.Trader.depositAssetId}; "                                                                   +
                      $"isLimitedRisk: {args.Trader.isLimitedRisk}; "                                                                     +
                      $"leverageInCents: {args.Trader.leverageInCents}; "                                                                 +
-                     $"registrationTimestamp: {args.Trader.registrationTimestamp} ({EpochToString(args.Trader.registrationTimestamp)}; " +
+                     $"registrationTimestamp: {args.Trader.registrationTimestamp} ({EpochToString(args.Trader.registrationTimestamp)}); " +
                      $"nonWithdrawableBonus: {args.Trader.nonWithdrawableBonus}; "                                                       +
                      $"ctidTraderAccountId: {args.Trader.ctidTraderAccountId}; "                                                         +
                      $"totalMarginCalculationType: {args.Trader.totalMarginCalculationType}; "                                           +
