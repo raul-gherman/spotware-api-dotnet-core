@@ -35,7 +35,7 @@ namespace spotware
 
                 Log.Info($"ProtoOAReconcileRes:: "                            +
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
-                         $"Position: {item}");
+                         $"Position: [{item}]");
             }
 
             foreach (ProtoOAOrder order in args.Orders)

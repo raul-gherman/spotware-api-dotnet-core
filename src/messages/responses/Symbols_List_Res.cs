@@ -12,28 +12,26 @@ namespace spotware
 
             foreach (ProtoOALightSymbol lightSymbol in args.Symbols)
             {
-                if (lightSymbol.Enabled)
-                {
-                    TradingSymbol tradingSymbol = new TradingSymbol(this, args.ctidTraderAccountId)
-                                                  {
-                                                      LightSymbol = lightSymbol
-                                                  };
-                    TradingAccounts[args.ctidTraderAccountId].TradingSymbols[lightSymbol.symbolId] = tradingSymbol;
+                if (!lightSymbol.Enabled)
+                    continue;
 
-                    string Symbols = string.Empty;
-                    Symbols +=
-                        $"symbolId: {lightSymbol.symbolId}; "                                                                                                                   +
-                        $"symbolName: {lightSymbol.symbolName}; "                                                                                                               +
-                        $"Description: {lightSymbol.Description}; "                                                                                                             +
-                        $"Enabled: {lightSymbol.Enabled}; "                                                                                                                     +
-                        $"symbolCategoryId: {lightSymbol.symbolCategoryId} ({TradingAccounts[args.ctidTraderAccountId].SymbolCategories[lightSymbol.symbolCategoryId].Name}); " +
-                        $"baseAssetId: {lightSymbol.baseAssetId} ({TradingAccounts[args.ctidTraderAccountId].Assets[lightSymbol.baseAssetId].displayName}); "                   +
-                        $"quoteAssetId: {lightSymbol.quoteAssetId} ({TradingAccounts[args.ctidTraderAccountId].Assets[lightSymbol.quoteAssetId].displayName})";
+                TradingSymbol tradingSymbol = new TradingSymbol(this, args.ctidTraderAccountId)
+                                              {
+                                                  LightSymbol = lightSymbol
+                                              };
+                TradingAccounts[args.ctidTraderAccountId].TradingSymbols[lightSymbol.symbolId] = tradingSymbol;
 
-                    Log.Info("ProtoOASymbolsListRes:: "                           +
-                             $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
-                             $"Symbol: {Symbols}");
-                }
+                string item = $"symbolId: {lightSymbol.symbolId}; "                                                                                                                   +
+                              $"symbolName: {lightSymbol.symbolName}; "                                                                                                               +
+                              $"Description: {lightSymbol.Description}; "                                                                                                             +
+                              $"Enabled: {lightSymbol.Enabled}; "                                                                                                                     +
+                              $"symbolCategoryId: {lightSymbol.symbolCategoryId} ({TradingAccounts[args.ctidTraderAccountId].SymbolCategories[lightSymbol.symbolCategoryId].Name}); " +
+                              $"baseAssetId: {lightSymbol.baseAssetId} ({TradingAccounts[args.ctidTraderAccountId].Assets[lightSymbol.baseAssetId].displayName}); "                   +
+                              $"quoteAssetId: {lightSymbol.quoteAssetId} ({TradingAccounts[args.ctidTraderAccountId].Assets[lightSymbol.quoteAssetId].displayName})";
+
+                Log.Info("ProtoOASymbolsListRes:: "                           +
+                         $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
+                         $"Symbol: [{item}]");
             }
 
             Send(Symbol_By_Id_Req(args.ctidTraderAccountId, TradingAccounts[args.ctidTraderAccountId].TradingSymbols.Keys.ToArray()));

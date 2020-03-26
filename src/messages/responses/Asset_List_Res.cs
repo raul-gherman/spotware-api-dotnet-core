@@ -12,10 +12,9 @@ namespace spotware
             {
                 TradingAccounts[args.ctidTraderAccountId].Assets[asset.assetId] = asset;
 
-                string item = string.Empty;
-                item += $"assetId: {asset.assetId}; "         +
-                        $"displayName: {asset.displayName}; " +
-                        $"Name: {asset.Name}";
+                string item = $"assetId: {asset.assetId}; "         +
+                              $"displayName: {asset.displayName}; " +
+                              $"Name: {asset.Name}";
 
                 Log.Info("ProtoOAAssetListRes:: "                             +
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +

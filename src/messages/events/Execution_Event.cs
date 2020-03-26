@@ -93,20 +93,21 @@ namespace spotware
                                         $"Volume: {args.Deal.Volume}; "                                                                                                             +
                                         $"filledVolume: {args.Deal.filledVolume}; "                                                                                                 +
                                         $"executionPrice: {args.Deal.executionPrice}; "                                                                                             +
-                                        $"createTimestamp: {args.Deal.createTimestamp}; "                                                                                           +
+                                        $"createTimestamp: {args.Deal.createTimestamp} ({EpochToString(args.Deal.createTimestamp)}); "                                              +
                                         $"executionTimestamp: {args.Deal.executionTimestamp} ({EpochToString(args.Deal.executionTimestamp)}); "                                     +
                                         $"Commission: {args.Deal.Commission}; "                                                                                                     +
                                         $"marginRate: {args.Deal.marginRate}; "                                                                                                     +
-                                        $"closePositionDetail.Balance: {args.Deal.closePositionDetail.Balance}; "                                                                   +
-                                        $"closePositionDetail.balanceVersion: {args.Deal.closePositionDetail.balanceVersion}; "                                                     +
-                                        $"closePositionDetail.entryPrice: {args.Deal.closePositionDetail.entryPrice}; "                                                             +
-                                        $"closePositionDetail.closedVolume: {args.Deal.closePositionDetail.closedVolume}; "                                                         +
-                                        $"closePositionDetail.Commission: {args.Deal.closePositionDetail.Commission}; "                                                             +
-                                        $"closePositionDetail.Swap: {args.Deal.closePositionDetail.Swap}; "                                                                         +
-                                        $"closePositionDetail.grossProfit: {args.Deal.closePositionDetail.grossProfit}; "                                                           +
-                                        $"closePositionDetail.quoteToDepositConversionRate: {args.Deal.closePositionDetail.quoteToDepositConversionRate}; "                         +
                                         $"baseToUsdConversionRate: {args.Deal.baseToUsdConversionRate}; "                                                                           +
                                         $"utcLastUpdateTimestamp: {args.Deal.utcLastUpdateTimestamp} ({EpochToString(args.Deal.utcLastUpdateTimestamp)})]";
+                if (args.Deal.closePositionDetail != null)
+                    executionEvent += $"closePositionDetail.Balance: {args.Deal.closePositionDetail.Balance}; "               +
+                                      $"closePositionDetail.balanceVersion: {args.Deal.closePositionDetail.balanceVersion}; " +
+                                      $"closePositionDetail.entryPrice: {args.Deal.closePositionDetail.entryPrice}; "         +
+                                      $"closePositionDetail.closedVolume: {args.Deal.closePositionDetail.closedVolume}; "     +
+                                      $"closePositionDetail.Commission: {args.Deal.closePositionDetail.Commission}; "         +
+                                      $"closePositionDetail.Swap: {args.Deal.closePositionDetail.Swap}; "                     +
+                                      $"closePositionDetail.grossProfit: {args.Deal.closePositionDetail.grossProfit}; "       +
+                                      $"closePositionDetail.quoteToDepositConversionRate: {args.Deal.closePositionDetail.quoteToDepositConversionRate}; ";
                 Log.Info(executionEvent);
             }
 

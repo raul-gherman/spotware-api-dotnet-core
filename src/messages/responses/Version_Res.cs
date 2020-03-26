@@ -8,7 +8,7 @@ namespace spotware
         {
             ProtoOAVersionRes args = Serializer.Deserialize<ProtoOAVersionRes>(_processorMemoryStream);
 
-            Log.Info($"ProtoOAVersionRes:: " +
+            Log.Info("ProtoOAVersionRes:: " +
                      $"Version: {args.Version}");
 
             Send(Application_Auth_Req(_clientId, _clientSecret));

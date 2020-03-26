@@ -10,13 +10,12 @@ namespace spotware
 
             foreach (ProtoOAMarginCall marginCall in args.marginCalls)
             {
-                string marginCalls = string.Empty;
-                marginCalls += $"marginCallType: {marginCall.marginCallType}; "             +
-                               $"marginLevelThreshold: {marginCall.marginLevelThreshold}; " +
-                               $"utcLastUpdateTimestamp: {marginCall.utcLastUpdateTimestamp} ({EpochToString(marginCall.utcLastUpdateTimestamp)}";
+                string item = $"marginCallType: {marginCall.marginCallType}; "             +
+                              $"marginLevelThreshold: {marginCall.marginLevelThreshold}; " +
+                              $"utcLastUpdateTimestamp: {marginCall.utcLastUpdateTimestamp} ({EpochToString(marginCall.utcLastUpdateTimestamp)}";
 
                 Log.Info("ProtoOAMarginCallListRes:: " +
-                         $"marginCall: {marginCalls}");
+                         $"marginCall: [{item}]");
             }
 
             OnMarginCallListResReceived?.Invoke(this, args);

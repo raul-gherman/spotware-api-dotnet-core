@@ -12,9 +12,8 @@ namespace spotware
             {
                 TradingAccounts[args.ctidTraderAccountId].AssetClasses[assetClass.Id] = assetClass;
 
-                string item = string.Empty;
-                item += $"Id: {assetClass.Id}; " +
-                        $"Name: {assetClass.Name}";
+                string item = $"Id: {assetClass.Id}; " +
+                              $"Name: {assetClass.Name}";
 
                 Log.Info("ProtoOAAssetClassListRes:: "                        +
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +

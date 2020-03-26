@@ -10,20 +10,19 @@ namespace spotware
 
             foreach (ProtoOATrendbar trendBar in args.Trendbars)
             {
-                string Trendbars = string.Empty;
-                Trendbars += $"Period: {trendBar.Period}; "         +
-                             $"Volume: {trendBar.Volume}; "         +
-                             $"Low: {trendBar.Low}; "               +
-                             $"deltaOpen: {trendBar.deltaOpen}; "   +
-                             $"deltaHigh: {trendBar.deltaHigh}; "   +
-                             $"deltaClose: {trendBar.deltaClose}; " +
-                             $"utcTimestampInMinutes: {trendBar.utcTimestampInMinutes} ({EpochToString(trendBar.utcTimestampInMinutes)}";
+                string item = $"Period: {trendBar.Period}; "         +
+                              $"Volume: {trendBar.Volume}; "         +
+                              $"Low: {trendBar.Low}; "               +
+                              $"deltaOpen: {trendBar.deltaOpen}; "   +
+                              $"deltaHigh: {trendBar.deltaHigh}; "   +
+                              $"deltaClose: {trendBar.deltaClose}; " +
+                              $"utcTimestampInMinutes: {trendBar.utcTimestampInMinutes} ({EpochToString(trendBar.utcTimestampInMinutes)}";
 
                 Log.Info("ProtoOAGetAccountListByAccessTokenRes:: "                        +
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; "              +
                          $"symbolId: {args.symbolId}; "                                    +
                          $"Timestamp: {args.Timestamp} ({EpochToString(args.Timestamp)}; " +
-                         $"Trendbar: {Trendbars}");
+                         $"Trendbar: [{item}]");
             }
 
             OnGetTrendbarsResReceived?.Invoke(args);

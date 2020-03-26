@@ -15,7 +15,7 @@ namespace spotware
         public bool   IsTradable   { get; private set; }
 
         public        double Pip { get; set; }
-        private const double Divider = 100000;
+        private const double Divider = 100_000;
 
         public event SpotEvent OnSpotEvent;
 
