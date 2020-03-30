@@ -14,8 +14,8 @@ namespace spotware
                                                     clientSecret = clientSecret
                                                 };
 
-            Log.Info("ProtoOAApplicationAuthReq | "  +
-                     $"clientId: {clientId} | "      +
+            Log.Info("ProtoOAApplicationAuthReq:: " +
+                     $"clientId: {clientId}; "      +
                      $"clientSecret: {clientSecret}");
 
             InnerMemoryStream.SetLength(0);

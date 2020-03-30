@@ -8,22 +8,21 @@ namespace spotware
         {
             ProtoOACashFlowHistoryListRes args = Serializer.Deserialize<ProtoOACashFlowHistoryListRes>(_processorMemoryStream);
 
-            string depositWithdraws = string.Empty;
             foreach (ProtoOADepositWithdraw depositWithdraw in args.depositWithdraws)
             {
-                depositWithdraws += $"operationType: {depositWithdraw.operationType} | "       +
-                                    $"Equity: {depositWithdraw.Equity} | "                     +
-                                    $"Balance: {depositWithdraw.Balance} | "                   +
-                                    $"balanceVersion: {depositWithdraw.balanceVersion} | "     +
-                                    $"balanceHistoryId: {depositWithdraw.balanceHistoryId} | " +
-                                    $"Delta: {depositWithdraw.Delta} | "                       +
-                                    $"externalNote: {depositWithdraw.externalNote} | "         +
-                                    $"changeBalanceTimestamp: {depositWithdraw.changeBalanceTimestamp}";
-            }
+                string item = $"operationType: {depositWithdraw.operationType}; "       +
+                              $"Equity: {depositWithdraw.Equity}; "                     +
+                              $"Balance: {depositWithdraw.Balance}; "                   +
+                              $"balanceVersion: {depositWithdraw.balanceVersion}; "     +
+                              $"balanceHistoryId: {depositWithdraw.balanceHistoryId}; " +
+                              $"Delta: {depositWithdraw.Delta}; "                       +
+                              $"externalNote: {depositWithdraw.externalNote}; "         +
+                              $"changeBalanceTimestamp: {depositWithdraw.changeBalanceTimestamp}";
 
-            Log.Info("ProtoOACashFlowHistoryListRes | "                    +
-                     $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
-                     $"depositWithdraws: [{depositWithdraws}]");
+                Log.Info("ProtoOACashFlowHistoryListRes:: "                   +
+                         $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
+                         $"depositWithdraws: [{item}]");
+            }
 
             OnCashFlowHistoryListResReceived?.Invoke(args);
         }

@@ -11,13 +11,13 @@ namespace spotware
             string tickDatas = string.Empty;
             foreach (ProtoOATickData tickData in args.tickDatas)
             {
-                tickDatas += $"Tick: {tickData.Tick} | " +
-                             $"Timestamp: {tickData.Timestamp}";
+                tickDatas += $"Tick: {tickData.Tick}; " +
+                             $"Timestamp: {tickData.Timestamp} ( ({EpochToString(tickData.Timestamp)}) | ";
             }
 
-            Log.Info("ProtoOAGetTickDataRes | "                        +
-                     $"accessToken: {args.hasMore} | "                 +
-                     $"permissionScope: {args.ctidTraderAccountId} | " +
+            Log.Info("ProtoOAGetTickDataRes:: "                       +
+                     $"accessToken: {args.hasMore}; "                 +
+                     $"permissionScope: {args.ctidTraderAccountId}; " +
                      $"tickDatas: [{tickDatas}]");
 
             OnGetTickDataResReceived?.Invoke(args);

@@ -8,7 +8,7 @@ namespace spotware
         {
             ProtoOAAccountDisconnectEvent args = Serializer.Deserialize<ProtoOAAccountDisconnectEvent>(_processorMemoryStream);
 
-            Log.Info("ProtoOAAccountDisconnectEvent | " +
+            Log.Info("ProtoOAAccountDisconnectEvent:: " +
                      $"ctidTraderAccountId: {args.ctidTraderAccountId}");
 
             OnAccountDisconnectEventReceived?.Invoke(args);

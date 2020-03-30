@@ -8,17 +8,20 @@ namespace spotware
         {
             ProtoOAAssetListRes args = Serializer.Deserialize<ProtoOAAssetListRes>(_processorMemoryStream);
 
-            string Assets = string.Empty;
             foreach (ProtoOAAsset asset in args.Assets)
             {
-                Assets += $"assetId: {asset.assetId} | "         +
-                          $"displayName: {asset.displayName} | " +
-                          $"Name: {asset.Name}";
+                TradingAccounts[args.ctidTraderAccountId].Assets[asset.assetId] = asset;
+
+                string item = $"assetId: {asset.assetId}; "         +
+                              $"displayName: {asset.displayName}; " +
+                              $"Name: {asset.Name}";
+
+                Log.Info("ProtoOAAssetListRes:: "                             +
+                         $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
+                         $"Asset: [{item}]");
             }
 
-            Log.Info("ProtoOAAssetListRes | "                              +
-                     $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
-                     $"Assets: [{Assets}]");
+            Send(Symbol_Category_List_Req(args.ctidTraderAccountId));
 
             OnAssetListResReceived?.Invoke(args);
         }

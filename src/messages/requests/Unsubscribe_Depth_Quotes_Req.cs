@@ -13,9 +13,9 @@ namespace spotware
                                                            symbolIds           = symbolIDs
                                                        };
 
-            Log.Info("ProtoOAUnsubscribeDepthQuotesReq | "            +
-                     $"ctidTraderAccountId: {ctidTraderAccountId} | " +
-                     $"symbolIDs: [{string.Join(" | ", symbolIDs)}]");
+            Log.Info("ProtoOAUnsubscribeDepthQuotesReq:: "           +
+                     $"ctidTraderAccountId: {ctidTraderAccountId}; " +
+                     $"symbolIDs: [{string.Join("; ", symbolIDs)}]");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);

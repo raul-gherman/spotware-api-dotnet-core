@@ -11,7 +11,7 @@ namespace spotware
                                             payloadType = ProtoOAPayloadType.ProtoOaVersionReq
                                         };
 
-            Log.Info($"ProtoOAVersionReq");
+            Log.Info("ProtoOAVersionReq");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);

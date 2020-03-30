@@ -12,7 +12,7 @@ namespace spotware
                                                    ctidTraderAccountId = ctidTraderAccountId
                                                };
 
-            Log.Info("ProtoOAMarginCallListReq | " +
+            Log.Info("ProtoOAMarginCallListReq:: " +
                      $"ctidTraderAccountId: {ctidTraderAccountId}");
 
             InnerMemoryStream.SetLength(0);

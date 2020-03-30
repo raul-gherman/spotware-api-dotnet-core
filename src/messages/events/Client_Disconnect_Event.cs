@@ -8,7 +8,7 @@ namespace spotware
         {
             ProtoOAClientDisconnectEvent args = Serializer.Deserialize<ProtoOAClientDisconnectEvent>(_processorMemoryStream);
 
-            Log.Info("ProtoOAClientDisconnectEvent | " +
+            Log.Info("ProtoOAClientDisconnectEvent:: " +
                      $"Reason: {args.Reason}");
 
             OnClientDisconnectEventReceived?.Invoke(args);

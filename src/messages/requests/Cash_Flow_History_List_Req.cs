@@ -16,10 +16,10 @@ namespace spotware
                                                         toTimestamp         = toTimestamp
                                                     };
 
-            Log.Info("ProtoOACashFlowHistoryListReq | "               +
-                     $"ctidTraderAccountId: {ctidTraderAccountId} | " +
-                     $"fromTimestamp: {fromTimestamp} | "             +
-                     $"toTimestamp: {toTimestamp}");
+            Log.Info("ProtoOACashFlowHistoryListReq:: "                                  +
+                     $"ctidTraderAccountId: {ctidTraderAccountId}; "                     +
+                     $"fromTimestamp: {fromTimestamp} ({EpochToString(fromTimestamp)}; " +
+                     $"toTimestamp: {toTimestamp} ({EpochToString(toTimestamp)}");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);

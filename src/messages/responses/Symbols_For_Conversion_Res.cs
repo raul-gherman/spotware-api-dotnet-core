@@ -8,21 +8,20 @@ namespace spotware
         {
             ProtoOASymbolsForConversionRes args = Serializer.Deserialize<ProtoOASymbolsForConversionRes>(_processorMemoryStream);
 
-            string Symbols = string.Empty;
             foreach (ProtoOALightSymbol lightSymbol in args.Symbols)
             {
-                Symbols += $"symbolId: {lightSymbol.symbolId} | "                 +
-                           $"symbolName: {lightSymbol.symbolName} | "             +
-                           $"Description: {lightSymbol.Description} | "           +
-                           $"Enabled: {lightSymbol.Enabled} | "                   +
-                           $"symbolCategoryId: {lightSymbol.symbolCategoryId} | " +
-                           $"baseAssetId: {lightSymbol.baseAssetId} | "           +
-                           $"quoteAssetId: {lightSymbol.quoteAssetId}";
-            }
+                string item = $"symbolId: {lightSymbol.symbolId}; "                                                                                                                   +
+                              $"symbolName: {lightSymbol.symbolName}; "                                                                                                               +
+                              $"Description: {lightSymbol.Description}; "                                                                                                             +
+                              $"Enabled: {lightSymbol.Enabled}; "                                                                                                                     +
+                              $"symbolCategoryId: {lightSymbol.symbolCategoryId} ({TradingAccounts[args.ctidTraderAccountId].SymbolCategories[lightSymbol.symbolCategoryId].Name}); " +
+                              $"baseAssetId: {lightSymbol.baseAssetId} ({TradingAccounts[args.ctidTraderAccountId].Assets[lightSymbol.baseAssetId].displayName}); "                   +
+                              $"quoteAssetId: {lightSymbol.quoteAssetId} ({TradingAccounts[args.ctidTraderAccountId].Assets[lightSymbol.quoteAssetId].displayName})";
 
-            Log.Info("ProtoOASymbolsForConversionRes | "                   +
-                     $"ctidTraderAccountId: {args.ctidTraderAccountId} | " +
-                     $"Symbols: [{Symbols}]");
+                Log.Info("ProtoOASymbolsForConversionRes:: "                  +
+                         $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
+                         $"Symbol: [{item}]");
+            }
 
             OnSymbolsForConversionResReceived?.Invoke(args);
         }
