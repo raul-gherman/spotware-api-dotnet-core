@@ -8,7 +8,22 @@ namespace spotware
         {
             ProtoOAGetTrendbarsRes args = Serializer.Deserialize<ProtoOAGetTrendbarsRes>(_processorMemoryStream);
 
-            Persist(args);
+            foreach (ProtoOATrendbar trendBar in args.Trendbars)
+            {
+                string item = $"Period: {trendBar.Period}; "         +
+                              $"Volume: {trendBar.Volume}; "         +
+                              $"Low: {trendBar.Low}; "               +
+                              $"deltaOpen: {trendBar.deltaOpen}; "   +
+                              $"deltaHigh: {trendBar.deltaHigh}; "   +
+                              $"deltaClose: {trendBar.deltaClose}; " +
+                              $"utcTimestampInMinutes: {trendBar.utcTimestampInMinutes} ({EpochToString(trendBar.utcTimestampInMinutes)}";
+
+                Log.Info("ProtoOAGetAccountListByAccessTokenRes:: "                        +
+                         $"ctidTraderAccountId: {args.ctidTraderAccountId}; "              +
+                         $"symbolId: {args.symbolId}; "                                    +
+                         $"Timestamp: {args.Timestamp} ({EpochToString(args.Timestamp)}; " +
+                         $"Trendbar: [{item}]");
+            }
 
             OnGetTrendbarsResReceived?.Invoke(args);
         }

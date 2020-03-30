@@ -8,7 +8,8 @@ namespace spotware
         {
             ProtoOASubscribeDepthQuotesRes args = Serializer.Deserialize<ProtoOASubscribeDepthQuotesRes>(_processorMemoryStream);
 
-            Persist(args);
+            Log.Info("ProtoOASubscribeDepthQuotesRes:: " +
+                     $"ctidTraderAccountId: {args.ctidTraderAccountId}");
 
             OnSubscribeDepthQuotesResReceived?.Invoke(args);
         }

@@ -1,4 +1,4 @@
-using ProtoBuf;
+﻿using ProtoBuf;
 
 namespace spotware
 {
@@ -8,8 +8,8 @@ namespace spotware
         {
             ProtoHeartbeatEvent args = Serializer.Deserialize<ProtoHeartbeatEvent>(_processorMemoryStream);
 
-            Persist(args);
-
+            Log.Info("ProtoHeartbeatEventRes");
+            
             Send(Heartbeat());
 
             OnHeartbeatEventReceived?.Invoke(args);

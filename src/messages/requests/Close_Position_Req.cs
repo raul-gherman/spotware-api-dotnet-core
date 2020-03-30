@@ -16,7 +16,10 @@ namespace spotware
                                                   Volume              = volume
                                               };
 
-            Persist(message);
+            Log.Info("ProtoOAClosePositionReq:: "                    +
+                     $"ctidTraderAccountId: {ctidTraderAccountId}; " +
+                     $"positionId: {positionId}; "                   +
+                     $"volume: {volume}");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);

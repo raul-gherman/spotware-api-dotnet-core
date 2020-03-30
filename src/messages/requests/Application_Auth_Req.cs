@@ -14,7 +14,9 @@ namespace spotware
                                                     clientSecret = clientSecret
                                                 };
 
-            Persist(message);
+            Log.Info("ProtoOAApplicationAuthReq:: " +
+                     $"clientId: {clientId}; "      +
+                     $"clientSecret: {clientSecret}");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);

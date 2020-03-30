@@ -62,7 +62,6 @@ namespace spotware
             {
                 _log.Error($"Listen :: {ex}");
             }
-
         }
 
         public event MessageReceived OnMessageReceived;

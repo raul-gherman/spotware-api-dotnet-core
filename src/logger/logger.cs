@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.IO;
-using System.Text;
 
 namespace spotware
 {
@@ -45,9 +44,8 @@ namespace spotware
 
     internal class XLogger
     {
-        public static readonly XLogger       Instance = new XLogger();
-        private                Queue         _que;
-        private readonly       StringBuilder _sb = new StringBuilder();
+        public static readonly XLogger Instance = new XLogger();
+        private                Queue   _que;
 
         private XLogger()
         {
@@ -59,7 +57,7 @@ namespace spotware
         {
             _que         = new Queue();
             _logFileName = filename;
-            System.Timers.Timer saveTimer = new System.Timers.Timer(1)
+            System.Timers.Timer saveTimer = new System.Timers.Timer(10)
                                             {
                                                 Enabled   = true,
                                                 AutoReset = true
@@ -78,13 +76,9 @@ namespace spotware
         }
 
 
-        private string FormatLog(string log, string msg)
+        private static string FormatLog(string log, string msg)
         {
-            _sb.Clear();
-            _sb.Append(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss.ffffff"));
-            _sb.Append(log);
-            _sb.AppendLine(msg);
-            return _sb.ToString();
+            return $"{(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss.ffffff"))} {log} {msg}{Environment.NewLine}";
         }
 
         private void WriteData()

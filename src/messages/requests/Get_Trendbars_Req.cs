@@ -22,7 +22,11 @@ namespace spotware
             if (symbolId > 0)
                 message.symbolId = symbolId;
 
-            Persist(message);
+            Log.Info("ProtoOAGetTrendbarsReq:: "                                         +
+                     $"ctidTraderAccountId: {ctidTraderAccountId}; "                     +
+                     $"fromTimestamp: {fromTimestamp} ({EpochToString(fromTimestamp)}; " +
+                     $"toTimestamp: {toTimestamp} ({EpochToString(toTimestamp)}; "       +
+                     $"period: {period}");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);

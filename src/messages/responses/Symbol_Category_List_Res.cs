@@ -8,7 +8,21 @@ namespace spotware
         {
             ProtoOASymbolCategoryListRes args = Serializer.Deserialize<ProtoOASymbolCategoryListRes>(_processorMemoryStream);
 
-            Persist(args);
+            foreach (ProtoOASymbolCategory symbolCategory in args.symbolCategories)
+            {
+                TradingAccounts[args.ctidTraderAccountId].SymbolCategories[symbolCategory.Id] = symbolCategory;
+
+                string item = string.Empty;
+                item += $"Id: {symbolCategory.Id}; "     +
+                        $"Name: {symbolCategory.Name}; " +
+                        $"assetClassId: {symbolCategory.assetClassId} ({TradingAccounts[args.ctidTraderAccountId].AssetClasses[symbolCategory.assetClassId].Name})";
+
+                Log.Info("ProtoOASymbolCategoryListRes:: "                    +
+                         $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
+                         $"symbolCategory: [{item}]");
+            }
+
+            Send(Symbols_List_Req(args.ctidTraderAccountId));
 
             OnSymbolCategoryListResReceived?.Invoke(args);
         }

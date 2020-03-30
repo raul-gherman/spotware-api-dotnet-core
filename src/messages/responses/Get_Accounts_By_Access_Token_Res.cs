@@ -12,10 +12,17 @@ namespace spotware
             {
                 TradingAccounts[(long) account.ctidTraderAccountId] = new TradingAccount(this, (long) account.ctidTraderAccountId);
 
+                string item = $"ctidTraderAccountId: {account.ctidTraderAccountId}; " +
+                              $"traderLogin: {account.traderLogin}; "                 +
+                              $"isLive: {account.isLive}";
+
+                Log.Info("ProtoOAGetAccountListByAccessTokenRes:: "   +
+                         $"accessToken: {args.accessToken}; "         +
+                         $"permissionScope: {args.permissionScope}; " +
+                         $"ctidTraderAccount: [{item}]");
+
                 Send(Account_Auth_Req((long) account.ctidTraderAccountId, _accessToken));
             }
-
-            Persist(args);
 
             OnGetAccountListByAccessTokenResReceived?.Invoke(args);
         }
