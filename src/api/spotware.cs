@@ -5,11 +5,11 @@
 #pragma warning disable CS1591, CS0612, CS3021, IDE1006
 namespace spotware
 {
-
     [ProtoBuf.ProtoContract()]
     public partial class ProtoMessage : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -22,8 +22,9 @@ namespace spotware
             get { return __pbn__Payload; }
             set { __pbn__Payload = value; }
         }
-        public bool ShouldSerializePayload() => __pbn__Payload != null;
-        public void ResetPayload() => __pbn__Payload = null;
+
+        public  bool   ShouldSerializePayload() => __pbn__Payload != null;
+        public  void   ResetPayload()           => __pbn__Payload = null;
         private byte[] __pbn__Payload;
 
         [ProtoBuf.ProtoMember(3)]
@@ -33,16 +34,17 @@ namespace spotware
             get { return __pbn__clientMsgId ?? ""; }
             set { __pbn__clientMsgId = value; }
         }
-        public bool ShouldSerializeclientMsgId() => __pbn__clientMsgId != null;
-        public void ResetclientMsgId() => __pbn__clientMsgId = null;
-        private string __pbn__clientMsgId;
 
+        public  bool   ShouldSerializeclientMsgId() => __pbn__clientMsgId != null;
+        public  void   ResetclientMsgId()           => __pbn__clientMsgId = null;
+        private string __pbn__clientMsgId;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoErrorRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -53,8 +55,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoPayloadType.ErrorRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool              ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void              ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -67,8 +70,9 @@ namespace spotware
             get { return __pbn__Description ?? ""; }
             set { __pbn__Description = value; }
         }
-        public bool ShouldSerializeDescription() => __pbn__Description != null;
-        public void ResetDescription() => __pbn__Description = null;
+
+        public  bool   ShouldSerializeDescription() => __pbn__Description != null;
+        public  void   ResetDescription()           => __pbn__Description = null;
         private string __pbn__Description;
 
         [ProtoBuf.ProtoMember(4)]
@@ -77,16 +81,17 @@ namespace spotware
             get { return __pbn__maintenanceEndTimestamp.GetValueOrDefault(); }
             set { __pbn__maintenanceEndTimestamp = value; }
         }
-        public bool ShouldSerializemaintenanceEndTimestamp() => __pbn__maintenanceEndTimestamp != null;
-        public void ResetmaintenanceEndTimestamp() => __pbn__maintenanceEndTimestamp = null;
-        private ulong? __pbn__maintenanceEndTimestamp;
 
+        public  bool   ShouldSerializemaintenanceEndTimestamp() => __pbn__maintenanceEndTimestamp != null;
+        public  void   ResetmaintenanceEndTimestamp()           => __pbn__maintenanceEndTimestamp = null;
+        private ulong? __pbn__maintenanceEndTimestamp;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoHeartbeatEvent : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -97,16 +102,17 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoPayloadType.HeartbeatEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
-        private ProtoPayloadType? __pbn__payloadType;
 
+        public  bool              ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void              ResetpayloadType()           => __pbn__payloadType = null;
+        private ProtoPayloadType? __pbn__payloadType;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAAsset : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -123,16 +129,17 @@ namespace spotware
             get { return __pbn__displayName ?? ""; }
             set { __pbn__displayName = value; }
         }
-        public bool ShouldSerializedisplayName() => __pbn__displayName != null;
-        public void ResetdisplayName() => __pbn__displayName = null;
-        private string __pbn__displayName;
 
+        public  bool   ShouldSerializedisplayName() => __pbn__displayName != null;
+        public  void   ResetdisplayName()           => __pbn__displayName = null;
+        private string __pbn__displayName;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAInterval : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -141,13 +148,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public uint endSecond { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOASymbol : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -166,8 +173,9 @@ namespace spotware
             get { return __pbn__enableShortSelling.GetValueOrDefault(); }
             set { __pbn__enableShortSelling = value; }
         }
-        public bool ShouldSerializeenableShortSelling() => __pbn__enableShortSelling != null;
-        public void ResetenableShortSelling() => __pbn__enableShortSelling = null;
+
+        public  bool  ShouldSerializeenableShortSelling() => __pbn__enableShortSelling != null;
+        public  void  ResetenableShortSelling()           => __pbn__enableShortSelling = null;
         private bool? __pbn__enableShortSelling;
 
         [ProtoBuf.ProtoMember(5)]
@@ -176,8 +184,9 @@ namespace spotware
             get { return __pbn__guaranteedStopLoss.GetValueOrDefault(); }
             set { __pbn__guaranteedStopLoss = value; }
         }
-        public bool ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
-        public void ResetguaranteedStopLoss() => __pbn__guaranteedStopLoss = null;
+
+        public  bool  ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
+        public  void  ResetguaranteedStopLoss()           => __pbn__guaranteedStopLoss = null;
         private bool? __pbn__guaranteedStopLoss;
 
         [ProtoBuf.ProtoMember(6)]
@@ -187,8 +196,9 @@ namespace spotware
             get { return __pbn__swapRollover3Days ?? ProtoOADayOfWeek.Monday; }
             set { __pbn__swapRollover3Days = value; }
         }
-        public bool ShouldSerializeswapRollover3Days() => __pbn__swapRollover3Days != null;
-        public void ResetswapRollover3Days() => __pbn__swapRollover3Days = null;
+
+        public  bool              ShouldSerializeswapRollover3Days() => __pbn__swapRollover3Days != null;
+        public  void              ResetswapRollover3Days()           => __pbn__swapRollover3Days = null;
         private ProtoOADayOfWeek? __pbn__swapRollover3Days;
 
         [ProtoBuf.ProtoMember(7)]
@@ -197,8 +207,9 @@ namespace spotware
             get { return __pbn__swapLong.GetValueOrDefault(); }
             set { __pbn__swapLong = value; }
         }
-        public bool ShouldSerializeswapLong() => __pbn__swapLong != null;
-        public void ResetswapLong() => __pbn__swapLong = null;
+
+        public  bool    ShouldSerializeswapLong() => __pbn__swapLong != null;
+        public  void    ResetswapLong()           => __pbn__swapLong = null;
         private double? __pbn__swapLong;
 
         [ProtoBuf.ProtoMember(8)]
@@ -207,8 +218,9 @@ namespace spotware
             get { return __pbn__swapShort.GetValueOrDefault(); }
             set { __pbn__swapShort = value; }
         }
-        public bool ShouldSerializeswapShort() => __pbn__swapShort != null;
-        public void ResetswapShort() => __pbn__swapShort = null;
+
+        public  bool    ShouldSerializeswapShort() => __pbn__swapShort != null;
+        public  void    ResetswapShort()           => __pbn__swapShort = null;
         private double? __pbn__swapShort;
 
         [ProtoBuf.ProtoMember(9)]
@@ -217,8 +229,9 @@ namespace spotware
             get { return __pbn__maxVolume.GetValueOrDefault(); }
             set { __pbn__maxVolume = value; }
         }
-        public bool ShouldSerializemaxVolume() => __pbn__maxVolume != null;
-        public void ResetmaxVolume() => __pbn__maxVolume = null;
+
+        public  bool  ShouldSerializemaxVolume() => __pbn__maxVolume != null;
+        public  void  ResetmaxVolume()           => __pbn__maxVolume = null;
         private long? __pbn__maxVolume;
 
         [ProtoBuf.ProtoMember(10)]
@@ -227,8 +240,9 @@ namespace spotware
             get { return __pbn__minVolume.GetValueOrDefault(); }
             set { __pbn__minVolume = value; }
         }
-        public bool ShouldSerializeminVolume() => __pbn__minVolume != null;
-        public void ResetminVolume() => __pbn__minVolume = null;
+
+        public  bool  ShouldSerializeminVolume() => __pbn__minVolume != null;
+        public  void  ResetminVolume()           => __pbn__minVolume = null;
         private long? __pbn__minVolume;
 
         [ProtoBuf.ProtoMember(11)]
@@ -237,8 +251,9 @@ namespace spotware
             get { return __pbn__stepVolume.GetValueOrDefault(); }
             set { __pbn__stepVolume = value; }
         }
-        public bool ShouldSerializestepVolume() => __pbn__stepVolume != null;
-        public void ResetstepVolume() => __pbn__stepVolume = null;
+
+        public  bool  ShouldSerializestepVolume() => __pbn__stepVolume != null;
+        public  void  ResetstepVolume()           => __pbn__stepVolume = null;
         private long? __pbn__stepVolume;
 
         [ProtoBuf.ProtoMember(12)]
@@ -247,8 +262,9 @@ namespace spotware
             get { return __pbn__maxExposure.GetValueOrDefault(); }
             set { __pbn__maxExposure = value; }
         }
-        public bool ShouldSerializemaxExposure() => __pbn__maxExposure != null;
-        public void ResetmaxExposure() => __pbn__maxExposure = null;
+
+        public  bool   ShouldSerializemaxExposure() => __pbn__maxExposure != null;
+        public  void   ResetmaxExposure()           => __pbn__maxExposure = null;
         private ulong? __pbn__maxExposure;
 
         [ProtoBuf.ProtoMember(13, Name = @"schedule")]
@@ -264,8 +280,9 @@ namespace spotware
             get { return __pbn__commissionType ?? ProtoOACommissionType.UsdPerMilUsd; }
             set { __pbn__commissionType = value; }
         }
-        public bool ShouldSerializecommissionType() => __pbn__commissionType != null;
-        public void ResetcommissionType() => __pbn__commissionType = null;
+
+        public  bool                   ShouldSerializecommissionType() => __pbn__commissionType != null;
+        public  void                   ResetcommissionType()           => __pbn__commissionType = null;
         private ProtoOACommissionType? __pbn__commissionType;
 
         [ProtoBuf.ProtoMember(16)]
@@ -274,8 +291,9 @@ namespace spotware
             get { return __pbn__slDistance.GetValueOrDefault(); }
             set { __pbn__slDistance = value; }
         }
-        public bool ShouldSerializeslDistance() => __pbn__slDistance != null;
-        public void ResetslDistance() => __pbn__slDistance = null;
+
+        public  bool  ShouldSerializeslDistance() => __pbn__slDistance != null;
+        public  void  ResetslDistance()           => __pbn__slDistance = null;
         private uint? __pbn__slDistance;
 
         [ProtoBuf.ProtoMember(17)]
@@ -284,8 +302,9 @@ namespace spotware
             get { return __pbn__tpDistance.GetValueOrDefault(); }
             set { __pbn__tpDistance = value; }
         }
-        public bool ShouldSerializetpDistance() => __pbn__tpDistance != null;
-        public void ResettpDistance() => __pbn__tpDistance = null;
+
+        public  bool  ShouldSerializetpDistance() => __pbn__tpDistance != null;
+        public  void  ResettpDistance()           => __pbn__tpDistance = null;
         private uint? __pbn__tpDistance;
 
         [ProtoBuf.ProtoMember(18)]
@@ -294,8 +313,9 @@ namespace spotware
             get { return __pbn__gslDistance.GetValueOrDefault(); }
             set { __pbn__gslDistance = value; }
         }
-        public bool ShouldSerializegslDistance() => __pbn__gslDistance != null;
-        public void ResetgslDistance() => __pbn__gslDistance = null;
+
+        public  bool  ShouldSerializegslDistance() => __pbn__gslDistance != null;
+        public  void  ResetgslDistance()           => __pbn__gslDistance = null;
         private uint? __pbn__gslDistance;
 
         [ProtoBuf.ProtoMember(19)]
@@ -304,8 +324,9 @@ namespace spotware
             get { return __pbn__gslCharge.GetValueOrDefault(); }
             set { __pbn__gslCharge = value; }
         }
-        public bool ShouldSerializegslCharge() => __pbn__gslCharge != null;
-        public void ResetgslCharge() => __pbn__gslCharge = null;
+
+        public  bool  ShouldSerializegslCharge() => __pbn__gslCharge != null;
+        public  void  ResetgslCharge()           => __pbn__gslCharge = null;
         private long? __pbn__gslCharge;
 
         [ProtoBuf.ProtoMember(20)]
@@ -315,8 +336,9 @@ namespace spotware
             get { return __pbn__distanceSetIn ?? ProtoOASymbolDistanceType.SymbolDistanceInPoints; }
             set { __pbn__distanceSetIn = value; }
         }
-        public bool ShouldSerializedistanceSetIn() => __pbn__distanceSetIn != null;
-        public void ResetdistanceSetIn() => __pbn__distanceSetIn = null;
+
+        public  bool                       ShouldSerializedistanceSetIn() => __pbn__distanceSetIn != null;
+        public  void                       ResetdistanceSetIn()           => __pbn__distanceSetIn = null;
         private ProtoOASymbolDistanceType? __pbn__distanceSetIn;
 
         [ProtoBuf.ProtoMember(21)]
@@ -325,8 +347,9 @@ namespace spotware
             get { return __pbn__minCommission.GetValueOrDefault(); }
             set { __pbn__minCommission = value; }
         }
-        public bool ShouldSerializeminCommission() => __pbn__minCommission != null;
-        public void ResetminCommission() => __pbn__minCommission = null;
+
+        public  bool  ShouldSerializeminCommission() => __pbn__minCommission != null;
+        public  void  ResetminCommission()           => __pbn__minCommission = null;
         private long? __pbn__minCommission;
 
         [ProtoBuf.ProtoMember(22)]
@@ -336,8 +359,9 @@ namespace spotware
             get { return __pbn__minCommissionType ?? ProtoOAMinCommissionType.Currency; }
             set { __pbn__minCommissionType = value; }
         }
-        public bool ShouldSerializeminCommissionType() => __pbn__minCommissionType != null;
-        public void ResetminCommissionType() => __pbn__minCommissionType = null;
+
+        public  bool                      ShouldSerializeminCommissionType() => __pbn__minCommissionType != null;
+        public  void                      ResetminCommissionType()           => __pbn__minCommissionType = null;
         private ProtoOAMinCommissionType? __pbn__minCommissionType;
 
         [ProtoBuf.ProtoMember(23)]
@@ -347,8 +371,9 @@ namespace spotware
             get { return __pbn__minCommissionAsset ?? @"USD"; }
             set { __pbn__minCommissionAsset = value; }
         }
-        public bool ShouldSerializeminCommissionAsset() => __pbn__minCommissionAsset != null;
-        public void ResetminCommissionAsset() => __pbn__minCommissionAsset = null;
+
+        public  bool   ShouldSerializeminCommissionAsset() => __pbn__minCommissionAsset != null;
+        public  void   ResetminCommissionAsset()           => __pbn__minCommissionAsset = null;
         private string __pbn__minCommissionAsset;
 
         [ProtoBuf.ProtoMember(24)]
@@ -357,8 +382,9 @@ namespace spotware
             get { return __pbn__rolloverCommission.GetValueOrDefault(); }
             set { __pbn__rolloverCommission = value; }
         }
-        public bool ShouldSerializerolloverCommission() => __pbn__rolloverCommission != null;
-        public void ResetrolloverCommission() => __pbn__rolloverCommission = null;
+
+        public  bool  ShouldSerializerolloverCommission() => __pbn__rolloverCommission != null;
+        public  void  ResetrolloverCommission()           => __pbn__rolloverCommission = null;
         private long? __pbn__rolloverCommission;
 
         [ProtoBuf.ProtoMember(25)]
@@ -367,8 +393,9 @@ namespace spotware
             get { return __pbn__skipRolloverDays.GetValueOrDefault(); }
             set { __pbn__skipRolloverDays = value; }
         }
-        public bool ShouldSerializeskipRolloverDays() => __pbn__skipRolloverDays != null;
-        public void ResetskipRolloverDays() => __pbn__skipRolloverDays = null;
+
+        public  bool ShouldSerializeskipRolloverDays() => __pbn__skipRolloverDays != null;
+        public  void ResetskipRolloverDays()           => __pbn__skipRolloverDays = null;
         private int? __pbn__skipRolloverDays;
 
         [ProtoBuf.ProtoMember(26)]
@@ -378,8 +405,9 @@ namespace spotware
             get { return __pbn__scheduleTimeZone ?? ""; }
             set { __pbn__scheduleTimeZone = value; }
         }
-        public bool ShouldSerializescheduleTimeZone() => __pbn__scheduleTimeZone != null;
-        public void ResetscheduleTimeZone() => __pbn__scheduleTimeZone = null;
+
+        public  bool   ShouldSerializescheduleTimeZone() => __pbn__scheduleTimeZone != null;
+        public  void   ResetscheduleTimeZone()           => __pbn__scheduleTimeZone = null;
         private string __pbn__scheduleTimeZone;
 
         [ProtoBuf.ProtoMember(27)]
@@ -389,8 +417,9 @@ namespace spotware
             get { return __pbn__tradingMode ?? ProtoOATradingMode.Enabled; }
             set { __pbn__tradingMode = value; }
         }
-        public bool ShouldSerializetradingMode() => __pbn__tradingMode != null;
-        public void ResettradingMode() => __pbn__tradingMode = null;
+
+        public  bool                ShouldSerializetradingMode() => __pbn__tradingMode != null;
+        public  void                ResettradingMode()           => __pbn__tradingMode = null;
         private ProtoOATradingMode? __pbn__tradingMode;
 
         [ProtoBuf.ProtoMember(28)]
@@ -400,8 +429,9 @@ namespace spotware
             get { return __pbn__rolloverCommission3Days ?? ProtoOADayOfWeek.Monday; }
             set { __pbn__rolloverCommission3Days = value; }
         }
-        public bool ShouldSerializerolloverCommission3Days() => __pbn__rolloverCommission3Days != null;
-        public void ResetrolloverCommission3Days() => __pbn__rolloverCommission3Days = null;
+
+        public  bool              ShouldSerializerolloverCommission3Days() => __pbn__rolloverCommission3Days != null;
+        public  void              ResetrolloverCommission3Days()           => __pbn__rolloverCommission3Days = null;
         private ProtoOADayOfWeek? __pbn__rolloverCommission3Days;
 
         [ProtoBuf.ProtoMember(29)]
@@ -411,16 +441,17 @@ namespace spotware
             get { return __pbn__swapCalculationType ?? ProtoOASwapCalculationType.Points; }
             set { __pbn__swapCalculationType = value; }
         }
-        public bool ShouldSerializeswapCalculationType() => __pbn__swapCalculationType != null;
-        public void ResetswapCalculationType() => __pbn__swapCalculationType = null;
-        private ProtoOASwapCalculationType? __pbn__swapCalculationType;
 
+        public  bool                        ShouldSerializeswapCalculationType() => __pbn__swapCalculationType != null;
+        public  void                        ResetswapCalculationType()           => __pbn__swapCalculationType = null;
+        private ProtoOASwapCalculationType? __pbn__swapCalculationType;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOALightSymbol : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -434,8 +465,9 @@ namespace spotware
             get { return __pbn__symbolName ?? ""; }
             set { __pbn__symbolName = value; }
         }
-        public bool ShouldSerializesymbolName() => __pbn__symbolName != null;
-        public void ResetsymbolName() => __pbn__symbolName = null;
+
+        public  bool   ShouldSerializesymbolName() => __pbn__symbolName != null;
+        public  void   ResetsymbolName()           => __pbn__symbolName = null;
         private string __pbn__symbolName;
 
         [ProtoBuf.ProtoMember(3, Name = @"enabled")]
@@ -444,8 +476,9 @@ namespace spotware
             get { return __pbn__Enabled.GetValueOrDefault(); }
             set { __pbn__Enabled = value; }
         }
-        public bool ShouldSerializeEnabled() => __pbn__Enabled != null;
-        public void ResetEnabled() => __pbn__Enabled = null;
+
+        public  bool  ShouldSerializeEnabled() => __pbn__Enabled != null;
+        public  void  ResetEnabled()           => __pbn__Enabled = null;
         private bool? __pbn__Enabled;
 
         [ProtoBuf.ProtoMember(4)]
@@ -454,8 +487,9 @@ namespace spotware
             get { return __pbn__baseAssetId.GetValueOrDefault(); }
             set { __pbn__baseAssetId = value; }
         }
-        public bool ShouldSerializebaseAssetId() => __pbn__baseAssetId != null;
-        public void ResetbaseAssetId() => __pbn__baseAssetId = null;
+
+        public  bool  ShouldSerializebaseAssetId() => __pbn__baseAssetId != null;
+        public  void  ResetbaseAssetId()           => __pbn__baseAssetId = null;
         private long? __pbn__baseAssetId;
 
         [ProtoBuf.ProtoMember(5)]
@@ -464,8 +498,9 @@ namespace spotware
             get { return __pbn__quoteAssetId.GetValueOrDefault(); }
             set { __pbn__quoteAssetId = value; }
         }
-        public bool ShouldSerializequoteAssetId() => __pbn__quoteAssetId != null;
-        public void ResetquoteAssetId() => __pbn__quoteAssetId = null;
+
+        public  bool  ShouldSerializequoteAssetId() => __pbn__quoteAssetId != null;
+        public  void  ResetquoteAssetId()           => __pbn__quoteAssetId = null;
         private long? __pbn__quoteAssetId;
 
         [ProtoBuf.ProtoMember(6)]
@@ -474,8 +509,9 @@ namespace spotware
             get { return __pbn__symbolCategoryId.GetValueOrDefault(); }
             set { __pbn__symbolCategoryId = value; }
         }
-        public bool ShouldSerializesymbolCategoryId() => __pbn__symbolCategoryId != null;
-        public void ResetsymbolCategoryId() => __pbn__symbolCategoryId = null;
+
+        public  bool  ShouldSerializesymbolCategoryId() => __pbn__symbolCategoryId != null;
+        public  void  ResetsymbolCategoryId()           => __pbn__symbolCategoryId = null;
         private long? __pbn__symbolCategoryId;
 
         [ProtoBuf.ProtoMember(7, Name = @"description")]
@@ -485,16 +521,17 @@ namespace spotware
             get { return __pbn__Description ?? ""; }
             set { __pbn__Description = value; }
         }
-        public bool ShouldSerializeDescription() => __pbn__Description != null;
-        public void ResetDescription() => __pbn__Description = null;
-        private string __pbn__Description;
 
+        public  bool   ShouldSerializeDescription() => __pbn__Description != null;
+        public  void   ResetDescription()           => __pbn__Description = null;
+        private string __pbn__Description;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOASymbolCategory : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -506,13 +543,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, Name = @"name", IsRequired = true)]
         public string Name { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOATrader : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -528,8 +565,9 @@ namespace spotware
             get { return __pbn__balanceVersion.GetValueOrDefault(); }
             set { __pbn__balanceVersion = value; }
         }
-        public bool ShouldSerializebalanceVersion() => __pbn__balanceVersion != null;
-        public void ResetbalanceVersion() => __pbn__balanceVersion = null;
+
+        public  bool  ShouldSerializebalanceVersion() => __pbn__balanceVersion != null;
+        public  void  ResetbalanceVersion()           => __pbn__balanceVersion = null;
         private long? __pbn__balanceVersion;
 
         [ProtoBuf.ProtoMember(4)]
@@ -538,8 +576,9 @@ namespace spotware
             get { return __pbn__managerBonus.GetValueOrDefault(); }
             set { __pbn__managerBonus = value; }
         }
-        public bool ShouldSerializemanagerBonus() => __pbn__managerBonus != null;
-        public void ResetmanagerBonus() => __pbn__managerBonus = null;
+
+        public  bool  ShouldSerializemanagerBonus() => __pbn__managerBonus != null;
+        public  void  ResetmanagerBonus()           => __pbn__managerBonus = null;
         private long? __pbn__managerBonus;
 
         [ProtoBuf.ProtoMember(5)]
@@ -548,8 +587,9 @@ namespace spotware
             get { return __pbn__ibBonus.GetValueOrDefault(); }
             set { __pbn__ibBonus = value; }
         }
-        public bool ShouldSerializeibBonus() => __pbn__ibBonus != null;
-        public void ResetibBonus() => __pbn__ibBonus = null;
+
+        public  bool  ShouldSerializeibBonus() => __pbn__ibBonus != null;
+        public  void  ResetibBonus()           => __pbn__ibBonus = null;
         private long? __pbn__ibBonus;
 
         [ProtoBuf.ProtoMember(6)]
@@ -558,8 +598,9 @@ namespace spotware
             get { return __pbn__nonWithdrawableBonus.GetValueOrDefault(); }
             set { __pbn__nonWithdrawableBonus = value; }
         }
-        public bool ShouldSerializenonWithdrawableBonus() => __pbn__nonWithdrawableBonus != null;
-        public void ResetnonWithdrawableBonus() => __pbn__nonWithdrawableBonus = null;
+
+        public  bool  ShouldSerializenonWithdrawableBonus() => __pbn__nonWithdrawableBonus != null;
+        public  void  ResetnonWithdrawableBonus()           => __pbn__nonWithdrawableBonus = null;
         private long? __pbn__nonWithdrawableBonus;
 
         [ProtoBuf.ProtoMember(7)]
@@ -569,8 +610,9 @@ namespace spotware
             get { return __pbn__accessRights ?? ProtoOAAccessRights.FullAccess; }
             set { __pbn__accessRights = value; }
         }
-        public bool ShouldSerializeaccessRights() => __pbn__accessRights != null;
-        public void ResetaccessRights() => __pbn__accessRights = null;
+
+        public  bool                 ShouldSerializeaccessRights() => __pbn__accessRights != null;
+        public  void                 ResetaccessRights()           => __pbn__accessRights = null;
         private ProtoOAAccessRights? __pbn__accessRights;
 
         [ProtoBuf.ProtoMember(8, IsRequired = true)]
@@ -582,8 +624,9 @@ namespace spotware
             get { return __pbn__swapFree.GetValueOrDefault(); }
             set { __pbn__swapFree = value; }
         }
-        public bool ShouldSerializeswapFree() => __pbn__swapFree != null;
-        public void ResetswapFree() => __pbn__swapFree = null;
+
+        public  bool  ShouldSerializeswapFree() => __pbn__swapFree != null;
+        public  void  ResetswapFree()           => __pbn__swapFree = null;
         private bool? __pbn__swapFree;
 
         [ProtoBuf.ProtoMember(10)]
@@ -592,8 +635,9 @@ namespace spotware
             get { return __pbn__leverageInCents.GetValueOrDefault(); }
             set { __pbn__leverageInCents = value; }
         }
-        public bool ShouldSerializeleverageInCents() => __pbn__leverageInCents != null;
-        public void ResetleverageInCents() => __pbn__leverageInCents = null;
+
+        public  bool  ShouldSerializeleverageInCents() => __pbn__leverageInCents != null;
+        public  void  ResetleverageInCents()           => __pbn__leverageInCents = null;
         private uint? __pbn__leverageInCents;
 
         [ProtoBuf.ProtoMember(11)]
@@ -603,8 +647,9 @@ namespace spotware
             get { return __pbn__totalMarginCalculationType ?? ProtoOATotalMarginCalculationType.Max; }
             set { __pbn__totalMarginCalculationType = value; }
         }
-        public bool ShouldSerializetotalMarginCalculationType() => __pbn__totalMarginCalculationType != null;
-        public void ResettotalMarginCalculationType() => __pbn__totalMarginCalculationType = null;
+
+        public  bool                               ShouldSerializetotalMarginCalculationType() => __pbn__totalMarginCalculationType != null;
+        public  void                               ResettotalMarginCalculationType()           => __pbn__totalMarginCalculationType = null;
         private ProtoOATotalMarginCalculationType? __pbn__totalMarginCalculationType;
 
         [ProtoBuf.ProtoMember(12)]
@@ -613,8 +658,9 @@ namespace spotware
             get { return __pbn__maxLeverage.GetValueOrDefault(); }
             set { __pbn__maxLeverage = value; }
         }
-        public bool ShouldSerializemaxLeverage() => __pbn__maxLeverage != null;
-        public void ResetmaxLeverage() => __pbn__maxLeverage = null;
+
+        public  bool  ShouldSerializemaxLeverage() => __pbn__maxLeverage != null;
+        public  void  ResetmaxLeverage()           => __pbn__maxLeverage = null;
         private uint? __pbn__maxLeverage;
 
         [ProtoBuf.ProtoMember(14)]
@@ -623,8 +669,9 @@ namespace spotware
             get { return __pbn__traderLogin.GetValueOrDefault(); }
             set { __pbn__traderLogin = value; }
         }
-        public bool ShouldSerializetraderLogin() => __pbn__traderLogin != null;
-        public void ResettraderLogin() => __pbn__traderLogin = null;
+
+        public  bool  ShouldSerializetraderLogin() => __pbn__traderLogin != null;
+        public  void  ResettraderLogin()           => __pbn__traderLogin = null;
         private long? __pbn__traderLogin;
 
         [ProtoBuf.ProtoMember(15)]
@@ -634,8 +681,9 @@ namespace spotware
             get { return __pbn__accountType ?? ProtoOAAccountType.Hedged; }
             set { __pbn__accountType = value; }
         }
-        public bool ShouldSerializeaccountType() => __pbn__accountType != null;
-        public void ResetaccountType() => __pbn__accountType = null;
+
+        public  bool                ShouldSerializeaccountType() => __pbn__accountType != null;
+        public  void                ResetaccountType()           => __pbn__accountType = null;
         private ProtoOAAccountType? __pbn__accountType;
 
         [ProtoBuf.ProtoMember(16)]
@@ -645,8 +693,9 @@ namespace spotware
             get { return __pbn__brokerName ?? ""; }
             set { __pbn__brokerName = value; }
         }
-        public bool ShouldSerializebrokerName() => __pbn__brokerName != null;
-        public void ResetbrokerName() => __pbn__brokerName = null;
+
+        public  bool   ShouldSerializebrokerName() => __pbn__brokerName != null;
+        public  void   ResetbrokerName()           => __pbn__brokerName = null;
         private string __pbn__brokerName;
 
         [ProtoBuf.ProtoMember(17)]
@@ -655,8 +704,9 @@ namespace spotware
             get { return __pbn__registrationTimestamp.GetValueOrDefault(); }
             set { __pbn__registrationTimestamp = value; }
         }
-        public bool ShouldSerializeregistrationTimestamp() => __pbn__registrationTimestamp != null;
-        public void ResetregistrationTimestamp() => __pbn__registrationTimestamp = null;
+
+        public  bool  ShouldSerializeregistrationTimestamp() => __pbn__registrationTimestamp != null;
+        public  void  ResetregistrationTimestamp()           => __pbn__registrationTimestamp = null;
         private long? __pbn__registrationTimestamp;
 
         [ProtoBuf.ProtoMember(18)]
@@ -665,8 +715,9 @@ namespace spotware
             get { return __pbn__isLimitedRisk.GetValueOrDefault(); }
             set { __pbn__isLimitedRisk = value; }
         }
-        public bool ShouldSerializeisLimitedRisk() => __pbn__isLimitedRisk != null;
-        public void ResetisLimitedRisk() => __pbn__isLimitedRisk = null;
+
+        public  bool  ShouldSerializeisLimitedRisk() => __pbn__isLimitedRisk != null;
+        public  void  ResetisLimitedRisk()           => __pbn__isLimitedRisk = null;
         private bool? __pbn__isLimitedRisk;
 
         [ProtoBuf.ProtoMember(19)]
@@ -676,16 +727,17 @@ namespace spotware
             get { return __pbn__limitedRiskMarginCalculationStrategy ?? ProtoOALimitedRiskMarginCalculationStrategy.AccordingToLeverage; }
             set { __pbn__limitedRiskMarginCalculationStrategy = value; }
         }
-        public bool ShouldSerializelimitedRiskMarginCalculationStrategy() => __pbn__limitedRiskMarginCalculationStrategy != null;
-        public void ResetlimitedRiskMarginCalculationStrategy() => __pbn__limitedRiskMarginCalculationStrategy = null;
-        private ProtoOALimitedRiskMarginCalculationStrategy? __pbn__limitedRiskMarginCalculationStrategy;
 
+        public  bool                                         ShouldSerializelimitedRiskMarginCalculationStrategy() => __pbn__limitedRiskMarginCalculationStrategy != null;
+        public  void                                         ResetlimitedRiskMarginCalculationStrategy()           => __pbn__limitedRiskMarginCalculationStrategy = null;
+        private ProtoOALimitedRiskMarginCalculationStrategy? __pbn__limitedRiskMarginCalculationStrategy;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOATradeData : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -704,8 +756,9 @@ namespace spotware
             get { return __pbn__openTimestamp.GetValueOrDefault(); }
             set { __pbn__openTimestamp = value; }
         }
-        public bool ShouldSerializeopenTimestamp() => __pbn__openTimestamp != null;
-        public void ResetopenTimestamp() => __pbn__openTimestamp = null;
+
+        public  bool  ShouldSerializeopenTimestamp() => __pbn__openTimestamp != null;
+        public  void  ResetopenTimestamp()           => __pbn__openTimestamp = null;
         private long? __pbn__openTimestamp;
 
         [ProtoBuf.ProtoMember(5, Name = @"label")]
@@ -715,8 +768,9 @@ namespace spotware
             get { return __pbn__Label ?? ""; }
             set { __pbn__Label = value; }
         }
-        public bool ShouldSerializeLabel() => __pbn__Label != null;
-        public void ResetLabel() => __pbn__Label = null;
+
+        public  bool   ShouldSerializeLabel() => __pbn__Label != null;
+        public  void   ResetLabel()           => __pbn__Label = null;
         private string __pbn__Label;
 
         [ProtoBuf.ProtoMember(6)]
@@ -725,16 +779,17 @@ namespace spotware
             get { return __pbn__guaranteedStopLoss.GetValueOrDefault(); }
             set { __pbn__guaranteedStopLoss = value; }
         }
-        public bool ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
-        public void ResetguaranteedStopLoss() => __pbn__guaranteedStopLoss = null;
-        private bool? __pbn__guaranteedStopLoss;
 
+        public  bool  ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
+        public  void  ResetguaranteedStopLoss()           => __pbn__guaranteedStopLoss = null;
+        private bool? __pbn__guaranteedStopLoss;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAPosition : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -756,8 +811,9 @@ namespace spotware
             get { return __pbn__Price.GetValueOrDefault(); }
             set { __pbn__Price = value; }
         }
-        public bool ShouldSerializePrice() => __pbn__Price != null;
-        public void ResetPrice() => __pbn__Price = null;
+
+        public  bool    ShouldSerializePrice() => __pbn__Price != null;
+        public  void    ResetPrice()           => __pbn__Price = null;
         private double? __pbn__Price;
 
         [ProtoBuf.ProtoMember(6)]
@@ -766,8 +822,9 @@ namespace spotware
             get { return __pbn__stopLoss.GetValueOrDefault(); }
             set { __pbn__stopLoss = value; }
         }
-        public bool ShouldSerializestopLoss() => __pbn__stopLoss != null;
-        public void ResetstopLoss() => __pbn__stopLoss = null;
+
+        public  bool    ShouldSerializestopLoss() => __pbn__stopLoss != null;
+        public  void    ResetstopLoss()           => __pbn__stopLoss = null;
         private double? __pbn__stopLoss;
 
         [ProtoBuf.ProtoMember(7)]
@@ -776,8 +833,9 @@ namespace spotware
             get { return __pbn__takeProfit.GetValueOrDefault(); }
             set { __pbn__takeProfit = value; }
         }
-        public bool ShouldSerializetakeProfit() => __pbn__takeProfit != null;
-        public void ResettakeProfit() => __pbn__takeProfit = null;
+
+        public  bool    ShouldSerializetakeProfit() => __pbn__takeProfit != null;
+        public  void    ResettakeProfit()           => __pbn__takeProfit = null;
         private double? __pbn__takeProfit;
 
         [ProtoBuf.ProtoMember(8)]
@@ -786,8 +844,9 @@ namespace spotware
             get { return __pbn__utcLastUpdateTimestamp.GetValueOrDefault(); }
             set { __pbn__utcLastUpdateTimestamp = value; }
         }
-        public bool ShouldSerializeutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp != null;
-        public void ResetutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp = null;
+
+        public  bool  ShouldSerializeutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp != null;
+        public  void  ResetutcLastUpdateTimestamp()           => __pbn__utcLastUpdateTimestamp = null;
         private long? __pbn__utcLastUpdateTimestamp;
 
         [ProtoBuf.ProtoMember(9, Name = @"commission")]
@@ -796,8 +855,9 @@ namespace spotware
             get { return __pbn__Commission.GetValueOrDefault(); }
             set { __pbn__Commission = value; }
         }
-        public bool ShouldSerializeCommission() => __pbn__Commission != null;
-        public void ResetCommission() => __pbn__Commission = null;
+
+        public  bool  ShouldSerializeCommission() => __pbn__Commission != null;
+        public  void  ResetCommission()           => __pbn__Commission = null;
         private long? __pbn__Commission;
 
         [ProtoBuf.ProtoMember(10)]
@@ -806,8 +866,9 @@ namespace spotware
             get { return __pbn__marginRate.GetValueOrDefault(); }
             set { __pbn__marginRate = value; }
         }
-        public bool ShouldSerializemarginRate() => __pbn__marginRate != null;
-        public void ResetmarginRate() => __pbn__marginRate = null;
+
+        public  bool    ShouldSerializemarginRate() => __pbn__marginRate != null;
+        public  void    ResetmarginRate()           => __pbn__marginRate = null;
         private double? __pbn__marginRate;
 
         [ProtoBuf.ProtoMember(11)]
@@ -816,8 +877,9 @@ namespace spotware
             get { return __pbn__mirroringCommission.GetValueOrDefault(); }
             set { __pbn__mirroringCommission = value; }
         }
-        public bool ShouldSerializemirroringCommission() => __pbn__mirroringCommission != null;
-        public void ResetmirroringCommission() => __pbn__mirroringCommission = null;
+
+        public  bool  ShouldSerializemirroringCommission() => __pbn__mirroringCommission != null;
+        public  void  ResetmirroringCommission()           => __pbn__mirroringCommission = null;
         private long? __pbn__mirroringCommission;
 
         [ProtoBuf.ProtoMember(12)]
@@ -826,8 +888,9 @@ namespace spotware
             get { return __pbn__guaranteedStopLoss.GetValueOrDefault(); }
             set { __pbn__guaranteedStopLoss = value; }
         }
-        public bool ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
-        public void ResetguaranteedStopLoss() => __pbn__guaranteedStopLoss = null;
+
+        public  bool  ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
+        public  void  ResetguaranteedStopLoss()           => __pbn__guaranteedStopLoss = null;
         private bool? __pbn__guaranteedStopLoss;
 
         [ProtoBuf.ProtoMember(13)]
@@ -836,8 +899,9 @@ namespace spotware
             get { return __pbn__usedMargin.GetValueOrDefault(); }
             set { __pbn__usedMargin = value; }
         }
-        public bool ShouldSerializeusedMargin() => __pbn__usedMargin != null;
-        public void ResetusedMargin() => __pbn__usedMargin = null;
+
+        public  bool   ShouldSerializeusedMargin() => __pbn__usedMargin != null;
+        public  void   ResetusedMargin()           => __pbn__usedMargin = null;
         private ulong? __pbn__usedMargin;
 
         [ProtoBuf.ProtoMember(14)]
@@ -847,16 +911,17 @@ namespace spotware
             get { return __pbn__stopLossTriggerMethod ?? ProtoOAOrderTriggerMethod.Trade; }
             set { __pbn__stopLossTriggerMethod = value; }
         }
-        public bool ShouldSerializestopLossTriggerMethod() => __pbn__stopLossTriggerMethod != null;
-        public void ResetstopLossTriggerMethod() => __pbn__stopLossTriggerMethod = null;
-        private ProtoOAOrderTriggerMethod? __pbn__stopLossTriggerMethod;
 
+        public  bool                       ShouldSerializestopLossTriggerMethod() => __pbn__stopLossTriggerMethod != null;
+        public  void                       ResetstopLossTriggerMethod()           => __pbn__stopLossTriggerMethod = null;
+        private ProtoOAOrderTriggerMethod? __pbn__stopLossTriggerMethod;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAOrder : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -878,8 +943,9 @@ namespace spotware
             get { return __pbn__expirationTimestamp.GetValueOrDefault(); }
             set { __pbn__expirationTimestamp = value; }
         }
-        public bool ShouldSerializeexpirationTimestamp() => __pbn__expirationTimestamp != null;
-        public void ResetexpirationTimestamp() => __pbn__expirationTimestamp = null;
+
+        public  bool  ShouldSerializeexpirationTimestamp() => __pbn__expirationTimestamp != null;
+        public  void  ResetexpirationTimestamp()           => __pbn__expirationTimestamp = null;
         private long? __pbn__expirationTimestamp;
 
         [ProtoBuf.ProtoMember(7)]
@@ -888,8 +954,9 @@ namespace spotware
             get { return __pbn__executionPrice.GetValueOrDefault(); }
             set { __pbn__executionPrice = value; }
         }
-        public bool ShouldSerializeexecutionPrice() => __pbn__executionPrice != null;
-        public void ResetexecutionPrice() => __pbn__executionPrice = null;
+
+        public  bool    ShouldSerializeexecutionPrice() => __pbn__executionPrice != null;
+        public  void    ResetexecutionPrice()           => __pbn__executionPrice = null;
         private double? __pbn__executionPrice;
 
         [ProtoBuf.ProtoMember(8)]
@@ -898,8 +965,9 @@ namespace spotware
             get { return __pbn__executedVolume.GetValueOrDefault(); }
             set { __pbn__executedVolume = value; }
         }
-        public bool ShouldSerializeexecutedVolume() => __pbn__executedVolume != null;
-        public void ResetexecutedVolume() => __pbn__executedVolume = null;
+
+        public  bool  ShouldSerializeexecutedVolume() => __pbn__executedVolume != null;
+        public  void  ResetexecutedVolume()           => __pbn__executedVolume = null;
         private long? __pbn__executedVolume;
 
         [ProtoBuf.ProtoMember(9)]
@@ -908,8 +976,9 @@ namespace spotware
             get { return __pbn__utcLastUpdateTimestamp.GetValueOrDefault(); }
             set { __pbn__utcLastUpdateTimestamp = value; }
         }
-        public bool ShouldSerializeutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp != null;
-        public void ResetutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp = null;
+
+        public  bool  ShouldSerializeutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp != null;
+        public  void  ResetutcLastUpdateTimestamp()           => __pbn__utcLastUpdateTimestamp = null;
         private long? __pbn__utcLastUpdateTimestamp;
 
         [ProtoBuf.ProtoMember(10)]
@@ -918,8 +987,9 @@ namespace spotware
             get { return __pbn__baseSlippagePrice.GetValueOrDefault(); }
             set { __pbn__baseSlippagePrice = value; }
         }
-        public bool ShouldSerializebaseSlippagePrice() => __pbn__baseSlippagePrice != null;
-        public void ResetbaseSlippagePrice() => __pbn__baseSlippagePrice = null;
+
+        public  bool    ShouldSerializebaseSlippagePrice() => __pbn__baseSlippagePrice != null;
+        public  void    ResetbaseSlippagePrice()           => __pbn__baseSlippagePrice = null;
         private double? __pbn__baseSlippagePrice;
 
         [ProtoBuf.ProtoMember(11)]
@@ -928,8 +998,9 @@ namespace spotware
             get { return __pbn__slippageInPoints.GetValueOrDefault(); }
             set { __pbn__slippageInPoints = value; }
         }
-        public bool ShouldSerializeslippageInPoints() => __pbn__slippageInPoints != null;
-        public void ResetslippageInPoints() => __pbn__slippageInPoints = null;
+
+        public  bool  ShouldSerializeslippageInPoints() => __pbn__slippageInPoints != null;
+        public  void  ResetslippageInPoints()           => __pbn__slippageInPoints = null;
         private long? __pbn__slippageInPoints;
 
         [ProtoBuf.ProtoMember(12)]
@@ -938,8 +1009,9 @@ namespace spotware
             get { return __pbn__closingOrder.GetValueOrDefault(); }
             set { __pbn__closingOrder = value; }
         }
-        public bool ShouldSerializeclosingOrder() => __pbn__closingOrder != null;
-        public void ResetclosingOrder() => __pbn__closingOrder = null;
+
+        public  bool  ShouldSerializeclosingOrder() => __pbn__closingOrder != null;
+        public  void  ResetclosingOrder()           => __pbn__closingOrder = null;
         private bool? __pbn__closingOrder;
 
         [ProtoBuf.ProtoMember(13)]
@@ -948,8 +1020,9 @@ namespace spotware
             get { return __pbn__limitPrice.GetValueOrDefault(); }
             set { __pbn__limitPrice = value; }
         }
-        public bool ShouldSerializelimitPrice() => __pbn__limitPrice != null;
-        public void ResetlimitPrice() => __pbn__limitPrice = null;
+
+        public  bool    ShouldSerializelimitPrice() => __pbn__limitPrice != null;
+        public  void    ResetlimitPrice()           => __pbn__limitPrice = null;
         private double? __pbn__limitPrice;
 
         [ProtoBuf.ProtoMember(14)]
@@ -958,8 +1031,9 @@ namespace spotware
             get { return __pbn__stopPrice.GetValueOrDefault(); }
             set { __pbn__stopPrice = value; }
         }
-        public bool ShouldSerializestopPrice() => __pbn__stopPrice != null;
-        public void ResetstopPrice() => __pbn__stopPrice = null;
+
+        public  bool    ShouldSerializestopPrice() => __pbn__stopPrice != null;
+        public  void    ResetstopPrice()           => __pbn__stopPrice = null;
         private double? __pbn__stopPrice;
 
         [ProtoBuf.ProtoMember(15)]
@@ -968,8 +1042,9 @@ namespace spotware
             get { return __pbn__stopLoss.GetValueOrDefault(); }
             set { __pbn__stopLoss = value; }
         }
-        public bool ShouldSerializestopLoss() => __pbn__stopLoss != null;
-        public void ResetstopLoss() => __pbn__stopLoss = null;
+
+        public  bool    ShouldSerializestopLoss() => __pbn__stopLoss != null;
+        public  void    ResetstopLoss()           => __pbn__stopLoss = null;
         private double? __pbn__stopLoss;
 
         [ProtoBuf.ProtoMember(16)]
@@ -978,8 +1053,9 @@ namespace spotware
             get { return __pbn__takeProfit.GetValueOrDefault(); }
             set { __pbn__takeProfit = value; }
         }
-        public bool ShouldSerializetakeProfit() => __pbn__takeProfit != null;
-        public void ResettakeProfit() => __pbn__takeProfit = null;
+
+        public  bool    ShouldSerializetakeProfit() => __pbn__takeProfit != null;
+        public  void    ResettakeProfit()           => __pbn__takeProfit = null;
         private double? __pbn__takeProfit;
 
         [ProtoBuf.ProtoMember(17)]
@@ -989,8 +1065,9 @@ namespace spotware
             get { return __pbn__clientOrderId ?? ""; }
             set { __pbn__clientOrderId = value; }
         }
-        public bool ShouldSerializeclientOrderId() => __pbn__clientOrderId != null;
-        public void ResetclientOrderId() => __pbn__clientOrderId = null;
+
+        public  bool   ShouldSerializeclientOrderId() => __pbn__clientOrderId != null;
+        public  void   ResetclientOrderId()           => __pbn__clientOrderId = null;
         private string __pbn__clientOrderId;
 
         [ProtoBuf.ProtoMember(18)]
@@ -1000,8 +1077,9 @@ namespace spotware
             get { return __pbn__timeInForce ?? ProtoOATimeInForce.ImmediateOrCancel; }
             set { __pbn__timeInForce = value; }
         }
-        public bool ShouldSerializetimeInForce() => __pbn__timeInForce != null;
-        public void ResettimeInForce() => __pbn__timeInForce = null;
+
+        public  bool                ShouldSerializetimeInForce() => __pbn__timeInForce != null;
+        public  void                ResettimeInForce()           => __pbn__timeInForce = null;
         private ProtoOATimeInForce? __pbn__timeInForce;
 
         [ProtoBuf.ProtoMember(19)]
@@ -1010,8 +1088,9 @@ namespace spotware
             get { return __pbn__positionId.GetValueOrDefault(); }
             set { __pbn__positionId = value; }
         }
-        public bool ShouldSerializepositionId() => __pbn__positionId != null;
-        public void ResetpositionId() => __pbn__positionId = null;
+
+        public  bool  ShouldSerializepositionId() => __pbn__positionId != null;
+        public  void  ResetpositionId()           => __pbn__positionId = null;
         private long? __pbn__positionId;
 
         [ProtoBuf.ProtoMember(20)]
@@ -1020,8 +1099,9 @@ namespace spotware
             get { return __pbn__relativeStopLoss.GetValueOrDefault(); }
             set { __pbn__relativeStopLoss = value; }
         }
-        public bool ShouldSerializerelativeStopLoss() => __pbn__relativeStopLoss != null;
-        public void ResetrelativeStopLoss() => __pbn__relativeStopLoss = null;
+
+        public  bool  ShouldSerializerelativeStopLoss() => __pbn__relativeStopLoss != null;
+        public  void  ResetrelativeStopLoss()           => __pbn__relativeStopLoss = null;
         private long? __pbn__relativeStopLoss;
 
         [ProtoBuf.ProtoMember(21)]
@@ -1030,8 +1110,9 @@ namespace spotware
             get { return __pbn__relativeTakeProfit.GetValueOrDefault(); }
             set { __pbn__relativeTakeProfit = value; }
         }
-        public bool ShouldSerializerelativeTakeProfit() => __pbn__relativeTakeProfit != null;
-        public void ResetrelativeTakeProfit() => __pbn__relativeTakeProfit = null;
+
+        public  bool  ShouldSerializerelativeTakeProfit() => __pbn__relativeTakeProfit != null;
+        public  void  ResetrelativeTakeProfit()           => __pbn__relativeTakeProfit = null;
         private long? __pbn__relativeTakeProfit;
 
         [ProtoBuf.ProtoMember(22)]
@@ -1040,8 +1121,9 @@ namespace spotware
             get { return __pbn__isStopOut.GetValueOrDefault(); }
             set { __pbn__isStopOut = value; }
         }
-        public bool ShouldSerializeisStopOut() => __pbn__isStopOut != null;
-        public void ResetisStopOut() => __pbn__isStopOut = null;
+
+        public  bool  ShouldSerializeisStopOut() => __pbn__isStopOut != null;
+        public  void  ResetisStopOut()           => __pbn__isStopOut = null;
         private bool? __pbn__isStopOut;
 
         [ProtoBuf.ProtoMember(23)]
@@ -1050,8 +1132,9 @@ namespace spotware
             get { return __pbn__trailingStopLoss.GetValueOrDefault(); }
             set { __pbn__trailingStopLoss = value; }
         }
-        public bool ShouldSerializetrailingStopLoss() => __pbn__trailingStopLoss != null;
-        public void ResettrailingStopLoss() => __pbn__trailingStopLoss = null;
+
+        public  bool  ShouldSerializetrailingStopLoss() => __pbn__trailingStopLoss != null;
+        public  void  ResettrailingStopLoss()           => __pbn__trailingStopLoss = null;
         private bool? __pbn__trailingStopLoss;
 
         [ProtoBuf.ProtoMember(24)]
@@ -1061,16 +1144,17 @@ namespace spotware
             get { return __pbn__stopTriggerMethod ?? ProtoOAOrderTriggerMethod.Trade; }
             set { __pbn__stopTriggerMethod = value; }
         }
-        public bool ShouldSerializestopTriggerMethod() => __pbn__stopTriggerMethod != null;
-        public void ResetstopTriggerMethod() => __pbn__stopTriggerMethod = null;
-        private ProtoOAOrderTriggerMethod? __pbn__stopTriggerMethod;
 
+        public  bool                       ShouldSerializestopTriggerMethod() => __pbn__stopTriggerMethod != null;
+        public  void                       ResetstopTriggerMethod()           => __pbn__stopTriggerMethod = null;
+        private ProtoOAOrderTriggerMethod? __pbn__stopTriggerMethod;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOABonusDepositWithdraw : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -1102,8 +1186,9 @@ namespace spotware
             get { return __pbn__externalNote ?? ""; }
             set { __pbn__externalNote = value; }
         }
-        public bool ShouldSerializeexternalNote() => __pbn__externalNote != null;
-        public void ResetexternalNote() => __pbn__externalNote = null;
+
+        public  bool   ShouldSerializeexternalNote() => __pbn__externalNote != null;
+        public  void   ResetexternalNote()           => __pbn__externalNote = null;
         private string __pbn__externalNote;
 
         [ProtoBuf.ProtoMember(9)]
@@ -1112,16 +1197,17 @@ namespace spotware
             get { return __pbn__introducingBrokerId.GetValueOrDefault(); }
             set { __pbn__introducingBrokerId = value; }
         }
-        public bool ShouldSerializeintroducingBrokerId() => __pbn__introducingBrokerId != null;
-        public void ResetintroducingBrokerId() => __pbn__introducingBrokerId = null;
-        private long? __pbn__introducingBrokerId;
 
+        public  bool  ShouldSerializeintroducingBrokerId() => __pbn__introducingBrokerId != null;
+        public  void  ResetintroducingBrokerId()           => __pbn__introducingBrokerId = null;
+        private long? __pbn__introducingBrokerId;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOADepositWithdraw : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -1147,8 +1233,9 @@ namespace spotware
             get { return __pbn__externalNote ?? ""; }
             set { __pbn__externalNote = value; }
         }
-        public bool ShouldSerializeexternalNote() => __pbn__externalNote != null;
-        public void ResetexternalNote() => __pbn__externalNote = null;
+
+        public  bool   ShouldSerializeexternalNote() => __pbn__externalNote != null;
+        public  void   ResetexternalNote()           => __pbn__externalNote = null;
         private string __pbn__externalNote;
 
         [ProtoBuf.ProtoMember(7)]
@@ -1157,8 +1244,9 @@ namespace spotware
             get { return __pbn__balanceVersion.GetValueOrDefault(); }
             set { __pbn__balanceVersion = value; }
         }
-        public bool ShouldSerializebalanceVersion() => __pbn__balanceVersion != null;
-        public void ResetbalanceVersion() => __pbn__balanceVersion = null;
+
+        public  bool  ShouldSerializebalanceVersion() => __pbn__balanceVersion != null;
+        public  void  ResetbalanceVersion()           => __pbn__balanceVersion = null;
         private long? __pbn__balanceVersion;
 
         [ProtoBuf.ProtoMember(8, Name = @"equity")]
@@ -1167,16 +1255,17 @@ namespace spotware
             get { return __pbn__Equity.GetValueOrDefault(); }
             set { __pbn__Equity = value; }
         }
-        public bool ShouldSerializeEquity() => __pbn__Equity != null;
-        public void ResetEquity() => __pbn__Equity = null;
-        private long? __pbn__Equity;
 
+        public  bool  ShouldSerializeEquity() => __pbn__Equity != null;
+        public  void  ResetEquity()           => __pbn__Equity = null;
+        private long? __pbn__Equity;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOADeal : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -1210,8 +1299,9 @@ namespace spotware
             get { return __pbn__utcLastUpdateTimestamp.GetValueOrDefault(); }
             set { __pbn__utcLastUpdateTimestamp = value; }
         }
-        public bool ShouldSerializeutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp != null;
-        public void ResetutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp = null;
+
+        public  bool  ShouldSerializeutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp != null;
+        public  void  ResetutcLastUpdateTimestamp()           => __pbn__utcLastUpdateTimestamp = null;
         private long? __pbn__utcLastUpdateTimestamp;
 
         [ProtoBuf.ProtoMember(10)]
@@ -1220,8 +1310,9 @@ namespace spotware
             get { return __pbn__executionPrice.GetValueOrDefault(); }
             set { __pbn__executionPrice = value; }
         }
-        public bool ShouldSerializeexecutionPrice() => __pbn__executionPrice != null;
-        public void ResetexecutionPrice() => __pbn__executionPrice = null;
+
+        public  bool    ShouldSerializeexecutionPrice() => __pbn__executionPrice != null;
+        public  void    ResetexecutionPrice()           => __pbn__executionPrice = null;
         private double? __pbn__executionPrice;
 
         [ProtoBuf.ProtoMember(11, IsRequired = true)]
@@ -1236,8 +1327,9 @@ namespace spotware
             get { return __pbn__marginRate.GetValueOrDefault(); }
             set { __pbn__marginRate = value; }
         }
-        public bool ShouldSerializemarginRate() => __pbn__marginRate != null;
-        public void ResetmarginRate() => __pbn__marginRate = null;
+
+        public  bool    ShouldSerializemarginRate() => __pbn__marginRate != null;
+        public  void    ResetmarginRate()           => __pbn__marginRate = null;
         private double? __pbn__marginRate;
 
         [ProtoBuf.ProtoMember(14, Name = @"commission")]
@@ -1246,8 +1338,9 @@ namespace spotware
             get { return __pbn__Commission.GetValueOrDefault(); }
             set { __pbn__Commission = value; }
         }
-        public bool ShouldSerializeCommission() => __pbn__Commission != null;
-        public void ResetCommission() => __pbn__Commission = null;
+
+        public  bool  ShouldSerializeCommission() => __pbn__Commission != null;
+        public  void  ResetCommission()           => __pbn__Commission = null;
         private long? __pbn__Commission;
 
         [ProtoBuf.ProtoMember(15)]
@@ -1256,19 +1349,19 @@ namespace spotware
             get { return __pbn__baseToUsdConversionRate.GetValueOrDefault(); }
             set { __pbn__baseToUsdConversionRate = value; }
         }
-        public bool ShouldSerializebaseToUsdConversionRate() => __pbn__baseToUsdConversionRate != null;
-        public void ResetbaseToUsdConversionRate() => __pbn__baseToUsdConversionRate = null;
+
+        public  bool    ShouldSerializebaseToUsdConversionRate() => __pbn__baseToUsdConversionRate != null;
+        public  void    ResetbaseToUsdConversionRate()           => __pbn__baseToUsdConversionRate = null;
         private double? __pbn__baseToUsdConversionRate;
 
-        [ProtoBuf.ProtoMember(16)]
-        public ProtoOAClosePositionDetail closePositionDetail { get; set; }
-
+        [ProtoBuf.ProtoMember(16)] public ProtoOAClosePositionDetail closePositionDetail { get; set; }
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAClosePositionDetail : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -1293,8 +1386,9 @@ namespace spotware
             get { return __pbn__quoteToDepositConversionRate.GetValueOrDefault(); }
             set { __pbn__quoteToDepositConversionRate = value; }
         }
-        public bool ShouldSerializequoteToDepositConversionRate() => __pbn__quoteToDepositConversionRate != null;
-        public void ResetquoteToDepositConversionRate() => __pbn__quoteToDepositConversionRate = null;
+
+        public  bool    ShouldSerializequoteToDepositConversionRate() => __pbn__quoteToDepositConversionRate != null;
+        public  void    ResetquoteToDepositConversionRate()           => __pbn__quoteToDepositConversionRate = null;
         private double? __pbn__quoteToDepositConversionRate;
 
         [ProtoBuf.ProtoMember(7)]
@@ -1303,8 +1397,9 @@ namespace spotware
             get { return __pbn__closedVolume.GetValueOrDefault(); }
             set { __pbn__closedVolume = value; }
         }
-        public bool ShouldSerializeclosedVolume() => __pbn__closedVolume != null;
-        public void ResetclosedVolume() => __pbn__closedVolume = null;
+
+        public  bool  ShouldSerializeclosedVolume() => __pbn__closedVolume != null;
+        public  void  ResetclosedVolume()           => __pbn__closedVolume = null;
         private long? __pbn__closedVolume;
 
         [ProtoBuf.ProtoMember(8)]
@@ -1313,16 +1408,17 @@ namespace spotware
             get { return __pbn__balanceVersion.GetValueOrDefault(); }
             set { __pbn__balanceVersion = value; }
         }
-        public bool ShouldSerializebalanceVersion() => __pbn__balanceVersion != null;
-        public void ResetbalanceVersion() => __pbn__balanceVersion = null;
-        private long? __pbn__balanceVersion;
 
+        public  bool  ShouldSerializebalanceVersion() => __pbn__balanceVersion != null;
+        public  void  ResetbalanceVersion()           => __pbn__balanceVersion = null;
+        private long? __pbn__balanceVersion;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOATrendbar : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -1336,8 +1432,9 @@ namespace spotware
             get { return __pbn__Period ?? ProtoOATrendbarPeriod.M1; }
             set { __pbn__Period = value; }
         }
-        public bool ShouldSerializePeriod() => __pbn__Period != null;
-        public void ResetPeriod() => __pbn__Period = null;
+
+        public  bool                   ShouldSerializePeriod() => __pbn__Period != null;
+        public  void                   ResetPeriod()           => __pbn__Period = null;
         private ProtoOATrendbarPeriod? __pbn__Period;
 
         [ProtoBuf.ProtoMember(5, Name = @"low")]
@@ -1346,8 +1443,9 @@ namespace spotware
             get { return __pbn__Low.GetValueOrDefault(); }
             set { __pbn__Low = value; }
         }
-        public bool ShouldSerializeLow() => __pbn__Low != null;
-        public void ResetLow() => __pbn__Low = null;
+
+        public  bool  ShouldSerializeLow() => __pbn__Low != null;
+        public  void  ResetLow()           => __pbn__Low = null;
         private long? __pbn__Low;
 
         [ProtoBuf.ProtoMember(6)]
@@ -1356,8 +1454,9 @@ namespace spotware
             get { return __pbn__deltaOpen.GetValueOrDefault(); }
             set { __pbn__deltaOpen = value; }
         }
-        public bool ShouldSerializedeltaOpen() => __pbn__deltaOpen != null;
-        public void ResetdeltaOpen() => __pbn__deltaOpen = null;
+
+        public  bool   ShouldSerializedeltaOpen() => __pbn__deltaOpen != null;
+        public  void   ResetdeltaOpen()           => __pbn__deltaOpen = null;
         private ulong? __pbn__deltaOpen;
 
         [ProtoBuf.ProtoMember(7)]
@@ -1366,8 +1465,9 @@ namespace spotware
             get { return __pbn__deltaClose.GetValueOrDefault(); }
             set { __pbn__deltaClose = value; }
         }
-        public bool ShouldSerializedeltaClose() => __pbn__deltaClose != null;
-        public void ResetdeltaClose() => __pbn__deltaClose = null;
+
+        public  bool   ShouldSerializedeltaClose() => __pbn__deltaClose != null;
+        public  void   ResetdeltaClose()           => __pbn__deltaClose = null;
         private ulong? __pbn__deltaClose;
 
         [ProtoBuf.ProtoMember(8)]
@@ -1376,8 +1476,9 @@ namespace spotware
             get { return __pbn__deltaHigh.GetValueOrDefault(); }
             set { __pbn__deltaHigh = value; }
         }
-        public bool ShouldSerializedeltaHigh() => __pbn__deltaHigh != null;
-        public void ResetdeltaHigh() => __pbn__deltaHigh = null;
+
+        public  bool   ShouldSerializedeltaHigh() => __pbn__deltaHigh != null;
+        public  void   ResetdeltaHigh()           => __pbn__deltaHigh = null;
         private ulong? __pbn__deltaHigh;
 
         [ProtoBuf.ProtoMember(9)]
@@ -1386,16 +1487,17 @@ namespace spotware
             get { return __pbn__utcTimestampInMinutes.GetValueOrDefault(); }
             set { __pbn__utcTimestampInMinutes = value; }
         }
-        public bool ShouldSerializeutcTimestampInMinutes() => __pbn__utcTimestampInMinutes != null;
-        public void ResetutcTimestampInMinutes() => __pbn__utcTimestampInMinutes = null;
-        private uint? __pbn__utcTimestampInMinutes;
 
+        public  bool  ShouldSerializeutcTimestampInMinutes() => __pbn__utcTimestampInMinutes != null;
+        public  void  ResetutcTimestampInMinutes()           => __pbn__utcTimestampInMinutes = null;
+        private uint? __pbn__utcTimestampInMinutes;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAExpectedMargin : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -1407,13 +1509,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public long sellMargin { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOATickData : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -1422,25 +1524,25 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(2, Name = @"tick", IsRequired = true)]
         public long Tick { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOACtidProfile : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
         [ProtoBuf.ProtoMember(1, IsRequired = true)]
         public long userId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOACtidTraderAccount : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -1453,8 +1555,9 @@ namespace spotware
             get { return __pbn__isLive.GetValueOrDefault(); }
             set { __pbn__isLive = value; }
         }
-        public bool ShouldSerializeisLive() => __pbn__isLive != null;
-        public void ResetisLive() => __pbn__isLive = null;
+
+        public  bool  ShouldSerializeisLive() => __pbn__isLive != null;
+        public  void  ResetisLive()           => __pbn__isLive = null;
         private bool? __pbn__isLive;
 
         [ProtoBuf.ProtoMember(3)]
@@ -1463,16 +1566,17 @@ namespace spotware
             get { return __pbn__traderLogin.GetValueOrDefault(); }
             set { __pbn__traderLogin = value; }
         }
-        public bool ShouldSerializetraderLogin() => __pbn__traderLogin != null;
-        public void ResettraderLogin() => __pbn__traderLogin = null;
-        private long? __pbn__traderLogin;
 
+        public  bool  ShouldSerializetraderLogin() => __pbn__traderLogin != null;
+        public  void  ResettraderLogin()           => __pbn__traderLogin = null;
+        private long? __pbn__traderLogin;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAAssetClass : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -1482,8 +1586,9 @@ namespace spotware
             get { return __pbn__Id.GetValueOrDefault(); }
             set { __pbn__Id = value; }
         }
-        public bool ShouldSerializeId() => __pbn__Id != null;
-        public void ResetId() => __pbn__Id = null;
+
+        public  bool  ShouldSerializeId() => __pbn__Id != null;
+        public  void  ResetId()           => __pbn__Id = null;
         private long? __pbn__Id;
 
         [ProtoBuf.ProtoMember(2, Name = @"name")]
@@ -1493,16 +1598,17 @@ namespace spotware
             get { return __pbn__Name ?? ""; }
             set { __pbn__Name = value; }
         }
-        public bool ShouldSerializeName() => __pbn__Name != null;
-        public void ResetName() => __pbn__Name = null;
-        private string __pbn__Name;
 
+        public  bool   ShouldSerializeName() => __pbn__Name != null;
+        public  void   ResetName()           => __pbn__Name = null;
+        private string __pbn__Name;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOADepthQuote : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -1518,8 +1624,9 @@ namespace spotware
             get { return __pbn__Bid.GetValueOrDefault(); }
             set { __pbn__Bid = value; }
         }
-        public bool ShouldSerializeBid() => __pbn__Bid != null;
-        public void ResetBid() => __pbn__Bid = null;
+
+        public  bool   ShouldSerializeBid() => __pbn__Bid != null;
+        public  void   ResetBid()           => __pbn__Bid = null;
         private ulong? __pbn__Bid;
 
         [ProtoBuf.ProtoMember(5, Name = @"ask")]
@@ -1528,16 +1635,17 @@ namespace spotware
             get { return __pbn__Ask.GetValueOrDefault(); }
             set { __pbn__Ask = value; }
         }
-        public bool ShouldSerializeAsk() => __pbn__Ask != null;
-        public void ResetAsk() => __pbn__Ask = null;
-        private ulong? __pbn__Ask;
 
+        public  bool   ShouldSerializeAsk() => __pbn__Ask != null;
+        public  void   ResetAsk()           => __pbn__Ask = null;
+        private ulong? __pbn__Ask;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAMarginCall : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -1553,16 +1661,17 @@ namespace spotware
             get { return __pbn__utcLastUpdateTimestamp.GetValueOrDefault(); }
             set { __pbn__utcLastUpdateTimestamp = value; }
         }
-        public bool ShouldSerializeutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp != null;
-        public void ResetutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp = null;
-        private long? __pbn__utcLastUpdateTimestamp;
 
+        public  bool  ShouldSerializeutcLastUpdateTimestamp() => __pbn__utcLastUpdateTimestamp != null;
+        public  void  ResetutcLastUpdateTimestamp()           => __pbn__utcLastUpdateTimestamp = null;
+        private long? __pbn__utcLastUpdateTimestamp;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAApplicationAuthReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -1573,8 +1682,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaApplicationAuthReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -1582,13 +1692,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public string clientSecret { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAApplicationAuthRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -1599,16 +1709,17 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaApplicationAuthRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
-        private ProtoOAPayloadType? __pbn__payloadType;
 
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
+        private ProtoOAPayloadType? __pbn__payloadType;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAAccountAuthReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -1619,8 +1730,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAccountAuthReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -1628,13 +1740,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public string accessToken { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAAccountAuthRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -1645,19 +1757,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAccountAuthRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAErrorRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -1668,8 +1781,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaErrorRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2)]
@@ -1678,8 +1792,9 @@ namespace spotware
             get { return __pbn__ctidTraderAccountId.GetValueOrDefault(); }
             set { __pbn__ctidTraderAccountId = value; }
         }
-        public bool ShouldSerializectidTraderAccountId() => __pbn__ctidTraderAccountId != null;
-        public void ResetctidTraderAccountId() => __pbn__ctidTraderAccountId = null;
+
+        public  bool  ShouldSerializectidTraderAccountId() => __pbn__ctidTraderAccountId != null;
+        public  void  ResetctidTraderAccountId()           => __pbn__ctidTraderAccountId = null;
         private long? __pbn__ctidTraderAccountId;
 
         [ProtoBuf.ProtoMember(3, IsRequired = true)]
@@ -1692,8 +1807,9 @@ namespace spotware
             get { return __pbn__Description ?? ""; }
             set { __pbn__Description = value; }
         }
-        public bool ShouldSerializeDescription() => __pbn__Description != null;
-        public void ResetDescription() => __pbn__Description = null;
+
+        public  bool   ShouldSerializeDescription() => __pbn__Description != null;
+        public  void   ResetDescription()           => __pbn__Description = null;
         private string __pbn__Description;
 
         [ProtoBuf.ProtoMember(5)]
@@ -1702,16 +1818,17 @@ namespace spotware
             get { return __pbn__maintenanceEndTimestamp.GetValueOrDefault(); }
             set { __pbn__maintenanceEndTimestamp = value; }
         }
-        public bool ShouldSerializemaintenanceEndTimestamp() => __pbn__maintenanceEndTimestamp != null;
-        public void ResetmaintenanceEndTimestamp() => __pbn__maintenanceEndTimestamp = null;
-        private long? __pbn__maintenanceEndTimestamp;
 
+        public  bool  ShouldSerializemaintenanceEndTimestamp() => __pbn__maintenanceEndTimestamp != null;
+        public  void  ResetmaintenanceEndTimestamp()           => __pbn__maintenanceEndTimestamp = null;
+        private long? __pbn__maintenanceEndTimestamp;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAClientDisconnectEvent : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -1722,8 +1839,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaClientDisconnectEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, Name = @"reason")]
@@ -1733,16 +1851,17 @@ namespace spotware
             get { return __pbn__Reason ?? ""; }
             set { __pbn__Reason = value; }
         }
-        public bool ShouldSerializeReason() => __pbn__Reason != null;
-        public void ResetReason() => __pbn__Reason = null;
-        private string __pbn__Reason;
 
+        public  bool   ShouldSerializeReason() => __pbn__Reason != null;
+        public  void   ResetReason()           => __pbn__Reason = null;
+        private string __pbn__Reason;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAAccountsTokenInvalidatedEvent : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -1753,12 +1872,12 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAccountsTokenInvalidatedEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
-        [ProtoBuf.ProtoMember(2)]
-        public long[] ctidTraderAccountIds { get; set; }
+        [ProtoBuf.ProtoMember(2)] public long[] ctidTraderAccountIds { get; set; }
 
         [ProtoBuf.ProtoMember(3, Name = @"reason")]
         [System.ComponentModel.DefaultValue("")]
@@ -1767,16 +1886,17 @@ namespace spotware
             get { return __pbn__Reason ?? ""; }
             set { __pbn__Reason = value; }
         }
-        public bool ShouldSerializeReason() => __pbn__Reason != null;
-        public void ResetReason() => __pbn__Reason = null;
-        private string __pbn__Reason;
 
+        public  bool   ShouldSerializeReason() => __pbn__Reason != null;
+        public  void   ResetReason()           => __pbn__Reason = null;
+        private string __pbn__Reason;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAVersionReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -1787,16 +1907,17 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaVersionReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
-        private ProtoOAPayloadType? __pbn__payloadType;
 
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
+        private ProtoOAPayloadType? __pbn__payloadType;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAVersionRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -1807,19 +1928,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaVersionRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, Name = @"version", IsRequired = true)]
         public string Version { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOANewOrderReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -1830,8 +1952,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaNewOrderReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -1855,8 +1978,9 @@ namespace spotware
             get { return __pbn__limitPrice.GetValueOrDefault(); }
             set { __pbn__limitPrice = value; }
         }
-        public bool ShouldSerializelimitPrice() => __pbn__limitPrice != null;
-        public void ResetlimitPrice() => __pbn__limitPrice = null;
+
+        public  bool    ShouldSerializelimitPrice() => __pbn__limitPrice != null;
+        public  void    ResetlimitPrice()           => __pbn__limitPrice = null;
         private double? __pbn__limitPrice;
 
         [ProtoBuf.ProtoMember(8)]
@@ -1865,8 +1989,9 @@ namespace spotware
             get { return __pbn__stopPrice.GetValueOrDefault(); }
             set { __pbn__stopPrice = value; }
         }
-        public bool ShouldSerializestopPrice() => __pbn__stopPrice != null;
-        public void ResetstopPrice() => __pbn__stopPrice = null;
+
+        public  bool    ShouldSerializestopPrice() => __pbn__stopPrice != null;
+        public  void    ResetstopPrice()           => __pbn__stopPrice = null;
         private double? __pbn__stopPrice;
 
         [ProtoBuf.ProtoMember(9)]
@@ -1876,8 +2001,9 @@ namespace spotware
             get { return __pbn__timeInForce ?? ProtoOATimeInForce.GoodTillCancel; }
             set { __pbn__timeInForce = value; }
         }
-        public bool ShouldSerializetimeInForce() => __pbn__timeInForce != null;
-        public void ResettimeInForce() => __pbn__timeInForce = null;
+
+        public  bool                ShouldSerializetimeInForce() => __pbn__timeInForce != null;
+        public  void                ResettimeInForce()           => __pbn__timeInForce = null;
         private ProtoOATimeInForce? __pbn__timeInForce;
 
         [ProtoBuf.ProtoMember(10)]
@@ -1886,8 +2012,9 @@ namespace spotware
             get { return __pbn__expirationTimestamp.GetValueOrDefault(); }
             set { __pbn__expirationTimestamp = value; }
         }
-        public bool ShouldSerializeexpirationTimestamp() => __pbn__expirationTimestamp != null;
-        public void ResetexpirationTimestamp() => __pbn__expirationTimestamp = null;
+
+        public  bool  ShouldSerializeexpirationTimestamp() => __pbn__expirationTimestamp != null;
+        public  void  ResetexpirationTimestamp()           => __pbn__expirationTimestamp = null;
         private long? __pbn__expirationTimestamp;
 
         [ProtoBuf.ProtoMember(11)]
@@ -1896,8 +2023,9 @@ namespace spotware
             get { return __pbn__stopLoss.GetValueOrDefault(); }
             set { __pbn__stopLoss = value; }
         }
-        public bool ShouldSerializestopLoss() => __pbn__stopLoss != null;
-        public void ResetstopLoss() => __pbn__stopLoss = null;
+
+        public  bool    ShouldSerializestopLoss() => __pbn__stopLoss != null;
+        public  void    ResetstopLoss()           => __pbn__stopLoss = null;
         private double? __pbn__stopLoss;
 
         [ProtoBuf.ProtoMember(12)]
@@ -1906,8 +2034,9 @@ namespace spotware
             get { return __pbn__takeProfit.GetValueOrDefault(); }
             set { __pbn__takeProfit = value; }
         }
-        public bool ShouldSerializetakeProfit() => __pbn__takeProfit != null;
-        public void ResettakeProfit() => __pbn__takeProfit = null;
+
+        public  bool    ShouldSerializetakeProfit() => __pbn__takeProfit != null;
+        public  void    ResettakeProfit()           => __pbn__takeProfit = null;
         private double? __pbn__takeProfit;
 
         [ProtoBuf.ProtoMember(13, Name = @"comment")]
@@ -1917,8 +2046,9 @@ namespace spotware
             get { return __pbn__Comment ?? ""; }
             set { __pbn__Comment = value; }
         }
-        public bool ShouldSerializeComment() => __pbn__Comment != null;
-        public void ResetComment() => __pbn__Comment = null;
+
+        public  bool   ShouldSerializeComment() => __pbn__Comment != null;
+        public  void   ResetComment()           => __pbn__Comment = null;
         private string __pbn__Comment;
 
         [ProtoBuf.ProtoMember(14)]
@@ -1927,8 +2057,9 @@ namespace spotware
             get { return __pbn__baseSlippagePrice.GetValueOrDefault(); }
             set { __pbn__baseSlippagePrice = value; }
         }
-        public bool ShouldSerializebaseSlippagePrice() => __pbn__baseSlippagePrice != null;
-        public void ResetbaseSlippagePrice() => __pbn__baseSlippagePrice = null;
+
+        public  bool    ShouldSerializebaseSlippagePrice() => __pbn__baseSlippagePrice != null;
+        public  void    ResetbaseSlippagePrice()           => __pbn__baseSlippagePrice = null;
         private double? __pbn__baseSlippagePrice;
 
         [ProtoBuf.ProtoMember(15)]
@@ -1937,8 +2068,9 @@ namespace spotware
             get { return __pbn__slippageInPoints.GetValueOrDefault(); }
             set { __pbn__slippageInPoints = value; }
         }
-        public bool ShouldSerializeslippageInPoints() => __pbn__slippageInPoints != null;
-        public void ResetslippageInPoints() => __pbn__slippageInPoints = null;
+
+        public  bool ShouldSerializeslippageInPoints() => __pbn__slippageInPoints != null;
+        public  void ResetslippageInPoints()           => __pbn__slippageInPoints = null;
         private int? __pbn__slippageInPoints;
 
         [ProtoBuf.ProtoMember(16, Name = @"label")]
@@ -1948,8 +2080,9 @@ namespace spotware
             get { return __pbn__Label ?? ""; }
             set { __pbn__Label = value; }
         }
-        public bool ShouldSerializeLabel() => __pbn__Label != null;
-        public void ResetLabel() => __pbn__Label = null;
+
+        public  bool   ShouldSerializeLabel() => __pbn__Label != null;
+        public  void   ResetLabel()           => __pbn__Label = null;
         private string __pbn__Label;
 
         [ProtoBuf.ProtoMember(17)]
@@ -1958,8 +2091,9 @@ namespace spotware
             get { return __pbn__positionId.GetValueOrDefault(); }
             set { __pbn__positionId = value; }
         }
-        public bool ShouldSerializepositionId() => __pbn__positionId != null;
-        public void ResetpositionId() => __pbn__positionId = null;
+
+        public  bool  ShouldSerializepositionId() => __pbn__positionId != null;
+        public  void  ResetpositionId()           => __pbn__positionId = null;
         private long? __pbn__positionId;
 
         [ProtoBuf.ProtoMember(18)]
@@ -1969,8 +2103,9 @@ namespace spotware
             get { return __pbn__clientOrderId ?? ""; }
             set { __pbn__clientOrderId = value; }
         }
-        public bool ShouldSerializeclientOrderId() => __pbn__clientOrderId != null;
-        public void ResetclientOrderId() => __pbn__clientOrderId = null;
+
+        public  bool   ShouldSerializeclientOrderId() => __pbn__clientOrderId != null;
+        public  void   ResetclientOrderId()           => __pbn__clientOrderId = null;
         private string __pbn__clientOrderId;
 
         [ProtoBuf.ProtoMember(19)]
@@ -1979,8 +2114,9 @@ namespace spotware
             get { return __pbn__relativeStopLoss.GetValueOrDefault(); }
             set { __pbn__relativeStopLoss = value; }
         }
-        public bool ShouldSerializerelativeStopLoss() => __pbn__relativeStopLoss != null;
-        public void ResetrelativeStopLoss() => __pbn__relativeStopLoss = null;
+
+        public  bool  ShouldSerializerelativeStopLoss() => __pbn__relativeStopLoss != null;
+        public  void  ResetrelativeStopLoss()           => __pbn__relativeStopLoss = null;
         private long? __pbn__relativeStopLoss;
 
         [ProtoBuf.ProtoMember(20)]
@@ -1989,8 +2125,9 @@ namespace spotware
             get { return __pbn__relativeTakeProfit.GetValueOrDefault(); }
             set { __pbn__relativeTakeProfit = value; }
         }
-        public bool ShouldSerializerelativeTakeProfit() => __pbn__relativeTakeProfit != null;
-        public void ResetrelativeTakeProfit() => __pbn__relativeTakeProfit = null;
+
+        public  bool  ShouldSerializerelativeTakeProfit() => __pbn__relativeTakeProfit != null;
+        public  void  ResetrelativeTakeProfit()           => __pbn__relativeTakeProfit = null;
         private long? __pbn__relativeTakeProfit;
 
         [ProtoBuf.ProtoMember(21)]
@@ -1999,8 +2136,9 @@ namespace spotware
             get { return __pbn__guaranteedStopLoss.GetValueOrDefault(); }
             set { __pbn__guaranteedStopLoss = value; }
         }
-        public bool ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
-        public void ResetguaranteedStopLoss() => __pbn__guaranteedStopLoss = null;
+
+        public  bool  ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
+        public  void  ResetguaranteedStopLoss()           => __pbn__guaranteedStopLoss = null;
         private bool? __pbn__guaranteedStopLoss;
 
         [ProtoBuf.ProtoMember(22)]
@@ -2009,8 +2147,9 @@ namespace spotware
             get { return __pbn__trailingStopLoss.GetValueOrDefault(); }
             set { __pbn__trailingStopLoss = value; }
         }
-        public bool ShouldSerializetrailingStopLoss() => __pbn__trailingStopLoss != null;
-        public void ResettrailingStopLoss() => __pbn__trailingStopLoss = null;
+
+        public  bool  ShouldSerializetrailingStopLoss() => __pbn__trailingStopLoss != null;
+        public  void  ResettrailingStopLoss()           => __pbn__trailingStopLoss = null;
         private bool? __pbn__trailingStopLoss;
 
         [ProtoBuf.ProtoMember(23)]
@@ -2020,16 +2159,17 @@ namespace spotware
             get { return __pbn__stopTriggerMethod ?? ProtoOAOrderTriggerMethod.Trade; }
             set { __pbn__stopTriggerMethod = value; }
         }
-        public bool ShouldSerializestopTriggerMethod() => __pbn__stopTriggerMethod != null;
-        public void ResetstopTriggerMethod() => __pbn__stopTriggerMethod = null;
-        private ProtoOAOrderTriggerMethod? __pbn__stopTriggerMethod;
 
+        public  bool                       ShouldSerializestopTriggerMethod() => __pbn__stopTriggerMethod != null;
+        public  void                       ResetstopTriggerMethod()           => __pbn__stopTriggerMethod = null;
+        private ProtoOAOrderTriggerMethod? __pbn__stopTriggerMethod;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAExecutionEvent : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2040,8 +2180,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaExecutionEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -2059,11 +2200,9 @@ namespace spotware
         [ProtoBuf.ProtoMember(6, Name = @"deal")]
         public ProtoOADeal Deal { get; set; }
 
-        [ProtoBuf.ProtoMember(7)]
-        public ProtoOABonusDepositWithdraw bonusDepositWithdraw { get; set; }
+        [ProtoBuf.ProtoMember(7)] public ProtoOABonusDepositWithdraw bonusDepositWithdraw { get; set; }
 
-        [ProtoBuf.ProtoMember(8)]
-        public ProtoOADepositWithdraw depositWithdraw { get; set; }
+        [ProtoBuf.ProtoMember(8)] public ProtoOADepositWithdraw depositWithdraw { get; set; }
 
         [ProtoBuf.ProtoMember(9)]
         [System.ComponentModel.DefaultValue("")]
@@ -2072,8 +2211,9 @@ namespace spotware
             get { return __pbn__errorCode ?? ""; }
             set { __pbn__errorCode = value; }
         }
-        public bool ShouldSerializeerrorCode() => __pbn__errorCode != null;
-        public void ReseterrorCode() => __pbn__errorCode = null;
+
+        public  bool   ShouldSerializeerrorCode() => __pbn__errorCode != null;
+        public  void   ReseterrorCode()           => __pbn__errorCode = null;
         private string __pbn__errorCode;
 
         [ProtoBuf.ProtoMember(10)]
@@ -2082,16 +2222,17 @@ namespace spotware
             get { return __pbn__isServerEvent.GetValueOrDefault(); }
             set { __pbn__isServerEvent = value; }
         }
-        public bool ShouldSerializeisServerEvent() => __pbn__isServerEvent != null;
-        public void ResetisServerEvent() => __pbn__isServerEvent = null;
-        private bool? __pbn__isServerEvent;
 
+        public  bool  ShouldSerializeisServerEvent() => __pbn__isServerEvent != null;
+        public  void  ResetisServerEvent()           => __pbn__isServerEvent = null;
+        private bool? __pbn__isServerEvent;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOACancelOrderReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2102,8 +2243,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaCancelOrderReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -2111,13 +2253,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public long orderId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAAmendOrderReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2128,8 +2270,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAmendOrderReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -2144,8 +2287,9 @@ namespace spotware
             get { return __pbn__Volume.GetValueOrDefault(); }
             set { __pbn__Volume = value; }
         }
-        public bool ShouldSerializeVolume() => __pbn__Volume != null;
-        public void ResetVolume() => __pbn__Volume = null;
+
+        public  bool  ShouldSerializeVolume() => __pbn__Volume != null;
+        public  void  ResetVolume()           => __pbn__Volume = null;
         private long? __pbn__Volume;
 
         [ProtoBuf.ProtoMember(5)]
@@ -2154,8 +2298,9 @@ namespace spotware
             get { return __pbn__limitPrice.GetValueOrDefault(); }
             set { __pbn__limitPrice = value; }
         }
-        public bool ShouldSerializelimitPrice() => __pbn__limitPrice != null;
-        public void ResetlimitPrice() => __pbn__limitPrice = null;
+
+        public  bool    ShouldSerializelimitPrice() => __pbn__limitPrice != null;
+        public  void    ResetlimitPrice()           => __pbn__limitPrice = null;
         private double? __pbn__limitPrice;
 
         [ProtoBuf.ProtoMember(6)]
@@ -2164,8 +2309,9 @@ namespace spotware
             get { return __pbn__stopPrice.GetValueOrDefault(); }
             set { __pbn__stopPrice = value; }
         }
-        public bool ShouldSerializestopPrice() => __pbn__stopPrice != null;
-        public void ResetstopPrice() => __pbn__stopPrice = null;
+
+        public  bool    ShouldSerializestopPrice() => __pbn__stopPrice != null;
+        public  void    ResetstopPrice()           => __pbn__stopPrice = null;
         private double? __pbn__stopPrice;
 
         [ProtoBuf.ProtoMember(7)]
@@ -2174,8 +2320,9 @@ namespace spotware
             get { return __pbn__expirationTimestamp.GetValueOrDefault(); }
             set { __pbn__expirationTimestamp = value; }
         }
-        public bool ShouldSerializeexpirationTimestamp() => __pbn__expirationTimestamp != null;
-        public void ResetexpirationTimestamp() => __pbn__expirationTimestamp = null;
+
+        public  bool  ShouldSerializeexpirationTimestamp() => __pbn__expirationTimestamp != null;
+        public  void  ResetexpirationTimestamp()           => __pbn__expirationTimestamp = null;
         private long? __pbn__expirationTimestamp;
 
         [ProtoBuf.ProtoMember(8)]
@@ -2184,8 +2331,9 @@ namespace spotware
             get { return __pbn__stopLoss.GetValueOrDefault(); }
             set { __pbn__stopLoss = value; }
         }
-        public bool ShouldSerializestopLoss() => __pbn__stopLoss != null;
-        public void ResetstopLoss() => __pbn__stopLoss = null;
+
+        public  bool    ShouldSerializestopLoss() => __pbn__stopLoss != null;
+        public  void    ResetstopLoss()           => __pbn__stopLoss = null;
         private double? __pbn__stopLoss;
 
         [ProtoBuf.ProtoMember(9)]
@@ -2194,8 +2342,9 @@ namespace spotware
             get { return __pbn__takeProfit.GetValueOrDefault(); }
             set { __pbn__takeProfit = value; }
         }
-        public bool ShouldSerializetakeProfit() => __pbn__takeProfit != null;
-        public void ResettakeProfit() => __pbn__takeProfit = null;
+
+        public  bool    ShouldSerializetakeProfit() => __pbn__takeProfit != null;
+        public  void    ResettakeProfit()           => __pbn__takeProfit = null;
         private double? __pbn__takeProfit;
 
         [ProtoBuf.ProtoMember(10)]
@@ -2204,8 +2353,9 @@ namespace spotware
             get { return __pbn__slippageInPoints.GetValueOrDefault(); }
             set { __pbn__slippageInPoints = value; }
         }
-        public bool ShouldSerializeslippageInPoints() => __pbn__slippageInPoints != null;
-        public void ResetslippageInPoints() => __pbn__slippageInPoints = null;
+
+        public  bool ShouldSerializeslippageInPoints() => __pbn__slippageInPoints != null;
+        public  void ResetslippageInPoints()           => __pbn__slippageInPoints = null;
         private int? __pbn__slippageInPoints;
 
         [ProtoBuf.ProtoMember(11)]
@@ -2214,8 +2364,9 @@ namespace spotware
             get { return __pbn__relativeStopLoss.GetValueOrDefault(); }
             set { __pbn__relativeStopLoss = value; }
         }
-        public bool ShouldSerializerelativeStopLoss() => __pbn__relativeStopLoss != null;
-        public void ResetrelativeStopLoss() => __pbn__relativeStopLoss = null;
+
+        public  bool  ShouldSerializerelativeStopLoss() => __pbn__relativeStopLoss != null;
+        public  void  ResetrelativeStopLoss()           => __pbn__relativeStopLoss = null;
         private long? __pbn__relativeStopLoss;
 
         [ProtoBuf.ProtoMember(12)]
@@ -2224,8 +2375,9 @@ namespace spotware
             get { return __pbn__relativeTakeProfit.GetValueOrDefault(); }
             set { __pbn__relativeTakeProfit = value; }
         }
-        public bool ShouldSerializerelativeTakeProfit() => __pbn__relativeTakeProfit != null;
-        public void ResetrelativeTakeProfit() => __pbn__relativeTakeProfit = null;
+
+        public  bool  ShouldSerializerelativeTakeProfit() => __pbn__relativeTakeProfit != null;
+        public  void  ResetrelativeTakeProfit()           => __pbn__relativeTakeProfit = null;
         private long? __pbn__relativeTakeProfit;
 
         [ProtoBuf.ProtoMember(13)]
@@ -2234,8 +2386,9 @@ namespace spotware
             get { return __pbn__guaranteedStopLoss.GetValueOrDefault(); }
             set { __pbn__guaranteedStopLoss = value; }
         }
-        public bool ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
-        public void ResetguaranteedStopLoss() => __pbn__guaranteedStopLoss = null;
+
+        public  bool  ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
+        public  void  ResetguaranteedStopLoss()           => __pbn__guaranteedStopLoss = null;
         private bool? __pbn__guaranteedStopLoss;
 
         [ProtoBuf.ProtoMember(14)]
@@ -2244,8 +2397,9 @@ namespace spotware
             get { return __pbn__trailingStopLoss.GetValueOrDefault(); }
             set { __pbn__trailingStopLoss = value; }
         }
-        public bool ShouldSerializetrailingStopLoss() => __pbn__trailingStopLoss != null;
-        public void ResettrailingStopLoss() => __pbn__trailingStopLoss = null;
+
+        public  bool  ShouldSerializetrailingStopLoss() => __pbn__trailingStopLoss != null;
+        public  void  ResettrailingStopLoss()           => __pbn__trailingStopLoss = null;
         private bool? __pbn__trailingStopLoss;
 
         [ProtoBuf.ProtoMember(15)]
@@ -2255,16 +2409,17 @@ namespace spotware
             get { return __pbn__stopTriggerMethod ?? ProtoOAOrderTriggerMethod.Trade; }
             set { __pbn__stopTriggerMethod = value; }
         }
-        public bool ShouldSerializestopTriggerMethod() => __pbn__stopTriggerMethod != null;
-        public void ResetstopTriggerMethod() => __pbn__stopTriggerMethod = null;
-        private ProtoOAOrderTriggerMethod? __pbn__stopTriggerMethod;
 
+        public  bool                       ShouldSerializestopTriggerMethod() => __pbn__stopTriggerMethod != null;
+        public  void                       ResetstopTriggerMethod()           => __pbn__stopTriggerMethod = null;
+        private ProtoOAOrderTriggerMethod? __pbn__stopTriggerMethod;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAAmendPositionSLTPReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2275,8 +2430,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAmendPositionSltpReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -2291,8 +2447,9 @@ namespace spotware
             get { return __pbn__stopLoss.GetValueOrDefault(); }
             set { __pbn__stopLoss = value; }
         }
-        public bool ShouldSerializestopLoss() => __pbn__stopLoss != null;
-        public void ResetstopLoss() => __pbn__stopLoss = null;
+
+        public  bool    ShouldSerializestopLoss() => __pbn__stopLoss != null;
+        public  void    ResetstopLoss()           => __pbn__stopLoss = null;
         private double? __pbn__stopLoss;
 
         [ProtoBuf.ProtoMember(5)]
@@ -2301,8 +2458,9 @@ namespace spotware
             get { return __pbn__takeProfit.GetValueOrDefault(); }
             set { __pbn__takeProfit = value; }
         }
-        public bool ShouldSerializetakeProfit() => __pbn__takeProfit != null;
-        public void ResettakeProfit() => __pbn__takeProfit = null;
+
+        public  bool    ShouldSerializetakeProfit() => __pbn__takeProfit != null;
+        public  void    ResettakeProfit()           => __pbn__takeProfit = null;
         private double? __pbn__takeProfit;
 
         [ProtoBuf.ProtoMember(7)]
@@ -2311,8 +2469,9 @@ namespace spotware
             get { return __pbn__guaranteedStopLoss.GetValueOrDefault(); }
             set { __pbn__guaranteedStopLoss = value; }
         }
-        public bool ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
-        public void ResetguaranteedStopLoss() => __pbn__guaranteedStopLoss = null;
+
+        public  bool  ShouldSerializeguaranteedStopLoss() => __pbn__guaranteedStopLoss != null;
+        public  void  ResetguaranteedStopLoss()           => __pbn__guaranteedStopLoss = null;
         private bool? __pbn__guaranteedStopLoss;
 
         [ProtoBuf.ProtoMember(8)]
@@ -2321,8 +2480,9 @@ namespace spotware
             get { return __pbn__trailingStopLoss.GetValueOrDefault(); }
             set { __pbn__trailingStopLoss = value; }
         }
-        public bool ShouldSerializetrailingStopLoss() => __pbn__trailingStopLoss != null;
-        public void ResettrailingStopLoss() => __pbn__trailingStopLoss = null;
+
+        public  bool  ShouldSerializetrailingStopLoss() => __pbn__trailingStopLoss != null;
+        public  void  ResettrailingStopLoss()           => __pbn__trailingStopLoss = null;
         private bool? __pbn__trailingStopLoss;
 
         [ProtoBuf.ProtoMember(9)]
@@ -2332,16 +2492,17 @@ namespace spotware
             get { return __pbn__stopLossTriggerMethod ?? ProtoOAOrderTriggerMethod.Trade; }
             set { __pbn__stopLossTriggerMethod = value; }
         }
-        public bool ShouldSerializestopLossTriggerMethod() => __pbn__stopLossTriggerMethod != null;
-        public void ResetstopLossTriggerMethod() => __pbn__stopLossTriggerMethod = null;
-        private ProtoOAOrderTriggerMethod? __pbn__stopLossTriggerMethod;
 
+        public  bool                       ShouldSerializestopLossTriggerMethod() => __pbn__stopLossTriggerMethod != null;
+        public  void                       ResetstopLossTriggerMethod()           => __pbn__stopLossTriggerMethod = null;
+        private ProtoOAOrderTriggerMethod? __pbn__stopLossTriggerMethod;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAClosePositionReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2352,8 +2513,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaClosePositionReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -2364,13 +2526,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(4, Name = @"volume", IsRequired = true)]
         public long Volume { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOATrailingSLChangedEvent : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2381,8 +2543,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaTrailingSlChangedEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -2399,13 +2562,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(6, IsRequired = true)]
         public long utcLastUpdateTimestamp { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAAssetListReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2416,19 +2579,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAssetListReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAAssetListRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2439,8 +2603,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAssetListRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -2448,13 +2613,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, Name = @"asset")]
         public System.Collections.Generic.List<ProtoOAAsset> Assets { get; } = new System.Collections.Generic.List<ProtoOAAsset>();
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOASymbolsListReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2465,19 +2630,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSymbolsListReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOASymbolsListRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2488,8 +2654,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSymbolsListRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -2497,13 +2664,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, Name = @"symbol")]
         public System.Collections.Generic.List<ProtoOALightSymbol> Symbols { get; } = new System.Collections.Generic.List<ProtoOALightSymbol>();
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOASymbolByIdReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2514,8 +2681,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSymbolByIdReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -2523,13 +2691,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, Name = @"symbolId")]
         public long[] symbolIds { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOASymbolByIdRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2540,8 +2708,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSymbolByIdRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -2549,13 +2718,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, Name = @"symbol")]
         public System.Collections.Generic.List<ProtoOASymbol> Symbols { get; } = new System.Collections.Generic.List<ProtoOASymbol>();
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOASymbolsForConversionReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2566,8 +2735,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSymbolsForConversionReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -2578,13 +2748,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public long lastAssetId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOASymbolsForConversionRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2595,8 +2765,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSymbolsForConversionRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -2604,13 +2775,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, Name = @"symbol")]
         public System.Collections.Generic.List<ProtoOALightSymbol> Symbols { get; } = new System.Collections.Generic.List<ProtoOALightSymbol>();
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOASymbolChangedEvent : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2621,8 +2792,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSymbolChangedEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -2630,13 +2802,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, Name = @"symbolId")]
         public long[] symbolIds { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAAssetClassListReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2647,19 +2819,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAssetClassListReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAAssetClassListRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2670,8 +2843,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAssetClassListRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -2679,13 +2853,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, Name = @"assetClass")]
         public System.Collections.Generic.List<ProtoOAAssetClass> assetClasses { get; } = new System.Collections.Generic.List<ProtoOAAssetClass>();
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOATraderReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2696,19 +2870,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaTraderReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOATraderRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2719,8 +2894,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaTraderRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -2728,13 +2904,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, Name = @"trader", IsRequired = true)]
         public ProtoOATrader Trader { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOATraderUpdatedEvent : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2745,8 +2921,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaTraderUpdateEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -2754,13 +2931,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, Name = @"trader", IsRequired = true)]
         public ProtoOATrader Trader { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAReconcileReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2771,19 +2948,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaReconcileReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAReconcileRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2794,8 +2972,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaReconcileRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -2806,13 +2985,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(4, Name = @"order")]
         public System.Collections.Generic.List<ProtoOAOrder> Orders { get; } = new System.Collections.Generic.List<ProtoOAOrder>();
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAOrderErrorEvent : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2823,8 +3002,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaOrderErrorEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(5, IsRequired = true)]
@@ -2839,8 +3019,9 @@ namespace spotware
             get { return __pbn__orderId.GetValueOrDefault(); }
             set { __pbn__orderId = value; }
         }
-        public bool ShouldSerializeorderId() => __pbn__orderId != null;
-        public void ResetorderId() => __pbn__orderId = null;
+
+        public  bool  ShouldSerializeorderId() => __pbn__orderId != null;
+        public  void  ResetorderId()           => __pbn__orderId = null;
         private long? __pbn__orderId;
 
         [ProtoBuf.ProtoMember(6)]
@@ -2849,8 +3030,9 @@ namespace spotware
             get { return __pbn__positionId.GetValueOrDefault(); }
             set { __pbn__positionId = value; }
         }
-        public bool ShouldSerializepositionId() => __pbn__positionId != null;
-        public void ResetpositionId() => __pbn__positionId = null;
+
+        public  bool  ShouldSerializepositionId() => __pbn__positionId != null;
+        public  void  ResetpositionId()           => __pbn__positionId = null;
         private long? __pbn__positionId;
 
         [ProtoBuf.ProtoMember(7, Name = @"description")]
@@ -2860,16 +3042,17 @@ namespace spotware
             get { return __pbn__Description ?? ""; }
             set { __pbn__Description = value; }
         }
-        public bool ShouldSerializeDescription() => __pbn__Description != null;
-        public void ResetDescription() => __pbn__Description = null;
-        private string __pbn__Description;
 
+        public  bool   ShouldSerializeDescription() => __pbn__Description != null;
+        public  void   ResetDescription()           => __pbn__Description = null;
+        private string __pbn__Description;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOADealListReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2880,8 +3063,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaDealListReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -2899,16 +3083,17 @@ namespace spotware
             get { return __pbn__maxRows.GetValueOrDefault(); }
             set { __pbn__maxRows = value; }
         }
-        public bool ShouldSerializemaxRows() => __pbn__maxRows != null;
-        public void ResetmaxRows() => __pbn__maxRows = null;
-        private int? __pbn__maxRows;
 
+        public  bool ShouldSerializemaxRows() => __pbn__maxRows != null;
+        public  void ResetmaxRows()           => __pbn__maxRows = null;
+        private int? __pbn__maxRows;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOADealListRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2919,8 +3104,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaDealListRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -2931,13 +3117,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public bool hasMore { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAExpectedMarginReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2948,8 +3134,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaExpectedMarginReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -2960,13 +3147,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(4, Name = @"volume")]
         public long[] Volumes { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAExpectedMarginRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -2977,8 +3164,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaExpectedMarginRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -2986,13 +3174,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, Name = @"margin")]
         public System.Collections.Generic.List<ProtoOAExpectedMargin> Margins { get; } = new System.Collections.Generic.List<ProtoOAExpectedMargin>();
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAMarginChangedEvent : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3003,8 +3191,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaMarginChangedEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -3015,13 +3204,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public ulong usedMargin { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOACashFlowHistoryListReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3032,8 +3221,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaCashFlowHistoryListReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -3044,13 +3234,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public long toTimestamp { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOACashFlowHistoryListRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3061,8 +3251,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaCashFlowHistoryListRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -3070,13 +3261,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, Name = @"depositWithdraw")]
         public System.Collections.Generic.List<ProtoOADepositWithdraw> depositWithdraws { get; } = new System.Collections.Generic.List<ProtoOADepositWithdraw>();
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAGetAccountListByAccessTokenReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3087,19 +3278,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaGetAccountsByAccessTokenReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public string accessToken { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAGetAccountListByAccessTokenRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3110,8 +3302,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaGetAccountsByAccessTokenRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -3124,19 +3317,20 @@ namespace spotware
             get { return __pbn__permissionScope ?? ProtoOAClientPermissionScope.ScopeView; }
             set { __pbn__permissionScope = value; }
         }
-        public bool ShouldSerializepermissionScope() => __pbn__permissionScope != null;
-        public void ResetpermissionScope() => __pbn__permissionScope = null;
+
+        public  bool                          ShouldSerializepermissionScope() => __pbn__permissionScope != null;
+        public  void                          ResetpermissionScope()           => __pbn__permissionScope = null;
         private ProtoOAClientPermissionScope? __pbn__permissionScope;
 
         [ProtoBuf.ProtoMember(4, Name = @"ctidTraderAccount")]
         public System.Collections.Generic.List<ProtoOACtidTraderAccount> ctidTraderAccounts { get; } = new System.Collections.Generic.List<ProtoOACtidTraderAccount>();
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOASubscribeSpotsReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3147,8 +3341,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSubscribeSpotsReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -3156,13 +3351,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, Name = @"symbolId")]
         public long[] symbolIds { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOASubscribeSpotsRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3173,19 +3368,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSubscribeSpotsRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAUnsubscribeSpotsReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3196,8 +3392,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaUnsubscribeSpotsReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -3205,13 +3402,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, Name = @"symbolId")]
         public long[] symbolIds { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAUnsubscribeSpotsRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3222,19 +3419,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaUnsubscribeSpotsRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOASpotEvent : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3245,8 +3443,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSpotEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -3261,8 +3460,9 @@ namespace spotware
             get { return __pbn__Bid.GetValueOrDefault(); }
             set { __pbn__Bid = value; }
         }
-        public bool ShouldSerializeBid() => __pbn__Bid != null;
-        public void ResetBid() => __pbn__Bid = null;
+
+        public  bool   ShouldSerializeBid() => __pbn__Bid != null;
+        public  void   ResetBid()           => __pbn__Bid = null;
         private ulong? __pbn__Bid;
 
         [ProtoBuf.ProtoMember(5, Name = @"ask")]
@@ -3271,8 +3471,9 @@ namespace spotware
             get { return __pbn__Ask.GetValueOrDefault(); }
             set { __pbn__Ask = value; }
         }
-        public bool ShouldSerializeAsk() => __pbn__Ask != null;
-        public void ResetAsk() => __pbn__Ask = null;
+
+        public  bool   ShouldSerializeAsk() => __pbn__Ask != null;
+        public  void   ResetAsk()           => __pbn__Ask = null;
         private ulong? __pbn__Ask;
 
         [ProtoBuf.ProtoMember(6, Name = @"trendbar")]
@@ -3284,16 +3485,17 @@ namespace spotware
             get { return __pbn__sessionClose.GetValueOrDefault(); }
             set { __pbn__sessionClose = value; }
         }
-        public bool ShouldSerializesessionClose() => __pbn__sessionClose != null;
-        public void ResetsessionClose() => __pbn__sessionClose = null;
-        private ulong? __pbn__sessionClose;
 
+        public  bool   ShouldSerializesessionClose() => __pbn__sessionClose != null;
+        public  void   ResetsessionClose()           => __pbn__sessionClose = null;
+        private ulong? __pbn__sessionClose;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOASubscribeLiveTrendbarReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3304,8 +3506,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSubscribeLiveTrendbarReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -3316,13 +3519,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public long symbolId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOASubscribeLiveTrendbarRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3333,19 +3536,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSubscribeLiveTrendbarRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAUnsubscribeLiveTrendbarReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3356,8 +3560,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaUnsubscribeLiveTrendbarReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -3368,13 +3573,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public long symbolId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAUnsubscribeLiveTrendbarRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3385,19 +3590,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaUnsubscribeLiveTrendbarRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAGetTrendbarsReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3408,8 +3614,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaGetTrendbarsReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -3426,13 +3633,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(6, IsRequired = true)]
         public long symbolId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAGetTrendbarsRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3443,8 +3650,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaGetTrendbarsRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -3465,16 +3673,17 @@ namespace spotware
             get { return __pbn__symbolId.GetValueOrDefault(); }
             set { __pbn__symbolId = value; }
         }
-        public bool ShouldSerializesymbolId() => __pbn__symbolId != null;
-        public void ResetsymbolId() => __pbn__symbolId = null;
-        private long? __pbn__symbolId;
 
+        public  bool  ShouldSerializesymbolId() => __pbn__symbolId != null;
+        public  void  ResetsymbolId()           => __pbn__symbolId = null;
+        private long? __pbn__symbolId;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAGetTickDataReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3485,8 +3694,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaGetTickdataReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -3503,13 +3713,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(6, IsRequired = true)]
         public long toTimestamp { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAGetTickDataRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3520,8 +3730,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaGetTickdataRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -3532,13 +3743,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(4, IsRequired = true)]
         public bool hasMore { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAGetCtidProfileByTokenReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3549,19 +3760,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaGetCtidProfileByTokenReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public string accessToken { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAGetCtidProfileByTokenRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3572,19 +3784,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaGetCtidProfileByTokenRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, Name = @"profile", IsRequired = true)]
         public ProtoOACtidProfile Profile { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOADepthEvent : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3595,8 +3808,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaDepthEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -3605,18 +3819,17 @@ namespace spotware
         [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public ulong symbolId { get; set; }
 
-        [ProtoBuf.ProtoMember(4)]
-        public System.Collections.Generic.List<ProtoOADepthQuote> newQuotes { get; } = new System.Collections.Generic.List<ProtoOADepthQuote>();
+        [ProtoBuf.ProtoMember(4)] public System.Collections.Generic.List<ProtoOADepthQuote> newQuotes { get; } = new System.Collections.Generic.List<ProtoOADepthQuote>();
 
         [ProtoBuf.ProtoMember(5, IsPacked = true)]
         public ulong[] deletedQuotes { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOASubscribeDepthQuotesReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3627,8 +3840,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSubscribeDepthQuotesReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -3636,13 +3850,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, Name = @"symbolId")]
         public long[] symbolIds { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOASubscribeDepthQuotesRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3653,19 +3867,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSubscribeDepthQuotesRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAUnsubscribeDepthQuotesReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3676,8 +3891,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaUnsubscribeDepthQuotesReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -3685,13 +3901,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, Name = @"symbolId")]
         public long[] symbolIds { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAUnsubscribeDepthQuotesRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3702,19 +3918,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaUnsubscribeDepthQuotesRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOASymbolCategoryListReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3725,19 +3942,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSymbolCategoryReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOASymbolCategoryListRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3748,8 +3966,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaSymbolCategoryRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -3757,13 +3976,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, Name = @"symbolCategory")]
         public System.Collections.Generic.List<ProtoOASymbolCategory> symbolCategories { get; } = new System.Collections.Generic.List<ProtoOASymbolCategory>();
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAAccountLogoutReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3774,19 +3993,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAccountLogoutReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAAccountLogoutRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3797,19 +4017,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAccountLogoutRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAAccountDisconnectEvent : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3820,19 +4041,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaAccountDisconnectEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAMarginCallListReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3843,19 +4065,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaMarginCallListReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public long ctidTraderAccountId { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAMarginCallListRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3866,19 +4089,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaMarginCallListRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, Name = @"marginCall")]
         public System.Collections.Generic.List<ProtoOAMarginCall> marginCalls { get; } = new System.Collections.Generic.List<ProtoOAMarginCall>();
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAMarginCallUpdateReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3889,8 +4113,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaMarginCallUpdateReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -3898,13 +4123,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public ProtoOAMarginCall marginCall { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAMarginCallUpdateRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3915,16 +4140,17 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaMarginCallUpdateRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
-        private ProtoOAPayloadType? __pbn__payloadType;
 
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
+        private ProtoOAPayloadType? __pbn__payloadType;
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAMarginCallUpdateEvent : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3935,8 +4161,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaMarginCallUpdateEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -3944,13 +4171,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public ProtoOAMarginCall marginCall { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOAMarginCallTriggerEvent : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3961,8 +4188,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaMarginCallTriggerEvent; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -3970,13 +4198,13 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(3, IsRequired = true)]
         public ProtoOAMarginCall marginCall { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOARefreshTokenReq : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -3987,19 +4215,20 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaRefreshTokenReq; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
         public string refreshToken { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
     public partial class ProtoOARefreshTokenRes : ProtoBuf.IExtensible
     {
         private ProtoBuf.IExtension __pbn__extensionData;
+
         ProtoBuf.IExtension ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
@@ -4010,8 +4239,9 @@ namespace spotware
             get { return __pbn__payloadType ?? ProtoOAPayloadType.ProtoOaRefreshTokenRes; }
             set { __pbn__payloadType = value; }
         }
-        public bool ShouldSerializepayloadType() => __pbn__payloadType != null;
-        public void ResetpayloadType() => __pbn__payloadType = null;
+
+        public  bool                ShouldSerializepayloadType() => __pbn__payloadType != null;
+        public  void                ResetpayloadType()           => __pbn__payloadType = null;
         private ProtoOAPayloadType? __pbn__payloadType;
 
         [ProtoBuf.ProtoMember(2, IsRequired = true)]
@@ -4025,7 +4255,6 @@ namespace spotware
 
         [ProtoBuf.ProtoMember(5, IsRequired = true)]
         public string refreshToken { get; set; }
-
     }
 
     [ProtoBuf.ProtoContract()]
@@ -4033,8 +4262,10 @@ namespace spotware
     {
         [ProtoBuf.ProtoEnum(Name = @"PROTO_MESSAGE")]
         ProtoMessage = 5,
+
         [ProtoBuf.ProtoEnum(Name = @"ERROR_RES")]
         ErrorRes = 50,
+
         [ProtoBuf.ProtoEnum(Name = @"HEARTBEAT_EVENT")]
         HeartbeatEvent = 51,
     }
@@ -4044,22 +4275,31 @@ namespace spotware
     {
         [ProtoBuf.ProtoEnum(Name = @"UNKNOWN_ERROR")]
         UnknownError = 1,
+
         [ProtoBuf.ProtoEnum(Name = @"UNSUPPORTED_MESSAGE")]
         UnsupportedMessage = 2,
+
         [ProtoBuf.ProtoEnum(Name = @"INVALID_REQUEST")]
         InvalidRequest = 3,
+
         [ProtoBuf.ProtoEnum(Name = @"TIMEOUT_ERROR")]
         TimeoutError = 5,
+
         [ProtoBuf.ProtoEnum(Name = @"ENTITY_NOT_FOUND")]
         EntityNotFound = 6,
+
         [ProtoBuf.ProtoEnum(Name = @"CANT_ROUTE_REQUEST")]
         CantRouteRequest = 7,
+
         [ProtoBuf.ProtoEnum(Name = @"FRAME_TOO_LONG")]
         FrameTooLong = 8,
+
         [ProtoBuf.ProtoEnum(Name = @"MARKET_CLOSED")]
         MarketClosed = 9,
+
         [ProtoBuf.ProtoEnum(Name = @"CONCURRENT_MODIFICATION")]
         ConcurrentModification = 10,
+
         [ProtoBuf.ProtoEnum(Name = @"BLOCKED_PAYLOAD_TYPE")]
         BlockedPayloadType = 11,
     }
@@ -4069,152 +4309,226 @@ namespace spotware
     {
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_APPLICATION_AUTH_REQ")]
         ProtoOaApplicationAuthReq = 2100,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_APPLICATION_AUTH_RES")]
         ProtoOaApplicationAuthRes = 2101,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ACCOUNT_AUTH_REQ")]
         ProtoOaAccountAuthReq = 2102,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ACCOUNT_AUTH_RES")]
         ProtoOaAccountAuthRes = 2103,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_VERSION_REQ")]
         ProtoOaVersionReq = 2104,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_VERSION_RES")]
         ProtoOaVersionRes = 2105,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_NEW_ORDER_REQ")]
         ProtoOaNewOrderReq = 2106,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_TRAILING_SL_CHANGED_EVENT")]
         ProtoOaTrailingSlChangedEvent = 2107,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_CANCEL_ORDER_REQ")]
         ProtoOaCancelOrderReq = 2108,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_AMEND_ORDER_REQ")]
         ProtoOaAmendOrderReq = 2109,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_AMEND_POSITION_SLTP_REQ")]
         ProtoOaAmendPositionSltpReq = 2110,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_CLOSE_POSITION_REQ")]
         ProtoOaClosePositionReq = 2111,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ASSET_LIST_REQ")]
         ProtoOaAssetListReq = 2112,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ASSET_LIST_RES")]
         ProtoOaAssetListRes = 2113,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOLS_LIST_REQ")]
         ProtoOaSymbolsListReq = 2114,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOLS_LIST_RES")]
         ProtoOaSymbolsListRes = 2115,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOL_BY_ID_REQ")]
         ProtoOaSymbolByIdReq = 2116,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOL_BY_ID_RES")]
         ProtoOaSymbolByIdRes = 2117,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOLS_FOR_CONVERSION_REQ")]
         ProtoOaSymbolsForConversionReq = 2118,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOLS_FOR_CONVERSION_RES")]
         ProtoOaSymbolsForConversionRes = 2119,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOL_CHANGED_EVENT")]
         ProtoOaSymbolChangedEvent = 2120,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_TRADER_REQ")]
         ProtoOaTraderReq = 2121,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_TRADER_RES")]
         ProtoOaTraderRes = 2122,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_TRADER_UPDATE_EVENT")]
         ProtoOaTraderUpdateEvent = 2123,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_RECONCILE_REQ")]
         ProtoOaReconcileReq = 2124,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_RECONCILE_RES")]
         ProtoOaReconcileRes = 2125,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_EXECUTION_EVENT")]
         ProtoOaExecutionEvent = 2126,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SUBSCRIBE_SPOTS_REQ")]
         ProtoOaSubscribeSpotsReq = 2127,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SUBSCRIBE_SPOTS_RES")]
         ProtoOaSubscribeSpotsRes = 2128,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_UNSUBSCRIBE_SPOTS_REQ")]
         ProtoOaUnsubscribeSpotsReq = 2129,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_UNSUBSCRIBE_SPOTS_RES")]
         ProtoOaUnsubscribeSpotsRes = 2130,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SPOT_EVENT")]
         ProtoOaSpotEvent = 2131,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ORDER_ERROR_EVENT")]
         ProtoOaOrderErrorEvent = 2132,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_DEAL_LIST_REQ")]
         ProtoOaDealListReq = 2133,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_DEAL_LIST_RES")]
         ProtoOaDealListRes = 2134,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SUBSCRIBE_LIVE_TRENDBAR_REQ")]
         ProtoOaSubscribeLiveTrendbarReq = 2135,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_UNSUBSCRIBE_LIVE_TRENDBAR_REQ")]
         ProtoOaUnsubscribeLiveTrendbarReq = 2136,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_TRENDBARS_REQ")]
         ProtoOaGetTrendbarsReq = 2137,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_TRENDBARS_RES")]
         ProtoOaGetTrendbarsRes = 2138,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_EXPECTED_MARGIN_REQ")]
         ProtoOaExpectedMarginReq = 2139,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_EXPECTED_MARGIN_RES")]
         ProtoOaExpectedMarginRes = 2140,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_MARGIN_CHANGED_EVENT")]
         ProtoOaMarginChangedEvent = 2141,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ERROR_RES")]
         ProtoOaErrorRes = 2142,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_CASH_FLOW_HISTORY_LIST_REQ")]
         ProtoOaCashFlowHistoryListReq = 2143,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_CASH_FLOW_HISTORY_LIST_RES")]
         ProtoOaCashFlowHistoryListRes = 2144,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_TICKDATA_REQ")]
         ProtoOaGetTickdataReq = 2145,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_TICKDATA_RES")]
         ProtoOaGetTickdataRes = 2146,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ACCOUNTS_TOKEN_INVALIDATED_EVENT")]
         ProtoOaAccountsTokenInvalidatedEvent = 2147,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_CLIENT_DISCONNECT_EVENT")]
         ProtoOaClientDisconnectEvent = 2148,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_ACCOUNTS_BY_ACCESS_TOKEN_REQ")]
         ProtoOaGetAccountsByAccessTokenReq = 2149,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_ACCOUNTS_BY_ACCESS_TOKEN_RES")]
         ProtoOaGetAccountsByAccessTokenRes = 2150,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_CTID_PROFILE_BY_TOKEN_REQ")]
         ProtoOaGetCtidProfileByTokenReq = 2151,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_GET_CTID_PROFILE_BY_TOKEN_RES")]
         ProtoOaGetCtidProfileByTokenRes = 2152,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ASSET_CLASS_LIST_REQ")]
         ProtoOaAssetClassListReq = 2153,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ASSET_CLASS_LIST_RES")]
         ProtoOaAssetClassListRes = 2154,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_DEPTH_EVENT")]
         ProtoOaDepthEvent = 2155,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SUBSCRIBE_DEPTH_QUOTES_REQ")]
         ProtoOaSubscribeDepthQuotesReq = 2156,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SUBSCRIBE_DEPTH_QUOTES_RES")]
         ProtoOaSubscribeDepthQuotesRes = 2157,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_UNSUBSCRIBE_DEPTH_QUOTES_REQ")]
         ProtoOaUnsubscribeDepthQuotesReq = 2158,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_UNSUBSCRIBE_DEPTH_QUOTES_RES")]
         ProtoOaUnsubscribeDepthQuotesRes = 2159,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOL_CATEGORY_REQ")]
         ProtoOaSymbolCategoryReq = 2160,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SYMBOL_CATEGORY_RES")]
         ProtoOaSymbolCategoryRes = 2161,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ACCOUNT_LOGOUT_REQ")]
         ProtoOaAccountLogoutReq = 2162,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ACCOUNT_LOGOUT_RES")]
         ProtoOaAccountLogoutRes = 2163,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_ACCOUNT_DISCONNECT_EVENT")]
         ProtoOaAccountDisconnectEvent = 2164,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_SUBSCRIBE_LIVE_TRENDBAR_RES")]
         ProtoOaSubscribeLiveTrendbarRes = 2165,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_UNSUBSCRIBE_LIVE_TRENDBAR_RES")]
         ProtoOaUnsubscribeLiveTrendbarRes = 2166,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_MARGIN_CALL_LIST_REQ")]
         ProtoOaMarginCallListReq = 2167,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_MARGIN_CALL_LIST_RES")]
         ProtoOaMarginCallListRes = 2168,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_MARGIN_CALL_UPDATE_REQ")]
         ProtoOaMarginCallUpdateReq = 2169,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_MARGIN_CALL_UPDATE_RES")]
         ProtoOaMarginCallUpdateRes = 2170,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_MARGIN_CALL_UPDATE_EVENT")]
         ProtoOaMarginCallUpdateEvent = 2171,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_MARGIN_CALL_TRIGGER_EVENT")]
         ProtoOaMarginCallTriggerEvent = 2172,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_REFRESH_TOKEN_REQ")]
         ProtoOaRefreshTokenReq = 2173,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTO_OA_REFRESH_TOKEN_RES")]
         ProtoOaRefreshTokenRes = 2174,
     }
@@ -4222,22 +4536,22 @@ namespace spotware
     [ProtoBuf.ProtoContract()]
     public enum ProtoOADayOfWeek
     {
-        [ProtoBuf.ProtoEnum(Name = @"NONE")]
-        None = 0,
-        [ProtoBuf.ProtoEnum(Name = @"MONDAY")]
-        Monday = 1,
+        [ProtoBuf.ProtoEnum(Name = @"NONE")]   None   = 0,
+        [ProtoBuf.ProtoEnum(Name = @"MONDAY")] Monday = 1,
+
         [ProtoBuf.ProtoEnum(Name = @"TUESDAY")]
         Tuesday = 2,
+
         [ProtoBuf.ProtoEnum(Name = @"WEDNESDAY")]
         Wednesday = 3,
+
         [ProtoBuf.ProtoEnum(Name = @"THURSDAY")]
         Thursday = 4,
-        [ProtoBuf.ProtoEnum(Name = @"FRIDAY")]
-        Friday = 5,
+        [ProtoBuf.ProtoEnum(Name = @"FRIDAY")] Friday = 5,
+
         [ProtoBuf.ProtoEnum(Name = @"SATURDAY")]
         Saturday = 6,
-        [ProtoBuf.ProtoEnum(Name = @"SUNDAY")]
-        Sunday = 7,
+        [ProtoBuf.ProtoEnum(Name = @"SUNDAY")] Sunday = 7,
     }
 
     [ProtoBuf.ProtoContract()]
@@ -4245,10 +4559,13 @@ namespace spotware
     {
         [ProtoBuf.ProtoEnum(Name = @"USD_PER_MIL_USD")]
         UsdPerMilUsd = 1,
+
         [ProtoBuf.ProtoEnum(Name = @"USD_PER_LOT")]
         UsdPerLot = 2,
+
         [ProtoBuf.ProtoEnum(Name = @"PERCENTAGE")]
         Percentage = 3,
+
         [ProtoBuf.ProtoEnum(Name = @"QUOTE_CCY_PER_LOT")]
         QuoteCcyPerLot = 4,
     }
@@ -4258,6 +4575,7 @@ namespace spotware
     {
         [ProtoBuf.ProtoEnum(Name = @"SYMBOL_DISTANCE_IN_POINTS")]
         SymbolDistanceInPoints = 1,
+
         [ProtoBuf.ProtoEnum(Name = @"SYMBOL_DISTANCE_IN_PERCENTAGE")]
         SymbolDistanceInPercentage = 2,
     }
@@ -4267,6 +4585,7 @@ namespace spotware
     {
         [ProtoBuf.ProtoEnum(Name = @"CURRENCY")]
         Currency = 1,
+
         [ProtoBuf.ProtoEnum(Name = @"QUOTE_CURRENCY")]
         QuoteCurrency = 2,
     }
@@ -4276,10 +4595,13 @@ namespace spotware
     {
         [ProtoBuf.ProtoEnum(Name = @"ENABLED")]
         Enabled = 0,
+
         [ProtoBuf.ProtoEnum(Name = @"DISABLED_WITHOUT_PENDINGS_EXECUTION")]
         DisabledWithoutPendingsExecution = 1,
+
         [ProtoBuf.ProtoEnum(Name = @"DISABLED_WITH_PENDINGS_EXECUTION")]
         DisabledWithPendingsExecution = 2,
+
         [ProtoBuf.ProtoEnum(Name = @"CLOSE_ONLY_MODE")]
         CloseOnlyMode = 3,
     }
@@ -4287,8 +4609,8 @@ namespace spotware
     [ProtoBuf.ProtoContract()]
     public enum ProtoOASwapCalculationType
     {
-        [ProtoBuf.ProtoEnum(Name = @"POINTS")]
-        Points = 0,
+        [ProtoBuf.ProtoEnum(Name = @"POINTS")] Points = 0,
+
         [ProtoBuf.ProtoEnum(Name = @"INTEREST")]
         Interest = 1,
     }
@@ -4298,10 +4620,13 @@ namespace spotware
     {
         [ProtoBuf.ProtoEnum(Name = @"FULL_ACCESS")]
         FullAccess = 0,
+
         [ProtoBuf.ProtoEnum(Name = @"CLOSE_ONLY")]
         CloseOnly = 1,
+
         [ProtoBuf.ProtoEnum(Name = @"NO_TRADING")]
         NoTrading = 2,
+
         [ProtoBuf.ProtoEnum(Name = @"NO_LOGIN")]
         NoLogin = 3,
     }
@@ -4309,21 +4634,17 @@ namespace spotware
     [ProtoBuf.ProtoContract()]
     public enum ProtoOATotalMarginCalculationType
     {
-        [ProtoBuf.ProtoEnum(Name = @"MAX")]
-        Max = 0,
-        [ProtoBuf.ProtoEnum(Name = @"SUM")]
-        Sum = 1,
-        [ProtoBuf.ProtoEnum(Name = @"NET")]
-        Net = 2,
+        [ProtoBuf.ProtoEnum(Name = @"MAX")] Max = 0,
+        [ProtoBuf.ProtoEnum(Name = @"SUM")] Sum = 1,
+        [ProtoBuf.ProtoEnum(Name = @"NET")] Net = 2,
     }
 
     [ProtoBuf.ProtoContract()]
     public enum ProtoOAAccountType
     {
-        [ProtoBuf.ProtoEnum(Name = @"HEDGED")]
-        Hedged = 0,
-        [ProtoBuf.ProtoEnum(Name = @"NETTED")]
-        Netted = 1,
+        [ProtoBuf.ProtoEnum(Name = @"HEDGED")] Hedged = 0,
+        [ProtoBuf.ProtoEnum(Name = @"NETTED")] Netted = 1,
+
         [ProtoBuf.ProtoEnum(Name = @"SPREAD_BETTING")]
         SpreadBetting = 2,
     }
@@ -4333,8 +4654,10 @@ namespace spotware
     {
         [ProtoBuf.ProtoEnum(Name = @"MARGIN_LEVEL_THRESHOLD_1")]
         MarginLevelThreshold1 = 61,
+
         [ProtoBuf.ProtoEnum(Name = @"MARGIN_LEVEL_THRESHOLD_2")]
         MarginLevelThreshold2 = 62,
+
         [ProtoBuf.ProtoEnum(Name = @"MARGIN_LEVEL_THRESHOLD_3")]
         MarginLevelThreshold3 = 63,
     }
@@ -4344,80 +4667,118 @@ namespace spotware
     {
         [ProtoBuf.ProtoEnum(Name = @"OA_AUTH_TOKEN_EXPIRED")]
         OaAuthTokenExpired = 1,
+
         [ProtoBuf.ProtoEnum(Name = @"ACCOUNT_NOT_AUTHORIZED")]
         AccountNotAuthorized = 2,
+
         [ProtoBuf.ProtoEnum(Name = @"ALREADY_LOGGED_IN")]
         AlreadyLoggedIn = 14,
+
         [ProtoBuf.ProtoEnum(Name = @"CH_CLIENT_AUTH_FAILURE")]
         ChClientAuthFailure = 101,
+
         [ProtoBuf.ProtoEnum(Name = @"CH_CLIENT_NOT_AUTHENTICATED")]
         ChClientNotAuthenticated = 102,
+
         [ProtoBuf.ProtoEnum(Name = @"CH_CLIENT_ALREADY_AUTHENTICATED")]
         ChClientAlreadyAuthenticated = 103,
+
         [ProtoBuf.ProtoEnum(Name = @"CH_ACCESS_TOKEN_INVALID")]
         ChAccessTokenInvalid = 104,
+
         [ProtoBuf.ProtoEnum(Name = @"CH_SERVER_NOT_REACHABLE")]
         ChServerNotReachable = 105,
+
         [ProtoBuf.ProtoEnum(Name = @"CH_CTID_TRADER_ACCOUNT_NOT_FOUND")]
         ChCtidTraderAccountNotFound = 106,
+
         [ProtoBuf.ProtoEnum(Name = @"CH_OA_CLIENT_NOT_FOUND")]
         ChOaClientNotFound = 107,
+
         [ProtoBuf.ProtoEnum(Name = @"REQUEST_FREQUENCY_EXCEEDED")]
         RequestFrequencyExceeded = 108,
+
         [ProtoBuf.ProtoEnum(Name = @"SERVER_IS_UNDER_MAINTENANCE")]
         ServerIsUnderMaintenance = 109,
+
         [ProtoBuf.ProtoEnum(Name = @"CHANNEL_IS_BLOCKED")]
         ChannelIsBlocked = 110,
+
         [ProtoBuf.ProtoEnum(Name = @"CONNECTIONS_LIMIT_EXCEEDED")]
         ConnectionsLimitExceeded = 67,
+
         [ProtoBuf.ProtoEnum(Name = @"NOT_SUBSCRIBED_TO_SPOTS")]
         NotSubscribedToSpots = 112,
+
         [ProtoBuf.ProtoEnum(Name = @"ALREADY_SUBSCRIBED")]
         AlreadySubscribed = 113,
+
         [ProtoBuf.ProtoEnum(Name = @"SYMBOL_NOT_FOUND")]
         SymbolNotFound = 114,
+
         [ProtoBuf.ProtoEnum(Name = @"UNKNOWN_SYMBOL")]
         UnknownSymbol = 115,
+
         [ProtoBuf.ProtoEnum(Name = @"INCORRECT_BOUNDARIES")]
         IncorrectBoundaries = 35,
+
         [ProtoBuf.ProtoEnum(Name = @"NO_QUOTES")]
         NoQuotes = 117,
+
         [ProtoBuf.ProtoEnum(Name = @"NOT_ENOUGH_MONEY")]
         NotEnoughMoney = 118,
+
         [ProtoBuf.ProtoEnum(Name = @"MAX_EXPOSURE_REACHED")]
         MaxExposureReached = 119,
+
         [ProtoBuf.ProtoEnum(Name = @"POSITION_NOT_FOUND")]
         PositionNotFound = 120,
+
         [ProtoBuf.ProtoEnum(Name = @"ORDER_NOT_FOUND")]
         OrderNotFound = 121,
+
         [ProtoBuf.ProtoEnum(Name = @"POSITION_NOT_OPEN")]
         PositionNotOpen = 122,
+
         [ProtoBuf.ProtoEnum(Name = @"POSITION_LOCKED")]
         PositionLocked = 123,
+
         [ProtoBuf.ProtoEnum(Name = @"TOO_MANY_POSITIONS")]
         TooManyPositions = 124,
+
         [ProtoBuf.ProtoEnum(Name = @"TRADING_BAD_VOLUME")]
         TradingBadVolume = 125,
+
         [ProtoBuf.ProtoEnum(Name = @"TRADING_BAD_STOPS")]
         TradingBadStops = 126,
+
         [ProtoBuf.ProtoEnum(Name = @"TRADING_BAD_PRICES")]
         TradingBadPrices = 127,
+
         [ProtoBuf.ProtoEnum(Name = @"TRADING_BAD_STAKE")]
         TradingBadStake = 128,
+
         [ProtoBuf.ProtoEnum(Name = @"PROTECTION_IS_TOO_CLOSE_TO_MARKET")]
         ProtectionIsTooCloseToMarket = 129,
+
         [ProtoBuf.ProtoEnum(Name = @"TRADING_BAD_EXPIRATION_DATE")]
         TradingBadExpirationDate = 130,
+
         [ProtoBuf.ProtoEnum(Name = @"PENDING_EXECUTION")]
         PendingExecution = 131,
+
         [ProtoBuf.ProtoEnum(Name = @"TRADING_DISABLED")]
         TradingDisabled = 132,
+
         [ProtoBuf.ProtoEnum(Name = @"TRADING_NOT_ALLOWED")]
         TradingNotAllowed = 133,
+
         [ProtoBuf.ProtoEnum(Name = @"UNABLE_TO_CANCEL_ORDER")]
         UnableToCancelOrder = 134,
+
         [ProtoBuf.ProtoEnum(Name = @"UNABLE_TO_AMEND_ORDER")]
         UnableToAmendOrder = 135,
+
         [ProtoBuf.ProtoEnum(Name = @"SHORT_SELLING_NOT_ALLOWED")]
         ShortSellingNotAllowed = 136,
     }
@@ -4427,8 +4788,10 @@ namespace spotware
     {
         [ProtoBuf.ProtoEnum(Name = @"ACCORDING_TO_LEVERAGE")]
         AccordingToLeverage = 0,
+
         [ProtoBuf.ProtoEnum(Name = @"ACCORDING_TO_GSL")]
         AccordingToGsl = 1,
+
         [ProtoBuf.ProtoEnum(Name = @"ACCORDING_TO_GSL_AND_LEVERAGE")]
         AccordingToGslAndLeverage = 2,
     }
@@ -4436,10 +4799,8 @@ namespace spotware
     [ProtoBuf.ProtoContract()]
     public enum ProtoOAQuoteType
     {
-        [ProtoBuf.ProtoEnum(Name = @"BID")]
-        Bid = 1,
-        [ProtoBuf.ProtoEnum(Name = @"ASK")]
-        Ask = 2,
+        [ProtoBuf.ProtoEnum(Name = @"BID")] Bid = 1,
+        [ProtoBuf.ProtoEnum(Name = @"ASK")] Ask = 2,
     }
 
     [ProtoBuf.ProtoContract()]
@@ -4447,6 +4808,7 @@ namespace spotware
     {
         [ProtoBuf.ProtoEnum(Name = @"SCOPE_VIEW")]
         ScopeView = 0,
+
         [ProtoBuf.ProtoEnum(Name = @"SCOPE_TRADE")]
         ScopeTrade = 1,
     }
@@ -4454,21 +4816,20 @@ namespace spotware
     [ProtoBuf.ProtoContract()]
     public enum ProtoOATrendbarPeriod
     {
-        M1 = 1,
-        M2 = 2,
-        M3 = 3,
-        M4 = 4,
-        M5 = 5,
-        M10 = 6,
-        M15 = 7,
-        M30 = 8,
-        H1 = 9,
-        H4 = 10,
-        H12 = 11,
-        D1 = 12,
-        W1 = 13,
-        [ProtoBuf.ProtoEnum(Name = @"MN1")]
-        Mn1 = 14,
+        M1                                      = 1,
+        M2                                      = 2,
+        M3                                      = 3,
+        M4                                      = 4,
+        M5                                      = 5,
+        M10                                     = 6,
+        M15                                     = 7,
+        M30                                     = 8,
+        H1                                      = 9,
+        H4                                      = 10,
+        H12                                     = 11,
+        D1                                      = 12,
+        W1                                      = 13,
+        [ProtoBuf.ProtoEnum(Name = @"MN1")] Mn1 = 14,
     }
 
     [ProtoBuf.ProtoContract()]
@@ -4476,10 +4837,13 @@ namespace spotware
     {
         [ProtoBuf.ProtoEnum(Name = @"POSITION_STATUS_OPEN")]
         PositionStatusOpen = 1,
+
         [ProtoBuf.ProtoEnum(Name = @"POSITION_STATUS_CLOSED")]
         PositionStatusClosed = 2,
+
         [ProtoBuf.ProtoEnum(Name = @"POSITION_STATUS_CREATED")]
         PositionStatusCreated = 3,
+
         [ProtoBuf.ProtoEnum(Name = @"POSITION_STATUS_ERROR")]
         PositionStatusError = 4,
     }
@@ -4487,25 +4851,23 @@ namespace spotware
     [ProtoBuf.ProtoContract()]
     public enum ProtoOATradeSide
     {
-        [ProtoBuf.ProtoEnum(Name = @"BUY")]
-        Buy = 1,
-        [ProtoBuf.ProtoEnum(Name = @"SELL")]
-        Sell = 2,
+        [ProtoBuf.ProtoEnum(Name = @"BUY")]  Buy  = 1,
+        [ProtoBuf.ProtoEnum(Name = @"SELL")] Sell = 2,
     }
 
     [ProtoBuf.ProtoContract()]
     public enum ProtoOAOrderType
     {
-        [ProtoBuf.ProtoEnum(Name = @"MARKET")]
-        Market = 1,
-        [ProtoBuf.ProtoEnum(Name = @"LIMIT")]
-        Limit = 2,
-        [ProtoBuf.ProtoEnum(Name = @"STOP")]
-        Stop = 3,
+        [ProtoBuf.ProtoEnum(Name = @"MARKET")] Market = 1,
+        [ProtoBuf.ProtoEnum(Name = @"LIMIT")]  Limit  = 2,
+        [ProtoBuf.ProtoEnum(Name = @"STOP")]   Stop   = 3,
+
         [ProtoBuf.ProtoEnum(Name = @"STOP_LOSS_TAKE_PROFIT")]
         StopLossTakeProfit = 4,
+
         [ProtoBuf.ProtoEnum(Name = @"MARKET_RANGE")]
         MarketRange = 5,
+
         [ProtoBuf.ProtoEnum(Name = @"STOP_LIMIT")]
         StopLimit = 6,
     }
@@ -4515,12 +4877,16 @@ namespace spotware
     {
         [ProtoBuf.ProtoEnum(Name = @"GOOD_TILL_DATE")]
         GoodTillDate = 1,
+
         [ProtoBuf.ProtoEnum(Name = @"GOOD_TILL_CANCEL")]
         GoodTillCancel = 2,
+
         [ProtoBuf.ProtoEnum(Name = @"IMMEDIATE_OR_CANCEL")]
         ImmediateOrCancel = 3,
+
         [ProtoBuf.ProtoEnum(Name = @"FILL_OR_KILL")]
         FillOrKill = 4,
+
         [ProtoBuf.ProtoEnum(Name = @"MARKET_ON_OPEN")]
         MarketOnOpen = 5,
     }
@@ -4530,12 +4896,16 @@ namespace spotware
     {
         [ProtoBuf.ProtoEnum(Name = @"ORDER_STATUS_ACCEPTED")]
         OrderStatusAccepted = 1,
+
         [ProtoBuf.ProtoEnum(Name = @"ORDER_STATUS_FILLED")]
         OrderStatusFilled = 2,
+
         [ProtoBuf.ProtoEnum(Name = @"ORDER_STATUS_REJECTED")]
         OrderStatusRejected = 3,
+
         [ProtoBuf.ProtoEnum(Name = @"ORDER_STATUS_EXPIRED")]
         OrderStatusExpired = 4,
+
         [ProtoBuf.ProtoEnum(Name = @"ORDER_STATUS_CANCELLED")]
         OrderStatusCancelled = 5,
     }
@@ -4543,12 +4913,14 @@ namespace spotware
     [ProtoBuf.ProtoContract()]
     public enum ProtoOAOrderTriggerMethod
     {
-        [ProtoBuf.ProtoEnum(Name = @"TRADE")]
-        Trade = 1,
+        [ProtoBuf.ProtoEnum(Name = @"TRADE")] Trade = 1,
+
         [ProtoBuf.ProtoEnum(Name = @"OPPOSITE")]
         Opposite = 2,
+
         [ProtoBuf.ProtoEnum(Name = @"DOUBLE_TRADE")]
         DoubleTrade = 3,
+
         [ProtoBuf.ProtoEnum(Name = @"DOUBLE_OPPOSITE")]
         DoubleOpposite = 4,
     }
@@ -4558,24 +4930,32 @@ namespace spotware
     {
         [ProtoBuf.ProtoEnum(Name = @"ORDER_ACCEPTED")]
         OrderAccepted = 2,
+
         [ProtoBuf.ProtoEnum(Name = @"ORDER_FILLED")]
         OrderFilled = 3,
+
         [ProtoBuf.ProtoEnum(Name = @"ORDER_REPLACED")]
         OrderReplaced = 4,
+
         [ProtoBuf.ProtoEnum(Name = @"ORDER_CANCELLED")]
         OrderCancelled = 5,
+
         [ProtoBuf.ProtoEnum(Name = @"ORDER_EXPIRED")]
         OrderExpired = 6,
+
         [ProtoBuf.ProtoEnum(Name = @"ORDER_REJECTED")]
         OrderRejected = 7,
+
         [ProtoBuf.ProtoEnum(Name = @"ORDER_CANCEL_REJECTED")]
         OrderCancelRejected = 8,
-        [ProtoBuf.ProtoEnum(Name = @"SWAP")]
-        Swap = 9,
+        [ProtoBuf.ProtoEnum(Name = @"SWAP")] Swap = 9,
+
         [ProtoBuf.ProtoEnum(Name = @"DEPOSIT_WITHDRAW")]
         DepositWithdraw = 10,
+
         [ProtoBuf.ProtoEnum(Name = @"ORDER_PARTIAL_FILL")]
         OrderPartialFill = 11,
+
         [ProtoBuf.ProtoEnum(Name = @"BONUS_DEPOSIT_WITHDRAW")]
         BonusDepositWithdraw = 12,
     }
@@ -4585,68 +4965,100 @@ namespace spotware
     {
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT")]
         BalanceDeposit = 0,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW")]
         BalanceWithdraw = 1,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_STRATEGY_COMMISSION_INNER")]
         BalanceDepositStrategyCommissionInner = 3,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_STRATEGY_COMMISSION_INNER")]
         BalanceWithdrawStrategyCommissionInner = 4,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_IB_COMMISSIONS")]
         BalanceDepositIbCommissions = 5,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_IB_SHARED_PERCENTAGE")]
         BalanceWithdrawIbSharedPercentage = 6,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_IB_SHARED_PERCENTAGE_FROM_SUB_IB")]
         BalanceDepositIbSharedPercentageFromSubIb = 7,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_IB_SHARED_PERCENTAGE_FROM_BROKER")]
         BalanceDepositIbSharedPercentageFromBroker = 8,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_REBATE")]
         BalanceDepositRebate = 9,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_REBATE")]
         BalanceWithdrawRebate = 10,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_STRATEGY_COMMISSION_OUTER")]
         BalanceDepositStrategyCommissionOuter = 11,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_STRATEGY_COMMISSION_OUTER")]
         BalanceWithdrawStrategyCommissionOuter = 12,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_BONUS_COMPENSATION")]
         BalanceWithdrawBonusCompensation = 13,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_IB_SHARED_PERCENTAGE_TO_BROKER")]
         BalanceWithdrawIbSharedPercentageToBroker = 14,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_DIVIDENDS")]
         BalanceDepositDividends = 15,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_DIVIDENDS")]
         BalanceWithdrawDividends = 16,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_GSL_CHARGE")]
         BalanceWithdrawGslCharge = 17,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_ROLLOVER")]
         BalanceWithdrawRollover = 18,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_NONWITHDRAWABLE_BONUS")]
         BalanceDepositNonwithdrawableBonus = 19,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_NONWITHDRAWABLE_BONUS")]
         BalanceWithdrawNonwithdrawableBonus = 20,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_SWAP")]
         BalanceDepositSwap = 21,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_SWAP")]
         BalanceWithdrawSwap = 22,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_MANAGEMENT_FEE")]
         BalanceDepositManagementFee = 27,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_MANAGEMENT_FEE")]
         BalanceWithdrawManagementFee = 28,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_PERFORMANCE_FEE")]
         BalanceDepositPerformanceFee = 29,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_FOR_SUBACCOUNT")]
         BalanceWithdrawForSubaccount = 30,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_TO_SUBACCOUNT")]
         BalanceDepositToSubaccount = 31,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_FROM_SUBACCOUNT")]
         BalanceWithdrawFromSubaccount = 32,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_FROM_SUBACCOUNT")]
         BalanceDepositFromSubaccount = 33,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_INACTIVITY_FEE")]
         BalanceWithdrawInactivityFee = 35,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_TRANSFER")]
         BalanceDepositTransfer = 36,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_TRANSFER")]
         BalanceWithdrawTransfer = 37,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_CONVERTED_BONUS")]
         BalanceDepositConvertedBonus = 38,
     }
@@ -4654,18 +5066,18 @@ namespace spotware
     [ProtoBuf.ProtoContract()]
     public enum ProtoOADealStatus
     {
-        [ProtoBuf.ProtoEnum(Name = @"FILLED")]
-        Filled = 2,
+        [ProtoBuf.ProtoEnum(Name = @"FILLED")] Filled = 2,
+
         [ProtoBuf.ProtoEnum(Name = @"PARTIALLY_FILLED")]
         PartiallyFilled = 3,
+
         [ProtoBuf.ProtoEnum(Name = @"REJECTED")]
         Rejected = 4,
+
         [ProtoBuf.ProtoEnum(Name = @"INTERNALLY_REJECTED")]
         InternallyRejected = 5,
-        [ProtoBuf.ProtoEnum(Name = @"ERROR")]
-        Error = 6,
-        [ProtoBuf.ProtoEnum(Name = @"MISSED")]
-        Missed = 7,
+        [ProtoBuf.ProtoEnum(Name = @"ERROR")]  Error  = 6,
+        [ProtoBuf.ProtoEnum(Name = @"MISSED")] Missed = 7,
     }
 
     [ProtoBuf.ProtoContract()]
@@ -4673,10 +5085,10 @@ namespace spotware
     {
         [ProtoBuf.ProtoEnum(Name = @"BONUS_DEPOSIT")]
         BonusDeposit = 0,
+
         [ProtoBuf.ProtoEnum(Name = @"BONUS_WITHDRAW")]
         BonusWithdraw = 1,
     }
-
 }
 
 #pragma warning restore CS1591, CS0612, CS3021, IDE1006
