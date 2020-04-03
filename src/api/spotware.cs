@@ -5038,8 +5038,29 @@ namespace spotware
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_PERFORMANCE_FEE")]
         BalanceDepositPerformanceFee = 29,
 
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_FOR_SUBACCOUNT")]
+        BalanceWithdrawForSubaccount = 30,
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_TO_SUBACCOUNT")]
+        BalanceDepositToSubaccount = 31,
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_FROM_SUBACCOUNT")]
+        BalanceWithdrawFromSubaccount = 32,
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_FROM_SUBACCOUNT")]
+        BalanceDepositFromSubaccount = 33,
+
         [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_INACTIVITY_FEE")]
         BalanceWithdrawInactivityFee = 35,
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_TRANSFER")]
+        BalanceDepositTransfer = 36,
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_WITHDRAW_TRANSFER")]
+        BalanceWithdrawTransfer = 37,
+
+        [ProtoBuf.ProtoEnum(Name = @"BALANCE_DEPOSIT_CONVERTED_BONUS")]
+        BalanceDepositConvertedBonus = 38,
     }
 
     [ProtoBuf.ProtoContract()]

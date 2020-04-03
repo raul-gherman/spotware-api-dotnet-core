@@ -9,7 +9,6 @@ namespace spotware
         {
             ProtoOASymbolByIdRes args = Serializer.Deserialize<ProtoOASymbolByIdRes>(_processorMemoryStream);
 
-
             foreach (ProtoOASymbol symbol in args.Symbols)
             {
                 TradingAccounts[args.ctidTraderAccountId].TradingSymbols[symbol.symbolId].Symbol = symbol;
