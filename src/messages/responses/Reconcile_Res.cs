@@ -9,6 +9,10 @@ namespace spotware
         {
             ProtoOAReconcileRes args = Serializer.Deserialize<ProtoOAReconcileRes>(_processorMemoryStream);
 
+            Log.Info("ProtoOAReconcileRes:: " +
+                     $"ctidTraderAccountId: {args.ctidTraderAccountId}");
+            
+            TradingAccounts[args.ctidTraderAccountId].Positions.Clear();
 
             foreach (ProtoOAPosition position in args.Positions)
             {
@@ -33,10 +37,12 @@ namespace spotware
                               $"stopLossTriggerMethod: {position.stopLossTriggerMethod}; "                                                                                                            +
                               $"utcLastUpdateTimestamp: {position.utcLastUpdateTimestamp} ({EpochToString(position.utcLastUpdateTimestamp)}";
 
-                Log.Info($"ProtoOAReconcileRes:: "                            +
+                Log.Info("ProtoOAReconcileRes:: "                             +
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
                          $"Position: [{item}]");
             }
+            
+            TradingAccounts[args.ctidTraderAccountId].Orders.Clear();
 
             foreach (ProtoOAOrder order in args.Orders)
             {
@@ -71,7 +77,7 @@ namespace spotware
                               $"trailingStopLoss: {order.trailingStopLoss}; "                                                                                                                   +
                               $"utcLastUpdateTimestamp: {order.utcLastUpdateTimestamp} ({EpochToString(order.utcLastUpdateTimestamp)})";
 
-                Log.Info($"ProtoOAReconcileRes:: "                            +
+                Log.Info("ProtoOAReconcileRes:: "                             +
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
                          $"Order: {item};");
             }

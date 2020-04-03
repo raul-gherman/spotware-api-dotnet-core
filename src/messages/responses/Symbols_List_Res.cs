@@ -9,7 +9,6 @@ namespace spotware
         {
             ProtoOASymbolsListRes args = Serializer.Deserialize<ProtoOASymbolsListRes>(_processorMemoryStream);
 
-
             foreach (ProtoOALightSymbol lightSymbol in args.Symbols)
             {
                 if (!lightSymbol.Enabled)
