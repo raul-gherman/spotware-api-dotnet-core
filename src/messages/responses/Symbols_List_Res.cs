@@ -11,9 +11,6 @@ namespace spotware
 
             foreach (ProtoOALightSymbol lightSymbol in args.Symbols)
             {
-                if (!lightSymbol.Enabled)
-                    continue;
-
                 TradingSymbol tradingSymbol = new TradingSymbol(this, args.ctidTraderAccountId)
                                               {
                                                   LightSymbol = lightSymbol
