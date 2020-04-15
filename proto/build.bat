@@ -1,1 +1,0 @@
-protogen.exe spotware.proto --csharp_out=.\
