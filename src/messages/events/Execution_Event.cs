@@ -12,8 +12,8 @@ namespace spotware
             {
                 string executionEvent = "ProtoOAExecutionEvent:: "                                                                                                                                                  +
                                         $"ctidTraderAccountId: {args.ctidTraderAccountId}; "                                                                                                                        +
-                                        $"isServerEvent: {args.isServerEvent}; "                                                                                                                                    +
                                         $"executionType: {args.executionType}; "                                                                                                                                    +
+                                        $"isServerEvent: {args.isServerEvent}; "                                                                                                                                    +
                                         $"errorCode: {args.errorCode}; "                                                                                                                                            +
                                         $"depositWithdraw: {args.depositWithdraw}; "                                                                                                                                +
                                         $"Order: [orderId: {args.Order.orderId}; "                                                                                                                                  +
