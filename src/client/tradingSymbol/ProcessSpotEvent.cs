@@ -1,3 +1,5 @@
+using System;
+
 namespace spotware
 {
     public partial class TradingSymbol
@@ -14,6 +16,8 @@ namespace spotware
             if (args.symbolId != LightSymbol.symbolId)
                 return;
 
+            LastTimestamp = DateTime.UtcNow;
+
             if (args.Ask != 0)
                 Ask = args.Ask / Divider;
 
@@ -22,6 +26,7 @@ namespace spotware
 
             if (!(Ask > 0) || !(Bid > 0))
                 return;
+
             IsTradable   = true;
             Spread       = Ask - Bid;
             SpreadInPips = (Ask - Bid) / Pip;
