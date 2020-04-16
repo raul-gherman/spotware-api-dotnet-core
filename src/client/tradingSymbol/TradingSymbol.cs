@@ -1,3 +1,5 @@
+using System;
+
 namespace spotware
 {
     public partial class TradingSymbol
@@ -7,12 +9,13 @@ namespace spotware
         public ProtoOALightSymbol LightSymbol;
         public ProtoOASymbol      Symbol;
 
-        public double Bid          { get; private set; }
-        public double Ask          { get; private set; }
-        public double Spread       { get; private set; }
-        public double SpreadInPips { get; private set; }
-        public double Weight       { get; private set; }
-        public bool   IsTradable   { get; private set; }
+        public DateTime LastTimestamp { get; private set; }
+        public double   Bid           { get; private set; }
+        public double   Ask           { get; private set; }
+        public double   Spread        { get; private set; }
+        public double   SpreadInPips  { get; private set; }
+        public double   Weight        { get; private set; }
+        public bool     IsTradable    { get; private set; }
 
         public        double Pip { get; set; }
         private const double Divider = 100_000;

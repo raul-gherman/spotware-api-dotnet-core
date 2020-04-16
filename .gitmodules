@@ -1,0 +1,3 @@
+[submodule "spotware_proto"]
+	path = spotware_proto
+	url = https://github.com/raul-gherman/spotware_proto.git
