@@ -11,6 +11,10 @@ namespace spotware
             Log.Info("ProtoOAAccountDisconnectEvent:: " +
                      $"ctidTraderAccountId: {args.ctidTraderAccountId}");
 
+            TradingAccounts.Remove(args.ctidTraderAccountId);
+
+            Send(Account_Auth_Req(args.ctidTraderAccountId, _accessToken));
+
             OnAccountDisconnectEventReceived?.Invoke(args);
         }
 
