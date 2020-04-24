@@ -23,17 +23,10 @@ namespace spotware
 
         public readonly Dictionary<long, TradingAccount> TradingAccounts = new Dictionary<long, TradingAccount>();
 
-        private readonly bool _subscribeAllSymbols = true;
+        private bool _subscribeAllSymbols = false;
 
         public Client()
         {
-            ReadVariablesFromEnvironment();
-        }
-
-        public Client(bool subscribeAllSymbols = true)
-        {
-            _subscribeAllSymbols = subscribeAllSymbols;
-
             ReadVariablesFromEnvironment();
         }
 
@@ -55,6 +48,9 @@ namespace spotware
                            ?? throw new Exception("SPOTWARE_API_ACCESS_TOKEN not set");
             _refreshToken = Environment.GetEnvironmentVariable("SPOTWARE_API_REFRESH_TOKEN")
                             ?? throw new Exception("SPOTWARE_API_REFRESH_TOKEN not set");
+
+            _subscribeAllSymbols = bool.Parse(Environment.GetEnvironmentVariable("SPOTWARE_SUBSCRIBE_ALL_SYMBOLS")
+                                              ?? throw new Exception("SPOTWARE_SUBSCRIBE_ALL_SYMBOLS not set"));
         }
     }
 }

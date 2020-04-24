@@ -14,7 +14,7 @@ namespace spotware
                               $"dealStatus: {deal.dealStatus}; "                                                                             +
                               $"orderId: {deal.orderId}; "                                                                                   +
                               $"positionId: {deal.positionId}; "                                                                             +
-                              $"symbolId: {deal.symbolId}; "                                                                                 +
+                              $"symbolId: {deal.symbolId} ({TradingAccounts[args.ctidTraderAccountId].TradingSymbols[position.tradeData.symbolId].LightSymbol.symbolName}); " +
                               $"tradeSide: {deal.tradeSide}; "                                                                               +
                               $"executionPrice: {deal.executionPrice}; "                                                                     +
                               $"Volume: {deal.Volume}; "                                                                                     +
