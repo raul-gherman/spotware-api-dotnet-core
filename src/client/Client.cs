@@ -9,8 +9,8 @@ namespace spotware
         public static readonly ILog Log = LogManager.GetLogger();
 
         private Connection _connection;
-        private string     _gateway;
-        private int        _port;
+        private string _gateway;
+        private int _port;
 
         private string _clientId;
         private string _clientSecret;
@@ -18,8 +18,8 @@ namespace spotware
         private string _accessToken;
         private string _refreshToken;
 
-        private                 MemoryStream _processorMemoryStream = new MemoryStream();
-        private static readonly MemoryStream InnerMemoryStream      = new MemoryStream();
+        private MemoryStream _processorMemoryStream = new MemoryStream();
+        private static readonly MemoryStream InnerMemoryStream = new MemoryStream();
 
         public readonly Dictionary<long, TradingAccount> TradingAccounts = new Dictionary<long, TradingAccount>();
 

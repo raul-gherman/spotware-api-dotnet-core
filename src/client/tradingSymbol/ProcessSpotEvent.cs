@@ -27,10 +27,10 @@ namespace spotware
             if (!(Ask > 0) || !(Bid > 0))
                 return;
 
-            IsTradable   = true;
-            Spread       = Ask - Bid;
+            IsTradable = true;
+            Spread = Ask - Bid;
             SpreadInPips = (Ask - Bid) / Pip;
-            Weight       = Ask         / Pip;
+            Weight = Ask / Pip;
 
             OnSpotEvent?.Invoke(this);
         }

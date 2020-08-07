@@ -7,16 +7,16 @@ namespace spotware
         private static ProtoMessage Heartbeat()
         {
             ProtoHeartbeatEvent message = new ProtoHeartbeatEvent
-                                          {
-                                              payloadType = ProtoPayloadType.HeartbeatEvent
-                                          };
+            {
+                payloadType = ProtoPayloadType.HeartbeatEvent
+            };
 
             Log.Info("ProtoHeartbeatEventReq");
-            
+
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);
 
-            return Encode((uint) message.payloadType, InnerMemoryStream.ToArray());
+            return Encode((uint)message.payloadType, InnerMemoryStream.ToArray());
         }
     }
 }

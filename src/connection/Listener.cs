@@ -8,13 +8,13 @@ namespace spotware
 {
     public partial class Connection
     {
-        private          Thread       _listenerThread;
-        private readonly byte[]       _incomingHeader = new byte[4];
-        private          int          _readBytes;
-        private          int          _calculatedIncomingRawDataSize;
-        private          byte[]       _rawData;
-        private          MemoryStream _decoderMemoryStream;
-        private          ProtoMessage _incomingMessage = new ProtoMessage();
+        private Thread _listenerThread;
+        private readonly byte[] _incomingHeader = new byte[4];
+        private int _readBytes;
+        private int _calculatedIncomingRawDataSize;
+        private byte[] _rawData;
+        private MemoryStream _decoderMemoryStream;
+        private ProtoMessage _incomingMessage = new ProtoMessage();
 
         private void Start_Listening_Thread()
         {
@@ -45,7 +45,7 @@ namespace spotware
                         continue;
                     }
 
-                    _rawData   = new byte[_calculatedIncomingRawDataSize];
+                    _rawData = new byte[_calculatedIncomingRawDataSize];
                     _readBytes = 0;
                     do
                     {
@@ -53,7 +53,7 @@ namespace spotware
                     } while (_readBytes < _calculatedIncomingRawDataSize);
 
                     _decoderMemoryStream = new MemoryStream(_rawData);
-                    _incomingMessage     = Serializer.Deserialize<ProtoMessage>(_decoderMemoryStream);
+                    _incomingMessage = Serializer.Deserialize<ProtoMessage>(_decoderMemoryStream);
 
                     OnMessageReceived?.Invoke(_incomingMessage);
                 }

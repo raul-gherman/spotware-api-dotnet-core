@@ -10,7 +10,7 @@ namespace spotware
 
             foreach (ProtoOAMarginCall marginCall in args.marginCalls)
             {
-                string item = $"marginCallType: {marginCall.marginCallType}; "             +
+                string item = $"marginCallType: {marginCall.marginCallType}; " +
                               $"marginLevelThreshold: {marginCall.marginLevelThreshold}; " +
                               $"utcLastUpdateTimestamp: {marginCall.utcLastUpdateTimestamp} ({EpochToString(marginCall.utcLastUpdateTimestamp)}";
 

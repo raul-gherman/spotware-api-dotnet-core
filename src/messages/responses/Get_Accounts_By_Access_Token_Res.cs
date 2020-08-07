@@ -10,18 +10,18 @@ namespace spotware
 
             foreach (ProtoOACtidTraderAccount account in args.ctidTraderAccounts)
             {
-                TradingAccounts[(long) account.ctidTraderAccountId] = new TradingAccount(this, (long) account.ctidTraderAccountId);
+                TradingAccounts[(long)account.ctidTraderAccountId] = new TradingAccount(this, (long)account.ctidTraderAccountId);
 
                 string item = $"ctidTraderAccountId: {account.ctidTraderAccountId}; " +
-                              $"traderLogin: {account.traderLogin}; "                 +
+                              $"traderLogin: {account.traderLogin}; " +
                               $"isLive: {account.isLive}";
 
-                Log.Info("ProtoOAGetAccountListByAccessTokenRes:: "   +
-                         $"accessToken: {args.accessToken}; "         +
+                Log.Info("ProtoOAGetAccountListByAccessTokenRes:: " +
+                         $"accessToken: {args.accessToken}; " +
                          $"permissionScope: {args.permissionScope}; " +
                          $"ctidTraderAccount: [{item}]");
 
-                Send(Account_Auth_Req((long) account.ctidTraderAccountId, _accessToken));
+                Send(Account_Auth_Req((long)account.ctidTraderAccountId, _accessToken));
             }
 
             OnGetAccountListByAccessTokenResReceived?.Invoke(args);

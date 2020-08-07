@@ -10,15 +10,15 @@ namespace spotware
 
             foreach (ProtoOALightSymbol lightSymbol in args.Symbols)
             {
-                string item = $"symbolId: {lightSymbol.symbolId}; "                                                                                                                   +
-                              $"symbolName: {lightSymbol.symbolName}; "                                                                                                               +
-                              $"Description: {lightSymbol.Description}; "                                                                                                             +
-                              $"Enabled: {lightSymbol.Enabled}; "                                                                                                                     +
+                string item = $"symbolId: {lightSymbol.symbolId}; " +
+                              $"symbolName: {lightSymbol.symbolName}; " +
+                              $"Description: {lightSymbol.Description}; " +
+                              $"Enabled: {lightSymbol.Enabled}; " +
                               $"symbolCategoryId: {lightSymbol.symbolCategoryId} ({TradingAccounts[args.ctidTraderAccountId].SymbolCategories[lightSymbol.symbolCategoryId].Name}); " +
-                              $"baseAssetId: {lightSymbol.baseAssetId} ({TradingAccounts[args.ctidTraderAccountId].Assets[lightSymbol.baseAssetId].displayName}); "                   +
+                              $"baseAssetId: {lightSymbol.baseAssetId} ({TradingAccounts[args.ctidTraderAccountId].Assets[lightSymbol.baseAssetId].displayName}); " +
                               $"quoteAssetId: {lightSymbol.quoteAssetId} ({TradingAccounts[args.ctidTraderAccountId].Assets[lightSymbol.quoteAssetId].displayName})";
 
-                Log.Info("ProtoOASymbolsForConversionRes:: "                  +
+                Log.Info("ProtoOASymbolsForConversionRes:: " +
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
                          $"Symbol: [{item}]");
             }

@@ -10,12 +10,12 @@ namespace spotware
             Prepare_Dispatcher();
 
             _connection = new Connection(_gateway, _port)
-                          {
-                              KeepAliveMessage = Heartbeat()
-                          };
+            {
+                KeepAliveMessage = Heartbeat()
+            };
 
             _connection.OnConnectionEstablished += Start_Message_Flow;
-            _connection.OnMessageReceived       += MessageReceived;
+            _connection.OnMessageReceived += MessageReceived;
             _connection.Connect();
         }
 

@@ -12,20 +12,20 @@ namespace spotware
             foreach (ProtoOALightSymbol lightSymbol in args.Symbols)
             {
                 TradingSymbol tradingSymbol = new TradingSymbol(this, args.ctidTraderAccountId)
-                                              {
-                                                  LightSymbol = lightSymbol
-                                              };
+                {
+                    LightSymbol = lightSymbol
+                };
                 TradingAccounts[args.ctidTraderAccountId].TradingSymbols[lightSymbol.symbolId] = tradingSymbol;
 
-                string item = $"symbolId: {lightSymbol.symbolId}; "                                                                                                                   +
-                              $"symbolName: {lightSymbol.symbolName}; "                                                                                                               +
-                              $"Description: {lightSymbol.Description}; "                                                                                                             +
-                              $"Enabled: {lightSymbol.Enabled}; "                                                                                                                     +
+                string item = $"symbolId: {lightSymbol.symbolId}; " +
+                              $"symbolName: {lightSymbol.symbolName}; " +
+                              $"Description: {lightSymbol.Description}; " +
+                              $"Enabled: {lightSymbol.Enabled}; " +
                               $"symbolCategoryId: {lightSymbol.symbolCategoryId} ({TradingAccounts[args.ctidTraderAccountId].SymbolCategories[lightSymbol.symbolCategoryId].Name}); " +
-                              $"baseAssetId: {lightSymbol.baseAssetId} ({TradingAccounts[args.ctidTraderAccountId].Assets[lightSymbol.baseAssetId].displayName}); "                   +
+                              $"baseAssetId: {lightSymbol.baseAssetId} ({TradingAccounts[args.ctidTraderAccountId].Assets[lightSymbol.baseAssetId].displayName}); " +
                               $"quoteAssetId: {lightSymbol.quoteAssetId} ({TradingAccounts[args.ctidTraderAccountId].Assets[lightSymbol.quoteAssetId].displayName})";
 
-                Log.Info("ProtoOASymbolsListRes:: "                           +
+                Log.Info("ProtoOASymbolsListRes:: " +
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
                          $"Symbol: [{item}]");
             }

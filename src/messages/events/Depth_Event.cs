@@ -11,15 +11,15 @@ namespace spotware
             string newQuotes = string.Empty;
             foreach (ProtoOADepthQuote newQuote in args.newQuotes)
             {
-                newQuotes += $"Id: {newQuote.Id}; "   +
+                newQuotes += $"Id: {newQuote.Id}; " +
                              $"Ask: {newQuote.Ask}; " +
                              $"Bid: {newQuote.Bid}; " +
                              $"Size: {newQuote.Size} | ";
             }
 
-            Log.Info("ProtoOADepthEvent:: "                                        +
-                     $"ctidTraderAccountId: {args.ctidTraderAccountId}; "          +
-                     $"symbolId: {args.symbolId}; "                                +
+            Log.Info("ProtoOADepthEvent:: " +
+                     $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
+                     $"symbolId: {args.symbolId}; " +
                      $"deletedQuotes: [{string.Join("; ", args.deletedQuotes)}]; " +
                      $"newQuotes: [{newQuotes}]");
 
