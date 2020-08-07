@@ -12,11 +12,11 @@ namespace spotware
             {
                 TradingAccounts[args.ctidTraderAccountId].SymbolCategories[symbolCategory.Id] = symbolCategory;
 
-                string item = $"Id: {symbolCategory.Id}; "     +
+                string item = $"Id: {symbolCategory.Id}; " +
                               $"Name: {symbolCategory.Name}; " +
                               $"assetClassId: {symbolCategory.assetClassId} ({TradingAccounts[args.ctidTraderAccountId].AssetClasses[symbolCategory.assetClassId].Name})";
 
-                Log.Info("ProtoOASymbolCategoryListRes:: "                    +
+                Log.Info("ProtoOASymbolCategoryListRes:: " +
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
                          $"symbolCategory: [{item}]");
             }

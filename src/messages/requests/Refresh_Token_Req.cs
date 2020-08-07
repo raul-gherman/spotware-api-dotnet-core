@@ -7,10 +7,10 @@ namespace spotware
         public static ProtoMessage Refresh_Token_Req(string refreshToken)
         {
             ProtoOARefreshTokenReq message = new ProtoOARefreshTokenReq
-                                             {
-                                                 payloadType  = ProtoOAPayloadType.ProtoOaRefreshTokenReq,
-                                                 refreshToken = refreshToken
-                                             };
+            {
+                payloadType = ProtoOAPayloadType.ProtoOaRefreshTokenReq,
+                refreshToken = refreshToken
+            };
 
             Log.Info("ProtoOARefreshTokenReq:: " +
                      $"refreshToken: {refreshToken}");
@@ -18,7 +18,7 @@ namespace spotware
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);
 
-            return Encode((uint) message.payloadType, InnerMemoryStream.ToArray());
+            return Encode((uint)message.payloadType, InnerMemoryStream.ToArray());
         }
     }
 }

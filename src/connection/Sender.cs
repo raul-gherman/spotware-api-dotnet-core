@@ -9,16 +9,16 @@ namespace spotware
 {
     public partial class Connection
     {
-        private          Thread              _senderThread;
-        private const    int                 HeartbeatIntervalInSeconds = 25;
-        private          DateTime            _nextTimeGate              = DateTime.UtcNow.AddSeconds(HeartbeatIntervalInSeconds);
-        public readonly  Queue<ProtoMessage> ProtoMessagesQueue         = new Queue<ProtoMessage>();
-        private readonly MemoryStream        _encoderMemoryStream       = new MemoryStream();
+        private Thread _senderThread;
+        private const int HeartbeatIntervalInSeconds = 25;
+        private DateTime _nextTimeGate = DateTime.UtcNow.AddSeconds(HeartbeatIntervalInSeconds);
+        public readonly Queue<ProtoMessage> ProtoMessagesQueue = new Queue<ProtoMessage>();
+        private readonly MemoryStream _encoderMemoryStream = new MemoryStream();
 
-        private       int      _outgoingMessageCountPerTimeWindow;
-        private const int      MaxOutgoingMessageCountPerTimeWindow = 50;
-        private       DateTime _nextOutgoingWindow;
-        private const int      OutgoingTimeWindowInMillis = 950;
+        private int _outgoingMessageCountPerTimeWindow;
+        private const int MaxOutgoingMessageCountPerTimeWindow = 50;
+        private DateTime _nextOutgoingWindow;
+        private const int OutgoingTimeWindowInMillis = 950;
 
         private void Start_Sender_Thread()
         {
@@ -38,7 +38,7 @@ namespace spotware
                                                if (DateTime.UtcNow >= _nextOutgoingWindow)
                                                {
                                                    _outgoingMessageCountPerTimeWindow = 0;
-                                                   _nextOutgoingWindow                = DateTime.UtcNow.AddMilliseconds(OutgoingTimeWindowInMillis);
+                                                   _nextOutgoingWindow = DateTime.UtcNow.AddMilliseconds(OutgoingTimeWindowInMillis);
                                                }
 
                                                if (_outgoingMessageCountPerTimeWindow >= MaxOutgoingMessageCountPerTimeWindow)
@@ -46,7 +46,7 @@ namespace spotware
                                                    Thread.Sleep((_nextOutgoingWindow - DateTime.UtcNow).Milliseconds);
 
                                                    _outgoingMessageCountPerTimeWindow = 0;
-                                                   _nextOutgoingWindow                = DateTime.UtcNow.AddMilliseconds(OutgoingTimeWindowInMillis);
+                                                   _nextOutgoingWindow = DateTime.UtcNow.AddMilliseconds(OutgoingTimeWindowInMillis);
                                                }
 
                                                Send(ProtoMessagesQueue.Dequeue());

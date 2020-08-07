@@ -5,11 +5,11 @@
         <RootNamespace>spotware</RootNamespace>
         <Configurations>Release;Debug</Configurations>
         <Platforms>x64</Platforms>
-        <AssemblyVersion>6.6</AssemblyVersion>
+        <AssemblyVersion>6.9</AssemblyVersion>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="protobuf-net" Version="2.4.4" />
+      <PackageReference Include="protobuf-net" Version="3.0.29" />
     </ItemGroup>
 
 </Project>

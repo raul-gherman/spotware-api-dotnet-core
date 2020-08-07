@@ -8,7 +8,7 @@ namespace spotware
         {
             ProtoOAAccountsTokenInvalidatedEvent args = Serializer.Deserialize<ProtoOAAccountsTokenInvalidatedEvent>(_processorMemoryStream);
 
-            Log.Info("ProtoOAAccountsTokenInvalidatedEvent:: "                                 +
+            Log.Info("ProtoOAAccountsTokenInvalidatedEvent:: " +
                      $"ctidTraderAccountIds: [{string.Join("; ", args.ctidTraderAccountIds)}]" +
                      $"Reason: {args.Reason}");
 
