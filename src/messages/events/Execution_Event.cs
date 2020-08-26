@@ -10,7 +10,7 @@ namespace spotware
 
             if (args.Order != null)
             {
-                string executionEvent = "ProtoOAExecutionEvent:: " +
+                string executionEvent = "ProtoOAExecutionEvent::Order:: " +
                                         $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
                                         $"executionType: {args.executionType}; " +
                                         $"isServerEvent: {args.isServerEvent}; " +
@@ -48,7 +48,7 @@ namespace spotware
 
             if (args.Position != null)
             {
-                string executionEvent = "ProtoOAExecutionEvent:: " +
+                string executionEvent = "ProtoOAExecutionEvent::Position:: " +
                                         $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
                                         $"executionType: {args.executionType}; " +
                                         $"isServerEvent: {args.isServerEvent}; " +
@@ -78,7 +78,7 @@ namespace spotware
 
             if (args.Deal != null)
             {
-                string executionEvent = "ProtoOAExecutionEvent:: " +
+                string executionEvent = "ProtoOAExecutionEvent::Deal:: " +
                                         $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
                                         $"executionType: {args.executionType}; " +
                                         $"isServerEvent: {args.isServerEvent}; " +
@@ -113,13 +113,13 @@ namespace spotware
 
             if (args.bonusDepositWithdraw != null)
             {
-                string executionEvent = "ProtoOAExecutionEvent:: " +
+                string executionEvent = "ProtoOAExecutionEvent::bonusDepositWithdraw:: " +
                                         $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
                                         $"executionType: {args.executionType}; " +
                                         $"isServerEvent: {args.isServerEvent}; " +
                                         $"errorCode: {args.errorCode}; " +
                                         $"depositWithdraw: {args.depositWithdraw}; " +
-                                        $"Bonus: [bonusDepositWithdraw.operationType: {args.bonusDepositWithdraw.operationType}; " +
+                                        $"bonusDepositWithdraw.operationType: {args.bonusDepositWithdraw.operationType}; " +
                                         $"bonusDepositWithdraw.bonusHistoryId: {args.bonusDepositWithdraw.bonusHistoryId}; " +
                                         $"bonusDepositWithdraw.changeBonusTimestamp: {args.bonusDepositWithdraw.changeBonusTimestamp} ({EpochToString(args.bonusDepositWithdraw.changeBonusTimestamp)}); " +
                                         $"bonusDepositWithdraw.externalNote: {args.bonusDepositWithdraw.externalNote}; " +
@@ -128,7 +128,7 @@ namespace spotware
                                         $"bonusDepositWithdraw.managerBonus: {args.bonusDepositWithdraw.managerBonus}; " +
                                         $"bonusDepositWithdraw.managerDelta: {args.bonusDepositWithdraw.managerDelta}; " +
                                         $"bonusDepositWithdraw.introducingBrokerId: {args.bonusDepositWithdraw.introducingBrokerId}; " +
-                                        $"bonusDepositWithdraw.externalNote: {args.bonusDepositWithdraw.externalNote}]";
+                                        $"bonusDepositWithdraw.externalNote: {args.bonusDepositWithdraw.externalNote}";
                 Log.Info(executionEvent);
             }
 
