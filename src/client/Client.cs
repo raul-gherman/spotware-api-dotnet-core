@@ -18,7 +18,6 @@ namespace spotware
         private string _accessToken;
         private string _refreshToken;
 
-        private MemoryStream _processorMemoryStream = new MemoryStream();
         private static readonly MemoryStream InnerMemoryStream = new MemoryStream();
 
         public readonly Dictionary<long, TradingAccount> TradingAccounts = new Dictionary<long, TradingAccount>();
@@ -27,17 +26,17 @@ namespace spotware
 
         public Client()
         {
-            ReadVariablesFromEnvironment();
+            ReadEnvironmentVariables();
         }
 
         public Client(bool subscribeAllSymbols = true)
         {
             _subscribeAllSymbols = subscribeAllSymbols;
 
-            ReadVariablesFromEnvironment();
+            ReadEnvironmentVariables();
         }
 
-        private void ReadVariablesFromEnvironment()
+        private void ReadEnvironmentVariables()
         {
             LogManager.Configure($"spotware-api-{DateTime.UtcNow:yyyy-MM-dd}.log");
 

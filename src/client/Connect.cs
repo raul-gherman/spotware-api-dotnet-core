@@ -5,6 +5,8 @@ namespace spotware
 {
     public partial class Client
     {
+        private MemoryStream _processorMemoryStream;
+
         public void Connect()
         {
             Prepare_Dispatcher();
@@ -15,7 +17,7 @@ namespace spotware
             };
 
             _connection.OnConnectionEstablished += Start_Message_Flow;
-            _connection.OnMessageReceived += MessageReceived;
+            _connection.OnMessageReceived += DecodeIncomingMessage;
             _connection.Connect();
         }
 
@@ -24,7 +26,7 @@ namespace spotware
             Send(Version_Req());
         }
 
-        private void MessageReceived(ProtoMessage args)
+        private void DecodeIncomingMessage(ProtoMessage args)
         {
             _processorMemoryStream = new MemoryStream(args.Payload);
             _dispatcher[args.payloadType]();
