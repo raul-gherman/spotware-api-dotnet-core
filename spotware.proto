@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Spotware OpenAPI 6.9
+// Spotware OpenAPI 7.0
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 syntax="proto2";
@@ -158,8 +158,8 @@ enum ProtoOATradingMode
 // Enum for specifying SWAP calculation type for symbol.
 enum ProtoOASwapCalculationType
 {
-    PIPS       = 0; //Specifies type of SWAP computation as PIPS (0)
-    PERCENTAGE = 1; //Specifies type of SWAP computation as PERCENTAGE (1, annual, in percent)
+    PIPS       = 0; // Specifies type of SWAP computation as PIPS (0)
+    PERCENTAGE = 1; // Specifies type of SWAP computation as PERCENTAGE (1, annual, in percent)
 }
 
 // Enum for specifying access right for a trader
@@ -449,7 +449,7 @@ message ProtoOAAsset
     required int64  assetId     = 1; // The unique asset ID.
     required string name        = 2; // The asset name.
     optional string displayName = 3; // User friendly name.
-    optional int32  digits      = 4;
+    optional int32  digits      = 4; // Precision of the asset.
 
 }
 
@@ -476,25 +476,26 @@ message ProtoOASymbol
     optional int64                      stepVolume                   = 11; // Step of the volume in cents for an order.
     optional uint64                     maxExposure                  = 12; // Value of max exposure per symbol, per account. Blocks execution if breached.
     repeated ProtoOAInterval            schedule                     = 13; // Symbol trading interval, specified in seconds starting from SUNDAY 00:00 in specified time zone.
-    optional int64                      commission                   = 14 [deprecated = true]; // Commission base amount. Total commission depends on commissionType.
-    optional ProtoOACommissionType      commissionType               = 15 [default = USD_PER_MILLION_USD]; // Commission type. See ProtoOACommissionType for details.
+    optional int64                      commission                   = 14  [deprecated = true]; // Commission base amount. Total commission depends on commissionType. Use preciseTradingCommissionRate.
+    optional ProtoOACommissionType      commissionType               = 15  [default = USD_PER_MILLION_USD]; // Commission type. See ProtoOACommissionType for details.
     optional uint32                     slDistance                   = 16; // Minimum allowed distance between stop loss and current market price.
     optional uint32                     tpDistance                   = 17; // Minimum allowed distance between take profit and current market price.
     optional uint32                     gslDistance                  = 18; // Minimum allowed distance between guaranteed stop loss and current market price.
     optional int64                      gslCharge                    = 19; // Guaranteed stop loss fee.
     optional ProtoOASymbolDistanceType  distanceSetIn                = 20  [default = SYMBOL_DISTANCE_IN_POINTS]; // Unit of distance measure for slDistance, tpDistance, gslDistance.
-    optional int64                      minCommission                = 21 [deprecated = true]; // Minimum commission amount per trade.
+    optional int64                      minCommission                = 21  [deprecated = true]; // Minimum commission amount per trade. Use preciseMinCommission.
     optional ProtoOAMinCommissionType   minCommissionType            = 22  [default = CURRENCY]; // Minimum commission Type. See ProtoOAMinCommissionType for details.
     optional string                     minCommissionAsset           = 23  [default = "USD"]; // Currency for minimum commission. (USD or quote currency).
     optional int64                      rolloverCommission           = 24; // Amount of commission per trade for Shariah Compliant accounts in deposit currency (swapFree = TRUE).
     optional int32                      skipRolloverDays             = 25; // Initial period before the first rolloverCommission will be charged on the account.
     optional string                     scheduleTimeZone             = 26; // Time zone for the symbol trading intervals.
     optional ProtoOATradingMode         tradingMode                  = 27  [default = ENABLED]; // Rules for trading with the symbol. See ProtoOATradingMode for details.
-    optional ProtoOADayOfWeek           rolloverCommission3Days      = 28  [default = MONDAY]; //Day of the week (in UTC) when Administrative Fee charge amount will be tripled. Applied only if RolloverChargePeriod = 0 or 1
-    optional ProtoOASwapCalculationType swapCalculationType          = 29 [default = PIPS]; //Specifies type of SWAP computation as PIPS (0) or PERCENTAGE (1, annual, in percent)
-    optional int64                      lotSize                      = 30; //Lot size of the Symbol (in cents)
-    optional int64                      preciseTradingCommissionRate = 31;
-    optional int64                      preciseMinCommission         = 32;
+    optional ProtoOADayOfWeek           rolloverCommission3Days      = 28  [default = MONDAY]; // Day of the week (in UTC) when Administrative Fee charge amount will be tripled. Applied only if RolloverChargePeriod = 0 or 1
+    optional ProtoOASwapCalculationType swapCalculationType          = 29  [default = PIPS]; // Specifies type of SWAP computation as PIPS (0) or PERCENTAGE (1, annual, in percent)
+    optional int64                      lotSize                      = 30; // Lot size of the Symbol (in cents)
+    optional int64                      preciseTradingCommissionRate = 31; // Commission base amount. Total commission depends on commissionType: for non-percentage types it is multiplied by 10^8.
+    optional int64                      preciseMinCommission         = 32; // Minimum commission amount per trade multiplied by 10^8.
+    repeated ProtoOAHoliday             holiday                      = 33; // List of holidays for this symbol specified by broker.
 }
 
 // Lightweight symbol entity
@@ -509,6 +510,14 @@ message ProtoOALightSymbol
     optional string description      = 7;
 }
 
+message ProtoOAArchivedSymbol
+{
+    required int64  symbolId               = 1;
+    required string name                   = 2;
+    required int64  utcLastUpdateTimestamp = 3;
+    optional string description            = 4;
+}
+
 // Symbol category entity
 message ProtoOASymbolCategory
 {
@@ -520,15 +529,15 @@ message ProtoOASymbolCategory
 // Trading account entity
 message ProtoOATrader
 {
-    required int64                                       ctidTraderAccountId                  = 1; // The unique trading account ID used to match the responses to the trading account.
-    required int64                                       balance                              = 2; // Current account balance in cents (e.g. If USD 100.00 then value = 10000).
-    optional int64                                       balanceVersion                       = 3; // Balance version used to identify the final balance. Increments each time when the trading account balance is changed.
-    optional int64                                       managerBonus                         = 4; // Amount of broker bonus allocated to the account in cents.
-    optional int64                                       ibBonus                              = 5; // Amount of introducing broker bonus allocated to the account cents.
-    optional int64                                       nonWithdrawableBonus                 = 6; // Broker bonus that cannot be withdrew from the account as cash.
-    optional ProtoOAAccessRights                         accessRights                         = 7  [default = FULL_ACCESS]; // Access rights that an owner has to the account in cTrader platform. See ProtoOAAccessRights for details.
-    required int64                                       depositAssetId                       = 8; // Deposit currency of the account.
-    optional bool                                        swapFree                             = 9; // If TRUE then account is Shariah compliant.
+    required int64                                       ctidTraderAccountId                  = 1;  // The unique trading account ID used to match the responses to the trading account.
+    required int64                                       balance                              = 2;  // Current account balance in cents (e.g. If USD 100.00 then value = 10000).
+    optional int64                                       balanceVersion                       = 3;  // Balance version used to identify the final balance. Increments each time when the trading account balance is changed.
+    optional int64                                       managerBonus                         = 4;  // Amount of broker bonus allocated to the account in cents.
+    optional int64                                       ibBonus                              = 5;  // Amount of introducing broker bonus allocated to the account in cents.
+    optional int64                                       nonWithdrawableBonus                 = 6;  // Broker bonus that cannot be withdrew from the account as cash.
+    optional ProtoOAAccessRights                         accessRights                         = 7   [default = FULL_ACCESS]; // Access rights that an owner has to the account in cTrader platform. See ProtoOAAccessRights for details.
+    required int64                                       depositAssetId                       = 8;  // Deposit currency of the account.
+    optional bool                                        swapFree                             = 9;  // If TRUE then account is Shariah compliant.
     optional uint32                                      leverageInCents                      = 10; // Account leverage (e.g. If leverage = 1:50 then value = 5000).
     optional ProtoOATotalMarginCalculationType           totalMarginCalculationType           = 11; // Margin computation type for the account (MAX, SUM, NET).
     optional uint32                                      maxLeverage                          = 12; // Maximum allowed leverage for the account. Used as validation when a Trader can change leverage value.
@@ -537,8 +546,8 @@ message ProtoOATrader
     optional string                                      brokerName                           = 16; // Some whitelabel assigned to trader by broker at the moment of account creation.
     optional int64                                       registrationTimestamp                = 17; // Unix timestamp of the account registration. Should be used as minimal date in historical data requests.
     optional bool                                        isLimitedRisk                        = 18; // If TRUE then account is compliant to use specific margin calculation strategy.
-    optional ProtoOALimitedRiskMarginCalculationStrategy limitedRiskMarginCalculationStrategy = 19 [default = ACCORDING_TO_LEVERAGE]; // Special strategy used in margin calculations for this account (if account isLimitedRisk).
-    optional uint32                                      moneyDigits                          = 20;
+    optional ProtoOALimitedRiskMarginCalculationStrategy limitedRiskMarginCalculationStrategy = 19  [default = ACCORDING_TO_LEVERAGE]; // Special strategy used in margin calculations for this account (if account isLimitedRisk).
+    optional uint32                                      moneyDigits                          = 20; // Specifies the exponent of the monetary values. E.g. moneyDigits = 8 must be interpret as business value multiplied by 10^8, then real balance would be 10053099944 / 10^8 = 100.53099944. Affects balance, managerBonus, ibBonus, nonWithdrawableBonus.
 }
 
 // Position/order trading details entity
@@ -550,6 +559,7 @@ message ProtoOATradeData
     optional int64            openTimestamp      = 4; // Time when position was opened or order was created.
     optional string           label              = 5; // Text label specified during order request.
     optional bool             guaranteedStopLoss = 6; // If TRUE then position/order stop loss is guaranteedStopLoss.
+    optional string           comment            = 7; // User-specified comment.
 }
 
 // Trade position entity
@@ -569,7 +579,7 @@ message ProtoOAPosition
     optional bool                      guaranteedStopLoss     = 12; // If TRUE then position stop loss is guaranteedStopLoss.
     optional uint64                    usedMargin             = 13; // Amount of margin used for the position in deposit currency.
     optional ProtoOAOrderTriggerMethod stopLossTriggerMethod  = 14  [default = TRADE]; // Stop trigger method for SL/TP of the position.
-    optional uint32                    moneyDigits            = 15;
+    optional uint32                    moneyDigits            = 15; // Specifies the exponent of the monetary values. E.g. moneyDigits = 8 must be interpret as business value multiplied by 10^8, then real balance would be 10053099944 / 10^8 = 100.53099944. Affects usedMargin.
 }
 
 // Trade order entity
@@ -598,22 +608,21 @@ message ProtoOAOrder
     optional bool                      isStopOut              = 22; // If TRUE then order was stopped out from server side.
     optional bool                      trailingStopLoss       = 23; // If TRUE then order is trailingStopLoss. Valid for STOP_LOSS_TAKE_PROFIT order.
     optional ProtoOAOrderTriggerMethod stopTriggerMethod      = 24  [default = TRADE]; // Trigger method for the order. Valid only for STOP and STOP_LIMIT orders.
-    optional uint32                    moneyDigits            = 25;
 }
 
 // Bonus deposit/withdrawal entity
 message ProtoOABonusDepositWithdraw
 {
-    required ProtoOAChangeBonusType operationType        = 1; // Type of the operation. Deposit/Withdrawal.
-    required int64                  bonusHistoryId       = 2; // The unique ID of the bonus deposit/withdrawal operation.
-    required int64                  managerBonus         = 3; // Total amount of broker bonus after the operation.
-    required int64                  managerDelta         = 4; // Amount of bonus deposited/withdrew by manager.
-    required int64                  ibBonus              = 5; // Total amount of introducing broker bonus after the operation.
-    required int64                  ibDelta              = 6; // Amount of bonus deposited/withdrew by introducing broker.
-    required int64                  changeBonusTimestamp = 7; // Time when the bonus operation was executed.
-    optional string                 externalNote         = 8; // Note added to operation. Visible to the trader.
-    optional int64                  introducingBrokerId  = 9; // ID of introducing broker who deposited/withdrew bonus.
-    optional uint32                 moneyDigits          = 10;
+    required ProtoOAChangeBonusType operationType        = 1;  // Type of the operation. Deposit/Withdrawal.
+    required int64                  bonusHistoryId       = 2;  // The unique ID of the bonus deposit/withdrawal operation.
+    required int64                  managerBonus         = 3;  // Total amount of broker bonus after the operation.
+    required int64                  managerDelta         = 4;  // Amount of bonus deposited/withdrew by manager.
+    required int64                  ibBonus              = 5;  // Total amount of introducing broker bonus after the operation.
+    required int64                  ibDelta              = 6;  // Amount of bonus deposited/withdrew by introducing broker.
+    required int64                  changeBonusTimestamp = 7;  // Time when the bonus operation was executed.
+    optional string                 externalNote         = 8;  // Note added to operation. Visible to the trader.
+    optional int64                  introducingBrokerId  = 9;  // ID of introducing broker who deposited/withdrew bonus.
+    optional uint32                 moneyDigits          = 10; // Specifies the exponent of the monetary values. E.g. moneyDigits = 8 must be interpret as business value multiplied by 10^8, then real balance would be 10053099944 / 10^8 = 100.53099944. Affects managerBonus, managerDelta, ibBonus, ibDelta.
 }
 
 // Account deposit/withdrawal operation entity
@@ -627,7 +636,7 @@ message ProtoOADepositWithdraw
     optional string                   externalNote           = 6; // Note added to operation. Visible to the trader.
     optional int64                    balanceVersion         = 7; // Balance version used to identify the final balance. Increments each time when the trading account balance is changed.
     optional int64                    equity                 = 8; // Total account equity after balance operation was executed.
-    optional uint32                   moneyDigits            = 9;
+    optional uint32                   moneyDigits            = 9; // Specifies the exponent of the monetary values. E.g. moneyDigits = 8 must be interpret as business value multiplied by 10^8, then real balance would be 10053099944 / 10^8 = 100.53099944. Affects usedMargin.
 }
 
 // Execution entity
@@ -649,7 +658,7 @@ message ProtoOADeal
     optional int64                      commission              = 14; // Amount of trading commission associated with the deal.
     optional double                     baseToUsdConversionRate = 15; // Base to USD conversion rate on the time of deal execution.
     optional ProtoOAClosePositionDetail closePositionDetail     = 16; // Closing position detail. Valid only for closing deal.
-    optional uint32                     moneyDigits             = 17;
+    optional uint32                     moneyDigits             = 17; // Specifies the exponent of the monetary values. E.g. moneyDigits = 8 must be interpret as business value multiplied by 10^8, then real balance would be 10053099944 / 10^8 = 100.53099944. Affects managerBonus, managerDelta, ibBonus, ibDelta.
 }
 
 // Trading details for closing deal
@@ -663,7 +672,7 @@ message ProtoOAClosePositionDetail
     optional double quoteToDepositConversionRate = 6; // Quote/Deposit currency conversion rate on the time of closing deal execution.
     optional int64  closedVolume                 = 7; // Closed volume in cents.
     optional int64  balanceVersion               = 8; // Balance version of the account related to closing deal operation.
-    optional uint32 moneyDigits                  = 9;
+    optional uint32 moneyDigits                  = 9; // Specifies the exponent of the monetary values. E.g. moneyDigits = 8 must be interpret as business value multiplied by 10^8, then real balance would be 10053099944 / 10^8 = 100.53099944. Affects margin.buyMargin, margin.sellMargin.
 }
 
 // Historical Trendbar entity
@@ -726,9 +735,9 @@ message ProtoOADepthQuote
 // Margin call entity, specifies threshold for exact margin call type. Only 3 instances of margin calls are supported, identified by marginCallType. See ProtoOANotificationType for details.
 message ProtoOAMarginCall
 {
-    required ProtoOANotificationType marginCallType = 1;
-    required double marginLevelThreshold = 2;
-    optional int64 utcLastUpdateTimestamp = 3;
+    required ProtoOANotificationType marginCallType         = 1;
+    required double                  marginLevelThreshold   = 2;
+    optional int64                   utcLastUpdateTimestamp = 3;
 }
 
 // Request for authorizing an application to work with the cTrader platform Proxies.
@@ -923,16 +932,18 @@ message ProtoOAAssetListRes
 // Request for a list of symbols available for a trading account. Symbol entries are returned with the limited set of fields.
 message ProtoOASymbolsListReq
 {
-    optional ProtoOAPayloadType payloadType         = 1  [default = PROTO_OA_SYMBOLS_LIST_REQ];
-    required int64              ctidTraderAccountId = 2; // Unique identifier of the trading account. Used to match responses to trading accounts.
+    optional ProtoOAPayloadType payloadType            = 1  [default = PROTO_OA_SYMBOLS_LIST_REQ];
+    required int64              ctidTraderAccountId    = 2; // Unique identifier of the trading account. Used to match responses to trading accounts.
+    optional bool               includeArchivedSymbols = 3  [default = false];
 }
 
 // Response to the ProtoOASymbolsListReq request.
 message ProtoOASymbolsListRes
 {
-    optional ProtoOAPayloadType payloadType         = 1  [default = PROTO_OA_SYMBOLS_LIST_RES];
-    required int64              ctidTraderAccountId = 2; // Unique identifier of the trading account. Used to match responses to trading accounts.
-    repeated ProtoOALightSymbol symbol              = 3; // The list of symbols.
+    optional ProtoOAPayloadType    payloadType         = 1  [default = PROTO_OA_SYMBOLS_LIST_RES];
+    required int64                 ctidTraderAccountId = 2; // Unique identifier of the trading account. Used to match responses to trading accounts.
+    repeated ProtoOALightSymbol    symbol              = 3; // The list of symbols.
+    repeated ProtoOAArchivedSymbol archivedSymbol      = 4; // The list of archived symbols.
 }
 
 // Request for getting a full symbol entity.
@@ -946,9 +957,10 @@ message ProtoOASymbolByIdReq
 // Response to the ProtoOASymbolByIdReq request.
 message ProtoOASymbolByIdRes
 {
-    optional ProtoOAPayloadType payloadType         = 1  [default = PROTO_OA_SYMBOL_BY_ID_RES];
-    required int64              ctidTraderAccountId = 2; // Unique identifier of the trading account. Used to match responses to trading accounts.
-    repeated ProtoOASymbol      symbol              = 3; // Symbol entity with the full set of fields.
+    optional ProtoOAPayloadType    payloadType         = 1  [default = PROTO_OA_SYMBOL_BY_ID_RES];
+    required int64                 ctidTraderAccountId = 2; // Unique identifier of the trading account. Used to match responses to trading accounts.
+    repeated ProtoOASymbol         symbol              = 3; // Symbol entity with the full set of fields.
+    repeated ProtoOAArchivedSymbol archivedSymbol      = 4; // Archived symbols.
 }
 
 // Request for getting a conversion chain between two assets that consists of several symbols. Use when no direct quote is available
@@ -1075,7 +1087,7 @@ message ProtoOAExpectedMarginRes
     optional ProtoOAPayloadType    payloadType         = 1  [default = PROTO_OA_EXPECTED_MARGIN_RES];
     required int64                 ctidTraderAccountId = 2; // Unique identifier of the trading account. Used to match responses to trading accounts.
     repeated ProtoOAExpectedMargin margin              = 3; // The buy and sell margin estimate.
-    optional uint32                moneyDigits         = 4;
+    optional uint32                moneyDigits         = 4; // Specifies the exponent of the monetary values. E.g. moneyDigits = 8 must be interpret as business value multiplied by 10^8, then real balance would be 10053099944 / 10^8 = 100.53099944. Affects usedMargin.
 
 }
 
@@ -1086,7 +1098,7 @@ message ProtoOAMarginChangedEvent
     required int64              ctidTraderAccountId = 2; // Unique identifier of the trading account. Used to match responses to trading accounts.
     required uint64             positionId          = 3; // The unique ID of the position.
     required uint64             usedMargin          = 4; // The new value of the margin used.
-    optional uint32             moneyDigits         = 5;
+    optional uint32             moneyDigits         = 5; // Specifies the exponent of the monetary values. E.g. moneyDigits = 8 must be interpret as business value multiplied by 10^8, then real balance would be 10053099944 / 10^8 = 100.53099944. Affects usedMargin.
 
 }
 
@@ -1389,4 +1401,16 @@ message ProtoOARefreshTokenRes
     required string             tokenType    = 3; // bearer
     required int64              expiresIn    = 4; // Access Token expiration in seconds
     required string             refreshToken = 5;
+}
+
+message ProtoOAHoliday
+{
+    required int64  holidayId        = 1; // Unique ID of holiday.
+    required string name             = 2; // Name of holiday.
+    optional string description      = 3; // Description of holiday.
+    required string scheduleTimeZone = 4; // Timezone used for holiday.
+    required int64  holidayDate      = 5; // Amount of days from 01-01-1970, multiply it by 86400000 to get unix timestamp.
+    required bool   isRecurring      = 6; // If TRUE, then the holiday happens each year.
+    optional int32  startSecond      = 7; // Amount of seconds from 00:00:00 of the holiday day when holiday actually starts.
+    optional int32  endSecond        = 8; // Amount of seconds from 00:00:00 of the holiday day when holiday actually finishes.
 }
