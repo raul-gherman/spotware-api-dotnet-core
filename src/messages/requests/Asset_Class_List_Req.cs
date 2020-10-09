@@ -8,7 +8,7 @@ namespace spotware
         {
             ProtoOAAssetClassListRes message = new ProtoOAAssetClassListRes
             {
-                payloadType = ProtoOAPayloadType.ProtoOaAssetClassListReq,
+                payloadType         = ProtoOAPayloadType.ProtoOaAssetClassListReq,
                 ctidTraderAccountId = ctidTraderAccountId
             };
 
@@ -18,7 +18,7 @@ namespace spotware
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);
 
-            return Encode((uint)message.payloadType, InnerMemoryStream.ToArray());
+            return Encode((uint) message.payloadType, InnerMemoryStream.ToArray());
         }
     }
 }

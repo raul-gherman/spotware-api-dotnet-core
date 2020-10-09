@@ -8,10 +8,10 @@ namespace spotware
     {
         private readonly ILog _log = LogManager.GetLogger();
 
-        private readonly string _gateway;
-        private readonly int _port;
-        private TcpClient _tcpClient;
-        private SslStream _sslStream;
+        private readonly string    _gateway;
+        private readonly int       _port;
+        private          TcpClient _tcpClient;
+        private          SslStream _sslStream;
 
         public event ConnectionEstablished OnConnectionEstablished;
 
@@ -20,7 +20,7 @@ namespace spotware
         public Connection(string gateway, int port)
         {
             _gateway = gateway;
-            _port = port;
+            _port    = port;
         }
     }
 }

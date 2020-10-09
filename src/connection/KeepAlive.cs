@@ -13,10 +13,10 @@ namespace spotware
         {
             ProtoMessagesQueue.Enqueue(KeepAliveMessage);
             _keepAliveThread = new Thread(() =>
-                                          {
-                                              Thread.CurrentThread.IsBackground = true;
-                                              KeepAlive();
-                                          });
+            {
+                Thread.CurrentThread.IsBackground = true;
+                KeepAlive();
+            });
             _keepAliveThread.Start();
         }
 

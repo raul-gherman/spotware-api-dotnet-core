@@ -17,15 +17,16 @@ namespace spotware
                 };
                 TradingAccounts[args.ctidTraderAccountId].TradingSymbols[lightSymbol.symbolId] = tradingSymbol;
 
-                string item = $"symbolId: {lightSymbol.symbolId}; " +
-                              $"symbolName: {lightSymbol.symbolName}; " +
-                              $"Description: {lightSymbol.Description}; " +
-                              $"Enabled: {lightSymbol.Enabled}; " +
-                              $"symbolCategoryId: {lightSymbol.symbolCategoryId} ({TradingAccounts[args.ctidTraderAccountId].SymbolCategories[lightSymbol.symbolCategoryId].Name}); " +
+                string item = $"symbolId: {lightSymbol.symbolId}; "                                                                                                 +
+                              $"symbolName: {lightSymbol.symbolName}; "                                                                                             +
+                              $"Description: {lightSymbol.Description}; "                                                                                           +
+                              $"Enabled: {lightSymbol.Enabled}; "                                                                                                   +
+                              $"symbolCategoryId: {lightSymbol.symbolCategoryId} "                                                                                  +
+                              $"({TradingAccounts[args.ctidTraderAccountId].SymbolCategories[lightSymbol.symbolCategoryId].Name}); "                                +
                               $"baseAssetId: {lightSymbol.baseAssetId} ({TradingAccounts[args.ctidTraderAccountId].Assets[lightSymbol.baseAssetId].displayName}); " +
                               $"quoteAssetId: {lightSymbol.quoteAssetId} ({TradingAccounts[args.ctidTraderAccountId].Assets[lightSymbol.quoteAssetId].displayName})";
 
-                Log.Info("ProtoOASymbolsListRes:: " +
+                Log.Info("ProtoOASymbolsListRes:: "                           +
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
                          $"Symbol: [{item}]");
             }

@@ -15,7 +15,7 @@ namespace spotware
             };
 
             _connection.OnConnectionEstablished += Start_Message_Flow;
-            _connection.OnMessageReceived += DecodeIncomingMessage;
+            _connection.OnMessageReceived       += DecodeIncomingMessage;
             _connection.Connect();
         }
 

@@ -4,19 +4,19 @@ namespace spotware
 {
     public partial class Client
     {
-        public static ProtoMessage Amend_Position_SLTP_Req(long ctidTraderAccountId,
-                                                           long positionId,
-                                                           double stopLoss = 0,
-                                                           double takeProfit = 0,
-                                                           bool guaranteedStopLoss = false,
-                                                           bool trailingStopLoss = false,
+        public static ProtoMessage Amend_Position_SLTP_Req(long                      ctidTraderAccountId,
+                                                           long                      positionId,
+                                                           double                    stopLoss              = 0,
+                                                           double                    takeProfit            = 0,
+                                                           bool                      guaranteedStopLoss    = false,
+                                                           bool                      trailingStopLoss      = false,
                                                            ProtoOAOrderTriggerMethod stopLossTriggerMethod = ProtoOAOrderTriggerMethod.Trade)
         {
             ProtoOAAmendPositionSLTPReq message = new ProtoOAAmendPositionSLTPReq
             {
-                payloadType = ProtoOAPayloadType.ProtoOaAmendPositionSltpReq,
+                payloadType         = ProtoOAPayloadType.ProtoOaAmendPositionSltpReq,
                 ctidTraderAccountId = ctidTraderAccountId,
-                positionId = positionId
+                positionId          = positionId
             };
 
             if (stopLoss > 0)
@@ -30,19 +30,19 @@ namespace spotware
             if (stopLossTriggerMethod != ProtoOAOrderTriggerMethod.Trade)
                 message.stopLossTriggerMethod = stopLossTriggerMethod;
 
-            Log.Info("ProtoOAAmendPositionSLTPReq:: " +
+            Log.Info("ProtoOAAmendPositionSLTPReq:: "                +
                      $"ctidTraderAccountId: {ctidTraderAccountId}; " +
-                     $"positionId: {positionId}; " +
-                     $"stopLoss: {stopLoss}; " +
-                     $"takeProfit: {takeProfit}; " +
-                     $"guaranteedStopLoss: {guaranteedStopLoss}; " +
-                     $"trailingStopLoss: {trailingStopLoss}; " +
+                     $"positionId: {positionId}; "                   +
+                     $"stopLoss: {stopLoss}; "                       +
+                     $"takeProfit: {takeProfit}; "                   +
+                     $"guaranteedStopLoss: {guaranteedStopLoss}; "   +
+                     $"trailingStopLoss: {trailingStopLoss}; "       +
                      $"stopLossTriggerMethod: {stopLossTriggerMethod}");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);
 
-            return Encode((uint)message.payloadType, InnerMemoryStream.ToArray());
+            return Encode((uint) message.payloadType, InnerMemoryStream.ToArray());
         }
     }
 }

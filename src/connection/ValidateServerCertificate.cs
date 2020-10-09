@@ -5,9 +5,9 @@ namespace spotware
 {
     public partial class Connection
     {
-        private bool ValidateServerCertificate(object sender,
+        private bool ValidateServerCertificate(object          sender,
                                                X509Certificate certificate,
-                                               X509Chain chain,
+                                               X509Chain       chain,
                                                SslPolicyErrors sslPolicyErrors)
         {
             if (sslPolicyErrors == SslPolicyErrors.None)

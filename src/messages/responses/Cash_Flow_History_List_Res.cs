@@ -10,16 +10,16 @@ namespace spotware
 
             foreach (ProtoOADepositWithdraw depositWithdraw in args.depositWithdraws)
             {
-                string item = $"operationType: {depositWithdraw.operationType}; " +
-                              $"Equity: {depositWithdraw.Equity}; " +
-                              $"Balance: {depositWithdraw.Balance}; " +
-                              $"balanceVersion: {depositWithdraw.balanceVersion}; " +
+                string item = $"operationType: {depositWithdraw.operationType}; "       +
+                              $"Equity: {depositWithdraw.Equity}; "                     +
+                              $"Balance: {depositWithdraw.Balance}; "                   +
+                              $"balanceVersion: {depositWithdraw.balanceVersion}; "     +
                               $"balanceHistoryId: {depositWithdraw.balanceHistoryId}; " +
-                              $"Delta: {depositWithdraw.Delta}; " +
-                              $"externalNote: {depositWithdraw.externalNote}; " +
+                              $"Delta: {depositWithdraw.Delta}; "                       +
+                              $"externalNote: {depositWithdraw.externalNote}; "         +
                               $"changeBalanceTimestamp: {depositWithdraw.changeBalanceTimestamp}";
 
-                Log.Info("ProtoOACashFlowHistoryListRes:: " +
+                Log.Info("ProtoOACashFlowHistoryListRes:: "                   +
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
                          $"depositWithdraws: [{item}]");
             }

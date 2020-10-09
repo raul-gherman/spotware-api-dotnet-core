@@ -8,7 +8,7 @@ namespace spotware
         {
             ProtoOAAccountLogoutReq message = new ProtoOAAccountLogoutReq
             {
-                payloadType = ProtoOAPayloadType.ProtoOaAccountAuthReq,
+                payloadType         = ProtoOAPayloadType.ProtoOaAccountAuthReq,
                 ctidTraderAccountId = ctidTraderAccountId
             };
 
@@ -18,7 +18,7 @@ namespace spotware
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);
 
-            return Encode((uint)message.payloadType, InnerMemoryStream.ToArray());
+            return Encode((uint) message.payloadType, InnerMemoryStream.ToArray());
         }
     }
 }

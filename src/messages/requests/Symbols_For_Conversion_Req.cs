@@ -8,12 +8,12 @@ namespace spotware
         public static ProtoMessage Symbols_For_Conversion_Req(long ctidTraderAccountId, long firstAssetId, long lastAssetId)
         {
             ProtoOASymbolsForConversionReq message = new ProtoOASymbolsForConversionReq
-                                                     {
-                                                         payloadType         = ProtoOAPayloadType.ProtoOaSymbolsForConversionReq,
-                                                         ctidTraderAccountId = ctidTraderAccountId,
-                                                         firstAssetId        = firstAssetId,
-                                                         lastAssetId         = lastAssetId
-                                                     };
+            {
+                payloadType         = ProtoOAPayloadType.ProtoOaSymbolsForConversionReq,
+                ctidTraderAccountId = ctidTraderAccountId,
+                firstAssetId        = firstAssetId,
+                lastAssetId         = lastAssetId
+            };
 
             Log.Info("ProtoOASymbolsForConversionReq:: "             +
                      $"ctidTraderAccountId: {ctidTraderAccountId}; " +

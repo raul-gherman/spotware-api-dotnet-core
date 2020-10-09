@@ -8,7 +8,7 @@ namespace spotware
         {
             ProtoOAMarginCallListReq message = new ProtoOAMarginCallListReq
             {
-                payloadType = ProtoOAPayloadType.ProtoOaMarginCallListReq,
+                payloadType         = ProtoOAPayloadType.ProtoOaMarginCallListReq,
                 ctidTraderAccountId = ctidTraderAccountId
             };
 
@@ -18,7 +18,7 @@ namespace spotware
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);
 
-            return Encode((uint)message.payloadType, InnerMemoryStream.ToArray());
+            return Encode((uint) message.payloadType, InnerMemoryStream.ToArray());
         }
     }
 }

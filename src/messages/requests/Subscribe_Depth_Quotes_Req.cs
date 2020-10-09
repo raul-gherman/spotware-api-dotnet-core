@@ -7,11 +7,11 @@ namespace spotware
         public static ProtoMessage Subscribe_Depth_Quotes_Req(long ctidTraderAccountId, long[] symbolIDs)
         {
             ProtoOASubscribeDepthQuotesReq message = new ProtoOASubscribeDepthQuotesReq
-                                                     {
-                                                         payloadType         = ProtoOAPayloadType.ProtoOaSubscribeDepthQuotesReq,
-                                                         ctidTraderAccountId = ctidTraderAccountId,
-                                                         symbolIds           = symbolIDs
-                                                     };
+            {
+                payloadType         = ProtoOAPayloadType.ProtoOaSubscribeDepthQuotesReq,
+                ctidTraderAccountId = ctidTraderAccountId,
+                symbolIds           = symbolIDs
+            };
 
             Log.Info("ProtoOASubscribeDepthQuotesReq:: "             +
                      $"ctidTraderAccountId: {ctidTraderAccountId}; " +

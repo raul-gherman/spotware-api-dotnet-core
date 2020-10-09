@@ -9,8 +9,8 @@ namespace spotware
         public static readonly ILog Log = LogManager.GetLogger();
 
         private Connection _connection;
-        private string _gateway;
-        private int _port;
+        private string     _gateway;
+        private int        _port;
 
         private string _clientId;
         private string _clientSecret;

@@ -4,34 +4,34 @@ namespace spotware
 {
     public partial class Client
     {
-        public static ProtoMessage Get_Trendbars_Req(long ctidTraderAccountId,
-                                                     long fromTimestamp,
-                                                     long toTimestamp,
+        public static ProtoMessage Get_Trendbars_Req(long                  ctidTraderAccountId,
+                                                     long                  fromTimestamp,
+                                                     long                  toTimestamp,
                                                      ProtoOATrendbarPeriod period,
-                                                     long symbolId = 0)
+                                                     long                  symbolId = 0)
         {
             ProtoOAGetTrendbarsReq message = new ProtoOAGetTrendbarsReq
             {
-                payloadType = ProtoOAPayloadType.ProtoOaGetTrendbarsReq,
+                payloadType         = ProtoOAPayloadType.ProtoOaGetTrendbarsReq,
                 ctidTraderAccountId = ctidTraderAccountId,
-                fromTimestamp = fromTimestamp,
-                toTimestamp = toTimestamp,
-                Period = period
+                fromTimestamp       = fromTimestamp,
+                toTimestamp         = toTimestamp,
+                Period              = period
             };
 
             if (symbolId > 0)
                 message.symbolId = symbolId;
 
-            Log.Info("ProtoOAGetTrendbarsReq:: " +
-                     $"ctidTraderAccountId: {ctidTraderAccountId}; " +
+            Log.Info("ProtoOAGetTrendbarsReq:: "                                         +
+                     $"ctidTraderAccountId: {ctidTraderAccountId}; "                     +
                      $"fromTimestamp: {fromTimestamp} ({EpochToString(fromTimestamp)}; " +
-                     $"toTimestamp: {toTimestamp} ({EpochToString(toTimestamp)}; " +
+                     $"toTimestamp: {toTimestamp} ({EpochToString(toTimestamp)}; "       +
                      $"period: {period}");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);
 
-            return Encode((uint)message.payloadType, InnerMemoryStream.ToArray());
+            return Encode((uint) message.payloadType, InnerMemoryStream.ToArray());
         }
     }
 }

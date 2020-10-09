@@ -8,19 +8,19 @@ namespace spotware
         {
             ProtoOAMarginCallUpdateReq message = new ProtoOAMarginCallUpdateReq
             {
-                payloadType = ProtoOAPayloadType.ProtoOaMarginCallUpdateReq,
+                payloadType         = ProtoOAPayloadType.ProtoOaMarginCallUpdateReq,
                 ctidTraderAccountId = ctidTraderAccountId,
-                marginCall = marginCall
+                marginCall          = marginCall
             };
 
-            Log.Info("ProtoOAMarginCallUpdateReq:: " +
+            Log.Info("ProtoOAMarginCallUpdateReq:: "                 +
                      $"ctidTraderAccountId: {ctidTraderAccountId}; " +
                      $"marginCall: {marginCall}");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);
 
-            return Encode((uint)message.payloadType, InnerMemoryStream.ToArray());
+            return Encode((uint) message.payloadType, InnerMemoryStream.ToArray());
         }
     }
 }

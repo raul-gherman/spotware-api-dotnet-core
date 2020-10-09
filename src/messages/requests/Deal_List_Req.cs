@@ -7,29 +7,29 @@ namespace spotware
         public static ProtoMessage Deal_List_Req(long ctidTraderAccountId,
                                                  long fromTimestamp,
                                                  long toTimestamp,
-                                                 int maxRows = 0)
+                                                 int  maxRows = 0)
         {
             ProtoOADealListReq message = new ProtoOADealListReq
             {
-                payloadType = ProtoOAPayloadType.ProtoOaDealListReq,
+                payloadType         = ProtoOAPayloadType.ProtoOaDealListReq,
                 ctidTraderAccountId = ctidTraderAccountId,
-                fromTimestamp = fromTimestamp,
-                toTimestamp = toTimestamp
+                fromTimestamp       = fromTimestamp,
+                toTimestamp         = toTimestamp
             };
 
             if (maxRows > 0)
                 message.maxRows = maxRows;
 
-            Log.Info("ProtoOADealListReq:: " +
-                     $"ctidTraderAccountId: {ctidTraderAccountId}; " +
+            Log.Info("ProtoOADealListReq:: "                                             +
+                     $"ctidTraderAccountId: {ctidTraderAccountId}; "                     +
                      $"fromTimestamp: {fromTimestamp} ({EpochToString(fromTimestamp)}; " +
-                     $"toTimestamp: {toTimestamp} ({EpochToString(toTimestamp)}; " +
+                     $"toTimestamp: {toTimestamp} ({EpochToString(toTimestamp)}; "       +
                      $"maxRows: {maxRows}");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);
 
-            return Encode((uint)message.payloadType, InnerMemoryStream.ToArray());
+            return Encode((uint) message.payloadType, InnerMemoryStream.ToArray());
         }
     }
 }
