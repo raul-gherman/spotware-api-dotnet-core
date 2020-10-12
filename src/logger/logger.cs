@@ -45,7 +45,7 @@ namespace spotware
     internal class XLogger
     {
         public static readonly XLogger Instance = new XLogger();
-        private Queue _que;
+        private                Queue   _que;
 
         private XLogger()
         {
@@ -55,11 +55,11 @@ namespace spotware
 
         public void Init(string filename)
         {
-            _que = new Queue();
+            _que         = new Queue();
             _logFileName = filename;
             System.Timers.Timer saveTimer = new System.Timers.Timer(10)
             {
-                Enabled = true,
+                Enabled   = true,
                 AutoReset = true
             };
             saveTimer.Elapsed += _saveTimer_Elapsed;

@@ -7,9 +7,9 @@ namespace spotware
         public static ProtoMessage Version_Req()
         {
             ProtoOAVersionReq message = new ProtoOAVersionReq
-                                        {
-                                            payloadType = ProtoOAPayloadType.ProtoOaVersionReq
-                                        };
+            {
+                payloadType = ProtoOAPayloadType.ProtoOaVersionReq
+            };
 
             Log.Info("ProtoOAVersionReq");
 

@@ -15,8 +15,8 @@ namespace spotware
                              $"Timestamp: {tickData.Timestamp} ( ({EpochToString(tickData.Timestamp)}) | ";
             }
 
-            Log.Info("ProtoOAGetTickDataRes:: " +
-                     $"accessToken: {args.hasMore}; " +
+            Log.Info("ProtoOAGetTickDataRes:: "                       +
+                     $"accessToken: {args.hasMore}; "                 +
                      $"permissionScope: {args.ctidTraderAccountId}; " +
                      $"tickDatas: [{tickDatas}]");
 

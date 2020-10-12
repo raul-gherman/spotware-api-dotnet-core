@@ -15,7 +15,7 @@ namespace spotware
                 string item = $"Id: {assetClass.Id}; " +
                               $"Name: {assetClass.Name}";
 
-                Log.Info("ProtoOAAssetClassListRes:: " +
+                Log.Info("ProtoOAAssetClassListRes:: "                        +
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
                          $"assetClass: [{item}]");
             }

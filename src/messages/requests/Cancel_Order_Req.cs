@@ -9,19 +9,19 @@ namespace spotware
         {
             ProtoOACancelOrderReq message = new ProtoOACancelOrderReq
             {
-                payloadType = ProtoOAPayloadType.ProtoOaCancelOrderReq,
+                payloadType         = ProtoOAPayloadType.ProtoOaCancelOrderReq,
                 ctidTraderAccountId = ctidTraderAccountId,
-                orderId = orderId
+                orderId             = orderId
             };
 
-            Log.Info("ProtoOACancelOrderReq:: " +
+            Log.Info("ProtoOACancelOrderReq:: "                      +
                      $"ctidTraderAccountId: {ctidTraderAccountId}; " +
                      $"orderId: {orderId}");
 
             InnerMemoryStream.SetLength(0);
             Serializer.Serialize(InnerMemoryStream, message);
 
-            return Encode((uint)message.payloadType, InnerMemoryStream.ToArray());
+            return Encode((uint) message.payloadType, InnerMemoryStream.ToArray());
         }
     }
 }

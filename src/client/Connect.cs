@@ -9,15 +9,13 @@ namespace spotware
 
         public void Connect()
         {
-            Prepare_Dispatcher();
-
             _connection = new Connection(_gateway, _port)
             {
                 KeepAliveMessage = Heartbeat()
             };
 
             _connection.OnConnectionEstablished += Start_Message_Flow;
-            _connection.OnMessageReceived += DecodeIncomingMessage;
+            _connection.OnMessageReceived       += DecodeIncomingMessage;
             _connection.Connect();
         }
 

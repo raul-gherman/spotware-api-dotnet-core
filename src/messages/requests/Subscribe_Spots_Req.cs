@@ -7,11 +7,11 @@ namespace spotware
         public static ProtoMessage Subscribe_Spots_Req(long ctidTraderAccountId, long[] symbolIDs)
         {
             ProtoOASubscribeSpotsReq message = new ProtoOASubscribeSpotsReq
-                                               {
-                                                   payloadType         = ProtoOAPayloadType.ProtoOaSubscribeSpotsReq,
-                                                   ctidTraderAccountId = ctidTraderAccountId,
-                                                   symbolIds           = symbolIDs
-                                               };
+            {
+                payloadType         = ProtoOAPayloadType.ProtoOaSubscribeSpotsReq,
+                ctidTraderAccountId = ctidTraderAccountId,
+                symbolIds           = symbolIDs
+            };
 
             Log.Info("ProtoOASubscribeSpotsReq:: "                   +
                      $"ctidTraderAccountId: {ctidTraderAccountId}; " +

@@ -7,11 +7,11 @@ namespace spotware
         public static ProtoMessage Unsubscribe_Spots_Req(long ctidTraderAccountId, long[] symbolIDs)
         {
             ProtoOAUnsubscribeSpotsReq message = new ProtoOAUnsubscribeSpotsReq
-                                                 {
-                                                     payloadType         = ProtoOAPayloadType.ProtoOaUnsubscribeSpotsReq,
-                                                     ctidTraderAccountId = ctidTraderAccountId,
-                                                     symbolIds           = symbolIDs
-                                                 };
+            {
+                payloadType         = ProtoOAPayloadType.ProtoOaUnsubscribeSpotsReq,
+                ctidTraderAccountId = ctidTraderAccountId,
+                symbolIds           = symbolIDs
+            };
 
             Log.Info("ProtoOAUnsubscribeSpotsReq:: "                 +
                      $"ctidTraderAccountId: {ctidTraderAccountId}; " +

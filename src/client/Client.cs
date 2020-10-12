@@ -9,8 +9,8 @@ namespace spotware
         public static readonly ILog Log = LogManager.GetLogger();
 
         private Connection _connection;
-        private string _gateway;
-        private int _port;
+        private string     _gateway;
+        private int        _port;
 
         private string _clientId;
         private string _clientSecret;
@@ -26,7 +26,11 @@ namespace spotware
 
         public Client()
         {
+            LogManager.Configure($"spotware-api-{DateTime.UtcNow:yyyy-MM-dd}.log");
+
             ReadEnvironmentVariables();
+
+            Prepare_Dispatcher();
         }
 
         public Client(bool subscribeAllSymbols = true)
@@ -38,8 +42,6 @@ namespace spotware
 
         private void ReadEnvironmentVariables()
         {
-            LogManager.Configure($"spotware-api-{DateTime.UtcNow:yyyy-MM-dd}.log");
-
             _gateway = Environment.GetEnvironmentVariable("SPOTWARE_API_GATEWAY")
                        ?? throw new Exception("SPOTWARE_API_GATEWAY not set");
             _port = int.Parse(Environment.GetEnvironmentVariable("SPOTWARE_API_PORT")

@@ -7,10 +7,10 @@ namespace spotware
         public static ProtoMessage Symbols_List_Req(long ctidTraderAccountId)
         {
             ProtoOASymbolsListReq message = new ProtoOASymbolsListReq
-                                            {
-                                                payloadType         = ProtoOAPayloadType.ProtoOaSymbolsListReq,
-                                                ctidTraderAccountId = ctidTraderAccountId
-                                            };
+            {
+                payloadType         = ProtoOAPayloadType.ProtoOaSymbolsListReq,
+                ctidTraderAccountId = ctidTraderAccountId
+            };
 
             Log.Info("ProtoOASymbolsListReq:: " +
                      $"ctidTraderAccountId: {ctidTraderAccountId}");

@@ -11,7 +11,7 @@ namespace spotware
             try
             {
                 _log.Info($"Connecting to {_gateway}:{_port}...");
-                _tcpClient = new TcpClient(_gateway, _port) { NoDelay = true };
+                _tcpClient = new TcpClient(_gateway, _port) {NoDelay = true};
             }
             catch (Exception ex)
             {

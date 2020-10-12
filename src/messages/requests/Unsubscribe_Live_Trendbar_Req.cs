@@ -7,12 +7,12 @@ namespace spotware
         public static ProtoMessage Unsubscribe_Live_Trendbar_Req(long ctidTraderAccountId, ProtoOATrendbarPeriod period, long symbolId)
         {
             ProtoOAUnsubscribeLiveTrendbarReq message = new ProtoOAUnsubscribeLiveTrendbarReq
-                                                        {
-                                                            payloadType         = ProtoOAPayloadType.ProtoOaUnsubscribeLiveTrendbarReq,
-                                                            ctidTraderAccountId = ctidTraderAccountId,
-                                                            Period              = period,
-                                                            symbolId            = symbolId
-                                                        };
+            {
+                payloadType         = ProtoOAPayloadType.ProtoOaUnsubscribeLiveTrendbarReq,
+                ctidTraderAccountId = ctidTraderAccountId,
+                Period              = period,
+                symbolId            = symbolId
+            };
 
             Log.Info("ProtoOAUnsubscribeLiveTrendbarReq:: "          +
                      $"ctidTraderAccountId: {ctidTraderAccountId}; " +

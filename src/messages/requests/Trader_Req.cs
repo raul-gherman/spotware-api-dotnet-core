@@ -7,10 +7,10 @@ namespace spotware
         public static ProtoMessage Trader_Req(long ctidTraderAccountId)
         {
             ProtoOATraderReq message = new ProtoOATraderReq
-                                       {
-                                           payloadType         = ProtoOAPayloadType.ProtoOaTraderReq,
-                                           ctidTraderAccountId = ctidTraderAccountId
-                                       };
+            {
+                payloadType         = ProtoOAPayloadType.ProtoOaTraderReq,
+                ctidTraderAccountId = ctidTraderAccountId
+            };
 
             Log.Info("ProtoOATraderReq:: " +
                      $"ctidTraderAccountId: {ctidTraderAccountId}");

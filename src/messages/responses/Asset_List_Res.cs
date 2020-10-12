@@ -12,11 +12,11 @@ namespace spotware
             {
                 TradingAccounts[args.ctidTraderAccountId].Assets[asset.assetId] = asset;
 
-                string item = $"assetId: {asset.assetId}; " +
+                string item = $"assetId: {asset.assetId}; "         +
                               $"displayName: {asset.displayName}; " +
                               $"Name: {asset.Name}";
 
-                Log.Info("ProtoOAAssetListRes:: " +
+                Log.Info("ProtoOAAssetListRes:: "                             +
                          $"ctidTraderAccountId: {args.ctidTraderAccountId}; " +
                          $"Asset: [{item}]");
             }

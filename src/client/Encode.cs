@@ -10,7 +10,7 @@ namespace spotware
             {
                 clientMsgId = DateTime.UtcNow.ToString("yyyyMMddHHmmssffffff"),
                 payloadType = payloadType,
-                Payload = payload
+                Payload     = payload
             };
         }
 
